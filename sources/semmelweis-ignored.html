@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>They Called Him Crazy: The Truth About Semmelweis — WakeUpWellness</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #cc0000; --red-dark: #8a0000; --yellow: #f5c400;
+      --dark: #111; --mid: #222; --muted: #555;
+      --border: #ddd; --bg: #fff; --light: #f8f8f8;
+    }
+    body { font-family: 'Open Sans', sans-serif; background: var(--bg); color: var(--dark); line-height: 1.7; }
+
+    .top-alert { background: var(--red); color: white; text-align: center; padding: 0.5rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; }
+
+    header { background: var(--dark); border-bottom: 4px solid var(--red); }
+    .header-inner { max-width: 1000px; margin: 0 auto; padding: 0.9rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Anton', sans-serif; font-size: 1.8rem; color: white; letter-spacing: 0.04em; text-decoration: none; }
+    .logo span { color: var(--yellow); }
+    .logo em { color: var(--red); font-style: normal; }
+
+    nav { background: #1a1a1a; }
+    nav ul { max-width: 1000px; margin: 0 auto; padding: 0 2rem; list-style: none; display: flex; flex-wrap: wrap; }
+    nav a { display: block; padding: 0.55rem 0.9rem; color: #aaa; text-decoration: none; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; }
+    nav a:hover { color: var(--yellow); }
+
+    .layout { max-width: 1000px; margin: 1.75rem auto; padding: 0 2rem; display: grid; grid-template-columns: 1fr 260px; gap: 2rem; }
+
+    .tag-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+    .tag { background: var(--red); color: white; padding: 0.15rem 0.5rem; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+    .tag.yellow { background: var(--yellow); color: var(--dark); }
+
+    h1 { font-family: 'Anton', sans-serif; font-size: 2.3rem; line-height: 1.1; color: var(--dark); margin-bottom: 0.6rem; letter-spacing: 0.01em; }
+    .deck { font-size: 1rem; color: var(--muted); margin-bottom: 1rem; line-height: 1.55; }
+    .byline { font-size: 0.76rem; color: var(--muted); padding: 0.5rem 0; border-top: 2px solid var(--dark); border-bottom: 1px solid var(--border); margin-bottom: 1.25rem; display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .byline strong { color: var(--dark); }
+
+    .hero { width: 100%; height: 260px; background: linear-gradient(135deg, #111 0%, #330000 60%, #cc0000 100%); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.15); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.4rem; }
+    .cap { font-size: 0.73rem; color: var(--muted); font-style: italic; margin-bottom: 1.25rem; }
+
+    p { margin-bottom: 1.1rem; font-size: 0.93rem; }
+    .bold-open { font-weight: 700; font-size: 1rem; color: var(--mid); }
+    h2 { font-family: 'Anton', sans-serif; font-size: 1.4rem; color: var(--red-dark); margin: 1.75rem 0 0.5rem; letter-spacing: 0.02em; }
+
+    .red-box { background: var(--red); color: white; padding: 1.1rem 1.25rem; margin: 1.5rem 0; font-weight: 700; font-size: 1rem; line-height: 1.5; }
+
+    .connection-box { background: var(--yellow); border: 2px solid var(--dark); padding: 1.1rem 1.25rem; margin: 1.5rem 0; }
+    .connection-box h3 { font-family: 'Anton', sans-serif; font-size: 1rem; color: var(--red-dark); margin-bottom: 0.6rem; letter-spacing: 0.03em; }
+    .connection-box ul { padding-left: 1.2rem; }
+    .connection-box li { font-size: 0.88rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--dark); }
+
+    .share-row { display: flex; gap: 0.5rem; margin: 1.25rem 0; }
+    .sh { padding: 0.4rem 1rem; font-size: 0.76rem; font-weight: 700; border: none; cursor: pointer; color: white; text-transform: uppercase; }
+    .sh-fb { background: #1877f2; } .sh-tw { background: #1da1f2; } .sh-em { background: #555; }
+
+    .comments-note { font-size: 0.8rem; color: var(--muted); border-top: 1px solid var(--border); padding-top: 0.75rem; }
+    .disclaimer { font-size: 0.74rem; color: #aaa; font-style: italic; margin-top: 0.75rem; }
+
+    /* Sidebar */
+    .sb { background: var(--light); border: 1px solid var(--border); padding: 1rem; margin-bottom: 1.25rem; }
+    .sb h4 { font-family: 'Anton', sans-serif; font-size: 0.88rem; color: var(--red-dark); margin-bottom: 0.75rem; letter-spacing: 0.04em; border-bottom: 2px solid var(--dark); padding-bottom: 0.35rem; }
+    .sb p, .sb li { font-size: 0.81rem; color: var(--muted); line-height: 1.55; margin-bottom: 0.35rem; }
+    .sb ul { list-style: none; padding: 0; }
+    .sb ul li { padding: 0.35rem 0; border-bottom: 1px solid var(--border); }
+    .sb ul li:last-child { border-bottom: none; }
+    .sb a { color: var(--dark); font-weight: 700; text-decoration: none; font-size: 0.81rem; }
+    .sb a:hover { color: var(--red); }
+    .sb .meta { font-size: 0.7rem; color: #aaa; }
+
+    .alert-sb { background: var(--red); color: white; padding: 1.1rem; margin-bottom: 1.25rem; text-align: center; }
+    .alert-sb h4 { font-family: 'Anton', sans-serif; font-size: 1rem; color: var(--yellow); margin-bottom: 0.4rem; }
+    .alert-sb p { font-size: 0.8rem; margin-bottom: 0.75rem; opacity: 0.9; }
+    .alert-sb button { background: var(--yellow); color: var(--dark); border: none; padding: 0.5rem 1.25rem; font-weight: 700; font-size: 0.85rem; cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    footer { background: var(--dark); color: rgba(255,255,255,0.4); text-align: center; padding: 1.25rem; font-size: 0.74rem; margin-top: 2rem; }
+
+    @media (max-width: 768px) { .layout { grid-template-columns: 1fr; } h1 { font-size: 1.75rem; } }
+  </style>
+</head>
+<body>
+
+<div class="top-alert">⚠ THE TRUTH THEY BURIED — READ BEFORE THIS GETS TAKEN DOWN ⚠</div>
+
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">WAKE<span>UP</span><em>WELLNESS</em></a>
+    <div style="font-size:0.72rem;color:#666;">Question Everything. Research Everything. Trust Yourself.</div>
+  </div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Hidden History</a></li>
+    <li><a href="#">Medical Truths</a></li>
+    <li><a href="#">Natural Health</a></li>
+    <li><a href="#">Big Pharma Watch</a></li>
+    <li><a href="#">Videos</a></li>
+    <li><a href="#">Community</a></li>
+  </ul>
+</nav>
+
+<div class="layout">
+  <main>
+    <div class="tag-row">
+      <span class="tag">Hidden History</span>
+      <span class="tag yellow">Must Read</span>
+    </div>
+    <h1>They Called Him Crazy: The Truth About Semmelweis (And What It Means Today)</h1>
+    <p class="deck">A 19th-century doctor proved that the medical establishment was killing patients. They silenced him, discredited him, and locked him away. Sound familiar?</p>
+    <div class="byline">
+      <span>By <strong>T. Harding</strong>, WakeUpWellness Research Team</span>
+      <span>30 March 2025</span>
+      <span>11 min read</span>
+    </div>
+
+    <div class="hero"><span>[Image: historical hospital illustration]</span></div>
+    <div class="cap">Semmelweis proved the medical establishment was wrong. His reward? Ridicule and an asylum. (Illustrative)</div>
+
+    <p class="bold-open">The year is 1847. A doctor named Ignaz Semmelweis has discovered something extraordinary: the reason women are dying in hospital maternity wards at terrifying rates is that doctors are going straight from doing autopsies to delivering babies — without washing their hands.</p>
+
+    <p>He proves it with data. He introduces handwashing. The death rates plummet — from over 10% to under 2%. The evidence is overwhelming.</p>
+
+    <p>The response from the medical establishment? They ignore him. They mock him. They write articles dismissing his work. Eventually, his own colleagues have him committed to a mental asylum, where he dies at 47 — almost certainly from an infection, the very thing he spent his life trying to prevent.</p>
+
+    <div class="red-box">
+      THE PATTERN IS ALWAYS THE SAME: A researcher finds evidence that threatens the established order. The establishment responds not with science — but with ridicule, marginalisation, and silence.
+    </div>
+
+    <h2>Why Did They Silence Him?</h2>
+    <p>The standard explanation is that doctors resisted because Semmelweis's theory implied they were responsible for their patients' deaths. That's true — and it's part of the story.</p>
+    <p>But there's another part that gets less attention. Medicine in the 19th century was a profession with enormous status and financial interests at stake. Admitting that standard practice was killing patients wasn't just uncomfortable — it was a threat to the entire edifice of professional authority. Those who controlled medical institutions had no incentive to admit they were wrong, even in the face of evidence.</p>
+    <p>Sound familiar? It should. Because the same dynamic plays out over and over in the history of medicine — and in medicine today.</p>
+
+    <h2>This Wasn't a One-Off. It's the Pattern.</h2>
+    <p>People like to treat Semmelweis as a tragic historical anomaly — a sad exception to a generally self-correcting scientific process. But is it? Let's look at a few other examples of establishment medicine resisting truth:</p>
+
+    <ul style="padding-left:1.25rem;margin-bottom:1.1rem;">
+      <li style="margin-bottom:0.6rem;">Barry Marshall had to <em>drink a flask of H. pylori bacteria</em> to prove that stomach ulcers were caused by bacteria — not stress — because the medical establishment refused to believe him. He eventually won the Nobel Prize. How many people suffered through decades of unnecessary treatments in the meantime?</li>
+      <li style="margin-bottom:0.6rem;">For decades, doctors dismissed women reporting autoimmune symptoms as "anxious" or "hysterical." It took generations of patients being ignored before these conditions were properly recognised.</li>
+      <li style="margin-bottom:0.6rem;">The long-term effects of certain medications, food additives, and environmental exposures were denied or minimised for years by regulatory bodies — often because the industries funding those bodies had a stake in the outcome.</li>
+    </ul>
+
+    <p>This is not a conspiracy theory. It's documented history. Science advances — but the institutions of science have interests, and those interests don't always align with the truth.</p>
+
+    <h2>What Semmelweis Means for Today</h2>
+    <p>Here's the uncomfortable question Semmelweis's story forces us to ask: who are today's Semmelweises? Which researchers, right now, are being ignored or silenced because their findings challenge powerful institutional interests?</p>
+    <p>We're not going to name names in this article — that's not what we're here to do. But we'd encourage you to think about areas where asking certain questions gets you labelled as a conspiracy theorist, or an anti-science crank. Think about why that label is deployed so quickly. Think about who benefits from discouraging those questions.</p>
+    <p>Semmelweis was not a crank. He was correct. The people who called him crazy were wrong — and they kept on being wrong for decades while patients died.</p>
+
+    <div class="connection-box">
+      <h3>THE SEMMELWEIS PATTERN — DOES IT SOUND FAMILIAR?</h3>
+      <ul>
+        <li>A researcher finds evidence that challenges mainstream medicine</li>
+        <li>The establishment dismisses the evidence without engaging with it</li>
+        <li>The researcher is labelled as a crank, rogue, or mentally unstable</li>
+        <li>Institutional and financial interests ensure the status quo is maintained</li>
+        <li>Years later, the researcher is proven right — after enormous preventable harm</li>
+      </ul>
+      <p style="margin-top:0.75rem;font-size:0.85rem;font-weight:600;">Ask yourself: where do you see this pattern today?</p>
+    </div>
+
+    <h2>The Lesson</h2>
+    <p>Semmelweis's story is taught in medical schools as a lesson about cognitive bias and resistance to new ideas. That's fine, as far as it goes. But the deeper lesson is this: <strong>institutional authority is not the same as truth.</strong> Scientific consensus is not always right — it is always provisional, and it is always shaped by the social and financial contexts in which it is produced.</p>
+    <p>That doesn't mean you should reject all expertise. It means you should maintain healthy scepticism, ask who is funding the research you're reading, and understand that "the experts say" has been wrong before and will be wrong again.</p>
+    <p>Semmelweis died unrecognised, locked in an asylum, surrounded by people telling him he was wrong. History has vindicated him completely. Keep that in mind the next time someone tells you to stop asking questions.</p>
+
+    <div class="share-row">
+      <button class="sh sh-fb">Share</button>
+      <button class="sh sh-tw">Tweet</button>
+      <button class="sh sh-em">Email</button>
+    </div>
+    <div class="comments-note">💬 387 comments — join the discussion below</div>
+    <p class="disclaimer">WakeUpWellness is an independent commentary and research platform. Views expressed are those of the authors. This is not medical advice.</p>
+  </main>
+
+  <aside>
+    <div class="alert-sb">
+      <h4>STAY INFORMED</h4>
+      <p>Get the stories mainstream media won't cover. Free newsletter.</p>
+      <button>Subscribe Now</button>
+    </div>
+    <div class="sb">
+      <h4>More Hidden History</h4>
+      <ul>
+        <li><a href="#">The Drug Trials They Buried</a><div class="meta">3 days ago</div></li>
+        <li><a href="#">Barry Marshall and the Ulcer Cover-Up</a><div class="meta">1 week ago</div></li>
+        <li><a href="#">What Your Doctor Won't Tell You About Cholesterol</a><div class="meta">2 weeks ago</div></li>
+        <li><a href="#">The Fluoride Debate: What the Research Really Shows</a><div class="meta">3 weeks ago</div></li>
+      </ul>
+    </div>
+    <div class="sb">
+      <h4>Most Shared</h4>
+      <ul>
+        <li><a href="#">10 Questions the Medical System Can't Answer</a></li>
+        <li><a href="#">Why Research Gets Buried</a></li>
+        <li><a href="#">The History of Medical Silencing</a></li>
+      </ul>
+    </div>
+    <div class="sb">
+      <h4>Share This Article</h4>
+      <p>If this made you think, share it with someone who needs to read it. They won't see it in mainstream news.</p>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  &copy; 2025 WakeUpWellness — Independent Research &amp; Commentary. The views expressed do not constitute medical advice.
+</footer>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>So a Study Says It Works — But Does It Really? — ConsumerHealth NZ</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --purple: #5c2d8a; --purple-mid: #7a3fb5; --purple-light: #f3eeff;
+      --teal: #0d8a7a; --teal-light: #e6f7f5;
+      --dark: #1a1a2a; --mid: #3a3a5a; --muted: #5a5a7a;
+      --border: #e0d8f0; --bg: #faf8ff; --white: #ffffff;
+    }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--dark); line-height: 1.7; }
+
+    .top-bar { background: var(--purple); color: rgba(255,255,255,0.8); padding: 0.3rem 2rem; font-size: 0.72rem; }
+    .top-bar-inner { max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; }
+    header { background: var(--white); border-bottom: 3px solid var(--purple); }
+    .header-inner { max-width: 1060px; margin: 0 auto; padding: 0.85rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--purple); text-decoration: none; }
+    .logo span { color: var(--teal); }
+
+    nav { background: var(--purple-mid); }
+    nav ul { max-width: 1060px; margin: 0 auto; padding: 0 2rem; list-style: none; display: flex; }
+    nav a { display: block; padding: 0.6rem 1rem; color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.82rem; font-weight: 500; }
+    nav a:hover { color: white; background: rgba(255,255,255,0.1); }
+
+    .layout { max-width: 1060px; margin: 2rem auto; padding: 0 2rem; display: grid; grid-template-columns: 1fr 270px; gap: 2rem; }
+
+    .tag { display: inline-block; background: var(--purple-light); color: var(--purple); padding: 0.2rem 0.65rem; border-radius: 20px; font-size: 0.72rem; font-weight: 700; margin-bottom: 0.5rem; }
+    h1 { font-family: 'DM Serif Display', serif; font-size: 2.1rem; line-height: 1.25; color: var(--dark); margin-bottom: 0.75rem; }
+    .intro-text { font-size: 1.05rem; color: var(--mid); line-height: 1.6; margin-bottom: 1rem; }
+    .byline { font-size: 0.8rem; color: var(--muted); display: flex; gap: 1.5rem; flex-wrap: wrap; padding: 0.6rem 0; border-top: 2px solid var(--purple); border-bottom: 1px solid var(--border); margin-bottom: 1.5rem; }
+    .byline strong { color: var(--dark); }
+
+    .hero-img { width: 100%; height: 280px; background: linear-gradient(130deg, #3a1a6a, #7a3fb5, #0d8a7a); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.25); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; border-radius: 4px; }
+    .caption { font-size: 0.75rem; color: var(--muted); font-style: italic; margin-bottom: 1.5rem; }
+
+    p { margin-bottom: 1.1rem; font-size: 0.94rem; }
+    h2 { font-family: 'DM Serif Display', serif; font-size: 1.35rem; color: var(--purple); margin: 1.75rem 0 0.6rem; }
+    h3 { font-size: 0.92rem; font-weight: 700; color: var(--dark); margin: 1.1rem 0 0.35rem; }
+
+    .explainer-box { background: var(--purple-light); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 1.5rem 0; border-left: 4px solid var(--purple-mid); }
+    .explainer-box h3 { color: var(--purple); margin-top: 0; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.6rem; }
+    .explainer-box p { font-size: 0.88rem; color: var(--mid); margin-bottom: 0.5rem; }
+    .explainer-box p:last-child { margin-bottom: 0; }
+
+    .check-list { margin: 1.25rem 0; }
+    .check-item { display: flex; gap: 0.75rem; align-items: flex-start; margin-bottom: 0.75rem; }
+    .check-icon { width: 24px; height: 24px; border-radius: 50%; background: var(--teal); color: white; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; flex-shrink: 0; margin-top: 0.1rem; }
+    .check-icon.warn { background: #c85a0a; }
+    .check-text h4 { font-size: 0.88rem; font-weight: 700; color: var(--dark); margin-bottom: 0.15rem; }
+    .check-text p { font-size: 0.83rem; color: var(--muted); margin-bottom: 0; }
+
+    .warning-strip { background: #fff4e8; border: 1px solid #e8c070; border-radius: 4px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+    .warning-strip h3 { font-size: 0.82rem; font-weight: 700; color: #c85a0a; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.4rem; }
+    .warning-strip p { font-size: 0.88rem; color: #6a3a0a; margin-bottom: 0; }
+
+    .quiz-box { background: var(--teal-light); border: 2px solid var(--teal); border-radius: 8px; padding: 1.25rem; margin: 1.75rem 0; }
+    .quiz-box h3 { color: var(--teal); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.07em; font-weight: 700; margin-bottom: 0.75rem; }
+    .quiz-q { font-weight: 700; font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .quiz-a { font-size: 0.88rem; color: var(--muted); margin-bottom: 0.85rem; padding-left: 0.75rem; border-left: 3px solid var(--teal); }
+
+    /* Sidebar */
+    .sb { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 1.1rem; margin-bottom: 1.25rem; }
+    .sb h4 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--purple); margin-bottom: 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; }
+    .sb p, .sb li { font-size: 0.82rem; color: var(--muted); line-height: 1.55; margin-bottom: 0.35rem; }
+    .sb ul { list-style: none; padding: 0; }
+    .sb ul li { padding: 0.35rem 0; border-bottom: 1px solid var(--border); }
+    .sb ul li:last-child { border-bottom: none; }
+    .sb a { color: var(--purple); font-weight: 600; text-decoration: none; font-size: 0.82rem; }
+    .sb .meta { font-size: 0.72rem; color: #aaa; }
+
+    .cta-box { background: var(--purple); color: white; border-radius: 8px; padding: 1.25rem; margin-bottom: 1.25rem; text-align: center; }
+    .cta-box h4 { font-family: 'DM Serif Display', serif; font-size: 1.1rem; margin-bottom: 0.4rem; }
+    .cta-box p { font-size: 0.8rem; opacity: 0.85; margin-bottom: 0.75rem; }
+    .cta-box button { background: white; color: var(--purple); border: none; padding: 0.5rem 1.25rem; font-weight: 700; cursor: pointer; border-radius: 20px; font-size: 0.85rem; }
+
+    footer { background: var(--purple); color: rgba(255,255,255,0.6); text-align: center; padding: 1.5rem; font-size: 0.78rem; margin-top: 2.5rem; }
+
+    @media (max-width: 768px) { .layout { grid-template-columns: 1fr; } h1 { font-size: 1.65rem; } }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <span>ConsumerHealth NZ — Independent health information for New Zealanders</span>
+    <span>consumerhealthnz.org.nz</span>
+  </div>
+</div>
+
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">Consumer<span>Health</span> NZ</a>
+    <div style="font-size:0.78rem;color:var(--muted);">Independent. Accessible. Yours.</div>
+  </div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Medicine Reviews</a></li>
+    <li><a href="#">Understanding Research</a></li>
+    <li><a href="#">Ask a Question</a></li>
+    <li><a href="#">Health A–Z</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+</nav>
+
+<div class="layout">
+  <main>
+    <span class="tag">Understanding Research</span>
+    <h1>So a Study Says It Works — But Does It Really?</h1>
+    <p class="intro-text">Every week, headlines tell us some new food, supplement, or treatment "works." But not all research is created equal. Here's how to tell the difference between solid evidence and a headline that got carried away.</p>
+
+    <div class="byline">
+      <span>By <strong>Dr. Ngaio Hauraki</strong>, Consumer Health Editor</span>
+      <span>Published: 28 March 2025</span>
+      <span>Updated: 1 April 2025</span>
+      <span>9 min read</span>
+    </div>
+
+    <div class="hero-img"><span>[Illustration: scientist looking at data]</span></div>
+    <div class="caption">A single study — even a well-designed one — rarely tells the whole story. (Illustrative image)</div>
+
+    <p>You've seen the headlines. "Coffee linked to longer life." "New drug cuts cancer risk by 40%." "Scientists discover vitamin X prevents memory loss." They're everywhere, and they're genuinely hard to evaluate if you haven't been trained to read research papers.</p>
+    <p>The good news: you don't need a science degree to be a smarter reader of health research. You just need to know a few key questions to ask.</p>
+
+    <h2>What Kind of Study Was It?</h2>
+    <p>Not all studies carry the same weight. The type of study matters enormously for how much confidence we should have in the results. Studies designed to find associations between things (observational studies) can tell us that two things seem to go together — but they often can't tell us whether one thing is actually causing the other.</p>
+    <p>The gold standard for testing whether a treatment actually works is the randomised controlled trial (RCT). In an RCT, participants are randomly assigned to either receive the treatment or not. This random assignment is crucial — it's what allows researchers to claim that any difference between the groups is likely due to the treatment, rather than something else.</p>
+
+    <div class="explainer-box">
+      <h3>Study Types: A Quick Guide</h3>
+      <p><strong>Randomised controlled trial (RCT):</strong> Participants are randomly assigned to treatment or control group. Considered the strongest evidence for whether a treatment works.</p>
+      <p><strong>Observational study:</strong> Researchers observe what happens in groups of people, without intervening. Can find associations, but association is not the same as causation.</p>
+      <p><strong>Case study / anecdote:</strong> A report on one individual or a small group. Useful for generating ideas but cannot draw general conclusions.</p>
+      <p><strong>Systematic review / meta-analysis:</strong> Combines the results of many studies. Generally the most reliable overview of evidence.</p>
+    </div>
+
+    <h2>The Size Problem</h2>
+    <p>Here's something that surprises many people: a lot of published research involves surprisingly small numbers of participants. Studies show that small studies are much more likely to produce results that are simply due to chance — and those chance results are also more likely to be dramatic and therefore newsworthy.</p>
+    <p>A study of 30 people who took a new supplement and felt better is interesting. It is not, however, evidence that the supplement works for the general population. You'd need a much larger, carefully controlled trial to reach that conclusion.</p>
+
+    <div class="warning-strip">
+      <h3>Watch Out For</h3>
+      <p>Headlines that say "a new study finds..." without mentioning how large the study was, whether it was randomised, or whether the results have been independently replicated. These omissions are often more revealing than what is included.</p>
+    </div>
+
+    <h2>What Is a Control Group and Why Does It Matter?</h2>
+    <p>A control group is the comparison group — the people who don't receive the treatment being tested. Without a control group, there's no way to know whether any improvement in the treatment group was actually caused by the treatment.</p>
+    <p>This matters more than you might think, because of something called the placebo effect. Studies consistently show that people who receive a treatment — even an inert one — often report feeling better. The act of being treated, being cared for, and expecting to improve can produce real physiological changes. A good study accounts for this by giving the control group a placebo and — crucially — not telling anyone who received what until the results are analysed.</p>
+
+    <h2>Has It Been Replicated?</h2>
+    <p>In science, a single study — even a well-designed one — is rarely considered conclusive. Results need to be replicated by independent researchers before they become established knowledge. This is a feature of science, not a bug: it's how the system weeds out fluke results and fraudulent research.</p>
+    <p>When a finding has been replicated across multiple independent studies, and a systematic review has confirmed the pattern, that's when we can start speaking with more confidence. That's very different from "one study showed..."</p>
+
+    <div class="quiz-box">
+      <h3>Questions to Ask When You See a Health Headline</h3>
+      <div class="quiz-q">Was it an RCT, or just an observational study?</div>
+      <div class="quiz-a">Observational studies can suggest associations; only well-designed RCTs can reliably show that a treatment causes an effect.</div>
+      <div class="quiz-q">How many people were in the study?</div>
+      <div class="quiz-a">Larger studies are generally more reliable. Studies of under 100 people should be treated as preliminary.</div>
+      <div class="quiz-q">Has it been replicated?</div>
+      <div class="quiz-a">One study is not enough. Look for whether other researchers have found the same result.</div>
+      <div class="quiz-q">Who paid for it?</div>
+      <div class="quiz-a">Studies funded by companies with a commercial interest in the outcome should be read with extra attention to methodology.</div>
+    </div>
+
+    <h2>When Headlines Get It Wrong</h2>
+    <p>Science journalism is genuinely difficult. Journalists work to tight deadlines, research papers are often paywalled, and nuance doesn't make great headlines. Studies show that many health stories in mainstream media overstate the strength of evidence, conflate association with causation, and omit important caveats.</p>
+    <p>This doesn't mean you should dismiss all health news — it means you should read it critically. Look for whether the journalist has spoken to independent experts (not just the paper's authors), whether they've explained the study design, and whether they've noted limitations.</p>
+
+    <h2>The Bottom Line</h2>
+    <p>No single study settles a question in medicine. Evidence accumulates over time, through multiple well-designed studies, peer review, and systematic evaluation. The body of evidence is what matters — not any individual headline.</p>
+    <p>Phrases like "studies suggest" or "research indicates" are genuinely different from "it is established that." Knowing the difference makes you a much better reader of health information.</p>
+  </main>
+
+  <aside>
+    <div class="sb">
+      <h4>More: Understanding Research</h4>
+      <ul>
+        <li><a href="#">What Is a Placebo, and How Strong Is the Placebo Effect?</a><div class="meta">1 week ago</div></li>
+        <li><a href="#">Correlation vs Causation: A Plain-English Explanation</a><div class="meta">2 weeks ago</div></li>
+        <li><a href="#">How to Read a Scientific Abstract</a><div class="meta">1 month ago</div></li>
+        <li><a href="#">What Is a Systematic Review?</a><div class="meta">2 months ago</div></li>
+      </ul>
+    </div>
+    <div class="cta-box">
+      <h4>ConsumerHealth NZ Newsletter</h4>
+      <p>Health information you can actually use. Free, fortnightly.</p>
+      <button>Subscribe</button>
+    </div>
+    <div class="sb">
+      <h4>Key Terms</h4>
+      <p><strong>RCT:</strong> Randomised controlled trial — the gold standard for testing treatments</p>
+      <p><strong>Placebo:</strong> An inactive treatment used as a comparison</p>
+      <p><strong>Blinding:</strong> Keeping participants (and sometimes researchers) unaware of who got the treatment</p>
+      <p><strong>Replication:</strong> Independent repetition of a study to check the results hold</p>
+      <p><strong>Meta-analysis:</strong> Statistical pooling of results from multiple studies</p>
+    </div>
+    <div class="sb">
+      <h4>Trustworthy Sources</h4>
+      <ul>
+        <li><a href="https://www.cochrane.org" target="_blank">Cochrane Reviews</a></li>
+        <li><a href="https://www.health.govt.nz" target="_blank">Ministry of Health NZ</a></li>
+        <li><a href="https://www.who.int" target="_blank">World Health Organization</a></li>
+        <li><a href="https://www.medsafe.govt.nz" target="_blank">Medsafe (NZ)</a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  &copy; 2025 ConsumerHealth NZ — Independent health information. Not a substitute for professional medical advice. Always consult your GP.
+</footer>
+
+</body>
+</html>

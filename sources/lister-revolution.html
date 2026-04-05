@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Man Who Made Surgery Safe: Joseph Lister's Germ-Fighting Revolution — PopSci NZ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green: #1a7a3a; --green-dark: #0f5228; --green-light: #eaf6ee;
+      --lime: #7ac420; --dark: #111e11; --mid: #2a3a2a; --muted: #4a5e4a;
+      --border: #ccdacc; --bg: #f4faf4; --white: #ffffff;
+    }
+    body { font-family: 'Nunito Sans', sans-serif; background: var(--bg); color: var(--dark); line-height: 1.65; }
+
+    header { background: var(--green-dark); }
+    .header-inner { max-width: 1080px; margin: 0 auto; padding: 0.85rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Nunito', sans-serif; font-size: 1.75rem; font-weight: 900; color: white; text-decoration: none; letter-spacing: -0.02em; }
+    .logo .pop { color: var(--lime); }
+    .header-sub { font-size: 0.72rem; color: rgba(255,255,255,0.55); font-style: italic; }
+
+    nav { background: var(--green); border-bottom: 3px solid var(--lime); }
+    nav ul { max-width: 1080px; margin: 0 auto; padding: 0 2rem; list-style: none; display: flex; }
+    nav a { display: block; padding: 0.6rem 1rem; color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.82rem; font-weight: 700; }
+    nav a:hover { color: var(--lime); }
+
+    .layout { max-width: 1080px; margin: 2rem auto; padding: 0 2rem; display: grid; grid-template-columns: 1fr 270px; gap: 2rem; }
+
+    .topic-pill { display: inline-block; background: var(--lime); color: var(--green-dark); padding: 0.2rem 0.75rem; border-radius: 20px; font-size: 0.72rem; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.6rem; }
+    h1 { font-family: 'Nunito', sans-serif; font-size: 2.2rem; font-weight: 900; line-height: 1.15; color: var(--green-dark); margin-bottom: 0.75rem; }
+    .deck { font-size: 1rem; color: var(--muted); line-height: 1.6; margin-bottom: 1rem; }
+    .byline { font-size: 0.8rem; color: var(--muted); display: flex; gap: 1.5rem; flex-wrap: wrap; padding: 0.6rem 0; border-top: 2px solid var(--green); border-bottom: 1px solid var(--border); margin-bottom: 1.25rem; }
+    .byline strong { color: var(--dark); }
+
+    .hero-img { width: 100%; height: 300px; background: linear-gradient(130deg, #0a3010 0%, #1a6030 50%, #7ac420 100%); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.25); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+    .caption { font-size: 0.75rem; color: var(--muted); font-style: italic; margin-bottom: 1.5rem; }
+
+    p { margin-bottom: 1.1rem; font-size: 0.95rem; }
+    h2 { font-family: 'Nunito', sans-serif; font-size: 1.35rem; font-weight: 900; color: var(--green-dark); margin: 1.75rem 0 0.6rem; }
+    .intro-bold { font-weight: 700; font-size: 1.05rem; color: var(--mid); }
+
+    .callout { background: var(--green-light); border-left: 5px solid var(--lime); padding: 1rem 1.25rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .callout p { font-weight: 700; color: var(--green-dark); margin-bottom: 0; font-size: 0.92rem; }
+
+    .number-list { margin: 1.25rem 0; }
+    .num-item { display: flex; gap: 1rem; margin-bottom: 1rem; align-items: flex-start; }
+    .num-circle { width: 36px; height: 36px; background: var(--green); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .num-content h3 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.92rem; color: var(--green-dark); margin-bottom: 0.25rem; }
+    .num-content p { font-size: 0.88rem; color: var(--muted); margin-bottom: 0; }
+
+    .quote-block { background: var(--green-dark); color: white; padding: 1.5rem; margin: 1.75rem 0; border-radius: 4px; }
+    .quote-block .quote { font-family: 'Nunito', sans-serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; line-height: 1.4; }
+    .quote-block .attribution { font-size: 0.8rem; color: var(--lime); font-weight: 700; }
+
+    .verdict-box { background: var(--lime); padding: 1.25rem; margin: 1.75rem 0; border-radius: 4px; }
+    .verdict-box h3 { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1rem; color: var(--green-dark); margin-bottom: 0.5rem; }
+    .verdict-box p { font-size: 0.9rem; color: var(--green-dark); margin-bottom: 0; }
+
+    /* Sidebar */
+    .sb { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 1.1rem; margin-bottom: 1.25rem; }
+    .sb h4 { font-family: 'Nunito', sans-serif; font-size: 0.85rem; font-weight: 900; color: var(--green); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; }
+    .sb p, .sb li { font-size: 0.82rem; color: var(--muted); line-height: 1.55; margin-bottom: 0.35rem; }
+    .sb ul { list-style: none; padding: 0; }
+    .sb ul li { padding: 0.35rem 0; border-bottom: 1px solid var(--border); }
+    .sb ul li:last-child { border-bottom: none; }
+    .sb a { color: var(--green-dark); font-weight: 700; text-decoration: none; font-size: 0.82rem; }
+    .sb a:hover { color: var(--green); }
+    .sb .meta { font-size: 0.72rem; color: #aaa; margin-top: 0.1rem; }
+
+    .newsletter-sb { background: var(--green-dark); color: white; border-radius: 8px; padding: 1.25rem; margin-bottom: 1.25rem; }
+    .newsletter-sb h4 { font-family: 'Nunito', sans-serif; font-weight: 900; color: var(--lime); margin-bottom: 0.4rem; }
+    .newsletter-sb p { font-size: 0.8rem; opacity: 0.85; margin-bottom: 0.75rem; }
+    .newsletter-sb button { background: var(--lime); color: var(--green-dark); border: none; padding: 0.5rem 1.25rem; font-family: 'Nunito', sans-serif; font-weight: 900; cursor: pointer; border-radius: 4px; width: 100%; font-size: 0.85rem; }
+
+    footer { background: var(--green-dark); color: rgba(255,255,255,0.55); text-align: center; padding: 1.5rem; font-size: 0.78rem; margin-top: 2.5rem; }
+
+    @media (max-width: 768px) { .layout { grid-template-columns: 1fr; } h1 { font-size: 1.75rem; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo"><span class="pop">Pop</span>Sci NZ</a>
+    <div class="header-sub">Popular Science for New Zealand readers</div>
+  </div>
+</header>
+<nav>
+  <ul>
+    <li><a href="#">Science</a></li>
+    <li><a href="#">Health</a></li>
+    <li><a href="#">History</a></li>
+    <li><a href="#">Environment</a></li>
+    <li><a href="#">Technology</a></li>
+    <li><a href="#">Explainers</a></li>
+  </ul>
+</nav>
+
+<div class="layout">
+  <main>
+    <span class="topic-pill">Medical History</span>
+    <h1>The Man Who Made Surgery Safe: Joseph Lister's Germ-Fighting Revolution</h1>
+    <p class="deck">Before Lister, going under the knife was almost as dangerous as whatever you were being treated for. Here's how one surgeon's obsession with invisible killers changed medicine forever.</p>
+    <div class="byline">
+      <span>By <strong>Jamie Thornton</strong>, Science Writer</span>
+      <span>Published: 22 March 2025</span>
+      <span>7 min read</span>
+    </div>
+
+    <div class="hero-img"><span>[Illustration: Victorian operating theatre]</span></div>
+    <div class="caption">A Victorian operating theatre before antiseptic technique — a terrifying place, and not just because of the surgery. (Illustrative image)</div>
+
+    <p class="intro-bold">Imagine going in for surgery knowing there's roughly a 50/50 chance you'll survive — not because of the operation itself, but because of what happens to your wound afterwards. That was the reality before Joseph Lister came along.</p>
+
+    <p>In the mid-1860s, Lister was a professor of surgery in Glasgow watching his patients die of infections that set in after otherwise successful operations. He was convinced there had to be a reason — and more importantly, a solution.</p>
+
+    <h2>The Invisible Enemy</h2>
+    <p>The key piece of the puzzle came from across the Channel. French scientist Louis Pasteur had recently proved something that sounds obvious to us now but was genuinely revolutionary at the time: that decay and infection were caused by living microorganisms — tiny creatures that were everywhere, floating in the air, clinging to surfaces, transferring from hand to hand.</p>
+    <p>Lister read Pasteur's work and immediately saw the implication. If infection was caused by microbes, and microbes could be killed by certain chemicals — then killing the microbes before they entered a wound would prevent infection. Simple, elegant, and nobody had tried it yet.</p>
+
+    <div class="callout">
+      <p>Lister's key insight: putrefaction of wounds is caused by microorganisms. Kill the microorganisms, and you prevent the infection. Pasteur had given him the theory; Lister provided the clinical proof.</p>
+    </div>
+
+    <h2>Carbolic Acid: The Weapon That Changed Surgery</h2>
+    <p>Lister had heard that carbolic acid (phenol) was being used to treat sewage in Carlisle. Fields irrigated with carbolic-treated sewage didn't develop the usual parasite problems. If it worked on sewage, he reasoned, it might work on wounds.</p>
+    <p>In 1865 he tried it on an 11-year-old boy with a compound fracture — the kind that almost always became fatally infected, because bone had broken through the skin. Lister cleaned the wound and dressed it with carbolic acid-soaked lint. The wound healed. No infection. The boy kept his leg and his life.</p>
+    <p>Over the next two years, Lister built up a series of cases and published his results in The Lancet in 1867. The numbers spoke for themselves: surgical mortality in his wards dropped from around 45% for major operations to under 15%.</p>
+
+    <h2>What Exactly Did He Do?</h2>
+    <p>Lister's antiseptic approach had several components — and he kept refining it throughout his career:</p>
+    <div class="number-list">
+      <div class="num-item"><div class="num-circle">1</div><div class="num-content"><h3>Carbolic wash on wounds</h3><p>The wound itself and surrounding tissue were treated with carbolic acid solution to kill any microorganisms present.</p></div></div>
+      <div class="num-item"><div class="num-circle">2</div><div class="num-content"><h3>Sterilised instruments</h3><p>Surgical instruments were cleaned with carbolic acid before and during operations.</p></div></div>
+      <div class="num-item"><div class="num-circle">3</div><div class="num-content"><h3>Antiseptic dressings</h3><p>Wounds were dressed with specially designed multilayer dressings incorporating carbolic compounds to maintain a germ-free environment as they healed.</p></div></div>
+      <div class="num-item"><div class="num-circle">4</div><div class="num-circle" style="background:transparent;"></div></div>
+    </div>
+    <p>He also developed catgut sutures treated with carbolic acid — so they could safely be left inside wounds and would dissolve naturally, rather than needing to be pulled out through a healing incision.</p>
+
+    <div class="quote-block">
+      <div class="quote">"There are people walking about the streets of Glasgow who would be dead if it had not been for this treatment."</div>
+      <div class="attribution">— Joseph Lister, speaking to medical colleagues, c. 1869</div>
+    </div>
+
+    <h2>Did Everyone Jump On Board?</h2>
+    <p>Not immediately. British surgeons were initially slow to adopt Lister's methods — partly scepticism, partly the practical inconvenience of working with carbolic acid (it could irritate skin and damaged surgical gloves), and partly professional pride. Some senior surgeons simply didn't want to change their practice.</p>
+    <p>Interestingly, German and American surgeons were often faster adopters. The Franco-Prussian War of 1870–71 saw Prussian surgeons using Listerian techniques with dramatically better outcomes than their French counterparts. That got people's attention.</p>
+    <p>By the 1880s, antiseptic surgery had become standard. By the 1890s, surgeons were beginning to move beyond Lister's antiseptic method (killing germs already present) towards aseptic technique — preventing germs from entering the operating environment at all. This is the approach that underpins modern surgical practice.</p>
+
+    <h2>How Does Lister Connect to Semmelweis?</h2>
+    <p>Lister's story is often told alongside that of Ignaz Semmelweis, who had discovered almost exactly the same thing — that doctors' unwashed hands were killing patients — some 20 years earlier. Semmelweis was ignored and ridiculed. Lister succeeded where Semmelweis failed, largely because Pasteur's germ theory gave Lister a scientific explanation that Semmelweis never had.</p>
+    <p>The lesson many people draw from this is about the importance of not just having the right answer, but being able to explain why you're right. In science, a good mechanism matters — not just good data.</p>
+
+    <div class="verdict-box">
+      <h3>Why Lister Matters Today</h3>
+      <p>Modern sterile technique in surgery, the disinfection of operating theatres, the use of gloves and masks — all trace their origin to Lister's work. If you or someone you love has ever had surgery and survived, Lister is part of why. He is one of the most consequential medical figures in history, and he doesn't get nearly enough credit outside specialist circles.</p>
+    </div>
+  </main>
+
+  <aside>
+    <div class="sb">
+      <h4>More Medical History</h4>
+      <ul>
+        <li><a href="#">Semmelweis: The Doctor Who Was Right Too Early</a><div class="meta">1 week ago</div></li>
+        <li><a href="#">How Germ Theory Changed Everything</a><div class="meta">2 weeks ago</div></li>
+        <li><a href="#">Florence Nightingale: The Stats Behind the Myth</a><div class="meta">3 weeks ago</div></li>
+        <li><a href="#">The First Anaesthetic: A Very Messy Story</a><div class="meta">1 month ago</div></li>
+      </ul>
+    </div>
+    <div class="newsletter-sb">
+      <h4>PopSci NZ Newsletter</h4>
+      <p>Science made simple, once a week.</p>
+      <button>Subscribe Free</button>
+    </div>
+    <div class="sb">
+      <h4>Quick Facts: Lister</h4>
+      <p><strong>Born:</strong> 1827, Essex, England</p>
+      <p><strong>Died:</strong> 1912</p>
+      <p><strong>Key publication:</strong> The Lancet, 1867</p>
+      <p><strong>Key technique:</strong> Carbolic acid antisepsis</p>
+      <p><strong>Inspired by:</strong> Pasteur's germ theory</p>
+      <p><strong>Legacy:</strong> Foundation of modern sterile surgery</p>
+    </div>
+    <div class="sb">
+      <h4>Also Read</h4>
+      <ul>
+        <li><a href="#">What Is Germ Theory and Why Did It Take So Long?</a></li>
+        <li><a href="#">The History of the Operating Theatre</a></li>
+        <li><a href="#">5 Medical Breakthroughs That Were Laughed At</a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  &copy; 2025 PopSci NZ — Popular science journalism for New Zealand. Content is for general interest and educational purposes.
+</footer>
+
+</body>
+</html>

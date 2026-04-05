@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Are Vaccines Still Working? What the Latest Research Says — HealthToday NZ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #d42b2b; --red-dark: #a81f1f; --red-light: #fdf0f0;
+      --dark: #1a1a1a; --mid: #3a3a3a; --muted: #666; --light-bg: #f5f5f5;
+      --border: #e0e0e0; --white: #ffffff; --accent: #f0a500;
+    }
+    body { font-family: 'PT Sans', sans-serif; background: var(--white); color: var(--dark); line-height: 1.65; }
+
+    /* Top ad bar */
+    .ad-bar { background: #222; color: #aaa; text-align: center; padding: 0.4rem; font-size: 0.7rem; letter-spacing: 0.06em; }
+
+    header { background: var(--white); border-bottom: 3px solid var(--red); }
+    .header-top { background: var(--red); color: white; padding: 0.3rem 1.5rem; }
+    .header-top-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; font-size: 0.72rem; }
+    .header-main { max-width: 1100px; margin: 0 auto; padding: 0.75rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+    .site-logo { font-family: 'Oswald', sans-serif; font-size: 2rem; font-weight: 700; color: var(--red); letter-spacing: -0.02em; text-decoration: none; }
+    .site-logo span { color: var(--dark); }
+    .header-tagline { font-size: 0.72rem; color: var(--muted); font-style: italic; }
+
+    nav { background: var(--dark); }
+    nav ul { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; list-style: none; display: flex; }
+    nav a { display: block; padding: 0.65rem 1rem; color: #ccc; text-decoration: none; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-family: 'Oswald', sans-serif; }
+    nav a:hover { color: white; background: var(--red); }
+
+    .breaking-bar { background: var(--accent); padding: 0.4rem 1.5rem; }
+    .breaking-inner { max-width: 1100px; margin: 0 auto; font-size: 0.78rem; font-weight: 700; }
+    .breaking-label { background: var(--red); color: white; padding: 0.1rem 0.5rem; margin-right: 0.6rem; font-family: 'Oswald', sans-serif; font-size: 0.72rem; letter-spacing: 0.06em; }
+
+    .layout { max-width: 1100px; margin: 1.5rem auto; padding: 0 1.5rem; display: grid; grid-template-columns: 1fr 300px; gap: 2rem; }
+
+    .article-section { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--red); margin-bottom: 0.4rem; font-family: 'Oswald', sans-serif; }
+
+    h1 { font-family: 'Oswald', sans-serif; font-size: 2.2rem; font-weight: 700; color: var(--dark); line-height: 1.15; margin-bottom: 0.75rem; }
+    .deck { font-size: 1.1rem; color: var(--mid); line-height: 1.5; margin-bottom: 1rem; font-style: italic; }
+
+    .author-bar { display: flex; align-items: center; gap: 1rem; padding: 0.65rem 0; border-top: 2px solid var(--dark); border-bottom: 1px solid var(--border); margin-bottom: 1.25rem; }
+    .author-avatar { width: 36px; height: 36px; background: var(--red); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 0.85rem; flex-shrink: 0; }
+    .author-info { font-size: 0.8rem; }
+    .author-info .name { font-weight: 700; color: var(--dark); }
+    .author-info .role { color: var(--muted); }
+    .publish-date { font-size: 0.78rem; color: var(--muted); margin-left: auto; }
+
+    .hero-image { width: 100%; height: 320px; background: linear-gradient(135deg, #c8d8e8 0%, #a8b8c8 100%); display: flex; align-items: center; justify-content: center; margin-bottom: 0.4rem; position: relative; overflow: hidden; }
+    .hero-image .img-label { color: rgba(0,0,0,0.3); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; }
+    .caption { font-size: 0.75rem; color: var(--muted); font-style: italic; margin-bottom: 1.25rem; }
+
+    p { margin-bottom: 1.1rem; font-size: 0.96rem; }
+    .intro-para { font-size: 1.05rem; font-weight: 700; color: var(--mid); }
+    h2 { font-family: 'Oswald', sans-serif; font-size: 1.35rem; font-weight: 600; color: var(--dark); margin: 1.75rem 0 0.6rem; padding-top: 1.25rem; border-top: 2px solid var(--border); }
+    h2:first-of-type { border-top: none; padding-top: 0; }
+
+    .pull-quote { font-family: 'Oswald', sans-serif; font-size: 1.35rem; font-weight: 600; color: var(--red); border-left: 5px solid var(--red); padding: 0.75rem 1.25rem; margin: 1.5rem 0; line-height: 1.3; }
+
+    .fact-box { background: var(--red-light); border: 2px solid var(--red); padding: 1.1rem 1.25rem; margin: 1.5rem 0; }
+    .fact-box h3 { font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 700; color: var(--red); margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .fact-box ul { padding-left: 1.2rem; }
+    .fact-box li { font-size: 0.88rem; margin-bottom: 0.4rem; }
+
+    .share-bar { display: flex; gap: 0.5rem; margin: 1.5rem 0; flex-wrap: wrap; }
+    .share-btn { padding: 0.45rem 1rem; font-size: 0.78rem; font-weight: 700; border: none; cursor: pointer; color: white; font-family: 'Oswald', sans-serif; letter-spacing: 0.04em; }
+    .share-fb { background: #1877f2; } .share-tw { background: #1da1f2; } .share-em { background: #666; }
+
+    /* Sidebar */
+    .sidebar-ad { background: var(--light-bg); border: 1px solid var(--border); padding: 1rem; text-align: center; margin-bottom: 1.25rem; }
+    .sidebar-ad .ad-label { font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.4rem; }
+    .sidebar-ad .ad-block { background: #ddd; height: 250px; display: flex; align-items: center; justify-content: center; color: #aaa; font-size: 0.75rem; }
+
+    .related-box { background: var(--light-bg); border-top: 3px solid var(--red); padding: 1.1rem; margin-bottom: 1.25rem; }
+    .related-box h4 { font-family: 'Oswald', sans-serif; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--dark); margin-bottom: 0.85rem; }
+    .related-item { display: flex; gap: 0.75rem; padding: 0.6rem 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+    .related-item:last-child { border-bottom: none; }
+    .related-thumb { width: 60px; height: 50px; background: linear-gradient(135deg, #b0c8d8, #8095a8); flex-shrink: 0; }
+    .related-item a { font-size: 0.82rem; font-weight: 700; color: var(--dark); text-decoration: none; line-height: 1.35; }
+    .related-item a:hover { color: var(--red); }
+    .related-item .rel-meta { font-size: 0.72rem; color: var(--muted); margin-top: 0.2rem; }
+
+    .newsletter-box { background: var(--red); color: white; padding: 1.25rem; margin-bottom: 1.25rem; }
+    .newsletter-box h4 { font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .newsletter-box p { font-size: 0.82rem; opacity: 0.9; margin-bottom: 0.75rem; }
+    .newsletter-box input { width: 100%; padding: 0.5rem; border: none; margin-bottom: 0.5rem; font-size: 0.85rem; }
+    .newsletter-box button { background: var(--dark); color: white; border: none; padding: 0.5rem 1rem; font-weight: 700; cursor: pointer; width: 100%; font-family: 'Oswald', sans-serif; font-size: 0.85rem; letter-spacing: 0.05em; }
+
+    footer { background: var(--dark); color: #aaa; padding: 2rem 1.5rem; margin-top: 2rem; font-size: 0.8rem; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
+    footer h5 { color: white; font-family: 'Oswald', sans-serif; font-size: 0.85rem; letter-spacing: 0.06em; margin-bottom: 0.75rem; }
+    footer a { color: #aaa; display: block; margin-bottom: 0.3rem; text-decoration: none; }
+    footer a:hover { color: white; }
+    .footer-bottom { max-width: 1100px; margin: 1.5rem auto 0; padding-top: 1rem; border-top: 1px solid #444; font-size: 0.72rem; }
+
+    @media (max-width: 768px) { .layout { grid-template-columns: 1fr; } .footer-inner { grid-template-columns: 1fr; } h1 { font-size: 1.7rem; } }
+  </style>
+</head>
+<body>
+
+<div class="ad-bar">ADVERTISEMENT — healthtodaynz.co.nz</div>
+
+<header>
+  <div class="header-top">
+    <div class="header-top-inner">
+      <span>Sunday, 6 April 2025</span>
+      <span>NZ's Most-Read Health News Site &nbsp;|&nbsp; 2.1M monthly readers</span>
+    </div>
+  </div>
+  <div class="header-main">
+    <a href="#" class="site-logo">Health<span>Today</span> NZ</a>
+    <div class="header-tagline">New Zealand's health news, explained simply</div>
+  </div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#">Latest</a></li>
+    <li><a href="#">Vaccines</a></li>
+    <li><a href="#">Nutrition</a></li>
+    <li><a href="#">Fitness</a></li>
+    <li><a href="#">Mental Health</a></li>
+    <li><a href="#">Kids</a></li>
+    <li><a href="#">Conditions A–Z</a></li>
+  </ul>
+</nav>
+
+<div class="breaking-bar">
+  <div class="breaking-inner">
+    <span class="breaking-label">TRENDING</span>
+    New flu strain detected in Auckland — are you protected?
+  </div>
+</div>
+
+<div class="layout">
+  <main>
+    <div class="article-section">Vaccines &rsaquo; News &amp; Research</div>
+    <h1>Are Vaccines Still Working? What the Latest Research Says</h1>
+    <p class="deck">Scientists are reassessing how long vaccine protection actually lasts — and the results are more complicated than the health authorities want to admit.</p>
+
+    <div class="author-bar">
+      <div class="author-avatar">KM</div>
+      <div class="author-info">
+        <div class="name">Kirsty Morrison</div>
+        <div class="role">Health Correspondent, HealthToday NZ</div>
+      </div>
+      <div class="publish-date">3 April 2025 &nbsp;|&nbsp; 6 min read</div>
+    </div>
+
+    <div class="hero-image">
+      <span class="img-label">[Photo: vaccine being administered]</span>
+    </div>
+    <div class="caption">Studies show that vaccine immunity can wane over time, raising questions about booster schedules. Getty Images.</div>
+
+    <div class="share-bar">
+      <button class="share-btn share-fb">f &nbsp; Share</button>
+      <button class="share-btn share-tw">&#x1D54F; &nbsp; Tweet</button>
+      <button class="share-btn share-em">✉ &nbsp; Email</button>
+    </div>
+
+    <p class="intro-para">Vaccines have long been sold to the public as our best defence against infectious disease. But a growing body of research suggests the picture is more complicated — and health authorities may need to rethink how often we need to get jabbed.</p>
+
+    <p>Most of us were told that childhood vaccines gave us lifetime protection. The science, however, tells a different story. Studies show that for many vaccines, immunity fades faster than originally thought, sometimes within just a few years. So what does this mean for you and your family?</p>
+
+    <h2>The Waning Immunity Problem</h2>
+    <p>Scientists have known for some time that vaccine-induced immunity doesn't last forever. Recent research has brought this issue back into the spotlight, with studies finding that protection against some diseases can drop significantly within two to five years of vaccination.</p>
+    <p>Experts say the immune system is complex — and different vaccines produce very different levels and durations of protection. Some, like the measles vaccine, provide decades of strong protection. Others, like the flu vaccine, need to be updated and administered every year because both the virus and our immunity change constantly.</p>
+
+    <div class="pull-quote">"We're not saying vaccines don't work — we're saying they don't work the same way for everyone, forever."</div>
+
+    <p>A spokesperson for a university immunology department who asked not to be named told HealthToday NZ: "The message to the public has sometimes been oversimplified. Immunity is not a binary — vaccinated vs. unvaccinated. It's a spectrum that changes over time."</p>
+
+    <h2>Booster Doses: How Many Is Too Many?</h2>
+    <p>The COVID-19 pandemic threw the booster question into sharp relief. Governments around the world rolled out first one, then two, then three booster doses in some populations. Public health officials defended each new round of boosters, but some researchers began asking whether repeated boosting was the right approach for everyone.</p>
+    <p>Studies show that repeated doses do reinforce immunity — but the benefits appear to diminish with each additional booster for many people, and there are still questions about optimal timing. Health authorities in several countries have now moved to more targeted booster recommendations rather than blanket roll-outs for all age groups.</p>
+
+    <div class="fact-box">
+      <h3>What the Research Shows</h3>
+      <ul>
+        <li>Measles vaccine: protection remains strong for 20+ years in most people</li>
+        <li>Flu vaccine: needs annual update; effectiveness varies 40–60% season to season</li>
+        <li>COVID-19 vaccines: protection against severe illness remains strong; protection against infection wanes faster</li>
+        <li>Whooping cough (pertussis): immunity can drop significantly within 4–6 years of vaccination or infection</li>
+      </ul>
+    </div>
+
+    <h2>What About Side Effects?</h2>
+    <p>Side effects are the aspect of vaccine science that health authorities are most cautious discussing publicly — worried, it seems, about eroding public confidence. But researchers say that acknowledging side effects honestly is actually key to maintaining trust.</p>
+    <p>Most vaccine side effects are mild and short-lived: soreness, fatigue, mild fever. These are signs the immune system is responding — which is good. Serious adverse events are rare, though not impossible. Databases of reported adverse events are publicly available, and researchers track these carefully.</p>
+    <p>The key question, scientists say, is always about balance: are the risks from the disease greater than the risks from the vaccine? For most vaccines in New Zealand's schedule, the evidence strongly supports vaccination. But experts acknowledge that this is a calculation that deserves honest discussion rather than dismissal.</p>
+
+    <h2>What Should You Do?</h2>
+    <p>Health authorities in New Zealand continue to recommend following the standard immunisation schedule. The Ministry of Health says vaccines are among the safest and most effective public health interventions available.</p>
+    <p>But as science evolves, so do the recommendations. Keep an eye on updates to booster guidance, particularly for older adults and those with health conditions that make them more vulnerable. And if you have questions, talk to your GP — rather than Dr Google.</p>
+
+    <div class="share-bar">
+      <button class="share-btn share-fb">f &nbsp; Share</button>
+      <button class="share-btn share-tw">&#x1D54F; &nbsp; Tweet</button>
+      <button class="share-btn share-em">✉ &nbsp; Email</button>
+    </div>
+
+    <p style="font-size:0.78rem;color:var(--muted);border-top:1px solid var(--border);padding-top:0.75rem;margin-top:1rem;"><em>HealthToday NZ reports on health news for a general audience. This article should not be taken as medical advice. Consult your GP or health professional for guidance specific to your situation.</em></p>
+  </main>
+
+  <aside>
+    <div class="sidebar-ad">
+      <span class="ad-label">Advertisement</span>
+      <div class="ad-block">Ad Space</div>
+    </div>
+
+    <div class="related-box">
+      <h4>You Might Also Like</h4>
+      <div class="related-item">
+        <div class="related-thumb"></div>
+        <div>
+          <a href="#">5 Things Your Doctor Won't Tell You About Flu Shots</a>
+          <div class="rel-meta">2 days ago</div>
+        </div>
+      </div>
+      <div class="related-item">
+        <div class="related-thumb"></div>
+        <div>
+          <a href="#">New Zealand's Measles Outbreak: Could It Have Been Prevented?</a>
+          <div class="rel-meta">1 week ago</div>
+        </div>
+      </div>
+      <div class="related-item">
+        <div class="related-thumb"></div>
+        <div>
+          <a href="#">The Real Reason Vaccine Hesitancy Is Rising</a>
+          <div class="rel-meta">2 weeks ago</div>
+        </div>
+      </div>
+      <div class="related-item">
+        <div class="related-thumb"></div>
+        <div>
+          <a href="#">How Boost Your Immune System Naturally This Winter</a>
+          <div class="rel-meta">3 weeks ago</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="newsletter-box">
+      <h4>Get Health News in Your Inbox</h4>
+      <p>Weekly health updates. No spam, unsubscribe anytime.</p>
+      <input type="email" placeholder="Your email address">
+      <button>Subscribe Free</button>
+    </div>
+
+    <div class="sidebar-ad">
+      <span class="ad-label">Advertisement</span>
+      <div class="ad-block" style="height:120px;">Ad Space</div>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h5>HealthToday NZ</h5>
+      <p style="line-height:1.6;margin-bottom:0.5rem;">New Zealand's most-read health news website. We explain health and science news simply and accessibly for everyday Kiwis.</p>
+      <p style="font-size:0.75rem;">Content is for general information only and does not constitute medical advice.</p>
+    </div>
+    <div>
+      <h5>Topics</h5>
+      <a href="#">Vaccines</a>
+      <a href="#">Nutrition</a>
+      <a href="#">Mental Health</a>
+      <a href="#">Children's Health</a>
+      <a href="#">Fitness</a>
+    </div>
+    <div>
+      <h5>Company</h5>
+      <a href="#">About Us</a>
+      <a href="#">Advertise</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 HealthToday NZ Ltd. All rights reserved. Auckland, New Zealand.
+  </div>
+</footer>
+
+</body>
+</html>

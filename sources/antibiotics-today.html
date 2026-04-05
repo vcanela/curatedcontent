@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Superbug Crisis: Are We Running Out of Antibiotics? — ScienceNow NZ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --orange: #e06010; --orange-dark: #b04808; --orange-light: #fff4ec;
+      --navy: #1a2840; --mid: #2c3e50; --muted: #5a6a7a;
+      --border: #dde4ec; --bg: #f4f7fb; --white: #ffffff;
+    }
+    body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--navy); line-height: 1.65; }
+
+    header { background: var(--navy); }
+    .header-top { background: var(--orange); padding: 0.3rem 2rem; }
+    .header-top-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; font-size: 0.72rem; color: rgba(255,255,255,0.9); }
+    .header-main { max-width: 1080px; margin: 0 auto; padding: 0.85rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Barlow Condensed', sans-serif; font-size: 1.9rem; font-weight: 800; color: white; letter-spacing: -0.01em; text-decoration: none; }
+    .logo .sci { color: var(--orange); }
+    nav { background: rgba(255,255,255,0.08); border-top: 1px solid rgba(255,255,255,0.1); }
+    nav ul { max-width: 1080px; margin: 0 auto; padding: 0 2rem; list-style: none; display: flex; }
+    nav a { display: block; padding: 0.55rem 1rem; color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.03em; }
+    nav a:hover { color: var(--orange); }
+
+    .hero-strip { background: var(--orange); color: white; padding: 0.4rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+    .hero-strip-inner { max-width: 1080px; margin: 0 auto; }
+
+    .layout { max-width: 1080px; margin: 1.75rem auto; padding: 0 2rem; display: grid; grid-template-columns: 1fr 280px; gap: 2rem; }
+
+    .cat-tag { display: inline-block; background: var(--orange); color: white; padding: 0.2rem 0.6rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.6rem; }
+    h1 { font-family: 'Barlow Condensed', sans-serif; font-size: 2.5rem; font-weight: 800; line-height: 1.1; color: var(--navy); margin-bottom: 0.75rem; }
+    .standfirst { font-size: 1.05rem; color: var(--mid); line-height: 1.55; margin-bottom: 1rem; }
+
+    .byline { font-size: 0.8rem; color: var(--muted); padding: 0.6rem 0; border-top: 2px solid var(--navy); border-bottom: 1px solid var(--border); margin-bottom: 1.25rem; display: flex; gap: 1.5rem; }
+    .byline strong { color: var(--navy); }
+
+    .feature-img { width: 100%; height: 300px; background: linear-gradient(120deg, #1a3a5c 0%, #2c5a8c 50%, #e06010 100%); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.3); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+    .img-caption { font-size: 0.75rem; color: var(--muted); font-style: italic; margin-bottom: 1.5rem; }
+
+    p { margin-bottom: 1.1rem; font-size: 0.95rem; }
+    .drop-cap::first-letter { float: left; font-family: 'Barlow Condensed', sans-serif; font-size: 3.5rem; font-weight: 800; line-height: 0.8; color: var(--orange); margin: 0.05em 0.1em 0 0; }
+    h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--navy); margin: 1.75rem 0 0.6rem; letter-spacing: 0.01em; }
+    .highlight { background: var(--orange-light); border-left: 4px solid var(--orange); padding: 0.85rem 1.25rem; margin: 1.25rem 0; }
+    .highlight p { margin-bottom: 0; font-weight: 600; color: var(--orange-dark); }
+
+    .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0; }
+    .stat-item { background: var(--navy); color: white; padding: 1rem; text-align: center; }
+    .stat-item .big { font-family: 'Barlow Condensed', sans-serif; font-size: 2.2rem; font-weight: 800; color: var(--orange); line-height: 1; }
+    .stat-item .label { font-size: 0.78rem; color: rgba(255,255,255,0.75); margin-top: 0.3rem; line-height: 1.4; }
+
+    .q-block { border-top: 3px solid var(--orange); padding-top: 0.75rem; margin: 1.5rem 0; }
+    .q-block .question { font-family: 'Barlow Condensed', sans-serif; font-size: 1.15rem; font-weight: 700; color: var(--orange); margin-bottom: 0.4rem; }
+    .q-block .answer { font-size: 0.92rem; }
+
+    /* Sidebar */
+    .sidebar-widget { background: var(--white); border: 1px solid var(--border); padding: 1.1rem; margin-bottom: 1.25rem; }
+    .sidebar-widget h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 0.88rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--orange); margin-bottom: 0.75rem; border-bottom: 2px solid var(--navy); padding-bottom: 0.4rem; }
+    .sidebar-widget p, .sidebar-widget li { font-size: 0.82rem; color: var(--muted); line-height: 1.5; margin-bottom: 0.35rem; }
+    .sidebar-widget ul { list-style: none; padding: 0; }
+    .sidebar-widget ul li { padding: 0.4rem 0; border-bottom: 1px solid var(--border); }
+    .sidebar-widget ul li:last-child { border-bottom: none; }
+    .sidebar-widget a { color: var(--navy); font-weight: 600; text-decoration: none; font-size: 0.82rem; }
+    .sidebar-widget a:hover { color: var(--orange); }
+    .sidebar-widget .art-meta { font-size: 0.72rem; color: var(--muted); margin-top: 0.15rem; }
+
+    .promo-box { background: var(--navy); color: white; padding: 1.25rem; margin-bottom: 1.25rem; text-align: center; }
+    .promo-box h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--orange); margin-bottom: 0.4rem; }
+    .promo-box p { font-size: 0.8rem; opacity: 0.85; margin-bottom: 0.75rem; }
+    .promo-box button { background: var(--orange); color: white; border: none; padding: 0.5rem 1.25rem; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.88rem; letter-spacing: 0.06em; cursor: pointer; text-transform: uppercase; }
+
+    footer { background: var(--navy); color: rgba(255,255,255,0.6); padding: 2rem; font-size: 0.78rem; margin-top: 2rem; }
+    .footer-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
+    footer h5 { color: white; font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.6rem; }
+    footer a { color: rgba(255,255,255,0.55); display: block; margin-bottom: 0.3rem; text-decoration: none; }
+    footer a:hover { color: var(--orange); }
+
+    @media (max-width: 768px) { .layout { grid-template-columns: 1fr; } .stat-row { grid-template-columns: 1fr 1fr; } .footer-inner { grid-template-columns: 1fr; } h1 { font-size: 1.9rem; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <div class="header-top-inner">
+      <span>Science &amp; Technology News for New Zealand</span>
+      <span>sciencenownz.co.nz</span>
+    </div>
+  </div>
+  <div class="header-main">
+    <a href="#" class="logo"><span class="sci">Science</span>Now NZ</a>
+    <div style="font-size:0.78rem;color:rgba(255,255,255,0.6);font-style:italic;">Making science accessible since 2008</div>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#">News</a></li>
+      <li><a href="#">Health</a></li>
+      <li><a href="#">Environment</a></li>
+      <li><a href="#">Technology</a></li>
+      <li><a href="#">Space</a></li>
+      <li><a href="#">Videos</a></li>
+      <li><a href="#">Podcast</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="hero-strip"><div class="hero-strip-inner">Health &rsaquo; Infectious Disease &rsaquo; Superbugs</div></div>
+
+<div class="layout">
+  <main>
+    <span class="cat-tag">Feature</span>
+    <h1>The Superbug Crisis: Are We Running Out of Antibiotics?</h1>
+    <p class="standfirst">Drug-resistant bacteria are killing over a million people a year — and the pipeline of new antibiotics has nearly dried up. Is the medical world prepared for a post-antibiotic era?</p>
+
+    <div class="byline">
+      <span>By <strong>Marcus Webb</strong>, Science Reporter</span>
+      <span>Published: 1 April 2025</span>
+      <span>8 min read</span>
+    </div>
+
+    <div class="feature-img"><span>[Photo: microscope image of bacteria]</span></div>
+    <div class="img-caption">Drug-resistant bacteria have rendered some common infections untreatable with standard antibiotics. (Illustrative image)</div>
+
+    <div class="stat-row">
+      <div class="stat-item"><div class="big">1.27M</div><div class="label">deaths directly from antibiotic resistance per year globally</div></div>
+      <div class="stat-item"><div class="big">0</div><div class="label">new antibiotic classes approved between 1962 and 2000</div></div>
+      <div class="stat-item"><div class="big">10M</div><div class="label">projected annual deaths from AMR by 2050 if unchecked</div></div>
+    </div>
+
+    <p class="drop-cap">When Alexander Fleming discovered penicillin in 1928, he warned that misuse could render it useless. Almost a century later, his warning has proven prophetic. Bacteria that once succumbed quickly to a course of amoxicillin are now surviving drugs that doctors considered last resorts just a decade ago.</p>
+
+    <p>Antimicrobial resistance — the ability of bacteria to evolve defences against the drugs designed to kill them — is now one of the World Health Organization's top global health threats. Studies show it already kills more people annually than HIV/AIDS or malaria in some regions.</p>
+
+    <h2>The Golden Age That Ended Too Soon</h2>
+    <p>From the 1940s through the 1970s, pharmaceutical companies introduced dozens of new antibiotic classes. It seemed, for a while, as though medicine had conquered bacterial infection. But scientists now know that every antibiotic use creates selection pressure — it kills susceptible bacteria while leaving resistant ones to multiply and spread their resistance genes.</p>
+    <p>The global rollout of antibiotics in human medicine, veterinary medicine, and agriculture accelerated this process enormously. And when resistance problems began to emerge in the 1980s, the pharmaceutical industry largely retreated from antibiotic development. Antibiotics, it turned out, were commercially unattractive: they are taken for short courses, they work too well, and governments encourage using them sparingly.</p>
+
+    <div class="highlight">
+      <p>"The pipeline is not empty — but it is dangerously thin. Most drugs in development are modifications of existing classes, not genuinely new mechanisms." — Professor Anna Liu, University of Melbourne Department of Microbiology, in a recent interview with ScienceNow NZ</p>
+    </div>
+
+    <h2>The Bacteria That Scare Doctors Most</h2>
+    <p>The WHO maintains a list of "priority pathogens" — bacteria for which new treatments are most urgently needed. At the top are carbapenem-resistant bacteria, which can shrug off carbapenems, once considered the heavy artillery of antibiotics. Infections with these organisms can be untreatable with any currently available drug.</p>
+    <p>In New Zealand, researchers at ESR (the Institute of Environmental Science and Research) track the emergence of resistant organisms in hospitals and the community. While New Zealand's situation is better than many countries, experts say the country is not insulated from global trends — especially given international travel and supply chains.</p>
+
+    <h2>Agriculture's Role</h2>
+    <p>Roughly 70% of antibiotics consumed globally are used in agriculture — not to treat sick animals, but to promote growth and prevent disease in crowded conditions. Studies show this is a significant driver of resistance, as resistant bacteria in animal populations can transfer resistance genes to bacteria that infect humans.</p>
+    <p>New Zealand has moved to restrict agricultural antibiotic use in recent years, but critics argue the reforms haven't gone far enough. "We can't keep using antibiotics as a substitute for good farming practice," one researcher told us.</p>
+
+    <div class="q-block">
+      <div class="question">So what can we actually do?</div>
+      <div class="answer">Experts say the solution requires action at every level: individuals completing antibiotic courses as prescribed and not demanding antibiotics for viral infections; doctors following prescribing guidelines more consistently; governments incentivising drug development; and international coordination on surveillance and stewardship. None of these are simple — but all are necessary.</div>
+    </div>
+
+    <h2>Is There Hope?</h2>
+    <p>There is, cautiously. Phage therapy — using viruses that specifically attack bacteria — is being trialled in cases where antibiotics have failed. Researchers are exploring entirely new mechanisms of antibiotic action. And internationally, push-pull funding models are trying to make antibiotic development commercially viable again.</p>
+    <p>But scientists warn that the window is narrowing. Every year of inaction sees resistance spread further. The question, as one researcher put it bluntly, is whether we'll solve this problem before the bacteria solve us.</p>
+  </main>
+
+  <aside>
+    <div class="sidebar-widget">
+      <h4>More in Health</h4>
+      <ul>
+        <li>
+          <a href="#">NZ Hospitals Report Record Rates of Drug-Resistant Infections</a>
+          <div class="art-meta">3 days ago</div>
+        </li>
+        <li>
+          <a href="#">What Is a Superbug? A Plain-English Explainer</a>
+          <div class="art-meta">1 week ago</div>
+        </li>
+        <li>
+          <a href="#">The Scientists Racing to Replace Antibiotics</a>
+          <div class="art-meta">2 weeks ago</div>
+        </li>
+        <li>
+          <a href="#">Why Your GP Won't Give You Antibiotics for a Cold</a>
+          <div class="art-meta">3 weeks ago</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="promo-box">
+      <h4>ScienceNow NZ Newsletter</h4>
+      <p>The week's most important science stories, in your inbox every Friday.</p>
+      <button>Subscribe Free</button>
+    </div>
+
+    <div class="sidebar-widget">
+      <h4>Key Terms</h4>
+      <p><strong>AMR:</strong> Antimicrobial Resistance — when bacteria evolve to resist the drugs designed to kill them.</p>
+      <p><strong>Superbug:</strong> Informal term for bacteria resistant to multiple antibiotic classes.</p>
+      <p><strong>Stewardship:</strong> Coordinated strategies to use antibiotics responsibly.</p>
+      <p><strong>Carbapenem:</strong> A class of "last resort" antibiotics; resistance to these is a serious concern.</p>
+    </div>
+
+    <div class="sidebar-widget">
+      <h4>Did You Know?</h4>
+      <p>Alexander Fleming warned about antibiotic resistance in his 1945 Nobel Prize lecture — just 17 years after discovering penicillin.</p>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h5>ScienceNow NZ</h5>
+      <p style="line-height:1.6;">Independent science journalism for New Zealand. We cover health, environment, technology and space with accuracy and accessibility.</p>
+    </div>
+    <div>
+      <h5>Sections</h5>
+      <a href="#">Health</a><a href="#">Environment</a><a href="#">Technology</a><a href="#">Space</a>
+    </div>
+    <div>
+      <h5>About</h5>
+      <a href="#">About Us</a><a href="#">Editorial Policy</a><a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Doctor Who Was Right About Everything — and Died Forgotten — History Uncovered</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Franklin:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --forest: #1e3d2a; --forest-mid: #2a5239; --gold: #c8922a; --gold-light: #fdf6e8;
+      --parchment: #faf6ef; --border: #d4c8a8; --text: #1a1410; --muted: #5a5040;
+      --white: #ffffff; --dark-red: #7a1a1a;
+    }
+    body { font-family: 'Libre Franklin', sans-serif; background: var(--parchment); color: var(--text); line-height: 1.7; }
+
+    header { background: var(--forest); }
+    .masthead { max-width: 1060px; margin: 0 auto; padding: 1.25rem 2rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .masthead .logo { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; color: var(--white); letter-spacing: 0.02em; text-decoration: none; display: block; }
+    .masthead .logo span { color: var(--gold); }
+    .masthead .tagline { font-size: 0.72rem; color: rgba(255,255,255,0.5); letter-spacing: 0.2em; text-transform: uppercase; margin-top: 0.2rem; }
+    nav { background: var(--forest-mid); border-bottom: 2px solid var(--gold); }
+    nav ul { max-width: 1060px; margin: 0 auto; padding: 0 2rem; list-style: none; display: flex; justify-content: center; }
+    nav a { display: block; padding: 0.65rem 1rem; color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+    nav a:hover { color: var(--gold); }
+
+    .article-wrap { max-width: 1060px; margin: 0 auto; padding: 0 2rem; display: grid; grid-template-columns: 1fr 280px; gap: 2.5rem; margin-top: 2rem; }
+
+    .category { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+    h1 { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; line-height: 1.2; color: var(--forest); margin-bottom: 0.75rem; }
+    .deck { font-size: 1.05rem; color: var(--muted); font-style: italic; line-height: 1.6; margin-bottom: 1rem; font-family: 'Playfair Display', serif; }
+    .byline { font-size: 0.8rem; color: var(--muted); padding: 0.6rem 0; border-top: 2px solid var(--forest); border-bottom: 1px solid var(--border); margin-bottom: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+    .byline strong { color: var(--text); }
+
+    .hero-img { width: 100%; height: 340px; background: linear-gradient(170deg, #2a3a1a 0%, #4a6030 40%, #1e2814 100%); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.2); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .img-cap { font-size: 0.75rem; color: var(--muted); font-style: italic; margin-bottom: 1.5rem; }
+
+    p { margin-bottom: 1.1rem; font-size: 0.95rem; }
+    .opener { font-size: 1.05rem; font-weight: 600; color: var(--forest); }
+    h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--forest); margin: 2rem 0 0.65rem; border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; }
+    h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--muted); margin: 1.25rem 0 0.4rem; font-style: italic; }
+
+    .pull { font-family: 'Playfair Display', serif; font-size: 1.45rem; font-style: italic; color: var(--forest); border-top: 3px solid var(--gold); border-bottom: 3px solid var(--gold); padding: 1rem 0; margin: 1.75rem 0; line-height: 1.4; }
+
+    .timeline-box { background: var(--gold-light); border: 1px solid var(--border); border-left: 4px solid var(--gold); padding: 1.25rem; margin: 1.5rem 0; }
+    .timeline-box h3 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-style: normal; margin-bottom: 0.75rem; }
+    .tl-item { display: flex; gap: 1rem; margin-bottom: 0.6rem; font-size: 0.85rem; }
+    .tl-year { font-weight: 700; color: var(--forest); min-width: 40px; }
+    .tl-text { color: var(--muted); line-height: 1.5; }
+
+    .verdict { background: var(--forest); color: white; padding: 1.5rem; margin: 2rem 0; }
+    .verdict h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--gold); margin-bottom: 0.6rem; font-style: italic; }
+    .verdict p { color: rgba(255,255,255,0.85); font-size: 0.9rem; margin-bottom: 0; }
+
+    /* Sidebar */
+    .sb-card { background: var(--white); border: 1px solid var(--border); padding: 1.1rem; margin-bottom: 1.25rem; }
+    .sb-card h4 { font-family: 'Playfair Display', serif; font-size: 0.9rem; font-weight: 700; color: var(--forest); border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; margin-bottom: 0.75rem; }
+    .sb-card p, .sb-card li { font-size: 0.82rem; color: var(--muted); line-height: 1.55; margin-bottom: 0.4rem; }
+    .sb-card ul { list-style: none; padding: 0; }
+    .sb-card ul li { padding: 0.35rem 0; border-bottom: 1px solid var(--border); }
+    .sb-card ul li:last-child { border-bottom: none; }
+    .sb-card a { color: var(--forest); font-size: 0.82rem; font-weight: 600; text-decoration: none; }
+    .sb-card a:hover { color: var(--gold); }
+    .sb-card .meta { font-size: 0.72rem; color: #aaa; }
+
+    .sub-box { background: var(--forest); color: white; padding: 1.25rem; text-align: center; margin-bottom: 1.25rem; }
+    .sub-box h4 { font-family: 'Playfair Display', serif; font-size: 1rem; margin-bottom: 0.4rem; color: var(--gold); }
+    .sub-box p { font-size: 0.8rem; opacity: 0.85; margin-bottom: 0.75rem; }
+    .sub-box button { background: var(--gold); color: var(--forest); border: none; padding: 0.5rem 1.25rem; font-weight: 700; cursor: pointer; font-size: 0.85rem; }
+
+    footer { background: var(--forest); color: rgba(255,255,255,0.55); padding: 2rem; font-size: 0.78rem; margin-top: 2.5rem; }
+    .footer-inner { max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+
+    @media (max-width: 768px) { .article-wrap { grid-template-columns: 1fr; } h1 { font-size: 1.8rem; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="masthead">
+    <a class="logo" href="#">History <span>Uncovered</span></a>
+    <div class="tagline">The past, told without apology</div>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#">Ancient World</a></li>
+      <li><a href="#">Medieval</a></li>
+      <li><a href="#">Revolutions</a></li>
+      <li><a href="#">Science &amp; Medicine</a></li>
+      <li><a href="#">War</a></li>
+      <li><a href="#">Biographies</a></li>
+      <li><a href="#">Mysteries</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="article-wrap">
+  <main>
+    <div class="category">Science &amp; Medicine &rsaquo; Forgotten Heroes</div>
+    <h1>The Doctor Who Was Right About Everything — and Died Forgotten</h1>
+    <p class="deck">Ignaz Semmelweis proved that handwashing could save thousands of lives. His colleagues thought he was mad. His story is one of history's most tragic examples of truth rejected.</p>
+
+    <div class="byline">
+      <span>By <strong>Charlotte Reeves</strong></span>
+      <span>Published: 15 March 2025</span>
+      <span>10 min read</span>
+    </div>
+
+    <div class="hero-img"><span>[Illustration: 19th century hospital ward]</span></div>
+    <div class="img-cap">Vienna General Hospital in the 1840s — where Semmelweis made his discovery, and where no one believed him. (Illustrative image)</div>
+
+    <p class="opener">In 1847, a Hungarian doctor named Ignaz Semmelweis discovered something extraordinary. He figured out why so many women were dying in maternity wards — and exactly how to stop it. Within months of applying his solution, death rates in his ward plummeted from over 10% to less than 2%.</p>
+
+    <p>The medical establishment's response? They ignored him. Mocked him. Eventually had him committed to an asylum, where he died — almost certainly of the very kind of infection he had spent his career trying to prevent.</p>
+
+    <p>His name deserves to be remembered alongside Fleming, Pasteur, and Lister. Instead, for most of his life and for decades after his death, it was not.</p>
+
+    <h2>The Ward Where Women Went to Die</h2>
+    <p>Vienna General Hospital in the 1840s had two maternity clinics. Everyone knew the First Clinic was dangerous — the mortality rate was routinely three times higher than in the Second Clinic. Women admitted to hospital begged not to be sent there. Some gave birth on the street and asked to be admitted afterwards, preferring the risk of an outdoor birth to what awaited inside.</p>
+    <p>The official explanation? Miasmas — bad air. Overcrowding. The shame and embarrassment of being examined by male doctors. No one had a satisfying answer, and no one seemed particularly motivated to find one. These deaths were accepted as the cost of doing business in a nineteenth-century hospital.</p>
+
+    <p>Semmelweis was not satisfied with this. He was meticulous and he was stubborn, two qualities that would define — and ultimately destroy — his career.</p>
+
+    <div class="pull">"These women did not die of bad air. They died because doctors were going from the autopsy room to the delivery room without washing their hands."</div>
+
+    <h2>The Moment of Insight</h2>
+    <p>The key came from tragedy. Semmelweis's close friend and colleague, Jakob Kolletschka, was accidentally stabbed with a scalpel during an autopsy. He died quickly, showing exactly the same symptoms as the women dying in the maternity ward. Semmelweis made the connection: the disease was being carried from the cadavers in the autopsy room to the labouring women on the doctors' hands.</p>
+    <p>The First Clinic was staffed by medical students who began their days performing autopsies. The Second Clinic was staffed by midwives who did not work with cadavers. That was the entire difference between a death rate of 10% and a death rate of 3%.</p>
+    <p>Semmelweis immediately introduced a requirement: all students and doctors must wash their hands in a chlorinated lime solution before examining patients. The results were immediate and dramatic. In the months that followed, the First Clinic's mortality rate fell to match the Second's.</p>
+
+    <div class="timeline-box">
+      <h3>Timeline: Semmelweis's Discovery and Rejection</h3>
+      <div class="tl-item"><span class="tl-year">1818</span><span class="tl-text">Born in Buda, Hungary</span></div>
+      <div class="tl-item"><span class="tl-year">1846</span><span class="tl-text">Appointed to First Obstetric Clinic, Vienna General Hospital</span></div>
+      <div class="tl-item"><span class="tl-year">1847</span><span class="tl-text">Kolletschka's death; Semmelweis introduces handwashing. Mortality drops from ~10% to ~1%</span></div>
+      <div class="tl-item"><span class="tl-year">1849</span><span class="tl-text">Contract not renewed at Vienna. Returns to Budapest. Largely ignored by European medical community</span></div>
+      <div class="tl-item"><span class="tl-year">1861</span><span class="tl-text">Publishes his great work on childbed fever — 14 years after the discovery. Reception is poor</span></div>
+      <div class="tl-item"><span class="tl-year">1865</span><span class="tl-text">Committed to asylum. Dies two weeks later. Pasteur's germ theory is just beginning to gain acceptance</span></div>
+      <div class="tl-item"><span class="tl-year">1880s</span><span class="tl-text">Lister's antiseptic surgery, based on germ theory, transforms medicine. Semmelweis is slowly vindicated — posthumously</span></div>
+    </div>
+
+    <h2>Why Did No One Listen?</h2>
+    <p>This is the question that haunts Semmelweis's story, and it doesn't have a simple answer. Several factors combined to make his discovery unwelcome.</p>
+    <p>First, there was the implication. If Semmelweis was right, then doctors — educated, respected men — were killing their patients. This was not a comfortable conclusion. The idea that clean hands could save lives implicitly accused every doctor who hadn't washed of causing harm. Some of the most eminent physicians in Europe rejected the hypothesis partly, historians believe, because accepting it was too uncomfortable.</p>
+    <p>Second, there was the theory gap. Semmelweis could show that handwashing worked — his statistics were clear. But he could not explain exactly why. Germ theory did not yet exist. Without a mechanism, many physicians found the evidence unconvincing. Data alone, it turns out, is rarely enough.</p>
+    <p>Third, Semmelweis was increasingly difficult to deal with. As his ideas were rejected and his mental health deteriorated, his correspondence became erratic and abusive. He wrote open letters calling his critics murderers. By the end, even those who might have championed his cause found him impossible to support.</p>
+
+    <h2>A Tragic End</h2>
+    <p>In July 1865, colleagues had Semmelweis committed to the Döbling asylum in Vienna. Accounts of the circumstances are murky — some suggest he was tricked into visiting, others that he was forcibly taken. He died there on August 13, aged 47. The cause of death is disputed, but the cruel irony is that the evidence points strongly to septicaemia — a blood infection — likely caused by a wound sustained around the time of his admission.</p>
+    <p>The man who discovered that infected hands killed patients may have died from an infected wound.</p>
+
+    <div class="verdict">
+      <h3>What Semmelweis's story teaches us</h3>
+      <p>Science does not automatically accept good ideas. Evidence alone is often not enough — ideas also need a theoretical framework, effective communication, and the right social conditions to be heard. Semmelweis had the evidence. He lacked the others. His story is a reminder that the scientific community is made up of human beings with all their biases, blind spots, and professional vanities — and that this matters enormously for what gets accepted and what gets ignored.</p>
+    </div>
+  </main>
+
+  <aside>
+    <div class="sb-card">
+      <h4>More Forgotten Heroes</h4>
+      <ul>
+        <li><a href="#">Rosalind Franklin and the Double Helix</a><div class="meta">2 weeks ago</div></li>
+        <li><a href="#">Nikola Tesla: Genius, Failure, Legacy</a><div class="meta">1 month ago</div></li>
+        <li><a href="#">The Woman Who Discovered Pulsars (And Didn't Win the Nobel)</a><div class="meta">2 months ago</div></li>
+        <li><a href="#">Lise Meitner and Nuclear Fission</a><div class="meta">3 months ago</div></li>
+      </ul>
+    </div>
+
+    <div class="sub-box">
+      <h4>History Uncovered Newsletter</h4>
+      <p>One fascinating historical story every week. Free to subscribe.</p>
+      <button>Join 80,000 Readers</button>
+    </div>
+
+    <div class="sb-card">
+      <h4>Related Topics</h4>
+      <ul>
+        <li><a href="#">Germ Theory &amp; Its Pioneers</a></li>
+        <li><a href="#">Joseph Lister: The Man Who Saved Surgery</a></li>
+        <li><a href="#">Florence Nightingale and Hospital Reform</a></li>
+        <li><a href="#">Victorian Medicine: A World of Good Intentions</a></li>
+      </ul>
+    </div>
+
+    <div class="sb-card">
+      <h4>Fast Facts</h4>
+      <p><strong>Born:</strong> 1 July 1818, Budapest</p>
+      <p><strong>Died:</strong> 13 August 1865, Vienna</p>
+      <p><strong>Discovery:</strong> Handwashing reduces puerperal fever</p>
+      <p><strong>Vindicated:</strong> Posthumously, after Pasteur's germ theory</p>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span>History Uncovered &copy; 2025 — Independent history journalism</span>
+    <span>historyuncovered.co.nz</span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaccines and Immunisation: A Scientific Overview — NZ Health Science Institute</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,400&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #005ea2; --blue-dark: #003a6c; --blue-light: #e8f1fb;
+      --green: #1a7a3c; --border: #d6dce5; --text: #1b1b1b;
+      --muted: #5a6472; --white: #ffffff; --bg: #f9fafb;
+    }
+    body { font-family: 'IBM Plex Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 1rem; }
+
+    /* Top government-style banner */
+    .gov-bar { background: var(--blue-dark); color: var(--white); padding: 0.35rem 1.5rem; font-size: 0.72rem; letter-spacing: 0.04em; }
+    .gov-bar-inner { max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+
+    header { background: var(--white); border-bottom: 3px solid var(--blue); padding: 0; }
+    .header-inner { max-width: 1060px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; align-items: center; gap: 1.5rem; }
+    .logo-block { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: inherit; }
+    .logo-icon { width: 44px; height: 44px; background: var(--blue); border-radius: 2px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.3rem; font-weight: 700; flex-shrink: 0; }
+    .logo-text { display: flex; flex-direction: column; }
+    .logo-text .org { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+    .logo-text .name { font-size: 1rem; font-weight: 600; color: var(--blue-dark); line-height: 1.2; }
+
+    nav { background: var(--blue); }
+    nav ul { max-width: 1060px; margin: 0 auto; padding: 0 1.5rem; list-style: none; display: flex; gap: 0; }
+    nav ul li a { display: block; padding: 0.65rem 1rem; color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.82rem; }
+    nav ul li a:hover { background: rgba(255,255,255,0.12); color: white; }
+
+    .layout { max-width: 1060px; margin: 2rem auto; padding: 0 1.5rem; display: grid; grid-template-columns: 1fr 260px; gap: 2.5rem; align-items: start; }
+
+    /* Article */
+    .article-header { margin-bottom: 1.75rem; padding-bottom: 1.25rem; border-bottom: 2px solid var(--border); }
+    .article-header .section-tag { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.5rem; }
+    .article-header h1 { font-family: 'IBM Plex Serif', serif; font-size: 1.75rem; font-weight: 600; color: var(--blue-dark); line-height: 1.3; margin-bottom: 0.75rem; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; font-size: 0.8rem; color: var(--muted); }
+    .article-meta .author { font-weight: 600; color: var(--text); }
+    .article-meta .credentials { color: var(--muted); }
+
+    .abstract { background: var(--blue-light); border-left: 4px solid var(--blue); padding: 1.25rem 1.5rem; margin-bottom: 2rem; border-radius: 0 4px 4px 0; }
+    .abstract h3 { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.6rem; }
+    .abstract p { font-size: 0.88rem; color: #2a3a50; line-height: 1.65; }
+
+    h2 { font-family: 'IBM Plex Serif', serif; font-size: 1.2rem; font-weight: 600; color: var(--blue-dark); margin: 2rem 0 0.75rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    h2:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+    h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin: 1.25rem 0 0.5rem; }
+
+    p { margin-bottom: 1rem; color: var(--text); font-size: 0.95rem; }
+
+    .data-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.85rem; }
+    .data-table th { background: var(--blue-dark); color: white; padding: 0.6rem 0.85rem; text-align: left; font-weight: 600; font-size: 0.8rem; }
+    .data-table td { padding: 0.6rem 0.85rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .data-table tr:nth-child(even) td { background: var(--blue-light); }
+
+    .citation { font-size: 0.78rem; color: var(--muted); vertical-align: super; font-weight: 600; }
+    .references { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 1.25rem 1.5rem; margin-top: 2rem; }
+    .references h3 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: 1rem; border: none; }
+    .references ol { padding-left: 1.5rem; }
+    .references li { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.5rem; line-height: 1.55; }
+    .references li a { color: var(--blue); }
+
+    /* Sidebar */
+    .sidebar-card { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 1.1rem 1.25rem; margin-bottom: 1.25rem; }
+    .sidebar-card h4 { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+    .sidebar-card p, .sidebar-card li { font-size: 0.82rem; color: var(--muted); line-height: 1.55; margin-bottom: 0.4rem; }
+    .sidebar-card ul { padding-left: 0; list-style: none; }
+    .sidebar-card ul li { padding: 0.3rem 0; border-bottom: 1px solid var(--border); }
+    .sidebar-card ul li:last-child { border-bottom: none; }
+    .sidebar-card a { color: var(--blue); text-decoration: none; font-size: 0.82rem; }
+    .sidebar-card a:hover { text-decoration: underline; }
+
+    .author-box { background: var(--blue-light); border: 1px solid #c2d4ed; border-radius: 4px; padding: 1.1rem 1.25rem; margin-bottom: 1.25rem; }
+    .author-box h4 { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: 0.6rem; }
+    .author-box .author-name { font-weight: 600; font-size: 0.88rem; color: var(--blue-dark); }
+    .author-box p { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.25rem; margin-top: 0.25rem; }
+
+    footer { background: var(--blue-dark); color: rgba(255,255,255,0.7); padding: 2rem 1.5rem; margin-top: 3rem; font-size: 0.8rem; }
+    .footer-inner { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
+    footer h5 { color: white; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+    footer a { color: rgba(255,255,255,0.65); text-decoration: none; display: block; margin-bottom: 0.35rem; font-size: 0.8rem; }
+    .footer-bottom { max-width: 1060px; margin: 1.5rem auto 0; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.15); font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+
+    @media (max-width: 768px) { .layout { grid-template-columns: 1fr; } .footer-inner { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<div class="gov-bar">
+  <div class="gov-bar-inner">
+    <span>NZ Health Science Institute — Public Health Information Service</span>
+    <span>healthscienceinstitute.org.nz</span>
+  </div>
+</div>
+
+<header>
+  <div class="header-inner">
+    <a class="logo-block" href="#">
+      <div class="logo-icon">HSI</div>
+      <div class="logo-text">
+        <span class="org">New Zealand</span>
+        <span class="name">Health Science Institute</span>
+      </div>
+    </a>
+  </div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Topics A–Z</a></li>
+    <li><a href="#">Immunisation</a></li>
+    <li><a href="#">Research Library</a></li>
+    <li><a href="#">For Educators</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+</nav>
+
+<div class="layout">
+  <article>
+    <div class="article-header">
+      <div class="section-tag">Immunisation &rsaquo; Vaccine Science</div>
+      <h1>Vaccines and Immunisation: A Scientific Overview</h1>
+      <div class="article-meta">
+        <span>By <span class="author">Dr. Rachel Tane</span> <span class="credentials">MB ChB, PhD — Department of Immunology, University of Otago</span></span>
+        <span>Reviewed by: <strong>Associate Professor James Whitfield</strong>, NZ Immunisation Advisory Centre</span>
+        <span>Published: 14 February 2024 &nbsp;|&nbsp; Last reviewed: 12 November 2024</span>
+      </div>
+    </div>
+
+    <div class="abstract">
+      <h3>Summary</h3>
+      <p>Vaccines work by training the immune system to recognise and respond to specific pathogens without causing the disease itself. This article explains the biological mechanisms of vaccine-induced immunity, reviews the major classes of vaccines in current use, describes the evidence base for vaccination programmes, and addresses common questions about vaccine safety and efficacy.</p>
+    </div>
+
+    <h2>How the Immune System Responds to Infection</h2>
+    <p>When the body encounters a pathogen — a virus, bacterium, or other disease-causing organism — the immune system mounts a two-stage defence. The innate immune response acts immediately, causing inflammation and deploying non-specific immune cells. Within days, the adaptive immune response activates: B cells produce antibodies specific to the pathogen, and T cells either destroy infected cells (cytotoxic T cells) or coordinate the immune response (helper T cells).<span class="citation">[1]</span></p>
+    <p>Crucially, the adaptive immune system retains a memory of pathogens it has encountered. Memory B and T cells persist long after an infection resolves, enabling a faster and stronger response if the same pathogen is encountered again. This is the biological basis of immunity — and the mechanism that vaccines exploit.<span class="citation">[2]</span></p>
+
+    <h2>How Vaccines Work</h2>
+    <p>Vaccines introduce the immune system to a pathogen or a component of one — without causing disease. The immune system mounts a response, produces antibodies, and creates immunological memory. If the vaccinated person later encounters the real pathogen, the immune system can respond rapidly, typically preventing severe illness or death.<span class="citation">[3]</span></p>
+    <p>The key insight, first applied by Edward Jenner in 1796 using cowpox to protect against smallpox, is that immunity can be acquired through a controlled exposure that does not itself cause the disease.<span class="citation">[4]</span></p>
+
+    <h3>Types of Vaccines</h3>
+    <p>Several distinct vaccine technologies are currently in use:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Vaccine Type</th>
+          <th>How It Works</th>
+          <th>Examples</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Live-attenuated</strong></td>
+          <td>Uses a weakened form of the pathogen; produces strong, long-lasting immunity</td>
+          <td>MMR (measles, mumps, rubella); chickenpox</td>
+        </tr>
+        <tr>
+          <td><strong>Inactivated</strong></td>
+          <td>Uses a killed pathogen; generally requires multiple doses or boosters</td>
+          <td>Influenza (injected); polio (IPV)</td>
+        </tr>
+        <tr>
+          <td><strong>Subunit / protein</strong></td>
+          <td>Uses specific proteins from the pathogen's surface to trigger immune response</td>
+          <td>Hepatitis B; pertussis (whooping cough) component</td>
+        </tr>
+        <tr>
+          <td><strong>Toxoid</strong></td>
+          <td>Uses an inactivated toxin produced by the pathogen</td>
+          <td>Tetanus; diphtheria</td>
+        </tr>
+        <tr>
+          <td><strong>mRNA</strong></td>
+          <td>Delivers genetic instructions for cells to produce a harmless antigen; immune system responds to this antigen</td>
+          <td>Pfizer-BioNTech and Moderna COVID-19 vaccines</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Herd Immunity</h2>
+    <p>When a sufficiently high proportion of a population is immune to an infectious disease — through vaccination or prior infection — the pathogen cannot spread easily, protecting even those who are not themselves immune. This is called herd immunity (or population immunity).<span class="citation">[5]</span></p>
+    <p>The proportion of the population that needs to be immune for herd immunity to operate — the herd immunity threshold — varies by disease. Measles, which is highly contagious, requires approximately 95% of the population to be immune. For COVID-19, estimates have ranged more widely depending on viral variant.<span class="citation">[6]</span></p>
+    <p>Herd immunity is particularly important for protecting people who cannot be vaccinated, including newborns, immunocompromised individuals, and those with certain allergies.<span class="citation">[5]</span></p>
+
+    <h2>The Evidence Base for Vaccination</h2>
+    <p>The evidence supporting vaccination is among the strongest in all of medicine. The eradication of smallpox — declared in 1980 after a global vaccination campaign — is the clearest demonstration. Polio, which once paralysed tens of thousands of children annually, has been eliminated from most of the world through vaccination. The incidence of diseases including measles, diphtheria, whooping cough, and rubella has declined by more than 99% in countries with sustained vaccination programmes.<span class="citation">[7]</span></p>
+    <p>In New Zealand, the Immunisation Advisory Centre reports that childhood vaccination coverage has consistently prevented thousands of hospitalisations annually. The 2019 measles outbreak in New Zealand — concentrated in communities with lower vaccination rates — illustrated the consequences of declining immunisation coverage.<span class="citation">[8]</span></p>
+
+    <h2>Vaccine Safety: How It Is Monitored</h2>
+    <p>Before a vaccine is approved for use, it must pass through several phases of clinical trials involving thousands to tens of thousands of participants. These trials assess both efficacy (does it produce immunity?) and safety (what are the side effects?).<span class="citation">[9]</span></p>
+    <p>Most side effects from vaccines are mild and temporary: soreness at the injection site, mild fever, fatigue. These reflect the immune system activating — they are signs that the vaccine is working. Serious adverse events are rare and are tracked through ongoing post-market surveillance systems. In New Zealand, CARM (the Centre for Adverse Reactions Monitoring) records and investigates reported adverse events following immunisation.<span class="citation">[10]</span></p>
+    <p>No medical intervention is entirely without risk. The relevant question is always comparative: what is the risk of the vaccine versus the risk of the disease it prevents? For all vaccines currently recommended in New Zealand, the evidence consistently shows that the benefits substantially outweigh the risks.<span class="citation">[9]</span></p>
+
+    <h2>Common Questions</h2>
+    <h3>Can vaccines cause the disease they are meant to prevent?</h3>
+    <p>In the case of live-attenuated vaccines, the vaccine contains a weakened pathogen that cannot cause disease in healthy people. In immunocompromised individuals, these vaccines require careful consideration. Inactivated, subunit, toxoid, and mRNA vaccines do not contain live pathogens and cannot cause the disease they target.<span class="citation">[3]</span></p>
+
+    <h3>Do vaccines contain harmful ingredients?</h3>
+    <p>Vaccines contain adjuvants (substances that enhance the immune response, such as aluminium salts), preservatives, stabilisers, and residual manufacturing substances in very small quantities. These components are subject to rigorous safety testing. The quantities involved are typically far below levels associated with adverse effects.<span class="citation">[11]</span></p>
+
+    <div class="references">
+      <h3>References</h3>
+      <ol>
+        <li>Janeway CA, et al. <em>Immunobiology: The Immune System in Health and Disease</em>. 9th ed. Garland Science; 2022.</li>
+        <li>Crotty S. "T follicular helper cell differentiation, function, and roles in disease." <em>Immunity</em>. 2019;41(4):529–542. doi:10.1016/j.immuni.2014.09.002</li>
+        <li>World Health Organization. <em>Vaccines and Immunization: What is Vaccination?</em> WHO; 2023. Available at: who.int/news-room/questions-and-answers/item/vaccines-and-immunization-what-is-vaccination</li>
+        <li>Riedel S. "Edward Jenner and the history of smallpox and vaccination." <em>Proc (Bayl Univ Med Cent)</em>. 2005;18(1):21–25.</li>
+        <li>Fine P, Eames K, Heymann DL. "'Herd immunity': a rough guide." <em>Clin Infect Dis</em>. 2011;52(7):911–916.</li>
+        <li>Randolph HE, Barreiro LB. "Herd Immunity: Understanding COVID-19." <em>Immunity</em>. 2020;52(5):737–741.</li>
+        <li>Centers for Disease Control and Prevention. <em>Vaccines and Preventable Diseases: Achievements in Public Health</em>. CDC; 2023.</li>
+        <li>Immunisation Advisory Centre, University of Auckland. <em>New Zealand Immunisation Handbook 2024</em>. Ministry of Health; 2024.</li>
+        <li>Plotkin SA, Orenstein WA, Offit PA. <em>Vaccines</em>. 7th ed. Elsevier; 2018.</li>
+        <li>Centre for Adverse Reactions Monitoring (CARM). <em>Annual Report 2023</em>. University of Otago; 2024.</li>
+        <li>Offit PA, Jew RK. "Addressing Parents' Concerns: Do Vaccines Contain Harmful Preservatives, Adjuvants, Additives, or Residuals?" <em>Pediatrics</em>. 2003;112(6):1394–1397.</li>
+      </ol>
+    </div>
+  </article>
+
+  <aside>
+    <div class="author-box">
+      <h4>About the Author</h4>
+      <div class="author-name">Dr. Rachel Tane</div>
+      <p>MB ChB (Otago, 2008), PhD Immunology (Otago, 2013)</p>
+      <p>Senior Lecturer, Department of Microbiology and Immunology, University of Otago. Research focus: vaccine-induced mucosal immunity. Member, NZ Immunisation Technical Advisory Group.</p>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Key Terms</h4>
+      <ul>
+        <li><strong>Antigen:</strong> a substance that triggers an immune response</li>
+        <li><strong>Antibody:</strong> a protein produced by B cells that binds to a specific antigen</li>
+        <li><strong>Adjuvant:</strong> a substance added to a vaccine to enhance immune response</li>
+        <li><strong>Herd immunity threshold:</strong> the proportion immune needed to prevent spread</li>
+        <li><strong>mRNA:</strong> messenger RNA — genetic instructions for protein production</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Related Resources</h4>
+      <ul>
+        <li><a href="https://www.who.int/news-room/questions-and-answers/item/vaccines-and-immunization-what-is-vaccination" target="_blank">WHO: Vaccines and Immunization</a></li>
+        <li><a href="https://www.cdc.gov/vaccines/index.html" target="_blank">CDC: Vaccines &amp; Immunizations</a></li>
+        <li><a href="https://www.immune.org.nz" target="_blank">NZ Immunisation Advisory Centre</a></li>
+        <li><a href="https://www.health.govt.nz/immunisation" target="_blank">Ministry of Health NZ: Immunisation</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>On This Page</h4>
+      <ul>
+        <li><a href="#">Immune System Response</a></li>
+        <li><a href="#">How Vaccines Work</a></li>
+        <li><a href="#">Types of Vaccines</a></li>
+        <li><a href="#">Herd Immunity</a></li>
+        <li><a href="#">Evidence Base</a></li>
+        <li><a href="#">Safety Monitoring</a></li>
+        <li><a href="#">Common Questions</a></li>
+        <li><a href="#">References</a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h5>NZ Health Science Institute</h5>
+      <p style="font-size:0.8rem;line-height:1.6;">An independent, publicly funded health information service providing evidence-based health science resources for New Zealand educators, students, and the public.</p>
+    </div>
+    <div>
+      <h5>Topics</h5>
+      <a href="#">Immunisation</a>
+      <a href="#">Infectious Disease</a>
+      <a href="#">Antimicrobial Resistance</a>
+      <a href="#">Clinical Evidence</a>
+    </div>
+    <div>
+      <h5>About</h5>
+      <a href="#">Editorial Policy</a>
+      <a href="#">Review Process</a>
+      <a href="#">Contact</a>
+      <a href="#">Accessibility</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 NZ Health Science Institute. Content reviewed by qualified health professionals. For educational use. This resource does not constitute medical advice.
+  </div>
+</footer>
+
+</body>
+</html>

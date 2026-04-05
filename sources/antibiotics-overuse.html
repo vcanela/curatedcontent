@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stop Reaching for the Pill Bottle — DadLife NZ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --orange: #e85a10; --orange-dark: #b83a00; --orange-light: #fff4ee;
+      --charcoal: #1a1a1a; --mid: #333; --muted: #666;
+      --border: #e0e0e0; --bg: #f9f9f9; --white: #ffffff; --yellow: #f5c400;
+    }
+    body { font-family: 'Montserrat', sans-serif; background: var(--bg); color: var(--charcoal); line-height: 1.7; }
+
+    header { background: var(--charcoal); }
+    .header-inner { max-width: 1000px; margin: 0 auto; padding: 0.85rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .logo { color: white; font-weight: 900; font-size: 1.5rem; letter-spacing: -0.02em; text-decoration: none; }
+    .logo .dad { color: var(--orange); }
+    .logo .life { color: white; }
+    .logo .nz { color: var(--yellow); font-size: 0.9rem; vertical-align: super; }
+    nav { background: #222; border-bottom: 3px solid var(--orange); }
+    nav ul { max-width: 1000px; margin: 0 auto; padding: 0 2rem; list-style: none; display: flex; }
+    nav a { display: block; padding: 0.55rem 0.85rem; color: #ccc; text-decoration: none; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+    nav a:hover { color: var(--orange); }
+
+    .layout { max-width: 1000px; margin: 2rem auto; padding: 0 2rem; display: grid; grid-template-columns: 1fr 260px; gap: 2rem; }
+
+    .cat { display: inline-block; background: var(--orange); color: white; padding: 0.2rem 0.65rem; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.6rem; }
+    h1 { font-size: 2.1rem; font-weight: 900; line-height: 1.15; color: var(--charcoal); margin-bottom: 0.6rem; }
+    .sub { font-size: 1rem; color: var(--muted); margin-bottom: 1rem; }
+    .byline { font-size: 0.78rem; color: var(--muted); padding: 0.5rem 0; border-top: 2px solid var(--charcoal); border-bottom: 1px solid var(--border); margin-bottom: 1.25rem; display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .byline strong { color: var(--charcoal); }
+
+    .hero { width: 100%; height: 280px; background: linear-gradient(120deg, #1a1a1a 0%, #333 60%, var(--orange) 100%); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.2); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.4rem; }
+    .cap { font-size: 0.75rem; color: var(--muted); font-style: italic; margin-bottom: 1.5rem; }
+
+    p { margin-bottom: 1.1rem; font-size: 0.93rem; }
+    .lead { font-weight: 700; font-size: 1rem; color: var(--mid); }
+    h2 { font-size: 1.2rem; font-weight: 900; color: var(--charcoal); margin: 1.75rem 0 0.6rem; border-left: 4px solid var(--orange); padding-left: 0.75rem; }
+
+    .callout { background: var(--orange); color: white; padding: 1.1rem 1.25rem; margin: 1.5rem 0; font-weight: 700; font-size: 1.05rem; line-height: 1.45; }
+    .story-box { background: var(--orange-light); border: 1px solid #f0c0a0; padding: 1.1rem 1.25rem; margin: 1.5rem 0; font-style: italic; color: var(--orange-dark); border-radius: 2px; }
+    .list-styled { margin: 1rem 0 1.1rem 0; padding-left: 0; list-style: none; }
+    .list-styled li { padding: 0.4rem 0 0.4rem 1.5rem; position: relative; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    .list-styled li:last-child { border-bottom: none; }
+    .list-styled li::before { content: '→'; position: absolute; left: 0; color: var(--orange); font-weight: 900; }
+
+    .share-row { display: flex; gap: 0.5rem; margin: 1.5rem 0; }
+    .sh { padding: 0.4rem 1rem; font-size: 0.78rem; font-weight: 700; border: none; cursor: pointer; color: white; text-transform: uppercase; letter-spacing: 0.04em; }
+    .sh-fb { background: #1877f2; } .sh-tw { background: #1da1f2; }
+
+    .disclaimer { font-size: 0.76rem; color: var(--muted); border-top: 1px solid var(--border); padding-top: 0.75rem; margin-top: 1.5rem; font-style: italic; }
+
+    /* Sidebar */
+    .sb { background: var(--white); border: 1px solid var(--border); padding: 1.1rem; margin-bottom: 1.25rem; }
+    .sb h4 { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--orange); margin-bottom: 0.75rem; border-bottom: 2px solid var(--charcoal); padding-bottom: 0.4rem; }
+    .sb p, .sb li { font-size: 0.82rem; color: var(--muted); line-height: 1.55; margin-bottom: 0.4rem; }
+    .sb ul { list-style: none; padding: 0; }
+    .sb ul li { padding: 0.35rem 0; border-bottom: 1px solid var(--border); }
+    .sb ul li:last-child { border-bottom: none; }
+    .sb a { color: var(--charcoal); font-weight: 700; text-decoration: none; font-size: 0.82rem; }
+    .sb a:hover { color: var(--orange); }
+    .sb .meta { font-size: 0.71rem; color: #aaa; }
+    .author-sb { background: var(--charcoal); color: white; padding: 1.25rem; text-align: center; margin-bottom: 1.25rem; }
+    .author-sb .av { width: 60px; height: 60px; background: var(--orange); border-radius: 50%; margin: 0 auto 0.75rem; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.1rem; }
+    .author-sb h4 { font-size: 0.88rem; font-weight: 800; color: white; margin-bottom: 0.3rem; }
+    .author-sb p { font-size: 0.78rem; color: rgba(255,255,255,0.7); }
+
+    footer { background: var(--charcoal); color: rgba(255,255,255,0.5); text-align: center; padding: 1.25rem; font-size: 0.76rem; margin-top: 2rem; }
+
+    @media (max-width: 768px) { .layout { grid-template-columns: 1fr; } h1 { font-size: 1.65rem; } }
+  </style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo"><span class="dad">Dad</span><span class="life">Life</span><span class="nz">NZ</span></a>
+    <div style="font-size:0.72rem;color:#666;">Real talk for Kiwi dads</div>
+  </div>
+</header>
+<nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Health</a></li>
+    <li><a href="#">Parenting</a></li>
+    <li><a href="#">Fitness</a></li>
+    <li><a href="#">Finance</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+</nav>
+
+<div class="layout">
+  <main>
+    <span class="cat">Health</span>
+    <h1>Stop Reaching for the Pill Bottle: My Family's Journey Off Antibiotics</h1>
+    <p class="sub">My kids used to get antibiotics for everything. Then I started asking questions — and what I learned made me change everything.</p>
+    <div class="byline">
+      <span>By <strong>Dave Millar</strong>, DadLife NZ</span>
+      <span>1 April 2025</span>
+      <span>8 min read</span>
+    </div>
+
+    <div class="hero"><span>[Photo: father and kids]</span></div>
+    <div class="cap">Before I changed our approach, my kids were on antibiotics at least twice a year. Now it's been two years since we last needed them. (Illustrative)</div>
+
+    <p class="lead">I want to tell you about the moment I realised we'd been doing it wrong. My son Jake, 7 at the time, had been on his fourth course of antibiotics in 18 months. Every ear infection, every chest thing — straight to the doctor, straight onto amoxicillin.</p>
+
+    <p>And then I read an article about antibiotic resistance. Not some fringe thing — it was in a mainstream magazine — and it talked about how overusing antibiotics was making bacteria stronger and making the drugs less effective. It also mentioned something that stopped me cold: antibiotics destroy the gut bacteria that your immune system depends on.</p>
+
+    <p>I'm not a doctor. I'm a 38-year-old dad from Tauranga who coaches under-11s footy and works in logistics. But I'm also someone who does his research, and what I've learned since that day has genuinely changed how we handle illness in our family.</p>
+
+    <div class="story-box">
+      "Our GP is a good bloke and I trust him. But when I started asking more questions — about whether Jake's ear infections actually needed antibiotics, or whether they'd clear up on their own — it was like I'd said something rude. He got a bit defensive. That told me I needed to start looking into this myself."
+    </div>
+
+    <h2>What I Learned About Antibiotics</h2>
+    <p>Here's the thing: studies show that a large proportion of antibiotic prescriptions — something like 30–50% depending on the country — are for conditions where they aren't actually needed. Ear infections in children, for example, often resolve on their own without antibiotics. Upper respiratory infections are almost always viral — antibiotics do nothing for viruses. Nothing.</p>
+    <p>Yet we keep getting them. Why? Partly because it's easier. A busy GP gives a parent a script, the parent feels like something is being done, and everyone goes home happy. Except that meanwhile we're trashing the kid's gut microbiome and contributing to a global antibiotic resistance crisis that scientists are calling one of the biggest public health threats of our time.</p>
+
+    <div class="callout">
+      "A large proportion of antibiotic prescriptions are unnecessary. Studies show many infections clear up on their own — but the system keeps handing them out."
+    </div>
+
+    <h2>The Gut Connection Nobody Talks About</h2>
+    <p>Here's what really got me. Your gut is where 70–80% of your immune system lives. The trillions of bacteria in your gut — your microbiome — train your immune cells, regulate inflammation, and help defend against pathogens. Antibiotics are not selective. They wipe out the bad bacteria AND the good bacteria. Every course of antibiotics resets your microbiome, and it can take months to recover — if it fully recovers at all.</p>
+    <p>My working theory — and I want to be clear this is based on my own reading, not a medical degree — is that all those rounds of antibiotics Jake had as a toddler may have contributed to why he kept getting sick. By knocking out his gut bacteria repeatedly, we may have been undermining the very immune system we were trying to protect.</p>
+
+    <h2>What We Do Now</h2>
+    <ul class="list-styled">
+      <li>We don't ask for antibiotics for anything viral (colds, flu, most coughs). We let the immune system do its job.</li>
+      <li>We focus on gut health — fermented foods like yoghurt and sauerkraut, and a probiotic supplement after any illness.</li>
+      <li>Good sleep, outdoor time, minimal processed food. I know it sounds obvious but it makes a real difference.</li>
+      <li>We push back on prescriptions. We ask the GP: does this actually need antibiotics, or would watchful waiting be appropriate?</li>
+      <li>For ear infections specifically, we give it 48–72 hours with pain relief first. Most of the time it clears up.</li>
+    </ul>
+
+    <p>I'm not saying never use antibiotics. If Jake had a serious bacterial infection — strep throat, a genuine chest infection — we'd absolutely use them. They are genuinely life-saving when used appropriately. The key word is "appropriately."</p>
+
+    <h2>The Result</h2>
+    <p>Two years since Jake last had a course of antibiotics. His sister Mia, four years old, has had them once in her life. Are they healthier? I think so. Are they getting fewer infections? Probably about the same number of colds — but they seem to fight them off faster. That could be coincidence. It could be the gut health approach. I can't prove causation. But I know we feel better about how we're handling it.</p>
+
+    <p>If you want to go deeper on this stuff, there's a lot of good reading out there. Search for the work being done on the human microbiome — some of the most interesting science of our time. And next time your kid gets sick, it's okay to ask: do we actually need the antibiotics?</p>
+
+    <div class="share-row">
+      <button class="sh sh-fb">Share</button>
+      <button class="sh sh-tw">Tweet</button>
+    </div>
+    <p class="disclaimer">DadLife NZ is a personal blog. Nothing here is medical advice. Always consult your GP or healthcare provider for decisions about your children's health.</p>
+  </main>
+
+  <aside>
+    <div class="author-sb">
+      <div class="av">DM</div>
+      <h4>Dave Millar</h4>
+      <p>Dad of two, Tauranga. Logistics manager by day, amateur health researcher by night. Writing honestly about parenting and men's health.</p>
+    </div>
+    <div class="sb">
+      <h4>More from Dave</h4>
+      <ul>
+        <li><a href="#">Why I Quit Sugar for 30 Days (And What Happened)</a><div class="meta">March 2025</div></li>
+        <li><a href="#">The Sleep Problem Nobody Talks About</a><div class="meta">February 2025</div></li>
+        <li><a href="#">Getting Off the Medication Treadmill</a><div class="meta">January 2025</div></li>
+        <li><a href="#">Cold Showers: 90 Days In</a><div class="meta">December 2024</div></li>
+      </ul>
+    </div>
+    <div class="sb">
+      <h4>Related</h4>
+      <ul>
+        <li><a href="#">The Gut Microbiome: A Beginner's Guide</a></li>
+        <li><a href="#">Natural Ways to Support Kids' Immunity</a></li>
+        <li><a href="#">When DO Kids Actually Need Antibiotics?</a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  &copy; 2025 DadLife NZ &mdash; Personal views only. Not medical advice.
+</footer>
+</body>
+</html>

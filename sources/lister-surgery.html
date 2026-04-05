@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joseph Lister and the Development of Antiseptic Surgery — Wellcome Institute for the History of Medicine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --teal: #1a5c5c; --teal-mid: #236b6b; --teal-light: #e8f4f4;
+      --slate: #2c3e50; --border: #c8dada; --text: #1a1a1a;
+      --muted: #4a6060; --bg: #f6fafa; --white: #ffffff; --gold: #b8902a;
+    }
+    body { font-family: 'Raleway', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+    .institute-bar { background: var(--slate); color: rgba(255,255,255,0.75); padding: 0.4rem 2rem; font-size: 0.72rem; letter-spacing: 0.04em; }
+    .institute-bar-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+
+    header { background: var(--teal); color: var(--white); padding: 1.5rem 2rem; }
+    .header-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; gap: 1.25rem; }
+    .header-logo { width: 54px; height: 54px; background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-align: center; line-height: 1.2; flex-shrink: 0; }
+    .header-text .institute-name { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.65); }
+    .header-text .site-name { font-size: 1.1rem; font-weight: 700; }
+
+    nav { background: var(--teal-mid); border-bottom: 2px solid var(--gold); }
+    nav ul { max-width: 1080px; margin: 0 auto; padding: 0 2rem; list-style: none; display: flex; }
+    nav ul li a { display: block; padding: 0.6rem 1rem; color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.03em; }
+    nav ul li a:hover { color: white; background: rgba(255,255,255,0.1); }
+
+    .breadcrumb { background: var(--white); border-bottom: 1px solid var(--border); padding: 0.55rem 2rem; font-size: 0.78rem; color: var(--muted); }
+    .breadcrumb-inner { max-width: 1080px; margin: 0 auto; }
+    .breadcrumb a { color: var(--teal); text-decoration: none; }
+
+    .layout { max-width: 1080px; margin: 2rem auto; padding: 0 2rem; display: grid; grid-template-columns: 1fr 260px; gap: 2.5rem; align-items: start; }
+
+    .article-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem; }
+    h1 { font-size: 1.75rem; font-weight: 800; color: var(--teal); line-height: 1.25; margin-bottom: 0.75rem; }
+    .byline { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.4rem; }
+    .byline strong { color: var(--text); }
+    .article-info { font-size: 0.78rem; color: var(--muted); padding: 0.6rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; }
+
+    .intro-block { font-family: 'Crimson Text', serif; font-size: 1.1rem; color: var(--slate); line-height: 1.75; margin-bottom: 1.75rem; padding-bottom: 1.25rem; border-bottom: 2px solid var(--teal-light); }
+
+    h2 { font-size: 1.1rem; font-weight: 700; color: var(--teal); margin: 2rem 0 0.6rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    h2:first-of-type { border-top: none; padding-top: 0; }
+    h3 { font-size: 0.95rem; font-weight: 700; color: var(--slate); margin: 1.2rem 0 0.4rem; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem; }
+    p { font-size: 0.93rem; margin-bottom: 1rem; color: var(--text); }
+
+    .highlight-box { background: var(--teal-light); border-left: 4px solid var(--teal); padding: 1rem 1.25rem; margin: 1.25rem 0; border-radius: 0 4px 4px 0; }
+    .highlight-box p { margin-bottom: 0; font-size: 0.88rem; color: var(--teal); }
+
+    .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0; }
+    .stat-card { background: var(--white); border: 1px solid var(--border); border-top: 3px solid var(--teal); padding: 1rem; text-align: center; }
+    .stat-card .number { font-size: 2rem; font-weight: 800; color: var(--teal); line-height: 1; }
+    .stat-card .label { font-size: 0.78rem; color: var(--muted); margin-top: 0.25rem; line-height: 1.4; }
+
+    sup.ref { font-size: 0.7rem; color: var(--teal); font-weight: 700; }
+
+    .data-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.83rem; }
+    .data-table th { background: var(--teal); color: white; padding: 0.55rem 0.85rem; text-align: left; font-weight: 600; }
+    .data-table td { padding: 0.55rem 0.85rem; border-bottom: 1px solid var(--border); }
+    .data-table tr:nth-child(even) td { background: var(--teal-light); }
+
+    .references { margin-top: 2rem; padding-top: 1.5rem; border-top: 2px solid var(--border); }
+    .references h2 { color: var(--teal); border: none; padding: 0; margin-top: 0; }
+    .references ol { padding-left: 1.4rem; margin-top: 0.75rem; }
+    .references li { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.5rem; line-height: 1.55; }
+
+    /* Sidebar */
+    .sidebar-card { background: var(--white); border: 1px solid var(--border); padding: 1.1rem 1.25rem; margin-bottom: 1.25rem; }
+    .sidebar-card.teal { background: var(--teal-light); border-color: var(--border); }
+    .sidebar-card h4 { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--teal); margin-bottom: 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; }
+    .sidebar-card p, .sidebar-card li { font-size: 0.8rem; color: var(--muted); line-height: 1.55; margin-bottom: 0.35rem; }
+    .sidebar-card ul { list-style: none; padding: 0; }
+    .sidebar-card ul li { padding: 0.3rem 0; border-bottom: 1px solid var(--border); }
+    .sidebar-card ul li:last-child { border-bottom: none; }
+    .sidebar-card a { color: var(--teal); font-size: 0.8rem; text-decoration: none; }
+    .sidebar-card a:hover { text-decoration: underline; }
+
+    footer { background: var(--teal); color: rgba(255,255,255,0.65); padding: 2rem; font-size: 0.78rem; margin-top: 3rem; }
+    .footer-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
+    footer h5 { color: white; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.6rem; }
+    footer a { color: rgba(255,255,255,0.6); text-decoration: none; display: block; margin-bottom: 0.3rem; font-size: 0.78rem; }
+
+    @media (max-width: 768px) { .layout { grid-template-columns: 1fr; } .stat-grid { grid-template-columns: 1fr 1fr; } .footer-inner { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<div class="institute-bar">
+  <div class="institute-bar-inner">
+    <span>Wellcome Institute for the History of Medicine — Educational Resources</span>
+    <span>wellcomehistory.org.nz</span>
+  </div>
+</div>
+
+<header>
+  <div class="header-inner">
+    <div class="header-logo">WIHM</div>
+    <div class="header-text">
+      <div class="institute-name">Wellcome Institute for the History of Medicine</div>
+      <div class="site-name">Medical History Learning Resources</div>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Biographies</a></li>
+    <li><a href="#">Key Discoveries</a></li>
+    <li><a href="#">Timelines</a></li>
+    <li><a href="#">For Students</a></li>
+    <li><a href="#">For Teachers</a></li>
+    <li><a href="#">Archive</a></li>
+  </ul>
+</nav>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="#">Home</a> &rsaquo; <a href="#">Key Discoveries</a> &rsaquo; <a href="#">19th Century Surgery</a> &rsaquo; Joseph Lister
+  </div>
+</div>
+
+<div class="layout">
+  <article>
+    <div class="article-label">Biography &amp; Discovery</div>
+    <h1>Joseph Lister and the Development of Antiseptic Surgery</h1>
+    <div class="byline">By <strong>Dr. Andrew Farnsworth</strong>, Senior Research Fellow, Wellcome Institute for the History of Medicine</div>
+    <div class="article-info">
+      <span>Published: June 2019</span>
+      <span>Last reviewed: February 2025</span>
+      <span>Peer reviewed: Yes</span>
+      <span>Reading level: Secondary/Tertiary</span>
+    </div>
+
+    <div class="intro-block">
+      Before Joseph Lister transformed surgical practice in the 1860s, undergoing a major operation was nearly as likely to kill a patient as to save them — not from the surgery itself, but from the infections that followed. Lister's application of Louis Pasteur's germ theory to surgical wounds changed everything.
+    </div>
+
+    <h2>Surgery Before Lister</h2>
+    <p>In the mid-nineteenth century, post-operative infection — then collectively called "hospital gangrene," "erysipelas," or "septicaemia" depending on its presentation — was an expected consequence of surgery. Surgeons worked in unwashed clothing; instruments were wiped between patients but not sterilised; operating theatres were not disinfected. Speed was considered a surgical virtue partly because longer operations gave "bad air" more time to infect the wound.<sup class="ref">[1]</sup></p>
+    <p>Mortality rates for major amputations in the pre-Listerian era were commonly recorded at 40–50%. At some institutions during periods of outbreak, rates exceeded 80%. Surgery was genuinely a last resort.<sup class="ref">[2]</sup></p>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="number">~45%</div>
+        <div class="label">Average post-amputation mortality before Lister's antiseptic technique</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">~15%</div>
+        <div class="label">Post-amputation mortality in Lister's wards by 1870</div>
+      </div>
+    </div>
+
+    <h2>Lister and Germ Theory</h2>
+    <p>Joseph Lister was born in 1827 in Upton, Essex, to a prosperous Quaker family. His father, Joseph Jackson Lister, was an accomplished amateur scientist who made important improvements to the compound microscope. This exposure to scientific method shaped Lister profoundly.<sup class="ref">[3]</sup></p>
+    <p>After qualifying in medicine at University College London and becoming a Fellow of the Royal College of Surgeons in 1852, Lister eventually took up a post as Professor of Surgery at Glasgow University. It was here, in 1865, that he encountered the work of Louis Pasteur, who had demonstrated that fermentation and putrefaction were caused not by spontaneous chemical processes but by living microorganisms.<sup class="ref">[4]</sup></p>
+
+    <div class="highlight-box">
+      <p><strong>The key insight:</strong> If wound putrefaction (the rotting of surgical wounds) was caused by microorganisms in the same way that Pasteur had shown fermentation to be, then killing or excluding those microorganisms from wounds should prevent putrefaction — and therefore prevent the lethal infections that followed surgery.</p>
+    </div>
+
+    <h2>The Carbolic Acid Experiments</h2>
+    <p>Lister was aware that carbolic acid (phenol) was being used to treat sewage in Carlisle, England, with the result that fields treated with carbolic-treated sewage showed no signs of parasitic contamination. He reasoned it might work as an antiseptic for wounds.<sup class="ref">[5]</sup></p>
+    <p>In August 1865, Lister treated an eleven-year-old boy — James Greenlees — who had been admitted to Glasgow Royal Infirmary with a compound fracture of the leg. In compound fractures, bone protrudes through the skin, and infection was nearly universal. Lister cleaned the wound with carbolic acid and dressed it with lint soaked in carbolic. The wound healed without infection. The boy kept his leg.<sup class="ref">[6]</sup></p>
+    <p>Lister published his initial results in <em>The Lancet</em> in 1867 in a series of papers entitled "On the Antiseptic Principle in the Practice of Surgery." He reported eleven cases of compound fracture treated antiseptically, with just one death — and that from causes unrelated to infection.<sup class="ref">[7]</sup></p>
+
+    <h2>The Antiseptic Method</h2>
+    <p>Lister's technique evolved over time. The core principle was to prevent microorganisms from entering wounds, and to kill those already present:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>Element</th><th>Lister's Approach</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Wound cleaning</td><td>Carbolic acid solution applied to wound and surrounding tissue</td></tr>
+        <tr><td>Dressings</td><td>Lint soaked in carbolic acid; later a multilayer "antiseptic dressing"</td></tr>
+        <tr><td>Instruments</td><td>Carbolic acid used to clean instruments before and during surgery</td></tr>
+        <tr><td>Surgeon's hands</td><td>Washed in carbolic acid solution before operating</td></tr>
+        <tr><td>Carbolic spray (later abandoned)</td><td>Spraying the operating field with carbolic acid aerosol during surgery</td></tr>
+        <tr><td>Sutures</td><td>Developed carbolised catgut sutures that could be left inside wounds to dissolve</td></tr>
+      </tbody>
+    </table>
+
+    <p>Not all elements of Lister's method proved equally important. The carbolic spray, in particular, was eventually abandoned as unnecessarily cumbersome and potentially harmful. Later surgeons shifted from Lister's antiseptic approach (killing germs in the wound) to an aseptic approach (preventing germs from entering the operating field at all) — but the underlying principle remained Lister's.<sup class="ref">[8]</sup></p>
+
+    <h2>Reception and Adoption</h2>
+    <p>Lister's methods met initial resistance, particularly in Britain where some senior surgeons remained sceptical of germ theory. Adoption was faster in Germany and the United States, where Listerian techniques were embraced enthusiastically. By the 1880s, Lister's principles had spread throughout the surgical world. Post-operative infection rates and mortality fell dramatically wherever the methods were adopted.<sup class="ref">[9]</sup></p>
+    <p>Lister eventually received extensive recognition: he was appointed Surgeon-Extraordinary to Queen Victoria, created a baronet in 1883, and elevated to the peerage as Baron Lister of Lyme Regis in 1897. He was the first medical man to sit in the House of Lords. He died in 1912, widely regarded as one of the greatest surgeons in history.<sup class="ref">[3]</sup></p>
+
+    <h2>Lister, Semmelweis, and the Nature of Scientific Progress</h2>
+    <p>Lister's success where Semmelweis had failed is instructive. Both men demonstrated, through clinical data, that hygiene practices dramatically reduced surgical and obstetric mortality. But Lister had something Semmelweis lacked: a theoretical explanation. Pasteur's germ theory gave Lister's evidence a framework. Physicians could understand <em>why</em> the method worked, not just <em>that</em> it worked. This made acceptance far more tractable.<sup class="ref">[10]</sup></p>
+    <p>Lister was also a more effective communicator than Semmelweis — systematic in his publications, careful in his experimental method, and measured in responding to criticism. The contrast between the two men's fates illustrates that the social and rhetorical dimensions of science matter alongside the empirical ones.<sup class="ref">[10]</sup></p>
+
+    <div class="references">
+      <h2>References</h2>
+      <ol>
+        <li>Youngson AJ. <em>The Scientific Revolution in Victorian Medicine</em>. Croom Helm; 1979.</li>
+        <li>Gawande A. <em>The Checklist Manifesto</em>. Metropolitan Books; 2009. (Chapter on surgical mortality statistics.)</li>
+        <li>Fisher RB. <em>Joseph Lister 1827–1912</em>. Stein and Day; 1977.</li>
+        <li>Pasteur L. "Mémoire sur les corpuscles organisés qui existent dans l'atmosphère." <em>Annales des sciences naturelles</em>. 1861.</li>
+        <li>Lister J. "On the Antiseptic Principle in the Practice of Surgery." <em>The Lancet</em>. 1867;90(2299):353–356.</li>
+        <li>Worboys M. <em>Spreading Germs: Disease Theories and Medical Practice in Britain, 1865–1900</em>. Cambridge University Press; 2000.</li>
+        <li>Lister J. "On the effects of the antiseptic system of treatment upon the salubrity of a surgical hospital." <em>The Lancet</em>. 1870;95(2417):4–6.</li>
+        <li>Lawrence C, Dixey R. "Practising on principle: Joseph Lister and the germ theories of disease." In: Lawrence C (ed). <em>Medical Theory, Surgical Practice</em>. Routledge; 1992.</li>
+        <li>Tröhler U. "Lister and the introduction of antiseptics." <em>BMJ</em>. 2002;324(7334):359.</li>
+        <li>Nuland SB. <em>Doctors: The Biography of Medicine</em>. Knopf; 1988.</li>
+      </ol>
+    </div>
+  </article>
+
+  <aside>
+    <div class="sidebar-card teal">
+      <h4>Key Facts: Joseph Lister</h4>
+      <p><strong>Born:</strong> 5 April 1827, Upton, Essex</p>
+      <p><strong>Died:</strong> 10 February 1912, Walmer, Kent</p>
+      <p><strong>Trained at:</strong> University College London</p>
+      <p><strong>Key post:</strong> Professor of Surgery, Glasgow (1860–1869); Edinburgh (1869–1877)</p>
+      <p><strong>Key publication:</strong> The Lancet, 1867</p>
+      <p><strong>Honours:</strong> Baron Lister; President, Royal Society</p>
+    </div>
+    <div class="sidebar-card">
+      <h4>Connections</h4>
+      <ul>
+        <li><a href="#">Louis Pasteur and Germ Theory</a></li>
+        <li><a href="#">Semmelweis and Handwashing</a></li>
+        <li><a href="#">Florence Nightingale and Hospital Reform</a></li>
+        <li><a href="#">History of the Operating Theatre</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h4>External Links</h4>
+      <ul>
+        <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1633463/" target="_blank">BMJ: Lister and antiseptics</a></li>
+        <li><a href="https://www.rcseng.ac.uk/about-the-rcs/history/" target="_blank">Royal College of Surgeons: History</a></li>
+        <li><a href="https://wellcomecollection.org" target="_blank">Wellcome Collection</a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h5>Wellcome Institute for the History of Medicine</h5>
+      <p style="font-size:0.78rem;line-height:1.6;">Providing peer-reviewed educational resources on the history of medicine for students, teachers, and researchers in New Zealand and the Pacific.</p>
+    </div>
+    <div>
+      <h5>Topics</h5>
+      <a href="#">Biographies</a>
+      <a href="#">Key Discoveries</a>
+      <a href="#">Timelines</a>
+      <a href="#">Diseases</a>
+    </div>
+    <div>
+      <h5>Resources</h5>
+      <a href="#">For Teachers</a>
+      <a href="#">For Students</a>
+      <a href="#">Cite This</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

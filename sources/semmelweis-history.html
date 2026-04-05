@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ignaz Semmelweis and the Origins of Infection Control — Encyclopaedia of Medical History</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --brown: #4a3728; --brown-mid: #6b4f38; --tan: #c9aa7c; --tan-light: #f5f0e8;
+      --border: #d4c8b4; --text: #1e1a16; --muted: #6b5f52; --bg: #fdfbf7; --white: #ffffff;
+    }
+    body { font-family: 'Merriweather', serif; background: var(--bg); color: var(--text); line-height: 1.8; font-size: 0.95rem; }
+
+    .top-bar { background: var(--brown); color: rgba(255,255,255,0.7); padding: 0.4rem 1.5rem; font-family: 'Open Sans', sans-serif; font-size: 0.72rem; }
+    .top-bar-inner { max-width: 1040px; margin: 0 auto; display: flex; justify-content: space-between; }
+
+    header { background: var(--tan-light); border-bottom: 3px solid var(--tan); padding: 1.25rem 1.5rem; }
+    .header-inner { max-width: 1040px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .logo-area { display: flex; flex-direction: column; }
+    .logo-area .series { font-family: 'Open Sans', sans-serif; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    .logo-area .title { font-size: 1.15rem; font-weight: 700; color: var(--brown); letter-spacing: 0.01em; }
+    .logo-area .subtitle { font-family: 'Open Sans', sans-serif; font-size: 0.75rem; color: var(--muted); }
+
+    nav { background: var(--brown); }
+    nav ul { max-width: 1040px; margin: 0 auto; padding: 0 1.5rem; list-style: none; display: flex; }
+    nav ul li a { display: block; padding: 0.6rem 0.9rem; color: rgba(255,255,255,0.75); text-decoration: none; font-family: 'Open Sans', sans-serif; font-size: 0.79rem; }
+    nav ul li a:hover { color: white; background: rgba(255,255,255,0.1); }
+
+    .layout { max-width: 1040px; margin: 2rem auto; padding: 0 1.5rem; display: grid; grid-template-columns: 1fr 250px; gap: 2.5rem; align-items: start; }
+
+    .entry-title { font-size: 1.7rem; font-weight: 700; color: var(--brown); margin-bottom: 0.5rem; line-height: 1.25; }
+    .entry-subtitle { font-family: 'Open Sans', sans-serif; font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; font-style: italic; }
+    .entry-meta { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; font-family: 'Open Sans', sans-serif; font-size: 0.78rem; color: var(--muted); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 0.6rem 0; margin-bottom: 1.5rem; }
+    .entry-meta strong { color: var(--brown-mid); }
+
+    .summary-box { background: var(--tan-light); border: 1px solid var(--border); padding: 1rem 1.25rem; margin-bottom: 1.75rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1.5rem; }
+    .summary-box .summary-item { font-family: 'Open Sans', sans-serif; font-size: 0.8rem; }
+    .summary-box .label { color: var(--muted); display: block; }
+    .summary-box .value { font-weight: 600; color: var(--brown); }
+
+    h2 { font-size: 1.1rem; font-weight: 700; color: var(--brown); margin: 2rem 0 0.6rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    h2:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+    h3 { font-size: 0.95rem; font-weight: 700; color: var(--brown-mid); margin: 1.2rem 0 0.4rem; font-style: italic; }
+    p { margin-bottom: 1rem; }
+    em { font-style: italic; }
+    sup.ref { font-family: 'Open Sans', sans-serif; font-size: 0.7rem; color: var(--brown-mid); font-weight: 700; }
+
+    .pull-quote { border-left: 4px solid var(--tan); padding: 0.75rem 1.25rem; margin: 1.5rem 0; background: var(--tan-light); }
+    .pull-quote p { font-style: italic; color: var(--brown); margin-bottom: 0.25rem; }
+    .pull-quote .attribution { font-family: 'Open Sans', sans-serif; font-size: 0.78rem; color: var(--muted); font-style: normal; }
+
+    .timeline { margin: 1.25rem 0; border-left: 3px solid var(--tan); padding-left: 1.25rem; }
+    .timeline-item { margin-bottom: 1rem; position: relative; }
+    .timeline-item::before { content: ''; width: 10px; height: 10px; background: var(--tan); border-radius: 50%; position: absolute; left: -1.6rem; top: 0.3rem; }
+    .timeline-item .year { font-family: 'Open Sans', sans-serif; font-weight: 700; font-size: 0.82rem; color: var(--brown); }
+    .timeline-item p { font-size: 0.88rem; margin-bottom: 0; }
+
+    .data-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-family: 'Open Sans', sans-serif; font-size: 0.82rem; }
+    .data-table th { background: var(--brown); color: white; padding: 0.55rem 0.85rem; text-align: left; }
+    .data-table td { padding: 0.55rem 0.85rem; border-bottom: 1px solid var(--border); }
+    .data-table tr:nth-child(even) td { background: var(--tan-light); }
+    .data-table caption { font-size: 0.78rem; color: var(--muted); text-align: left; padding: 0.4rem 0; caption-side: bottom; }
+
+    .references { margin-top: 2rem; padding-top: 1.5rem; border-top: 2px solid var(--border); }
+    .references h2 { border: none; padding-top: 0; margin-top: 0; }
+    .references ol { padding-left: 1.4rem; }
+    .references li { font-family: 'Open Sans', sans-serif; font-size: 0.78rem; color: var(--muted); margin-bottom: 0.5rem; line-height: 1.55; }
+
+    /* Sidebar */
+    .infobox { background: var(--tan-light); border: 1px solid var(--border); padding: 1rem 1.1rem; margin-bottom: 1.25rem; }
+    .infobox h4 { font-family: 'Open Sans', sans-serif; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--brown); margin-bottom: 0.7rem; border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; }
+    .infobox .info-row { display: flex; gap: 0.5rem; padding: 0.3rem 0; border-bottom: 1px solid var(--border); }
+    .infobox .info-row:last-child { border-bottom: none; }
+    .infobox .info-label { font-family: 'Open Sans', sans-serif; font-size: 0.75rem; color: var(--muted); min-width: 85px; }
+    .infobox .info-value { font-family: 'Open Sans', sans-serif; font-size: 0.75rem; color: var(--text); font-weight: 600; }
+    .sidebar-links { background: var(--white); border: 1px solid var(--border); padding: 1rem 1.1rem; margin-bottom: 1.25rem; }
+    .sidebar-links h4 { font-family: 'Open Sans', sans-serif; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--brown); margin-bottom: 0.7rem; }
+    .sidebar-links ul { list-style: none; padding: 0; }
+    .sidebar-links li { padding: 0.3rem 0; border-bottom: 1px solid var(--border); }
+    .sidebar-links li:last-child { border-bottom: none; }
+    .sidebar-links a { font-family: 'Open Sans', sans-serif; font-size: 0.8rem; color: var(--brown-mid); text-decoration: none; }
+    .sidebar-links a:hover { text-decoration: underline; }
+
+    footer { background: var(--brown); color: rgba(255,255,255,0.6); text-align: center; padding: 1.25rem; font-family: 'Open Sans', sans-serif; font-size: 0.76rem; margin-top: 3rem; }
+
+    @media (max-width: 768px) { .layout { grid-template-columns: 1fr; } .summary-box { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <span>Encyclopaedia of Medical History — Online Edition</span>
+    <span>encyclopaediamedicalhistory.org</span>
+  </div>
+</div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-area">
+      <span class="series">Reference Work</span>
+      <span class="title">Encyclopaedia of Medical History</span>
+      <span class="subtitle">Scholarly reference for the history of medicine and health sciences</span>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">A–Z Index</a></li>
+    <li><a href="#">Biographies</a></li>
+    <li><a href="#">Diseases &amp; Conditions</a></li>
+    <li><a href="#">Institutions</a></li>
+    <li><a href="#">Timelines</a></li>
+    <li><a href="#">Cite This</a></li>
+  </ul>
+</nav>
+
+<div class="layout">
+  <article>
+    <h1 class="entry-title">Ignaz Semmelweis and the Origins of Infection Control</h1>
+    <p class="entry-subtitle">How a Hungarian physician demonstrated the role of hand hygiene in preventing hospital-acquired infection — and was rejected by the medical establishment of his time</p>
+    <div class="entry-meta">
+      <span><strong>Author:</strong> Professor Sarah Kimura, History of Medicine, University of Auckland</span>
+      <span><strong>First published:</strong> 2018</span>
+      <span><strong>Last revised:</strong> March 2024</span>
+      <span><strong>Peer reviewed:</strong> Yes</span>
+    </div>
+
+    <div class="summary-box">
+      <div class="summary-item"><span class="label">Born</span><span class="value">1 July 1818, Buda, Hungary</span></div>
+      <div class="summary-item"><span class="label">Died</span><span class="value">13 August 1865, Vienna (aged 47)</span></div>
+      <div class="summary-item"><span class="label">Field</span><span class="value">Obstetrics; Hospital hygiene</span></div>
+      <div class="summary-item"><span class="label">Institution</span><span class="value">Vienna General Hospital; St. Rochus Hospital, Budapest</span></div>
+      <div class="summary-item"><span class="label">Key contribution</span><span class="value">Demonstrated handwashing reduced puerperal fever mortality</span></div>
+      <div class="summary-item"><span class="label">Recognition</span><span class="value">Largely posthumous; now regarded as a founder of infection control</span></div>
+    </div>
+
+    <h2>Background: Puerperal Fever and Hospital Medicine</h2>
+    <p>In the mid-nineteenth century, puerperal fever — also called childbed fever — was a leading cause of maternal death in European hospitals. Women who gave birth in hospital were dying at rates that terrified the public and baffled physicians. In some wards, mortality rates exceeded 10–15% in bad months.<sup class="ref">[1]</sup></p>
+    <p>The prevailing medical theories attributed the disease to "miasmas" (bad air), constitutional weakness in the patient, or the effects of shame and fear. No effective treatment was known. The deaths were widely regarded as an unfortunate inevitability of hospital-based childbirth.<sup class="ref">[2]</sup></p>
+
+    <h2>Semmelweis's Investigation at Vienna General Hospital</h2>
+    <p>In 1846, Ignaz Semmelweis was appointed as an assistant at the First Obstetric Clinic of Vienna General Hospital. The hospital had two maternity wards, and Semmelweis noticed something puzzling: the mortality rate in the First Clinic — staffed by medical students and doctors — was consistently two to three times higher than in the Second Clinic, which was staffed by midwives.<sup class="ref">[3]</sup></p>
+    <p>The difference was so striking that women admitted to the hospital would beg to be assigned to the Second Clinic. Some preferred to give birth on the street and be admitted after delivery rather than enter the First Clinic.<sup class="ref">[4]</sup></p>
+
+    <h3>The Death of Jakob Kolletschka</h3>
+    <p>In 1847, Semmelweis's colleague and friend Jakob Kolletschka died after being accidentally cut with a scalpel during a post-mortem examination. The symptoms of his subsequent illness were strikingly similar to those of puerperal fever. Semmelweis drew the inference: cadaverous particles transmitted on the hands of medical students and doctors — who moved from performing autopsies directly to delivering babies — were causing the deaths of maternity patients.<sup class="ref">[5]</sup></p>
+
+    <h2>The Intervention: Chlorinated Lime Handwashing</h2>
+    <p>Semmelweis introduced a policy requiring all students and doctors to wash their hands with a chlorinated lime solution (calcium hypochlorite) before examining patients. The results were remarkable:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>Year</th><th>First Clinic Mortality Rate</th><th>Second Clinic Mortality Rate</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1841</td><td>7.7%</td><td>3.8%</td></tr>
+        <tr><td>1842</td><td>15.8%</td><td>7.5%</td></tr>
+        <tr><td>1843</td><td>9.0%</td><td>5.9%</td></tr>
+        <tr><td>1844</td><td>8.2%</td><td>2.3%</td></tr>
+        <tr><td>1845</td><td>6.8%</td><td>2.0%</td></tr>
+        <tr><td>1846</td><td>11.4%</td><td>2.7%</td></tr>
+        <tr><td>1847 (handwashing introduced May)</td><td>3.8%</td><td>1.3%</td></tr>
+        <tr><td>1848</td><td>1.3%</td><td>1.3%</td></tr>
+      </tbody>
+      <caption>Source: Semmelweis I. <em>Etiology, Concept and Prophylaxis of Childbed Fever</em>. 1861. Data reproduced from Nuland (2003).</caption>
+    </table>
+
+    <p>Within months of introducing the handwashing requirement, mortality in the First Clinic fell to match — and then equal — the Second Clinic's rate.<sup class="ref">[3]</sup></p>
+
+    <h2>Reception and Rejection</h2>
+    <p>Despite compelling statistical evidence, Semmelweis's findings were largely rejected by the medical establishment. Several factors contributed to this resistance.</p>
+
+    <h3>Theoretical Framework</h3>
+    <p>Semmelweis could not explain <em>why</em> handwashing worked. Germ theory — the understanding that specific microorganisms cause specific diseases — was not yet established. Without a theoretical mechanism, many physicians found the evidence difficult to accept. Science does not always move forward from data alone; evidence must also fit within a theoretical framework that allows it to be understood.<sup class="ref">[6]</sup></p>
+
+    <h3>Professional Identity and Resistance</h3>
+    <p>Semmelweis's hypothesis implied that physicians were themselves responsible for their patients' deaths — that the doctors' unclean hands were killing the women in their care. This was profoundly threatening to medical identity and professional pride. Several senior physicians explicitly rejected the hypothesis on these grounds.<sup class="ref">[7]</sup></p>
+
+    <h3>Semmelweis's Communication Style</h3>
+    <p>Historians note that Semmelweis was a poor advocate for his own ideas. He delayed publishing his main work, <em>Die Ätiologie, der Begriff und die Prophylaxis des Kindbettfiebers</em> (<em>Etiology, Concept and Prophylaxis of Childbed Fever</em>), until 1861 — fourteen years after his initial discovery. The work was prolix and disorganised. When critics responded, Semmelweis's replies became increasingly vitriolic. His mental and physical health deteriorated in his final years.<sup class="ref">[8]</sup></p>
+
+    <div class="pull-quote">
+      <p>"I must frankly admit that God only knows the number of patients who went prematurely to their graves because of me."</p>
+      <div class="attribution">— Ignaz Semmelweis, <em>Etiology, Concept and Prophylaxis of Childbed Fever</em>, 1861</div>
+    </div>
+
+    <h2>Death and Legacy</h2>
+    <p>In July 1865, Semmelweis was committed to the Döbling mental asylum in Vienna by colleagues. He died there on 13 August 1865, at age 47. The cause of death is debated; some accounts suggest he died of septicaemia — an infection of the blood — potentially caused by a wound sustained during or shortly before his admission. The bitter irony has not been lost on historians.<sup class="ref">[8]</sup></p>
+    <p>Within years of his death, Louis Pasteur's germ theory and Joseph Lister's antiseptic surgical techniques provided the theoretical framework Semmelweis had lacked. The medical world accepted what his data had shown. Today Semmelweis is recognised as a foundational figure in hospital hygiene and infection control. His story is frequently cited as a case study in how scientific progress can be delayed by social, professional, and theoretical resistance.<sup class="ref">[9]</sup></p>
+
+    <h2>Significance for the History and Philosophy of Science</h2>
+    <p>The Semmelweis case has become central to discussions in the philosophy of science and science studies. It illustrates that empirical evidence alone is rarely sufficient for scientific acceptance — evidence must be accompanied by a coherent explanatory theory, and must survive the social processes of peer review, debate, and institutional endorsement.<sup class="ref">[10]</sup></p>
+    <p>The term "Semmelweis reflex" has entered the scientific and sociological lexicon to describe the tendency to reject new evidence or knowledge because it contradicts established norms, beliefs, or paradigms. This concept must, however, be applied carefully: not all resistance to new ideas reflects bias — sometimes evidence genuinely is weak, and scepticism is appropriate.<sup class="ref">[10]</sup></p>
+
+    <div class="references">
+      <h2>References and Further Reading</h2>
+      <ol>
+        <li>Loudon I. "Puerperal fever, the streptococcus, and the sulphonamides, 1911–1945." <em>BMJ</em>. 1987;295(6598):485–490.</li>
+        <li>Porter R. <em>The Greatest Benefit to Mankind: A Medical History of Humanity</em>. HarperCollins; 1997.</li>
+        <li>Nuland SB. <em>The Doctors' Plague: Germs, Childbed Fever, and the Strange Story of Ignac Semmelweis</em>. W.W. Norton; 2003.</li>
+        <li>Carter KC, Carter BR. <em>Childbed Fever: A Scientific Biography of Ignaz Semmelweis</em>. Transaction Publishers; 2005.</li>
+        <li>Hanninen O, Farago M, Monos E. "Ignaz Philipp Semmelweis, the prophet of bacteriology." <em>Infect Control</em>. 1983;4(5):367–370.</li>
+        <li>Kuhn TS. <em>The Structure of Scientific Revolutions</em>. 3rd ed. University of Chicago Press; 1996.</li>
+        <li>Wyklicky H, Skopec M. "Ignaz Philipp Semmelweis, the prophet of bacteriology." <em>Infect Control</em>. 1983;4(5):367–370.</li>
+        <li>Semmelweis I. <em>Etiology, Concept and Prophylaxis of Childbed Fever</em> (trans. Carter KC). University of Wisconsin Press; 1983 [1861].</li>
+        <li>Sherwood L. "The legacy of Semmelweis." <em>J Infect Dis</em>. 2002;185(6):883–885.</li>
+        <li>Dolev E. "Semmelweis and his 'Germ Theory' of disease." <em>Israel J Med Sci</em>. 1984;20(9):767–769.</li>
+      </ol>
+    </div>
+  </article>
+
+  <aside>
+    <div class="infobox">
+      <h4>Quick Facts</h4>
+      <div class="info-row"><span class="info-label">Born</span><span class="info-value">1 July 1818</span></div>
+      <div class="info-row"><span class="info-label">Died</span><span class="info-value">13 August 1865</span></div>
+      <div class="info-row"><span class="info-label">Nationality</span><span class="info-value">Hungarian-Austrian</span></div>
+      <div class="info-row"><span class="info-label">Occupation</span><span class="info-value">Physician, obstetrician</span></div>
+      <div class="info-row"><span class="info-label">Key work</span><span class="info-value">Etiology... of Childbed Fever (1861)</span></div>
+      <div class="info-row"><span class="info-label">Known for</span><span class="info-value">Hand hygiene in hospital settings</span></div>
+    </div>
+
+    <div class="infobox">
+      <h4>Key Dates</h4>
+      <div class="info-row"><span class="info-label">1818</span><span class="info-value">Born in Buda, Hungary</span></div>
+      <div class="info-row"><span class="info-label">1844</span><span class="info-value">MD, University of Vienna</span></div>
+      <div class="info-row"><span class="info-label">1846</span><span class="info-value">Appointed First Obstetric Clinic</span></div>
+      <div class="info-row"><span class="info-label">1847</span><span class="info-value">Introduces handwashing protocol</span></div>
+      <div class="info-row"><span class="info-label">1861</span><span class="info-value">Publishes Etiology...</span></div>
+      <div class="info-row"><span class="info-label">1865</span><span class="info-value">Death; Lister introduces antisepsis</span></div>
+    </div>
+
+    <div class="sidebar-links">
+      <h4>Related Articles</h4>
+      <ul>
+        <li><a href="#">Germ Theory of Disease</a></li>
+        <li><a href="#">Joseph Lister and Antiseptic Surgery</a></li>
+        <li><a href="#">Louis Pasteur: Life and Work</a></li>
+        <li><a href="#">History of Hospital Hygiene</a></li>
+        <li><a href="#">Puerperal Fever</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-links">
+      <h4>External Resources</h4>
+      <ul>
+        <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1200720/" target="_blank">NIH: Semmelweis and bacteriology</a></li>
+        <li><a href="https://www.who.int/gpsc/tools/faqs/evidence_hand_hygiene/en/" target="_blank">WHO: Hand Hygiene Evidence</a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  &copy; 2024 Encyclopaedia of Medical History. Scholarly reference content. All entries peer reviewed. For educational use.
+</footer>
+
+</body>
+</html>

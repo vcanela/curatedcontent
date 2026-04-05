@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understanding Clinical Trials: Design, Evidence, and Interpretation — Centre for Evidence-Based Medicine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Slab:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #1a4f8a; --blue-mid: #2563aa; --blue-light: #eaf1fb;
+      --green: #1a6b3c; --green-light: #e8f5ee;
+      --border: #cdd8e8; --text: #111827; --muted: #4b5875;
+      --bg: #f0f4fa; --white: #ffffff; --orange: #c85a0a;
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; font-size: 0.95rem; }
+
+    .top-strip { background: var(--blue); color: rgba(255,255,255,0.8); padding: 0.35rem 2rem; font-size: 0.7rem; letter-spacing: 0.04em; }
+    .top-strip-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; }
+
+    header { background: var(--white); border-bottom: 3px solid var(--blue); box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+    .header-inner { max-width: 1100px; margin: 0 auto; padding: 0.85rem 2rem; display: flex; align-items: center; gap: 1rem; }
+    .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: inherit; }
+    .logo-mark { background: var(--blue); color: white; width: 42px; height: 42px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.04em; text-align: center; line-height: 1.2; flex-shrink: 0; }
+    .logo-text .org { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); display: block; }
+    .logo-text .name { font-size: 1rem; font-weight: 700; color: var(--blue); }
+
+    nav { background: var(--blue-mid); }
+    nav ul { max-width: 1100px; margin: 0 auto; padding: 0 2rem; list-style: none; display: flex; }
+    nav a { display: block; padding: 0.6rem 1rem; color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.79rem; font-weight: 500; }
+    nav a:hover { color: white; background: rgba(255,255,255,0.12); }
+
+    .layout { max-width: 1100px; margin: 2rem auto; padding: 0 2rem; display: grid; grid-template-columns: 1fr 270px; gap: 2.5rem; align-items: start; }
+
+    .doc-type { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.4rem; }
+    h1 { font-family: 'Roboto Slab', serif; font-size: 1.6rem; font-weight: 700; color: var(--blue); line-height: 1.3; margin-bottom: 0.75rem; }
+    .doc-meta { font-size: 0.78rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 0.35rem 1.25rem; padding: 0.6rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 1.5rem; }
+    .doc-meta strong { color: var(--text); }
+
+    .key-messages { background: var(--blue-light); border: 1px solid #b8cce8; border-radius: 4px; padding: 1.25rem 1.5rem; margin-bottom: 1.75rem; }
+    .key-messages h3 { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--blue); margin-bottom: 0.75rem; }
+    .key-messages ul { padding-left: 1.25rem; }
+    .key-messages li { font-size: 0.88rem; color: #1a3060; margin-bottom: 0.4rem; line-height: 1.55; }
+
+    h2 { font-family: 'Roboto Slab', serif; font-size: 1.1rem; font-weight: 700; color: var(--blue); margin: 2rem 0 0.65rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    h2:first-of-type { border-top: none; padding-top: 0; }
+    h3 { font-size: 0.9rem; font-weight: 600; color: var(--text); margin: 1.2rem 0 0.4rem; }
+    p { margin-bottom: 1rem; }
+    sup.ref { font-size: 0.68rem; color: var(--blue); font-weight: 600; }
+
+    .phase-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin: 1.25rem 0; }
+    .phase-card { background: var(--white); border: 1px solid var(--border); border-top: 3px solid var(--blue-mid); padding: 0.85rem; }
+    .phase-card .phase-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: 0.3rem; }
+    .phase-card .phase-name { font-size: 0.82rem; font-weight: 600; margin-bottom: 0.35rem; }
+    .phase-card p { font-size: 0.78rem; color: var(--muted); margin-bottom: 0; line-height: 1.5; }
+
+    .evidence-pyramid { background: var(--white); border: 1px solid var(--border); padding: 1.25rem 1.5rem; margin: 1.25rem 0; }
+    .evidence-pyramid h3 { margin-top: 0; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue); margin-bottom: 0.75rem; }
+    .pyramid-row { display: flex; align-items: center; gap: 1rem; padding: 0.45rem 0; border-bottom: 1px solid var(--border); }
+    .pyramid-row:last-child { border-bottom: none; }
+    .pyramid-rank { width: 28px; height: 28px; border-radius: 50%; background: var(--blue); color: white; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+    .pyramid-rank.low { background: #aab; }
+    .pyramid-rank.mid { background: #669; }
+    .pyramid-text .type { font-size: 0.85rem; font-weight: 600; }
+    .pyramid-text .desc { font-size: 0.77rem; color: var(--muted); }
+
+    .warning-box { background: #fff8e8; border: 1px solid #e8c870; border-left: 4px solid var(--orange); padding: 1rem 1.25rem; margin: 1.25rem 0; border-radius: 0 4px 4px 0; }
+    .warning-box h3 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--orange); margin-bottom: 0.5rem; }
+    .warning-box p { font-size: 0.85rem; color: #5a3a0a; margin-bottom: 0; }
+
+    .data-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.82rem; }
+    .data-table th { background: var(--blue); color: white; padding: 0.55rem 0.85rem; text-align: left; font-weight: 600; }
+    .data-table td { padding: 0.55rem 0.85rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .data-table tr:nth-child(even) td { background: var(--blue-light); }
+    .yes { color: var(--green); font-weight: 600; } .no { color: #a83232; font-weight: 600; }
+
+    .references { margin-top: 2rem; padding-top: 1.5rem; border-top: 2px solid var(--border); }
+    .references h2 { border: none; padding: 0; margin-top: 0; }
+    .references ol { padding-left: 1.4rem; margin-top: 0.75rem; }
+    .references li { font-size: 0.78rem; color: var(--muted); margin-bottom: 0.5rem; line-height: 1.55; }
+
+    /* Sidebar */
+    .sidebar-card { background: var(--white); border: 1px solid var(--border); padding: 1.1rem 1.25rem; margin-bottom: 1.25rem; border-radius: 4px; }
+    .sidebar-card h4 { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--blue); margin-bottom: 0.7rem; border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; }
+    .sidebar-card p, .sidebar-card li { font-size: 0.8rem; color: var(--muted); line-height: 1.55; margin-bottom: 0.35rem; }
+    .sidebar-card ul { list-style: none; padding: 0; }
+    .sidebar-card ul li { padding: 0.3rem 0; border-bottom: 1px solid var(--border); }
+    .sidebar-card ul li:last-child { border-bottom: none; }
+    .sidebar-card a { color: var(--blue); font-size: 0.8rem; text-decoration: none; }
+    .sidebar-card a:hover { text-decoration: underline; }
+
+    footer { background: var(--blue); color: rgba(255,255,255,0.65); padding: 1.5rem 2rem; font-size: 0.77rem; margin-top: 3rem; text-align: center; }
+
+    @media (max-width: 768px) { .layout { grid-template-columns: 1fr; } .phase-grid { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+
+<div class="top-strip">
+  <div class="top-strip-inner">
+    <span>Centre for Evidence-Based Medicine — New Zealand</span>
+    <span>cebm.org.nz</span>
+  </div>
+</div>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#">
+      <div class="logo-mark">CEBM<br>NZ</div>
+      <div class="logo-text">
+        <span class="org">New Zealand</span>
+        <span class="name">Centre for Evidence-Based Medicine</span>
+      </div>
+    </a>
+  </div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About EBM</a></li>
+    <li><a href="#">Clinical Trials</a></li>
+    <li><a href="#">Systematic Reviews</a></li>
+    <li><a href="#">Statistics Explained</a></li>
+    <li><a href="#">For Students</a></li>
+    <li><a href="#">Glossary</a></li>
+  </ul>
+</nav>
+
+<div class="layout">
+  <article>
+    <div class="doc-type">Educational Overview &mdash; Evidence-Based Medicine</div>
+    <h1>Understanding Clinical Trials: Design, Evidence, and Interpretation</h1>
+    <div class="doc-meta">
+      <span><strong>Authors:</strong> Dr. Priya Menon <em>PhD (Epidemiology, Auckland)</em>; Dr. Tom Callister <em>MB ChB, MBioeth</em></span>
+      <span><strong>Affiliation:</strong> Centre for Evidence-Based Medicine, University of Otago</span>
+      <span><strong>Published:</strong> September 2023</span>
+      <span><strong>Last reviewed:</strong> January 2025</span>
+      <span><strong>Peer reviewed:</strong> Yes</span>
+    </div>
+
+    <div class="key-messages">
+      <h3>Key Messages</h3>
+      <ul>
+        <li>Clinical trials are the primary method for determining whether medical treatments are safe and effective.</li>
+        <li>Randomisation, blinding, and control groups are essential features that reduce bias in trial results.</li>
+        <li>A single study — no matter how well designed — is rarely definitive. Systematic reviews and meta-analyses combine evidence from multiple trials.</li>
+        <li>Understanding study design helps you evaluate health claims critically and identify misleading uses of research.</li>
+        <li>Phrases like "studies show" and "scientists say" can conceal enormous variation in evidence quality.</li>
+      </ul>
+    </div>
+
+    <h2>What Is a Clinical Trial?</h2>
+    <p>A clinical trial is a research study conducted in human participants to evaluate a medical intervention — a drug, vaccine, surgical procedure, device, or behavioural approach. The fundamental question a clinical trial asks is: does this intervention work, and is it safe?<sup class="ref">[1]</sup></p>
+    <p>Before a treatment reaches clinical trials, it typically undergoes years of laboratory and animal research. Even so, many treatments that appear promising in pre-clinical research fail in human trials. This is not a flaw in the system — it is the system working as intended, filtering out interventions that are ineffective or harmful before they are widely used.<sup class="ref">[2]</sup></p>
+
+    <h2>The Phases of a Clinical Trial</h2>
+    <p>In most regulatory frameworks, clinical trials proceed through four phases, each designed to answer different questions:</p>
+
+    <div class="phase-grid">
+      <div class="phase-card">
+        <div class="phase-label">Phase I</div>
+        <div class="phase-name">Safety</div>
+        <p>Small groups (20–100 people). Tests safety and dosing. Identifies side effects. Usually in healthy volunteers.</p>
+      </div>
+      <div class="phase-card">
+        <div class="phase-label">Phase II</div>
+        <div class="phase-name">Efficacy &amp; Safety</div>
+        <p>Larger groups (100–300). Tests whether the treatment works and continues safety monitoring in patients with the condition.</p>
+      </div>
+      <div class="phase-card">
+        <div class="phase-label">Phase III</div>
+        <div class="phase-name">Confirmation</div>
+        <p>Large-scale (300–3,000+). Compares to standard treatment or placebo. Provides the main evidence base for regulatory approval.</p>
+      </div>
+      <div class="phase-card">
+        <div class="phase-label">Phase IV</div>
+        <div class="phase-name">Post-Market</div>
+        <p>After approval. Ongoing monitoring of long-term safety and effectiveness in real-world populations.</p>
+      </div>
+    </div>
+
+    <h2>Key Design Features That Reduce Bias</h2>
+    <h3>Randomisation</h3>
+    <p>In a randomised controlled trial (RCT), participants are randomly assigned to either the treatment group or the control group. This means any differences between groups at the start of the trial are due to chance rather than systematic selection — reducing confounding, where characteristics of participants (age, severity of illness, lifestyle) could otherwise distort the results.<sup class="ref">[3]</sup></p>
+
+    <h3>Control Groups</h3>
+    <p>A control group receives either a placebo (a treatment with no active ingredients) or, where it would be unethical to withhold treatment, the current best available treatment. The control group provides a comparison point: without it, we cannot know whether any improvement in the treatment group is due to the intervention, or simply to time, the placebo effect, or other factors.<sup class="ref">[4]</sup></p>
+
+    <h3>Blinding</h3>
+    <p>Blinding prevents knowledge of treatment assignment from influencing outcomes or measurements. In a single-blind trial, participants do not know which group they are in. In a double-blind trial — generally considered the gold standard — neither participants nor the researchers assessing outcomes know who received the treatment. This prevents both the placebo effect in participants and unconscious bias in assessment by researchers.<sup class="ref">[5]</sup></p>
+
+    <h3>Statistical Significance and P-Values</h3>
+    <p>Results are typically assessed using a p-value — a measure of the probability that the observed result could have occurred by chance if there were actually no difference between groups. By convention, a p-value below 0.05 is considered "statistically significant," meaning there is less than a 5% probability the result is due to chance. However, statistical significance does not mean clinical significance — a result can be statistically significant but too small to matter in practice.<sup class="ref">[6]</sup></p>
+
+    <div class="warning-box">
+      <h3>Common Misreading of Evidence</h3>
+      <p>A single statistically significant result in a small study does not confirm that a treatment works. Many findings fail to replicate. Headlines like "Scientists discover X cures Y" frequently misrepresent preliminary findings. Before drawing conclusions, ask: How large was the study? Was it randomised and blinded? Has it been replicated by independent researchers?</p>
+    </div>
+
+    <h2>The Evidence Hierarchy</h2>
+    <p>Not all study designs provide equally reliable evidence. The evidence hierarchy ranks study types by their resistance to bias:</p>
+
+    <div class="evidence-pyramid">
+      <h3>Evidence Hierarchy (strongest to weakest)</h3>
+      <div class="pyramid-row"><div class="pyramid-rank">1</div><div class="pyramid-text"><div class="type">Systematic reviews &amp; meta-analyses</div><div class="desc">Combine results from multiple high-quality RCTs; most robust</div></div></div>
+      <div class="pyramid-row"><div class="pyramid-rank">2</div><div class="pyramid-text"><div class="type">Randomised controlled trials (RCTs)</div><div class="desc">Well-designed individual trials; controlled for bias</div></div></div>
+      <div class="pyramid-row"><div class="pyramid-rank">3</div><div class="pyramid-text"><div class="type">Cohort studies</div><div class="desc">Follow groups over time; observational, not experimental</div></div></div>
+      <div class="pyramid-row"><div class="pyramid-rank" style="background:#669">4</div><div class="pyramid-text"><div class="type">Case-control studies</div><div class="desc">Compare people with and without a condition retrospectively</div></div></div>
+      <div class="pyramid-row"><div class="pyramid-rank low">5</div><div class="pyramid-text"><div class="type">Case reports / anecdotes</div><div class="desc">Individual accounts; cannot establish causation</div></div></div>
+      <div class="pyramid-row"><div class="pyramid-rank low">6</div><div class="pyramid-text"><div class="type">Expert opinion / editorial</div><div class="desc">Without systematic evidence; lowest weight</div></div></div>
+    </div>
+
+    <h2>Evaluating Health Claims: A Checklist</h2>
+    <table class="data-table">
+      <thead>
+        <tr><th>Question to Ask</th><th>Strong Evidence</th><th>Weak Evidence</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Was the study randomised?</td><td class="yes">Yes</td><td class="no">No / Unclear</td></tr>
+        <tr><td>Was there a control group?</td><td class="yes">Yes</td><td class="no">No / Anecdote only</td></tr>
+        <tr><td>Was it double-blind?</td><td class="yes">Yes</td><td class="no">No / Single-blind</td></tr>
+        <tr><td>Sample size</td><td class="yes">Large (hundreds+)</td><td class="no">Small (under 50)</td></tr>
+        <tr><td>Independently replicated?</td><td class="yes">Yes, multiple times</td><td class="no">Single study only</td></tr>
+        <tr><td>Published in peer-reviewed journal?</td><td class="yes">Yes</td><td class="no">No / Preprint only</td></tr>
+        <tr><td>Conflicts of interest declared?</td><td class="yes">Declared &amp; managed</td><td class="no">Undisclosed / Obvious bias</td></tr>
+        <tr><td>Systematic review available?</td><td class="yes">Yes, supports finding</td><td class="no">Not yet / Contradicts</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Limitations and Research Integrity</h2>
+    <p>Clinical trials have genuine limitations. They are expensive and time-consuming; they sometimes lack diversity in their participant populations; and results in controlled trial conditions may not perfectly reflect real-world outcomes. Some trials have been conducted or reported improperly, and a small number of researchers have committed fraud.<sup class="ref">[7]</sup></p>
+    <p>These are real problems that the scientific community actively works to address through pre-registration of trials (so outcomes cannot be changed after the fact), open data policies, and independent replication. The existence of flawed or fraudulent research does not invalidate the clinical trial system — it demonstrates why replication, peer review, and systematic review are essential features of science, and why no single study should be treated as conclusive.<sup class="ref">[8]</sup></p>
+
+    <div class="references">
+      <h2>References</h2>
+      <ol>
+        <li>Friedman LM, Furberg CD, DeMets DL. <em>Fundamentals of Clinical Trials</em>. 5th ed. Springer; 2015.</li>
+        <li>Ioannidis JPA. "Why most published research findings are false." <em>PLoS Med</em>. 2005;2(8):e124.</li>
+        <li>Schulz KF, Altman DG, Moher D. "CONSORT 2010 statement: updated guidelines for reporting parallel group randomised trials." <em>BMJ</em>. 2010;340:c332.</li>
+        <li>Enserink M. "The placebo problem." <em>Science</em>. 2012;336(6085):1094–1097.</li>
+        <li>Sackett DL. "Bias in analytic research." <em>J Chron Dis</em>. 1979;32(1–2):51–63.</li>
+        <li>Wasserstein RL, Lazar NA. "The ASA statement on p-values: context, process, and purpose." <em>Am Stat</em>. 2016;70(2):129–133.</li>
+        <li>Fanelli D. "How many scientists fabricate and falsify research? A systematic review and meta-analysis of survey data." <em>PLoS ONE</em>. 2009;4(5):e5738.</li>
+        <li>Munafo MR, et al. "A manifesto for reproducible science." <em>Nat Hum Behav</em>. 2017;1(1):0021.</li>
+      </ol>
+    </div>
+  </article>
+
+  <aside>
+    <div class="sidebar-card">
+      <h4>Key Terms</h4>
+      <ul>
+        <li><strong>RCT:</strong> Randomised controlled trial</li>
+        <li><strong>Placebo:</strong> Inactive treatment given to control group</li>
+        <li><strong>Double-blind:</strong> Neither participant nor assessor knows treatment assignment</li>
+        <li><strong>P-value:</strong> Probability result is due to chance</li>
+        <li><strong>Meta-analysis:</strong> Statistical combination of multiple studies</li>
+        <li><strong>Confounding:</strong> Third variable distorting apparent relationship</li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h4>External Resources</h4>
+      <ul>
+        <li><a href="https://www.cochrane.org/evidence" target="_blank">Cochrane: Evidence in Health</a></li>
+        <li><a href="https://www.clinicaltrials.gov" target="_blank">ClinicalTrials.gov</a></li>
+        <li><a href="https://www.testing-treatments.org" target="_blank">Testing Treatments Interactive</a></li>
+        <li><a href="https://www.medsafe.govt.nz" target="_blank">NZ Medsafe: Medicine Regulation</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-card">
+      <h4>Questions to Consider</h4>
+      <p>When you read a health claim, ask:</p>
+      <ul>
+        <li>What type of study was it?</li>
+        <li>How many participants?</li>
+        <li>Who funded it?</li>
+        <li>Has it been replicated?</li>
+        <li>What does the systematic review say?</li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  &copy; 2025 Centre for Evidence-Based Medicine NZ — University of Otago. Educational resource. Peer reviewed. For questions or corrections, contact the editorial team.
+</footer>
+
+</body>
+</html>

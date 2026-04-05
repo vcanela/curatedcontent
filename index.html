@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medicine &amp; Science Research Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1a2744;
+      --navy-mid: #243660;
+      --teal: #0d7a6e;
+      --teal-light: #e6f4f2;
+      --gold: #c8922a;
+      --grey-light: #f4f5f7;
+      --grey-mid: #e2e4e9;
+      --grey-text: #4a5568;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background: var(--grey-light);
+      color: #1a1a2e;
+      line-height: 1.6;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--navy);
+      color: var(--white);
+      padding: 0;
+      border-bottom: 4px solid var(--teal);
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+
+    .site-wordmark {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .site-wordmark .label {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #8fa3c8;
+      font-weight: 300;
+    }
+
+    .site-wordmark .name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--white);
+    }
+
+    .header-meta {
+      font-size: 0.78rem;
+      color: #8fa3c8;
+      text-align: right;
+    }
+
+    /* ── Utility bar ── */
+    .util-bar {
+      background: var(--navy-mid);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .util-bar-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.45rem 2rem;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .util-bar a {
+      color: #b0c4de;
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.03em;
+    }
+
+    .util-bar a:hover { color: var(--white); }
+
+    /* ── Hero banner ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy-mid) 0%, var(--teal) 100%);
+      color: var(--white);
+      padding: 3.5rem 2rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      max-width: 640px;
+      margin: 0 auto;
+      color: rgba(255,255,255,0.88);
+      font-weight: 300;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 2px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── Main layout ── */
+    .main-wrap {
+      max-width: 1100px;
+      margin: 2.5rem auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    /* ── Section headings ── */
+    .section-heading {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      border-bottom: 2px solid var(--teal);
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── Topic cards ── */
+    .topic-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .topic-card {
+      background: var(--white);
+      border: 1px solid var(--grey-mid);
+      border-radius: 4px;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: box-shadow 0.15s, border-color 0.15s;
+      position: relative;
+    }
+
+    .topic-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.09);
+      border-color: var(--teal);
+    }
+
+    .topic-card .icon {
+      width: 36px;
+      height: 36px;
+      background: var(--teal-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.85rem;
+      font-size: 1.1rem;
+    }
+
+    .topic-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+    }
+
+    .topic-card p {
+      font-size: 0.85rem;
+      color: var(--grey-text);
+      line-height: 1.55;
+    }
+
+    .topic-card .source-count {
+      margin-top: 0.85rem;
+      font-size: 0.72rem;
+      color: var(--teal);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .topic-card-wide {
+      grid-column: 1 / -1;
+    }
+
+    /* ── How to use panel ── */
+    .how-to {
+      background: var(--white);
+      border: 1px solid var(--grey-mid);
+      border-radius: 4px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .how-to ol {
+      padding-left: 1.25rem;
+      font-size: 0.88rem;
+      color: var(--grey-text);
+    }
+
+    .how-to li {
+      margin-bottom: 0.6rem;
+      line-height: 1.55;
+    }
+
+    /* ── Sidebar ── */
+    .sidebar-card {
+      background: var(--white);
+      border: 1px solid var(--grey-mid);
+      border-radius: 4px;
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .sidebar-card h4 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.85rem;
+    }
+
+    .sidebar-card ul {
+      list-style: none;
+      font-size: 0.85rem;
+      color: var(--grey-text);
+    }
+
+    .sidebar-card ul li {
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--grey-mid);
+      line-height: 1.45;
+    }
+
+    .sidebar-card ul li:last-child { border-bottom: none; }
+
+    .task-box {
+      background: var(--teal-light);
+      border-left: 4px solid var(--teal);
+      padding: 1.25rem;
+      border-radius: 0 4px 4px 0;
+      margin-bottom: 1.25rem;
+    }
+
+    .task-box h4 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--teal);
+      margin-bottom: 0.6rem;
+    }
+
+    .task-box p {
+      font-size: 0.85rem;
+      color: #2d5a54;
+      line-height: 1.55;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--navy);
+      color: #8fa3c8;
+      padding: 1.5rem 2rem;
+      font-size: 0.78rem;
+      margin-top: 3rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer a { color: #b0c4de; text-decoration: none; }
+    footer a:hover { color: var(--white); }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .main-wrap { grid-template-columns: 1fr; }
+      .topic-grid { grid-template-columns: 1fr; }
+      .topic-card-wide { grid-column: auto; }
+      .hero h1 { font-size: 1.6rem; }
+      .footer-inner { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="site-wordmark">
+      <span class="label">Educational Resource Portal</span>
+      <span class="name">Medicine &amp; Science Research Hub</span>
+    </div>
+    <div class="header-meta">
+      Year 9 Science<br>Curated Research Collection
+    </div>
+  </div>
+</header>
+
+<div class="util-bar">
+  <div class="util-bar-inner">
+    <a href="index.html">Home</a>
+    <a href="topics/vaccines.html">Vaccines</a>
+    <a href="topics/antibiotics.html">Antibiotics</a>
+    <a href="topics/semmelweis.html">Semmelweis</a>
+    <a href="topics/lister.html">Lister</a>
+    <a href="topics/clinical-trials.html">Clinical Trials</a>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-badge">Science Advancing Medicine</div>
+  <h1>Medicine &amp; Science Research Hub</h1>
+  <p>A curated collection of sources for your Year 9 research project. Explore each topic area and use the resources below to support your investigation.</p>
+</div>
+
+<div class="main-wrap">
+  <main>
+    <div class="how-to">
+      <p class="section-heading">How to Use This Hub</p>
+      <ol>
+        <li>Choose a topic from the cards below or the navigation bar above.</li>
+        <li>Each topic page lists available sources. Read at least two sources per topic.</li>
+        <li>Take notes on the key information each source provides.</li>
+        <li>Record which sources you use in your citation log, and explain <em>why</em> you chose them.</li>
+        <li>Compare what different sources say about the same topic.</li>
+      </ol>
+    </div>
+
+    <p class="section-heading">Research Topics</p>
+
+    <div class="topic-grid">
+
+      <a class="topic-card" href="topics/vaccines.html">
+        <div class="icon">💉</div>
+        <h3>Vaccines</h3>
+        <p>The history and science of vaccination, how vaccines work, and different perspectives on their role in public health.</p>
+        <div class="source-count">3 sources available</div>
+      </a>
+
+      <a class="topic-card" href="topics/antibiotics.html">
+        <div class="icon">🔬</div>
+        <h3>Antibiotics &amp; Resistance</h3>
+        <p>The discovery of antibiotics, how they work, and the growing global challenge of antimicrobial resistance.</p>
+        <div class="source-count">3 sources available</div>
+      </a>
+
+      <a class="topic-card" href="topics/semmelweis.html">
+        <div class="icon">🧼</div>
+        <h3>Semmelweis &amp; Handwashing</h3>
+        <p>How Ignaz Semmelweis discovered the importance of handwashing — and why the medical establishment refused to believe him.</p>
+        <div class="source-count">3 sources available</div>
+      </a>
+
+      <a class="topic-card" href="topics/lister.html">
+        <div class="icon">🏥</div>
+        <h3>Joseph Lister &amp; Sterilisation</h3>
+        <p>How Joseph Lister transformed surgery by introducing antiseptic techniques and changing how we think about infection.</p>
+        <div class="source-count">3 sources available</div>
+      </a>
+
+      <a class="topic-card topic-card-wide" href="topics/clinical-trials.html">
+        <div class="icon">📋</div>
+        <h3>How Clinical Trials Work</h3>
+        <p>Clinical trials are how we test whether medical treatments actually work. Understand the phases of a trial, what makes evidence reliable, and how to evaluate health claims you encounter.</p>
+        <div class="source-count">3 sources available</div>
+      </a>
+
+    </div>
+  </main>
+
+  <aside>
+    <div class="task-box">
+      <h4>Your Research Task</h4>
+      <p>For each source you use, record: the title, where it's from, and a sentence explaining why you chose it over other available sources.</p>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>Topics at a Glance</h4>
+      <ul>
+        <li><a href="topics/vaccines.html">Vaccines</a></li>
+        <li><a href="topics/antibiotics.html">Antibiotics &amp; Resistance</a></li>
+        <li><a href="topics/semmelweis.html">Semmelweis &amp; Handwashing</a></li>
+        <li><a href="topics/lister.html">Lister &amp; Sterilisation</a></li>
+        <li><a href="topics/clinical-trials.html">Clinical Trials</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-card">
+      <h4>What to Look For</h4>
+      <ul>
+        <li>Who wrote this? What are their credentials?</li>
+        <li>When was it written or last updated?</li>
+        <li>Does it cite evidence?</li>
+        <li>Does the language seem balanced or emotional?</li>
+        <li>Who published it, and why?</li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span>Medicine &amp; Science Research Hub &mdash; Year 9 Science &mdash; Curated Educational Resource</span>
+    <span>Last updated: March 2025</span>
+  </div>
+</footer>
+
+</body>
+</html>

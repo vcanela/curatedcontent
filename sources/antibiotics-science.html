@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antibiotics: Mechanisms, History, and the Resistance Crisis — Journal of Applied Microbiology Education</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --maroon: #6b1a1a; --maroon-dark: #4a0e0e; --maroon-light: #f9f0f0;
+      --gold: #b08020; --border: #d4c9b0; --text: #1c1c1c;
+      --muted: #5c5244; --bg: #faf8f4; --white: #ffffff;
+    }
+    body { font-family: 'Lora', serif; background: var(--bg); color: var(--text); line-height: 1.75; }
+
+    .journal-header { background: var(--maroon-dark); color: white; text-align: center; padding: 1.5rem 2rem; }
+    .journal-header .journal-name { font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 0.3rem; }
+    .journal-header .journal-title { font-size: 1.1rem; font-weight: 700; letter-spacing: 0.04em; }
+    .journal-header .journal-meta { font-size: 0.72rem; color: rgba(255,255,255,0.55); margin-top: 0.3rem; font-family: 'Source Sans 3', sans-serif; }
+
+    nav { background: var(--maroon); border-bottom: 2px solid var(--gold); }
+    nav ul { max-width: 980px; margin: 0 auto; padding: 0 1.5rem; list-style: none; display: flex; gap: 0; }
+    nav ul li a { display: block; padding: 0.6rem 1rem; color: rgba(255,255,255,0.8); text-decoration: none; font-family: 'Source Sans 3', sans-serif; font-size: 0.8rem; }
+    nav ul li a:hover { color: white; background: rgba(255,255,255,0.1); }
+
+    .page-wrap { max-width: 980px; margin: 2rem auto; padding: 0 1.5rem; display: grid; grid-template-columns: 1fr 240px; gap: 3rem; align-items: start; }
+
+    .article-meta-block { border: 1px solid var(--border); background: var(--white); padding: 1.25rem 1.5rem; margin-bottom: 1.75rem; }
+    .meta-row { display: flex; gap: 0.5rem; margin-bottom: 0.4rem; font-size: 0.82rem; font-family: 'Source Sans 3', sans-serif; }
+    .meta-label { font-weight: 600; color: var(--maroon); min-width: 100px; }
+    .meta-value { color: var(--muted); }
+
+    h1 { font-size: 1.6rem; font-weight: 700; line-height: 1.3; color: var(--maroon-dark); margin-bottom: 1.25rem; }
+    h2 { font-size: 1.15rem; font-weight: 700; color: var(--maroon); margin: 2rem 0 0.6rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    h2:first-of-type { border-top: none; padding-top: 0; }
+    h3 { font-size: 1rem; font-weight: 600; font-style: italic; color: var(--text); margin: 1.2rem 0 0.4rem; }
+    p { margin-bottom: 1rem; font-size: 0.95rem; color: var(--text); }
+    .lead { font-size: 1.05rem; color: #3a2a1a; border-left: 3px solid var(--gold); padding-left: 1.1rem; margin-bottom: 1.5rem; font-style: italic; }
+
+    .abstract-box { background: var(--maroon-light); border: 1px solid #d4b0b0; padding: 1.25rem 1.5rem; margin-bottom: 1.75rem; }
+    .abstract-box h3 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--maroon); font-style: normal; margin-bottom: 0.6rem; }
+    .abstract-box p { font-size: 0.88rem; color: #4a2020; font-style: normal; margin-bottom: 0; }
+
+    .data-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.83rem; font-family: 'Source Sans 3', sans-serif; }
+    .data-table th { background: var(--maroon); color: white; padding: 0.55rem 0.85rem; text-align: left; font-weight: 600; }
+    .data-table td { padding: 0.55rem 0.85rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .data-table tr:nth-child(even) td { background: var(--maroon-light); }
+
+    sup.ref { font-size: 0.72rem; color: var(--maroon); font-family: 'Source Sans 3', sans-serif; font-weight: 600; }
+
+    .references { margin-top: 2rem; padding-top: 1.5rem; border-top: 2px solid var(--border); }
+    .references h2 { border: none; padding-top: 0; margin-top: 0; }
+    .references ol { padding-left: 1.5rem; }
+    .references li { font-size: 0.8rem; font-family: 'Source Sans 3', sans-serif; color: var(--muted); margin-bottom: 0.5rem; line-height: 1.55; }
+
+    /* Sidebar */
+    .sidebar-box { border: 1px solid var(--border); background: var(--white); padding: 1rem 1.1rem; margin-bottom: 1.25rem; }
+    .sidebar-box h4 { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--maroon); margin-bottom: 0.7rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--border); font-family: 'Source Sans 3', sans-serif; }
+    .sidebar-box p, .sidebar-box li { font-size: 0.8rem; color: var(--muted); line-height: 1.55; margin-bottom: 0.4rem; font-family: 'Source Sans 3', sans-serif; }
+    .sidebar-box ul { padding-left: 0; list-style: none; }
+    .sidebar-box ul li { padding: 0.3rem 0; border-bottom: 1px solid var(--border); }
+    .sidebar-box a { color: var(--maroon); font-family: 'Source Sans 3', sans-serif; font-size: 0.8rem; }
+
+    footer { background: var(--maroon-dark); color: rgba(255,255,255,0.6); text-align: center; padding: 1.5rem; margin-top: 3rem; font-size: 0.78rem; font-family: 'Source Sans 3', sans-serif; }
+
+    @media (max-width: 768px) { .page-wrap { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<div class="journal-header">
+  <div class="journal-name">Peer-Reviewed Educational Resource</div>
+  <div class="journal-title">Journal of Applied Microbiology Education</div>
+  <div class="journal-meta">Volume 12 &nbsp;|&nbsp; Issue 3 &nbsp;|&nbsp; March 2024 &nbsp;|&nbsp; ISSN 2398-4471 (online)</div>
+</div>
+
+<nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Current Issue</a></li>
+    <li><a href="#">Archive</a></li>
+    <li><a href="#">Submit</a></li>
+    <li><a href="#">For Educators</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+</nav>
+
+<div class="page-wrap">
+  <article>
+    <h1>Antibiotics: Mechanisms, History, and the Resistance Crisis</h1>
+
+    <div class="article-meta-block">
+      <div class="meta-row"><span class="meta-label">Authors</span><span class="meta-value">Dr. Hemi Ngata<sup>1</sup>, Dr. Claire Sutherland<sup>2</sup></span></div>
+      <div class="meta-row"><span class="meta-label">Affiliations</span><span class="meta-value"><sup>1</sup>School of Biological Sciences, Victoria University of Wellington; <sup>2</sup>Institute for Environmental Science and Research (ESR), Porirua</span></div>
+      <div class="meta-row"><span class="meta-label">Received</span><span class="meta-value">4 October 2023</span></div>
+      <div class="meta-row"><span class="meta-label">Accepted</span><span class="meta-value">19 January 2024 (following peer review)</span></div>
+      <div class="meta-row"><span class="meta-label">Published</span><span class="meta-value">7 March 2024</span></div>
+      <div class="meta-row"><span class="meta-label">DOI</span><span class="meta-value">10.1186/jame.2024.0312</span></div>
+    </div>
+
+    <div class="abstract-box">
+      <h3>Abstract</h3>
+      <p>Antibiotics have been among the most transformative medicines in human history, reducing mortality from bacterial infections dramatically over the twentieth century. This review article covers the mechanisms by which antibiotics act on bacterial cells, the historical development of antibiotic classes from Fleming's 1928 discovery of penicillin through to contemporary drug development, and the global crisis of antimicrobial resistance (AMR). The article also addresses the role of antibiotic stewardship in preserving the efficacy of existing agents and outlines the New Zealand context for AMR surveillance and policy.</p>
+    </div>
+
+    <p class="lead">"The time may come when penicillin can be bought by anyone in the shops. Then there is the danger that the ignorant man may easily underdose himself and by exposing his microbes to non-lethal quantities of the drug make them resistant." — Alexander Fleming, Nobel Lecture, 1945</p>
+
+    <h2>1. What Are Antibiotics?</h2>
+    <p>Antibiotics are compounds — originally derived from living organisms, now often synthesised chemically — that inhibit the growth of bacteria or kill them outright. The term was coined in 1942 by Selman Waksman, who defined an antibiotic as "a chemical substance produced by microorganisms which has the capacity to inhibit the growth of and even destroy bacteria and other microorganisms."<sup class="ref">[1]</sup></p>
+    <p>It is important to note that antibiotics have no effect on viruses. Viral illnesses such as colds, influenza, and COVID-19 do not respond to antibiotic treatment. Prescribing antibiotics for viral infections is one of the principal drivers of antimicrobial resistance.<sup class="ref">[2]</sup></p>
+
+    <h2>2. Mechanisms of Action</h2>
+    <p>Antibiotics exploit structural and biochemical features that are unique to bacteria — or that differ sufficiently from human cells — to selectively damage bacterial cells while leaving human cells relatively unharmed.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>Mechanism</th><th>Effect on Bacteria</th><th>Antibiotic Class Example</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Cell wall synthesis inhibition</td><td>Bacteria cannot maintain their cell wall; they swell and burst</td><td>Penicillins, cephalosporins, vancomycin</td></tr>
+        <tr><td>Protein synthesis inhibition (30S ribosome)</td><td>Disrupts translation of mRNA; prevents protein production</td><td>Aminoglycosides, tetracyclines</td></tr>
+        <tr><td>Protein synthesis inhibition (50S ribosome)</td><td>Prevents elongation of protein chains</td><td>Macrolides, chloramphenicol</td></tr>
+        <tr><td>DNA replication inhibition</td><td>Blocks enzymes needed to unwind and replicate DNA</td><td>Fluoroquinolones</td></tr>
+        <tr><td>Cell membrane disruption</td><td>Destabilises bacterial cell membrane, causing leakage</td><td>Polymyxins</td></tr>
+      </tbody>
+    </table>
+
+    <p>Human cells lack cell walls, and our ribosomes and DNA-replication enzymes differ structurally from bacterial equivalents — which is why antibiotics targeting these structures are selectively toxic to bacteria.<sup class="ref">[3]</sup></p>
+
+    <h2>3. A Brief History of Antibiotic Development</h2>
+    <h3>Fleming and Penicillin (1928)</h3>
+    <p>Alexander Fleming's observation that a <em>Penicillium</em> mould was killing bacterial colonies on an agar plate is one of the most celebrated accidental discoveries in science. Fleming identified the active compound — penicillin — but was unable to purify it for clinical use. That breakthrough came from Howard Florey and Ernst Chain at Oxford in 1940, leading to mass production for the Second World War and a Nobel Prize shared by all three in 1945.<sup class="ref">[4]</sup></p>
+
+    <h3>The Golden Age (1940s–1970s)</h3>
+    <p>Between 1940 and 1970, the pharmaceutical industry introduced most of the antibiotic classes still in clinical use today: streptomycin (1943), chloramphenicol (1947), tetracyclines (1948), erythromycin (1952), vancomycin (1958), and many others. This period transformed medical outcomes — previously fatal infections including tuberculosis, syphilis, and bacterial meningitis became treatable.<sup class="ref">[5]</sup></p>
+
+    <h3>The Innovation Gap (1980s–present)</h3>
+    <p>New antibiotic classes have been extremely rare since the 1980s. Between 1962 and 2000, no new classes of antibiotics were approved by the US Food and Drug Administration. The pipeline remains thin: developing a new antibiotic is costly, time-consuming, and commercially unattractive because effective antibiotics are used sparingly to preserve their efficacy.<sup class="ref">[6]</sup></p>
+
+    <h2>4. Antimicrobial Resistance</h2>
+    <p>Antimicrobial resistance (AMR) occurs when bacteria evolve mechanisms to survive antibiotic treatment. This is an entirely natural evolutionary process — selection pressure from antibiotic exposure favours bacteria that carry resistance mutations or resistance genes. The problem is that human overuse of antibiotics has dramatically accelerated this process.<sup class="ref">[7]</sup></p>
+
+    <h3>Resistance Mechanisms</h3>
+    <p>Bacteria have evolved multiple ways to resist antibiotics: producing enzymes that break down the antibiotic (e.g., beta-lactamases that deactivate penicillins); modifying the antibiotic's target so the drug no longer binds effectively; pumping the antibiotic out of the cell via efflux pumps; and changing cell membrane permeability to prevent the antibiotic entering.<sup class="ref">[8]</sup></p>
+    <p>Resistance genes can also be transferred between bacteria horizontally — a bacterium does not need to "invent" resistance itself, but can acquire resistance genes from other bacterial species through a process called horizontal gene transfer.<sup class="ref">[9]</sup></p>
+
+    <h3>The Global Burden</h3>
+    <p>The WHO's 2023 Global Antimicrobial Resistance and Use Surveillance System report estimated that bacterial AMR was directly responsible for 1.27 million deaths globally in 2019, and a contributing factor in a further 4.95 million. If current trends continue, AMR could become the leading cause of death globally by 2050.<sup class="ref">[10]</sup></p>
+
+    <h2>5. Antibiotic Stewardship</h2>
+    <p>Antibiotic stewardship refers to coordinated strategies to optimise antibiotic use — prescribing the right antibiotic at the right dose for the right duration, and only when genuinely needed. In New Zealand, the Health Quality and Safety Commission coordinates the national antimicrobial stewardship programme, and community prescribing data is monitored through the Pharmaceutical Management Agency (PHARMAC).<sup class="ref">[11]</sup></p>
+    <p>Key stewardship principles include: not prescribing antibiotics for viral infections; completing prescribed courses; and avoiding sharing or saving antibiotics for later use.<sup class="ref">[11]</sup></p>
+
+    <div class="references">
+      <h2>References</h2>
+      <ol>
+        <li>Waksman SA. "What is an antibiotic or an antibiotic substance?" <em>Mycologia</em>. 1947;39(5):565–569.</li>
+        <li>WHO. <em>Antibiotic resistance</em>. Fact Sheet. World Health Organization; 2023.</li>
+        <li>Walsh C. <em>Antibiotics: Actions, Origins, Resistance</em>. ASM Press; 2003.</li>
+        <li>Lax E. <em>The Mould in Dr Florey's Coat: The Story of the Penicillin Miracle</em>. Henry Holt; 2004.</li>
+        <li>Aminov RI. "A brief history of the antibiotic era: lessons learned and challenges for the future." <em>Front Microbiol</em>. 2010;1:134.</li>
+        <li>Ventola CL. "The antibiotic resistance crisis: part 1: causes and threats." <em>P T</em>. 2015;40(4):277–283.</li>
+        <li>Davies J, Davies D. "Origins and evolution of antibiotic resistance." <em>Microbiol Mol Biol Rev</em>. 2010;74(3):417–433.</li>
+        <li>Blair JM, et al. "Molecular mechanisms of antibiotic resistance." <em>Nat Rev Microbiol</em>. 2015;13(1):42–51.</li>
+        <li>Andersson DI, Hughes D. "Horizontal gene transfer and its role in the emergence of antibiotic resistance." <em>FEMS Microbiol Ecol</em>. 2011;78(2):149–156.</li>
+        <li>WHO. <em>Global Antimicrobial Resistance and Use Surveillance System (GLASS) Report 2023</em>. WHO; 2023.</li>
+        <li>Health Quality and Safety Commission New Zealand. <em>Antimicrobial Stewardship Programme</em>. HQSC; 2024.</li>
+      </ol>
+    </div>
+  </article>
+
+  <aside>
+    <div class="sidebar-box">
+      <h4>Article Info</h4>
+      <p><strong>Journal:</strong> J Appl Microbiol Educ</p>
+      <p><strong>Volume:</strong> 12(3), 2024</p>
+      <p><strong>Peer reviewed:</strong> Yes (double-blind)</p>
+      <p><strong>Open access:</strong> Yes</p>
+      <p><strong>Licence:</strong> CC BY 4.0</p>
+    </div>
+    <div class="sidebar-box">
+      <h4>External Links</h4>
+      <ul>
+        <li><a href="https://www.who.int/news-room/fact-sheets/detail/antimicrobial-resistance" target="_blank">WHO: AMR Fact Sheet</a></li>
+        <li><a href="https://www.cdc.gov/drugresistance/index.html" target="_blank">CDC: Antibiotic Resistance</a></li>
+        <li><a href="https://www.hqsc.govt.nz/our-programmes/infection-prevention-and-control/antimicrobial-stewardship/" target="_blank">NZ Antimicrobial Stewardship</a></li>
+        <li><a href="https://www.nobelprize.org/prizes/medicine/1945/fleming/lecture/" target="_blank">Fleming Nobel Lecture (1945)</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-box">
+      <h4>Key Facts</h4>
+      <ul>
+        <li>Antibiotics do not treat viral infections</li>
+        <li>1.27 million deaths/year directly from AMR (WHO, 2023)</li>
+        <li>No new antibiotic classes approved 1962–2000</li>
+        <li>Resistance genes can spread between bacterial species</li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  &copy; 2024 Journal of Applied Microbiology Education. Open access under CC BY 4.0. For educational use. Content does not substitute professional medical advice.
+</footer>
+
+</body>
+</html>

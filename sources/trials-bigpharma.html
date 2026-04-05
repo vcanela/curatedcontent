@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why You Can't Trust Clinical Trials — The Independent Health Observer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0a1628; --navy-mid: #152240; --blue: #1a4a8a;
+      --silver: #8a9ab0; --gold: #c8a820;
+      --text: #1a1a1a; --muted: #555; --border: #ddd;
+      --bg: #f8f8f8; --white: #fff; --red: #aa2020;
+    }
+    body { font-family: 'Roboto', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+    .breaking { background: var(--red); color: white; text-align: center; padding: 0.4rem; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; font-family: 'Roboto Condensed', sans-serif; }
+
+    header { background: var(--navy); border-bottom: 3px solid var(--gold); }
+    .header-inner { max-width: 1020px; margin: 0 auto; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .logo { color: white; text-decoration: none; }
+    .logo .the { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--silver); display: block; }
+    .logo .name { font-family: 'Roboto Condensed', sans-serif; font-size: 1.5rem; font-weight: 700; letter-spacing: 0.02em; color: white; line-height: 1.1; }
+    .logo .name span { color: var(--gold); }
+    .header-right { text-align: right; font-size: 0.72rem; color: var(--silver); }
+
+    nav { background: var(--navy-mid); }
+    nav ul { max-width: 1020px; margin: 0 auto; padding: 0 2rem; list-style: none; display: flex; flex-wrap: wrap; }
+    nav a { display: block; padding: 0.55rem 0.85rem; color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.78rem; font-weight: 700; font-family: 'Roboto Condensed', sans-serif; letter-spacing: 0.06em; text-transform: uppercase; }
+    nav a:hover { color: var(--gold); }
+
+    .layout { max-width: 1020px; margin: 2rem auto; padding: 0 2rem; display: grid; grid-template-columns: 1fr 270px; gap: 2rem; }
+
+    .section-label { font-family: 'Roboto Condensed', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+    h1 { font-family: 'Roboto Condensed', sans-serif; font-size: 2.2rem; font-weight: 700; line-height: 1.15; color: var(--navy); margin-bottom: 0.65rem; }
+    .deck { font-size: 1rem; color: var(--muted); line-height: 1.55; margin-bottom: 1rem; }
+    .byline { font-size: 0.77rem; color: var(--muted); padding: 0.5rem 0; border-top: 2px solid var(--navy); border-bottom: 1px solid var(--border); margin-bottom: 1.25rem; display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .byline strong { color: var(--text); }
+
+    .hero { width: 100%; height: 270px; background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 60%, var(--gold) 100%); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.15); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.4rem; }
+    .cap { font-size: 0.73rem; color: var(--muted); font-style: italic; margin-bottom: 1.5rem; }
+
+    p { margin-bottom: 1.1rem; font-size: 0.93rem; }
+    .lead { font-weight: 700; font-size: 1rem; color: var(--navy); }
+    h2 { font-family: 'Roboto Condensed', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--navy); margin: 1.75rem 0 0.5rem; border-bottom: 2px solid var(--gold); padding-bottom: 0.3rem; }
+
+    .evidence-box { background: var(--navy); color: white; padding: 1.25rem; margin: 1.5rem 0; }
+    .evidence-box h3 { font-family: 'Roboto Condensed', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+    .evidence-box ul { padding-left: 1.2rem; }
+    .evidence-box li { font-size: 0.88rem; color: rgba(255,255,255,0.85); margin-bottom: 0.5rem; line-height: 1.55; }
+
+    .quote-block { border-left: 4px solid var(--gold); padding: 0.75rem 1.25rem; margin: 1.5rem 0; background: #f0ece0; }
+    .quote-block p { font-style: italic; color: var(--navy); font-weight: 600; margin-bottom: 0.25rem; }
+    .quote-block .attr { font-size: 0.78rem; color: var(--muted); font-style: normal; font-weight: 400; }
+
+    .conclusion-box { background: var(--red); color: white; padding: 1.25rem; margin: 1.75rem 0; }
+    .conclusion-box h3 { font-family: 'Roboto Condensed', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.6rem; letter-spacing: 0.04em; }
+    .conclusion-box p { font-size: 0.9rem; opacity: 0.95; margin-bottom: 0; }
+
+    .share-row { display: flex; gap: 0.5rem; margin: 1.25rem 0; }
+    .sh { padding: 0.4rem 1rem; font-size: 0.76rem; font-weight: 700; border: none; cursor: pointer; color: white; font-family: 'Roboto Condensed', sans-serif; text-transform: uppercase; letter-spacing: 0.06em; }
+    .sh-fb { background: #1877f2; } .sh-tw { background: #1da1f2; } .sh-em { background: #555; }
+
+    .comments { font-size: 0.8rem; color: var(--muted); margin-top: 0.5rem; }
+    .disclaimer { font-size: 0.74rem; color: #aaa; border-top: 1px solid var(--border); padding-top: 0.75rem; margin-top: 1.5rem; font-style: italic; }
+
+    /* Sidebar */
+    .sb { background: var(--white); border: 1px solid var(--border); padding: 1.1rem; margin-bottom: 1.25rem; }
+    .sb h4 { font-family: 'Roboto Condensed', sans-serif; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--navy); margin-bottom: 0.75rem; border-bottom: 2px solid var(--gold); padding-bottom: 0.35rem; }
+    .sb p, .sb li { font-size: 0.81rem; color: var(--muted); line-height: 1.55; margin-bottom: 0.35rem; }
+    .sb ul { list-style: none; padding: 0; }
+    .sb ul li { padding: 0.35rem 0; border-bottom: 1px solid var(--border); }
+    .sb ul li:last-child { border-bottom: none; }
+    .sb a { color: var(--navy); font-weight: 700; text-decoration: none; font-size: 0.81rem; }
+    .sb a:hover { color: var(--gold); }
+    .sb .meta { font-size: 0.7rem; color: #aaa; }
+    .mission-sb { background: var(--navy); color: white; padding: 1.25rem; margin-bottom: 1.25rem; }
+    .mission-sb h4 { font-family: 'Roboto Condensed', sans-serif; font-size: 0.88rem; color: var(--gold); margin-bottom: 0.4rem; letter-spacing: 0.04em; }
+    .mission-sb p { font-size: 0.8rem; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 0.75rem; }
+    .mission-sb button { background: var(--gold); color: var(--navy); border: none; padding: 0.5rem 1.25rem; font-family: 'Roboto Condensed', sans-serif; font-weight: 700; cursor: pointer; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; }
+
+    footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: center; padding: 1.25rem; font-size: 0.74rem; margin-top: 2rem; }
+
+    @media (max-width: 768px) { .layout { grid-template-columns: 1fr; } h1 { font-size: 1.7rem; } }
+  </style>
+</head>
+<body>
+
+<div class="breaking">INDEPENDENT ANALYSIS — NOT FUNDED BY INDUSTRY — READ AND SHARE WIDELY</div>
+
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <span class="the">The</span>
+      <span class="name">Independent Health <span>Observer</span></span>
+    </a>
+    <div class="header-right">
+      Independent since 2011<br>
+      No pharmaceutical advertising
+    </div>
+  </div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Research Watch</a></li>
+    <li><a href="#">Big Pharma</a></li>
+    <li><a href="#">Drug Safety</a></li>
+    <li><a href="#">Suppressed Studies</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Support Us</a></li>
+  </ul>
+</nav>
+
+<div class="layout">
+  <main>
+    <div class="section-label">Research Watch · Critical Analysis</div>
+    <h1>Why You Can't Trust Clinical Trials (And What Big Pharma Doesn't Want You to Know)</h1>
+    <p class="deck">We're told that clinical trials are the gold standard of medical evidence. But when pharmaceutical companies design, fund, and control the research that approves their own products — how gold is that standard, really?</p>
+    <div class="byline">
+      <span>By <strong>The IHO Research Desk</strong></span>
+      <span>28 March 2025</span>
+      <span>12 min read</span>
+    </div>
+
+    <div class="hero"><span>[Image: pharmaceutical research lab]</span></div>
+    <div class="cap">Clinical trials are presented as objective science. But who designs them, funds them, and controls the data? (Illustrative)</div>
+
+    <p class="lead">Let's start with a fact that should disturb everyone: the majority of clinical trials for pharmaceutical drugs are funded, designed, and controlled by the companies that stand to profit from those drugs being approved.</p>
+
+    <p>We're asked to trust this system. We're told that peer review and regulatory oversight ensure integrity. But study after study — published in the most prestigious medical journals in the world — has documented systematic bias, selective reporting, and outright fraud in clinical trial research. This is not a fringe claim. It's documented. And yet it barely registers in the public conversation about whether we should trust the medicines we're being prescribed.</p>
+
+    <h2>The Evidence of Bias Is Overwhelming</h2>
+    <p>Research published in peer-reviewed journals has documented that industry-funded trials are significantly more likely to produce positive results than independently funded trials — even when testing the same drugs. This isn't a small effect. A 2003 analysis in the <em>British Medical Journal</em> found industry-sponsored studies were four times more likely to report positive outcomes than those without industry funding.</p>
+    <p>How does this happen? Multiple mechanisms have been documented:</p>
+
+    <div class="evidence-box">
+      <h3>Documented Methods of Research Manipulation</h3>
+      <ul>
+        <li><strong>Publication bias:</strong> Positive results get published; negative results get buried in filing cabinets. Companies are not legally required to publish trials showing their drug doesn't work.</li>
+        <li><strong>Outcome switching:</strong> When the primary outcome doesn't show the desired result, companies switch to reporting a different outcome that does — sometimes without disclosing the switch.</li>
+        <li><strong>Cherry-picked comparators:</strong> Trials compare new drugs to older, suboptimal versions of competitor drugs rather than current best practice — making the new drug look more effective than it actually is.</li>
+        <li><strong>Surrogate endpoints:</strong> Trials measure things like cholesterol levels or tumour markers rather than actual health outcomes like mortality — because the surrogate measures look better.</li>
+        <li><strong>Ghost writing:</strong> Studies authored by academic researchers were actually written by pharmaceutical company employees, with the academics listed as "authors" to give the appearance of independence.</li>
+      </ul>
+    </div>
+
+    <p>These are not accusations. They are findings from published research, parliamentary inquiries, and legal proceedings. GlaxoSmithKline paid $3 billion in 2012 in part to settle US charges of withholding safety data. Merck withheld cardiovascular safety data on Vioxx for years while patients died. These are matters of documented legal and regulatory record.</p>
+
+    <h2>But Doesn't Peer Review Catch This?</h2>
+    <p>This is the standard reassurance. Peer review, we're told, is science's self-correcting mechanism. And it does catch some problems. But peer reviewers typically only see the paper — not the underlying data. They cannot detect outcome switching, publication bias, or selective data reporting without access to the raw trial data, which companies routinely refuse to share.</p>
+    <p>The AllTrials campaign, backed by researchers and medical journals, has spent years trying to get pharmaceutical companies to register and publish all clinical trial results — not just the ones they want published. Progress has been slow. There is an entire industry of suppressed results that we, the public, never get to see.</p>
+
+    <div class="quote-block">
+      <p>"It is simply no longer possible to believe much of the clinical research that is published, or to rely on the judgment of trusted physicians or authoritative medical guidelines."</p>
+      <div class="attr">— Dr. Marcia Angell, former Editor-in-Chief, <em>New England Journal of Medicine</em>, in <em>The New York Review of Books</em>, 2009</div>
+    </div>
+
+    <h2>What This Means for You</h2>
+    <p>This does not mean that all medicines are fraudulent or that doctors are corrupt. It means the system that produces and validates medical evidence has profound conflicts of interest built into its structure — and those conflicts produce systematic distortions in what we know and what we don't know about the drugs we take.</p>
+    <p>When your doctor tells you that "the evidence shows" a drug is safe and effective, they are almost certainly acting in good faith. But the evidence base they are relying on was largely produced by the companies selling the product. That's a problem, and it's a problem the medical establishment has been slow to address.</p>
+
+    <h2>So What Can You Do?</h2>
+    <p>We're not saying trust nothing. We're saying ask better questions. When a new treatment is recommended to you:</p>
+    <ul style="padding-left:1.25rem;margin-bottom:1.1rem;">
+      <li style="margin-bottom:0.5rem;">Ask who funded the studies supporting it</li>
+      <li style="margin-bottom:0.5rem;">Ask whether all trials have been published or whether negative results exist</li>
+      <li style="margin-bottom:0.5rem;">Ask whether the evidence compares the treatment to current best practice or to a weaker comparator</li>
+      <li style="margin-bottom:0.5rem;">Seek out independent systematic reviews from organisations without pharmaceutical funding</li>
+      <li style="margin-bottom:0.5rem;">Remember that regulatory approval means a drug met a minimum threshold — not that it's optimally safe or effective</li>
+    </ul>
+
+    <p>Being a critical consumer of medical evidence is not anti-science. It is pro-science in the truest sense — it's demanding that the standards of evidence actually be applied, rather than accepting that the system is working simply because we've been told it is.</p>
+
+    <div class="conclusion-box">
+      <h3>The Bottom Line</h3>
+      <p>Clinical trials are a vital tool — when they are independent, transparent, and fully reported. Right now, too many of them are none of those things. Until the system changes, healthy scepticism is not just reasonable. It is rational.</p>
+    </div>
+
+    <div class="share-row">
+      <button class="sh sh-fb">Share</button>
+      <button class="sh sh-tw">Tweet</button>
+      <button class="sh sh-em">Email</button>
+    </div>
+    <div class="comments">💬 214 comments</div>
+    <p class="disclaimer">The Independent Health Observer is an independent commentary platform. We cite published sources where available but are not a peer-reviewed publication. This is not medical advice. Always consult a qualified healthcare professional.</p>
+  </main>
+
+  <aside>
+    <div class="mission-sb">
+      <h4>Our Mission</h4>
+      <p>Independent health analysis, free from pharmaceutical advertising or industry funding. We rely on reader support.</p>
+      <button>Support Our Work</button>
+    </div>
+    <div class="sb">
+      <h4>Most Read</h4>
+      <ul>
+        <li><a href="#">The Statin Controversy: What the Industry Funded Studies Miss</a><div class="meta">1 week ago</div></li>
+        <li><a href="#">Publication Bias: The Medical Literature's Dirty Secret</a><div class="meta">2 weeks ago</div></li>
+        <li><a href="#">How Drug Trials Get Designed to Win</a><div class="meta">3 weeks ago</div></li>
+        <li><a href="#">The AllTrials Campaign: Why It Matters</a><div class="meta">1 month ago</div></li>
+      </ul>
+    </div>
+    <div class="sb">
+      <h4>Related Analysis</h4>
+      <ul>
+        <li><a href="#">Outcome Switching: A Guide to Spotting It</a></li>
+        <li><a href="#">Ghost Writing in Medical Journals</a></li>
+        <li><a href="#">How to Find Independent Research</a></li>
+      </ul>
+    </div>
+    <div class="sb">
+      <h4>Note on Sources</h4>
+      <p>The Angell quote is real and accurately attributed. The BMJ publication bias research is real. The GSK and Merck settlements are matters of public record. We stand by these facts while acknowledging our overall framing is editorial and critical in nature.</p>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  &copy; 2025 The Independent Health Observer — Editorial commentary. Not medical advice. Not affiliated with any pharmaceutical company.
+</footer>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What They're Not Telling You About Vaccines — The Nourished Family</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --sage: #7a9a6a; --sage-dark: #5a7a4a; --sage-light: #f0f5ec;
+      --blush: #e8c4b0; --blush-light: #fdf6f2;
+      --warm: #8a6a4a; --text: #2a1a0a; --muted: #6a5a4a;
+      --border: #ddd0c0; --bg: #fdfaf6; --white: #ffffff;
+    }
+    body { font-family: 'Lato', sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; }
+
+    .ribbon { background: var(--sage); color: white; text-align: center; padding: 0.4rem; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; }
+
+    header { background: var(--blush-light); border-bottom: 2px solid var(--blush); padding: 1.5rem 2rem; text-align: center; }
+    .blog-title { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; color: var(--sage-dark); letter-spacing: 0.04em; text-decoration: none; display: block; }
+    .blog-subtitle { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 0.3rem; }
+
+    nav { background: var(--sage-light); border-bottom: 1px solid var(--border); }
+    nav ul { max-width: 900px; margin: 0 auto; padding: 0 2rem; list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 0; }
+    nav a { display: block; padding: 0.55rem 1rem; color: var(--sage-dark); text-decoration: none; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; }
+    nav a:hover { color: var(--warm); }
+
+    .layout { max-width: 900px; margin: 2rem auto; padding: 0 2rem; display: grid; grid-template-columns: 1fr 260px; gap: 2.5rem; }
+
+    /* Main article */
+    .post-meta { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.75rem; }
+    h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 400; line-height: 1.25; color: var(--text); margin-bottom: 0.6rem; }
+    .post-intro { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; color: var(--muted); line-height: 1.6; margin-bottom: 1.25rem; }
+    .author-tag { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+    .author-circle { width: 44px; height: 44px; background: var(--sage); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; }
+    .author-tag .info .name { font-weight: 700; font-size: 0.88rem; color: var(--text); }
+    .author-tag .info .role { font-size: 0.75rem; color: var(--muted); }
+
+    .post-img { width: 100%; height: 300px; background: linear-gradient(135deg, #c8d8b8 0%, #e8c4b0 60%, #f5e8d8 100%); display: flex; align-items: center; justify-content: center; color: rgba(0,0,0,0.2); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; border-radius: 2px; }
+    .img-caption { font-size: 0.75rem; color: var(--muted); font-style: italic; margin-bottom: 1.5rem; text-align: center; }
+
+    p { margin-bottom: 1.2rem; font-size: 0.95rem; }
+    h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--sage-dark); margin: 2rem 0 0.6rem; }
+    h3 { font-size: 0.92rem; font-weight: 700; color: var(--warm); margin: 1.25rem 0 0.4rem; text-transform: uppercase; letter-spacing: 0.08em; }
+
+    .personal-block { background: var(--blush-light); border-left: 3px solid var(--blush); padding: 1.25rem 1.5rem; margin: 1.5rem 0; border-radius: 0 4px 4px 0; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: var(--warm); line-height: 1.65; }
+
+    .question-list { margin: 1.25rem 0; }
+    .question-item { display: flex; gap: 0.75rem; margin-bottom: 0.85rem; align-items: flex-start; }
+    .q-bullet { color: var(--sage); font-size: 1.1rem; line-height: 1.5; flex-shrink: 0; }
+    .q-text { font-size: 0.93rem; line-height: 1.6; }
+
+    .resource-note { background: var(--sage-light); border: 1px solid #c0d0b0; padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.85rem; color: var(--sage-dark); border-radius: 4px; }
+    .resource-note a { color: var(--sage-dark); font-weight: 700; }
+
+    .disclaimer { font-size: 0.78rem; color: var(--muted); border-top: 1px solid var(--border); padding-top: 0.75rem; margin-top: 1.5rem; font-style: italic; }
+
+    .share-row { display: flex; gap: 0.5rem; margin: 1.5rem 0; flex-wrap: wrap; }
+    .share-btn { padding: 0.4rem 1rem; border: 1px solid var(--border); background: var(--white); color: var(--muted); font-size: 0.78rem; cursor: pointer; border-radius: 2px; }
+    .share-btn:hover { background: var(--sage-light); }
+
+    .comment-count { font-size: 0.8rem; color: var(--muted); }
+
+    /* Sidebar */
+    .sb { margin-bottom: 1.75rem; }
+    .sb h4 { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 600; color: var(--sage-dark); border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; margin-bottom: 0.85rem; }
+    .about-box { background: var(--blush-light); border: 1px solid var(--border); padding: 1.25rem; text-align: center; margin-bottom: 1.75rem; }
+    .about-circle { width: 70px; height: 70px; background: linear-gradient(135deg, var(--sage), var(--blush)); border-radius: 50%; margin: 0 auto 0.75rem; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-style: italic; color: white; }
+    .about-box h4 { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
+    .about-box p { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
+    .popular-posts .pp-item { display: flex; gap: 0.75rem; margin-bottom: 0.85rem; align-items: flex-start; }
+    .pp-thumb { width: 56px; height: 46px; background: linear-gradient(135deg, #c8d8b8, #e8c4b0); flex-shrink: 0; border-radius: 2px; }
+    .pp-item a { font-size: 0.82rem; color: var(--text); font-weight: 700; text-decoration: none; line-height: 1.4; }
+    .pp-item a:hover { color: var(--sage-dark); }
+    .pp-item .pp-meta { font-size: 0.72rem; color: var(--muted); margin-top: 0.15rem; }
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .tag { background: var(--sage-light); border: 1px solid #c0d0b0; padding: 0.2rem 0.6rem; font-size: 0.75rem; color: var(--sage-dark); border-radius: 2px; text-decoration: none; }
+    .newsletter-sb { background: var(--sage); color: white; padding: 1.25rem; text-align: center; margin-bottom: 1.75rem; border-radius: 2px; }
+    .newsletter-sb h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 400; margin-bottom: 0.4rem; }
+    .newsletter-sb p { font-size: 0.8rem; opacity: 0.9; margin-bottom: 0.75rem; }
+    .newsletter-sb input { width: 100%; padding: 0.5rem; border: none; margin-bottom: 0.4rem; font-size: 0.85rem; background: rgba(255,255,255,0.9); }
+    .newsletter-sb button { background: var(--warm); color: white; border: none; width: 100%; padding: 0.5rem; font-size: 0.85rem; font-weight: 700; cursor: pointer; }
+
+    footer { background: var(--sage-dark); color: rgba(255,255,255,0.6); text-align: center; padding: 1.5rem; font-size: 0.78rem; margin-top: 2.5rem; }
+
+    @media (max-width: 768px) { .layout { grid-template-columns: 1fr; } h1 { font-size: 1.9rem; } }
+  </style>
+</head>
+<body>
+
+<div class="ribbon">natural living &nbsp;·&nbsp; real food &nbsp;·&nbsp; mindful parenting &nbsp;·&nbsp; wellness from the ground up</div>
+
+<header>
+  <a href="#" class="blog-title">The Nourished Family</a>
+  <div class="blog-subtitle">Wellness, whole foods &amp; honest conversations about health</div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Real Food</a></li>
+    <li><a href="#">Natural Remedies</a></li>
+    <li><a href="#">Kids' Health</a></li>
+    <li><a href="#">Honest Health</a></li>
+    <li><a href="#">About Me</a></li>
+  </ul>
+</nav>
+
+<div class="layout">
+  <main>
+    <div class="post-meta">Honest Health &nbsp;·&nbsp; 2 April 2025 &nbsp;·&nbsp; 14 min read</div>
+    <h1>What They're Not Telling You About Vaccines</h1>
+    <p class="post-intro">I'm not anti-vaccine. I'm pro-information. And after what happened with my youngest, I decided it was time to ask some hard questions — and share what I found.</p>
+
+    <div class="author-tag">
+      <div class="author-circle">R</div>
+      <div class="info">
+        <div class="name">Rachel Morrow</div>
+        <div class="role">Wellness writer, mother of three, Auckland</div>
+      </div>
+    </div>
+
+    <div class="post-img"><span>[Photo: mother and baby]</span></div>
+    <div class="img-caption">Every parent deserves honest answers about what goes into their children's bodies.</div>
+
+    <p>Let me start by saying something clearly: I believe in protecting children. I believe infections are real, and that some of them are serious. I'm not writing this to scare anyone or to tell people what to do.</p>
+
+    <p>But after my son Eli had a difficult reaction after his 15-month vaccinations — three days of high fever, inconsolable crying, and a rash that the doctor initially dismissed as "normal" — I started doing my own research. And what I found surprised me.</p>
+
+    <div class="personal-block">
+      "When I asked our GP about the ingredients in the vaccines Eli had received, she didn't really know. She told me reactions like his were 'very rare.' But when I looked it up myself, the rate of reactions listed in the product information sheet was higher than I'd been led to expect."
+    </div>
+
+    <h2>The Ingredients Question</h2>
+    <p>Most parents have never actually looked at what's in the vaccines their children receive. I hadn't, until Eli's reaction made me start asking questions. What I found was… a lot to process.</p>
+    <p>Vaccines contain adjuvants (substances added to boost immune response), preservatives, stabilisers, and residual manufacturing materials. Some of these — like aluminium salts — have been in vaccines for decades. The health authorities say they're safe in the amounts used. And that's probably true for most children.</p>
+    <p>But here's what I keep coming back to: every child is different. We know this intuitively as parents — some kids react to dairy, some to gluten, some to certain medications. Why do we assume everyone will respond to vaccine ingredients in exactly the same way? The one-size-fits-all schedule doesn't allow for much individual variation.</p>
+
+    <h2>The Pressure to Vaccinate</h2>
+    <p>I want to be really careful here, because I know this topic is sensitive. But I think it's worth naming: many parents feel intense social pressure to vaccinate on the standard schedule, and feel like they can't ask questions without being dismissed or judged.</p>
+    <p>That's not healthy. In a healthy medical system, patients — and parents — should feel free to ask about any intervention: what are the benefits, what are the risks, what are the alternatives? For some reason, when it comes to vaccines, even asking those questions gets you labelled as "anti-vax."</p>
+    <p>I've spoken to dozens of parents in our local community who have concerns — about timing, about combination vaccines, about certain ingredients — and almost none of them felt they could raise these concerns with their GP. That silence isn't protecting anyone.</p>
+
+    <h2>Questions I Think Every Parent Should Ask</h2>
+    <div class="question-list">
+      <div class="question-item"><span class="q-bullet">✿</span><span class="q-text">What exactly is in this vaccine, and can I see the product information sheet before consenting?</span></div>
+      <div class="question-item"><span class="q-bullet">✿</span><span class="q-text">What is the rate of adverse reactions, and what should I watch for in the 72 hours after vaccination?</span></div>
+      <div class="question-item"><span class="q-bullet">✿</span><span class="q-text">Why are so many vaccines given together at once? Has the safety of the full combined schedule been studied as a whole?</span></div>
+      <div class="question-item"><span class="q-bullet">✿</span><span class="q-text">Who funded the safety studies, and were they independent of the pharmaceutical companies that make the vaccines?</span></div>
+      <div class="question-item"><span class="q-bullet">✿</span><span class="q-text">What are the risks of the diseases being vaccinated against, for a healthy child in New Zealand today?</span></div>
+    </div>
+
+    <p>These aren't fringe questions. They're the kinds of questions any thoughtful parent might ask about any medical intervention. The fact that raising them can feel controversial tells you something about the culture around vaccines right now.</p>
+
+    <h2>What About the Science?</h2>
+    <p>I'm not dismissing the science. Vaccines have prevented real suffering — measles, polio, whooping cough are genuinely awful diseases and I don't want my children to get them. The data on vaccination reducing childhood mortality is real.</p>
+    <p>But science is also not infallible, and health authorities have been wrong before. The same institutions that told us certain food additives were safe, that certain pesticides were fine, that certain medications were low-risk — they have had to revise their guidance over and over. Humility about what we know and don't know seems appropriate.</p>
+    <p>There are also researchers who publish in peer-reviewed journals and raise genuine questions about aspects of vaccine policy — on timing, on combination schedules, on specific populations who may be more vulnerable. These researchers get marginalised. Their papers are dismissed. That's worth noting.</p>
+
+    <h2>What We Do in Our Family</h2>
+    <p>I want to be clear that I'm not going to tell you what to do. This is your family, your children, your decision. We've chosen a modified approach — we do vaccinate, but we've spaced some things out, and we've had long conversations with a GP who actually listens to us, which took some finding.</p>
+    <p>We also focus heavily on supporting our children's immune systems through whole food nutrition, time outdoors, minimising unnecessary antibiotics and pharmaceuticals, and building gut health from infancy. A strong, well-nourished immune system is your child's best foundation — with or without vaccines.</p>
+
+    <div class="resource-note">
+      <strong>Further reading:</strong> I've found the work of <a href="#">Dr. Suzanne Humphries</a> and websites like <a href="#">The Thinking Moms' Revolution</a> helpful for understanding alternative perspectives. I'd encourage you to read widely and form your own view.
+    </div>
+
+    <div class="share-row">
+      <button class="share-btn">♡ Save</button>
+      <button class="share-btn">Share</button>
+      <button class="share-btn">Pin it</button>
+      <button class="share-btn">Email</button>
+    </div>
+
+    <p class="comment-count">↓ 142 comments</p>
+
+    <p class="disclaimer">This post reflects my personal experience and research as a parent. It does not constitute medical advice. Please consult your healthcare provider before making any decisions about your child's health.</p>
+  </main>
+
+  <aside>
+    <div class="about-box">
+      <div class="about-circle">R</div>
+      <h4>Hi, I'm Rachel</h4>
+      <p>Mum of three, whole-food advocate, and honest writer on wellness and natural living in Auckland, NZ. I believe in asking questions.</p>
+    </div>
+
+    <div class="newsletter-sb">
+      <h4>Join the Nourished Community</h4>
+      <p>Honest wellness, real food, and thoughtful parenting. No spam.</p>
+      <input type="email" placeholder="your@email.com">
+      <button>Yes, I'm In!</button>
+    </div>
+
+    <div class="sb popular-posts">
+      <h4>Popular Posts</h4>
+      <div class="pp-item">
+        <div class="pp-thumb"></div>
+        <div><a href="#">10 Foods That Support Your Child's Immune System</a><div class="pp-meta">March 2025</div></div>
+      </div>
+      <div class="pp-item">
+        <div class="pp-thumb"></div>
+        <div><a href="#">Why We Chose a Modified Vaccine Schedule</a><div class="pp-meta">January 2025</div></div>
+      </div>
+      <div class="pp-item">
+        <div class="pp-thumb"></div>
+        <div><a href="#">The Gut-Immunity Connection: What Every Parent Should Know</a><div class="pp-meta">December 2024</div></div>
+      </div>
+      <div class="pp-item">
+        <div class="pp-thumb"></div>
+        <div><a href="#">My Honest Review of Functional Medicine</a><div class="pp-meta">November 2024</div></div>
+      </div>
+    </div>
+
+    <div class="sb">
+      <h4>Topics</h4>
+      <div class="tag-cloud">
+        <a href="#" class="tag">Natural Health</a>
+        <a href="#" class="tag">Kids</a>
+        <a href="#" class="tag">Vaccines</a>
+        <a href="#" class="tag">Gut Health</a>
+        <a href="#" class="tag">Real Food</a>
+        <a href="#" class="tag">Immune Support</a>
+        <a href="#" class="tag">Honest Health</a>
+        <a href="#" class="tag">Pregnancy</a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  &copy; 2025 The Nourished Family &mdash; Rachel Morrow &mdash; Auckland, New Zealand<br>
+  <span style="font-size:0.72rem;opacity:0.7;">Personal blog. Not medical advice. Always consult a qualified healthcare professional.</span>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lister, Carbolic Acid, and Why We're Still Poisoning Ourselves — CleanLivingNZ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Nunito:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --teal: #1a9a8a; --teal-dark: #0f6a5e; --teal-light: #e6f8f6;
+      --peach: #f0a878; --peach-light: #fef5ee;
+      --text: #1a2a28; --muted: #4a6a60; --border: #c8deda;
+      --bg: #f6fdfb; --white: #ffffff;
+    }
+    body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; }
+
+    .top-strip { background: var(--teal); color: white; text-align: center; padding: 0.35rem; font-size: 0.72rem; letter-spacing: 0.12em; }
+
+    header { background: var(--white); border-bottom: 2px solid var(--teal-light); padding: 1rem 2rem; }
+    .header-inner { max-width: 960px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Quicksand', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--teal-dark); text-decoration: none; }
+    .logo span { color: var(--peach); }
+
+    nav { background: var(--teal-light); border-bottom: 1px solid var(--border); }
+    nav ul { max-width: 960px; margin: 0 auto; padding: 0 2rem; list-style: none; display: flex; flex-wrap: wrap; }
+    nav a { display: block; padding: 0.5rem 0.85rem; color: var(--teal-dark); text-decoration: none; font-size: 0.8rem; font-weight: 700; font-family: 'Quicksand', sans-serif; }
+    nav a:hover { color: var(--peach); }
+
+    .layout { max-width: 960px; margin: 2rem auto; padding: 0 2rem; display: grid; grid-template-columns: 1fr 250px; gap: 2rem; }
+
+    .cat-pill { display: inline-block; background: var(--teal-light); color: var(--teal-dark); padding: 0.2rem 0.75rem; border-radius: 20px; font-size: 0.72rem; font-weight: 700; font-family: 'Quicksand', sans-serif; margin-bottom: 0.6rem; border: 1px solid var(--border); }
+    h1 { font-family: 'Quicksand', sans-serif; font-size: 2rem; font-weight: 700; line-height: 1.25; color: var(--teal-dark); margin-bottom: 0.6rem; }
+    .deck { font-size: 1rem; color: var(--muted); margin-bottom: 1rem; font-style: italic; }
+    .byline { font-size: 0.77rem; color: var(--muted); padding: 0.5rem 0; border-top: 2px solid var(--teal); border-bottom: 1px solid var(--border); margin-bottom: 1.25rem; display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .byline strong { color: var(--text); }
+
+    .hero { width: 100%; height: 260px; background: linear-gradient(135deg, #0f6a5e 0%, #1a9a8a 50%, #f0a878 100%); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.25); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; border-radius: 4px; }
+    .cap { font-size: 0.73rem; color: var(--muted); font-style: italic; margin-bottom: 1.5rem; }
+
+    p { margin-bottom: 1.1rem; font-size: 0.93rem; }
+    .lead { font-weight: 700; color: var(--teal-dark); font-size: 1rem; }
+    h2 { font-family: 'Quicksand', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--teal-dark); margin: 1.75rem 0 0.5rem; }
+
+    .highlight { background: var(--teal-light); border-left: 4px solid var(--teal); padding: 1rem 1.25rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .highlight p { margin-bottom: 0; font-weight: 600; color: var(--teal-dark); font-style: italic; }
+
+    .concern-box { background: var(--peach-light); border: 1px solid #e8c0a0; border-left: 4px solid var(--peach); padding: 1rem 1.25rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .concern-box h3 { font-family: 'Quicksand', sans-serif; font-size: 0.85rem; font-weight: 700; color: #8a4a20; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.06em; }
+    .concern-box p { font-size: 0.88rem; color: #6a3a18; margin-bottom: 0; }
+
+    .green-list { list-style: none; padding: 0; margin: 1rem 0 1.1rem; }
+    .green-list li { padding: 0.4rem 0 0.4rem 1.5rem; position: relative; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    .green-list li:last-child { border-bottom: none; }
+    .green-list li::before { content: '🌿'; position: absolute; left: 0; font-size: 0.85rem; }
+
+    .share-row { display: flex; gap: 0.5rem; margin: 1.25rem 0; flex-wrap: wrap; }
+    .sh { padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.78rem; font-weight: 700; border: 1px solid var(--border); background: var(--white); color: var(--muted); cursor: pointer; font-family: 'Quicksand', sans-serif; }
+    .sh:hover { background: var(--teal-light); }
+
+    .disclaimer { font-size: 0.74rem; color: var(--muted); border-top: 1px solid var(--border); padding-top: 0.75rem; margin-top: 1.5rem; font-style: italic; }
+
+    /* Sidebar */
+    .sb { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 1.1rem; margin-bottom: 1.25rem; }
+    .sb h4 { font-family: 'Quicksand', sans-serif; font-size: 0.82rem; font-weight: 700; color: var(--teal-dark); margin-bottom: 0.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; }
+    .sb p, .sb li { font-size: 0.81rem; color: var(--muted); line-height: 1.55; margin-bottom: 0.35rem; }
+    .sb ul { list-style: none; padding: 0; }
+    .sb ul li { padding: 0.35rem 0; border-bottom: 1px solid var(--border); }
+    .sb ul li:last-child { border-bottom: none; }
+    .sb a { color: var(--teal-dark); font-weight: 700; text-decoration: none; font-size: 0.81rem; }
+    .sb a:hover { color: var(--peach); }
+    .sb .meta { font-size: 0.7rem; color: #aaa; }
+    .about-sb { background: var(--teal-light); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; text-align: center; margin-bottom: 1.25rem; }
+    .about-av { width: 60px; height: 60px; background: linear-gradient(135deg, var(--teal), var(--peach)); border-radius: 50%; margin: 0 auto 0.6rem; display: flex; align-items: center; justify-content: center; color: white; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 1.1rem; }
+    .about-sb h4 { font-family: 'Quicksand', sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--teal-dark); margin-bottom: 0.3rem; }
+    .about-sb p { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
+    .cta-sb { background: var(--teal); color: white; border-radius: 8px; padding: 1.25rem; text-align: center; margin-bottom: 1.25rem; }
+    .cta-sb h4 { font-family: 'Quicksand', sans-serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .cta-sb p { font-size: 0.78rem; opacity: 0.9; margin-bottom: 0.75rem; }
+    .cta-sb button { background: white; color: var(--teal-dark); border: none; padding: 0.5rem 1.25rem; font-family: 'Quicksand', sans-serif; font-weight: 700; cursor: pointer; border-radius: 20px; font-size: 0.85rem; }
+
+    footer { background: var(--teal-dark); color: rgba(255,255,255,0.55); text-align: center; padding: 1.25rem; font-size: 0.76rem; margin-top: 2.5rem; }
+
+    @media (max-width: 768px) { .layout { grid-template-columns: 1fr; } h1 { font-size: 1.6rem; } }
+  </style>
+</head>
+<body>
+
+<div class="top-strip">🌿 Clean living · Natural health · Toxin-free home · CleanLivingNZ</div>
+
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">CleanLiving<span>NZ</span></a>
+    <div style="font-size:0.72rem;color:var(--muted);font-style:italic;">Living well, the natural way</div>
+  </div>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Toxin-Free Home</a></li>
+    <li><a href="#">Natural Health</a></li>
+    <li><a href="#">Clean Food</a></li>
+    <li><a href="#">Skincare</a></li>
+    <li><a href="#">Resources</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+</nav>
+
+<div class="layout">
+  <main>
+    <span class="cat-pill">Natural Health · History</span>
+    <h1>Lister, Carbolic Acid, and Why We're Still Poisoning Ourselves</h1>
+    <p class="deck">Joseph Lister had the right instinct — but somewhere along the way, modern medicine replaced his nature-inspired insight with a chemical arms race. I think we need to go back to basics.</p>
+    <div class="byline">
+      <span>By <strong>Janine Kowalski</strong>, CleanLivingNZ</span>
+      <span>25 March 2025</span>
+      <span>9 min read</span>
+    </div>
+
+    <div class="hero"><span>[Photo: natural cleaning products]</span></div>
+    <div class="cap">Lister proved that cleanliness prevents infection. But does that mean we need to reach for harsh chemicals? (Illustrative)</div>
+
+    <p class="lead">I have a lot of respect for Joseph Lister. He proved something that sounds almost obvious now but was genuinely revolutionary in his time: that germs cause infection, and that cleanliness prevents it. He was right, and he saved lives.</p>
+
+    <p>But here's what I keep thinking about: Lister's great insight was about <em>natural principles</em>. He recognised that invisible living organisms were causing disease, and he found a way to address that. His instinct was sound. Where I think things went wrong is in how medicine took his legacy — and doubled down on the chemical approach in ways that are now causing real problems.</p>
+
+    <h2>What Lister Actually Did</h2>
+    <p>Lister used carbolic acid — phenol — to clean wounds, instruments, and surgeons' hands. It worked brilliantly in 19th-century hospital wards where infections were rampant. The death rates dropped dramatically and medicine was transformed.</p>
+    <p>What often gets glossed over is that carbolic acid is a toxic chemical. Lister himself acknowledged that prolonged exposure caused skin damage to surgeons' hands. It had to be handled carefully. It wasn't some gentle, natural substance — it was a harsh industrial compound that happened to kill bacteria.</p>
+    <p>My point isn't that Lister was wrong. My point is that the 160 years since Lister have seen medicine reach further and further down the chemical intervention path — and I think we need to ask whether we've gone too far.</p>
+
+    <h2>The Antibacterial Everything Problem</h2>
+    <p>Walk into any supermarket and you'll find antibacterial soap, antibacterial hand gel, antibacterial wipes, antibacterial surface sprays, antibacterial kitchen cloths. We have become obsessed with killing every microorganism in our environment.</p>
+    <p>Here's the problem: we now know — and this is mainstream science, not fringe — that our bodies <em>need</em> microbial exposure. The hygiene hypothesis, which has significant scientific support, suggests that children who grow up in overly sterile environments have higher rates of allergies, asthma, and autoimmune conditions. We have been so focused on killing bad microbes that we've also been killing the good ones — in our homes, in our guts, and in our children's developing immune systems.</p>
+
+    <div class="highlight">
+      <p>Lister's insight was that specific germs cause specific harm. That's different from saying all microbes are the enemy. Somewhere in the translation, we lost that nuance.</p>
+    </div>
+
+    <h2>The Chemicals in Modern Antiseptics</h2>
+    <p>The active ingredient in most antibacterial hand sanitisers is either alcohol (ethanol or isopropanol) or triclosan. Triclosan, in particular, has had a difficult regulatory history. Studies have linked it to hormonal disruption, and it's been restricted or banned in some contexts in the US and EU. It was removed from many consumer products after regulators concluded the risks outweighed the benefits.</p>
+    <p>Yet the antibacterial industry continues to market products with similar chemical profiles, and most people use them without a second thought. We squirt unknown chemicals on our children's hands before lunch and think nothing of it.</p>
+
+    <div class="concern-box">
+      <h3>Questions Worth Asking</h3>
+      <p>Before using any antibacterial product routinely: What are the active ingredients? Have they been independently tested for long-term safety? Is there evidence this product is meaningfully more effective than plain soap and water — and is that difference worth any potential chemical exposure?</p>
+    </div>
+
+    <h2>What I Do Instead</h2>
+    <p>I want to be clear: I'm not saying don't wash your hands. Handwashing is one of the most effective things you can do for your health — Semmelweis and Lister both proved that. Plain soap and water, used properly, removes most pathogens effectively. Most of the time, you don't need the chemistry lab in a bottle.</p>
+    <p>In our home, we've moved to:</p>
+    <ul class="green-list">
+      <li>Plain castile soap for handwashing — effective, gentle, biodegradable</li>
+      <li>White vinegar and essential oils for surface cleaning — genuinely antimicrobial without the harsh chemicals</li>
+      <li>Letting our kids play outside, dig in the dirt, and have normal microbial exposure</li>
+      <li>Reserving hand sanitiser for situations where soap and water genuinely aren't available</li>
+      <li>Avoiding triclosan-containing products entirely</li>
+    </ul>
+
+    <h2>Honouring What Lister Got Right</h2>
+    <p>Lister's real legacy isn't the specific chemicals he used — carbolic acid is rarely used in medicine today. His legacy is the <em>principle</em>: that infection is preventable, that cleanliness matters, that we can intervene against disease with knowledge and care.</p>
+    <p>That principle doesn't require us to drench our homes in toxic chemicals. It requires us to be thoughtful — to understand what we're trying to prevent, what actually works, and what costs come with the interventions we choose.</p>
+    <p>In that spirit, I think Lister would have been the first to ask whether the chemical approach has overshot. He was, after all, a careful observer who changed his methods as he learned more. We should do the same.</p>
+
+    <div class="share-row">
+      <button class="sh">♡ Save</button>
+      <button class="sh">Share</button>
+      <button class="sh">Pin it</button>
+    </div>
+    <p class="disclaimer">CleanLivingNZ is a personal lifestyle and wellness blog. Nothing here constitutes medical or health advice. Please do your own research and consult a qualified health professional.</p>
+  </main>
+
+  <aside>
+    <div class="about-sb">
+      <div class="about-av">JK</div>
+      <h4>Hi, I'm Janine</h4>
+      <p>Wellington-based mum of two, toxin-free living advocate, and chronic overthinker about what's in our cleaning products. Here to share what I've learned.</p>
+    </div>
+
+    <div class="cta-sb">
+      <h4>Join the CleanLiving Community</h4>
+      <p>Practical tips for a toxin-free home, delivered fortnightly.</p>
+      <button>Subscribe Free</button>
+    </div>
+
+    <div class="sb">
+      <h4>You Might Also Like</h4>
+      <ul>
+        <li><a href="#">10 Toxic Ingredients to Remove from Your Home Right Now</a><div class="meta">2 weeks ago</div></li>
+        <li><a href="#">DIY Natural All-Purpose Cleaner (That Actually Works)</a><div class="meta">3 weeks ago</div></li>
+        <li><a href="#">The Hygiene Hypothesis: Are We Too Clean?</a><div class="meta">1 month ago</div></li>
+        <li><a href="#">What's Really in Your Hand Sanitiser?</a><div class="meta">2 months ago</div></li>
+      </ul>
+    </div>
+
+    <div class="sb">
+      <h4>Topics</h4>
+      <p>
+        <a href="#">Natural Cleaning</a> · <a href="#">Gut Health</a> · <a href="#">Toxin-Free</a> · <a href="#">Kids Health</a> · <a href="#">DIY</a> · <a href="#">Skincare</a>
+      </p>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  &copy; 2025 CleanLivingNZ — Janine Kowalski — Wellington, NZ<br>
+  <span style="font-size:0.71rem;opacity:0.7;">Personal blog. Not medical advice.</span>
+</footer>
+</body>
+</html>
