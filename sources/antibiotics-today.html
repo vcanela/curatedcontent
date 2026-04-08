@@ -79,8 +79,21 @@
 
     @media (max-width: 768px) { .layout { grid-template-columns: 1fr; } .stat-row { grid-template-columns: 1fr 1fr; } .footer-inner { grid-template-columns: 1fr; } h1 { font-size: 1.9rem; } }
   </style>
+  <style>
+    .hud-top-bar{position:fixed;top:0;left:0;width:100%;height:60px;background:#1a2744;border-bottom:4px solid #0d7a6e;display:flex;align-items:center;z-index:9999;box-shadow:0 4px 10px rgba(0,0,0,0.2);font-family:'Source Sans 3',Arial,sans-serif;}
+    .hud-container{max-width:1100px;margin:0 auto;width:100%;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;}
+    .breadcrumbs{color:#8fa3c8;font-size:0.9rem;}
+    .breadcrumbs a{color:#fff;text-decoration:none;font-weight:600;}
+    .breadcrumbs a:hover{color:#c8922a;}
+    .sep{margin:0 10px;color:#0d7a6e;font-weight:bold;}
+    .current-page{color:#fff;opacity:0.8;}
+    .hud-badge{background:rgba(255,255,255,0.1);border:1px solid #0d7a6e;color:#fff;padding:4px 10px;font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;border-radius:3px;white-space:nowrap;}
+    body{padding-top:70px!important;}
+  </style>
 </head>
 <body>
+<div class="hud-top-bar"><div class="hud-container"><div class="breadcrumbs"><a href="../index.html">Home</a><span class="sep">/</span><a href="../topics/antibiotics.html">Antibiotics</a><span class="sep">/</span><span class="current-page">Source Analysis</span></div><div class="hud-badge">External Source Analysis</div></div></div>
+
 
 <header>
   <div class="header-top">
