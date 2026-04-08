@@ -7,45 +7,34 @@
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --navy: #1a2744; --navy-mid: #243660; --teal: #0d7a6e; --teal-light: #e6f4f2; --grey-light: #f4f5f7; --grey-mid: #e2e4e9; --grey-text: #4a5568; --white: #ffffff; }
-    body { font-family: 'Source Sans 3', sans-serif; background: var(--grey-light); color: #1a1a2e; line-height: 1.6; }
-    header { background: var(--navy); color: var(--white); border-bottom: 4px solid var(--teal); }
+    :root {
+      --dark: #2d3b2e; --dark-mid: #3e5240; --accent: #b87d1a; --accent-light: #fdf3e3;
+      --bg: #f4f6f1; --grey-mid: #dde3d8; --grey-text: #414d3c; --white: #ffffff;
+    }
+    body { font-family: 'Source Sans 3', sans-serif; background: var(--bg); color: #1a2018; line-height: 1.6; }
+    header { background: var(--dark); color: var(--white); border-bottom: 4px solid var(--accent); }
     .header-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 70px; }
-    .site-wordmark .label { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: #8fa3c8; font-weight: 300; display: block; }
+    .site-wordmark .label { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: #a8bea0; font-weight: 300; display: block; }
     .site-wordmark .name { font-size: 1.15rem; font-weight: 700; color: var(--white); text-decoration: none; }
-    .util-bar { background: var(--navy-mid); border-bottom: 1px solid rgba(255,255,255,0.08); }
-    .util-bar-inner { max-width: 1100px; margin: 0 auto; padding: 0.45rem 2rem; display: flex; gap: 2rem; }
-    .util-bar a { color: #b0c4de; text-decoration: none; font-size: 0.8rem; }
-    .util-bar a:hover { color: var(--white); }
-    .breadcrumb { background: var(--white); border-bottom: 1px solid var(--grey-mid); padding: 0.6rem 0; }
-    .breadcrumb-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; font-size: 0.8rem; color: var(--grey-text); }
-    .breadcrumb a { color: var(--teal); text-decoration: none; }
-    .page-hero { background: var(--navy); color: var(--white); padding: 2.5rem 2rem; border-bottom: 4px solid var(--teal); }
-    .page-hero-inner { max-width: 1100px; margin: 0 auto; }
-    .page-hero .topic-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: #8fa3c8; margin-bottom: 0.5rem; }
-    .page-hero h1 { font-family: 'Source Serif 4', serif; font-size: 1.9rem; font-weight: 600; margin-bottom: 0.6rem; }
-    .page-hero p { color: rgba(255,255,255,0.8); font-size: 0.95rem; max-width: 600px; font-weight: 300; }
-    .main-wrap { max-width: 1100px; margin: 2rem auto; padding: 0 2rem; display: grid; grid-template-columns: 1fr 280px; gap: 2rem; align-items: start; }
-    .section-heading { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); border-bottom: 2px solid var(--teal); padding-bottom: 0.4rem; margin-bottom: 1.25rem; }
-    .intro-box { background: var(--white); border: 1px solid var(--grey-mid); border-radius: 4px; padding: 1.5rem; margin-bottom: 1.75rem; }
-    .intro-box p { font-size: 0.92rem; color: var(--grey-text); margin-bottom: 0.75rem; }
-    .intro-box p:last-child { margin-bottom: 0; }
+    .page-hero { background: var(--dark-mid); color: var(--white); padding: 2.25rem 2rem; border-bottom: 3px solid var(--accent); }
+    .page-hero-inner { max-width: 900px; margin: 0 auto; }
+    .page-hero .topic-label { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: #a8c4a0; margin-bottom: 0.4rem; }
+    .page-hero h1 { font-family: 'Source Serif 4', serif; font-size: 1.85rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .page-hero p { color: rgba(255,255,255,0.78); font-size: 0.92rem; max-width: 600px; font-weight: 300; }
+    .main-wrap { max-width: 900px; margin: 2rem auto; padding: 0 2rem; }
+    .section-heading { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dark-mid); border-bottom: 2px solid var(--grey-mid); padding-bottom: 0.4rem; margin-bottom: 1.25rem; }
     .source-list { display: flex; flex-direction: column; gap: 1rem; }
-    .source-card { background: var(--white); border: 1px solid var(--grey-mid); border-radius: 4px; padding: 1.35rem 1.5rem; display: flex; gap: 1.25rem; align-items: flex-start; text-decoration: none; color: inherit; transition: box-shadow 0.15s, border-color 0.15s; }
-    .source-card:hover { box-shadow: 0 3px 14px rgba(0,0,0,0.08); border-color: var(--teal); }
+    .source-card { background: var(--white); border: 1px solid var(--grey-mid); border-radius: 6px; padding: 1.35rem 1.5rem; display: flex; gap: 1.25rem; align-items: flex-start; text-decoration: none; color: inherit; transition: box-shadow 0.15s, border-color 0.15s; }
+    .source-card:hover { box-shadow: 0 3px 14px rgba(0,0,0,0.07); border-color: var(--accent); }
     .source-badge { flex-shrink: 0; width: 42px; height: 42px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
     .badge-high { background: #dff0e8; } .badge-mid { background: #fff3e0; } .badge-low { background: #fce8e8; }
-    .source-info h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.25rem; }
+    .source-info h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.25rem; }
     .source-info .source-type { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; margin-bottom: 0.4rem; }
     .type-high { color: #2a7a4f; } .type-mid { color: #b06a10; } .type-low { color: #a83232; }
     .source-info p { font-size: 0.85rem; color: var(--grey-text); line-height: 1.5; }
-    .sidebar-card { background: var(--white); border: 1px solid var(--grey-mid); border-radius: 4px; padding: 1.25rem; margin-bottom: 1.25rem; }
-    .sidebar-card h4 { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.85rem; }
-    .sidebar-card p, .sidebar-card li { font-size: 0.85rem; color: var(--grey-text); line-height: 1.55; margin-bottom: 0.5rem; }
-    .sidebar-card ul { padding-left: 1.1rem; }
-    footer { background: var(--navy); color: #8fa3c8; padding: 1.5rem 2rem; font-size: 0.78rem; margin-top: 3rem; }
+    footer { background: var(--dark); color: #a8bea0; padding: 1.25rem 2rem; font-size: 0.78rem; margin-top: 3rem; }
     .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; }
-    @media (max-width: 768px) { .main-wrap { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) { .page-hero h1 { font-size: 1.5rem; } }
   </style>
   <style>
     .hud-top-bar{position:fixed;top:0;left:0;width:100%;height:60px;background:#1a2744;border-bottom:4px solid #0d7a6e;display:flex;align-items:center;z-index:9999;box-shadow:0 4px 10px rgba(0,0,0,0.2);font-family:'Source Sans 3',Arial,sans-serif;}
@@ -68,22 +57,10 @@
       <span class="label">Educational Resource Portal</span>
       <a href="../index.html" class="name">Medicine &amp; Science Research Hub</a>
     </div>
-    <div style="font-size:0.78rem;color:#8fa3c8;text-align:right;">Year 9 Science<br>Curated Research Collection</div>
+    <div style="font-size:0.78rem;color:#a8bea0;text-align:right;">Year 9 Science<br>Curated Research Collection</div>
   </div>
 </header>
-<div class="util-bar">
-  <div class="util-bar-inner">
-    <a href="../index.html">Home</a>
-    <a href="vaccines.html">Vaccines</a>
-    <a href="antibiotics.html">Antibiotics</a>
-    <a href="semmelweis.html">Semmelweis</a>
-    <a href="lister.html">Lister</a>
-    <a href="clinical-trials.html">Clinical Trials</a>
-  </div>
-</div>
-<div class="breadcrumb">
-  <div class="breadcrumb-inner"><a href="../index.html">Home</a> &rsaquo; Joseph Lister &amp; Sterilisation</div>
-</div>
+
 <div class="page-hero">
   <div class="page-hero-inner">
     <div class="topic-label">Topic Area</div>
@@ -93,76 +70,43 @@
 </div>
 
 <div class="main-wrap">
-  <main>
-    <div class="intro-box">
-      <p class="section-heading">Topic Overview</p>
-      <p>Before Joseph Lister introduced antiseptic surgery in the 1860s, around half of all surgical patients died from post-operative infections. Surgery was a last resort — not because of the procedure itself, but because of what happened after. Infection was considered an inevitable part of healing.</p>
-      <p>Inspired by Louis Pasteur's germ theory, Lister began using carbolic acid (phenol) to sterilise surgical instruments, dress wounds, and clean operating environments. Mortality rates in his wards dropped dramatically. His methods, though initially resisted by many surgeons, eventually transformed surgical practice worldwide and laid the foundation for modern sterile technique.</p>
-    </div>
+  <p class="section-heading">Available Sources</p>
+  <div class="source-list">
 
-    <p class="section-heading">Available Sources</p>
-    <div class="source-list">
+    <a class="source-card" href="../sources/lister-surgery.html">
+      <div class="source-badge badge-high">📄</div>
+      <div class="source-info">
+        <div class="source-type type-high">Source 1</div>
+        <h3>Joseph Lister and the Development of Antiseptic Surgery</h3>
+        <p>A scholarly account of Lister's work at Glasgow Royal Infirmary and Edinburgh, the scientific basis of his antiseptic technique, the reception of his ideas by the medical community, and his lasting influence on surgical practice and infection control.</p>
+      </div>
+    </a>
 
-      <a class="source-card" href="../sources/lister-surgery.html">
-        <div class="source-badge badge-high">📄</div>
-        <div class="source-info">
-          <div class="source-type type-high">Source 1</div>
-          <h3>Joseph Lister and the Development of Antiseptic Surgery</h3>
-          <p>A scholarly account of Lister's work at Glasgow Royal Infirmary and Edinburgh, the scientific basis of his antiseptic technique, the reception of his ideas by the medical community, and his lasting influence on surgical practice and infection control.</p>
-        </div>
-      </a>
+    <a class="source-card" href="../sources/lister-revolution.html">
+      <div class="source-badge badge-mid">📰</div>
+      <div class="source-info">
+        <div class="source-type type-mid">Source 2</div>
+        <h3>The Man Who Made Surgery Safe: Joseph Lister's Germ-Fighting Revolution</h3>
+        <p>A popular science feature presenting Lister as a lone visionary who transformed medicine against resistance. Engaging narrative style with some simplification of the science and historical context.</p>
+      </div>
+    </a>
 
-      <a class="source-card" href="../sources/lister-revolution.html">
-        <div class="source-badge badge-mid">📰</div>
-        <div class="source-info">
-          <div class="source-type type-mid">Source 2</div>
-          <h3>The Man Who Made Surgery Safe: Joseph Lister's Germ-Fighting Revolution</h3>
-          <p>A popular science feature presenting Lister as a lone visionary who transformed medicine against resistance. Engaging narrative style with some simplification of the science and historical context.</p>
-        </div>
-      </a>
+    <a class="source-card" href="../sources/lister-blog.html">
+      <div class="source-badge badge-low">✍️</div>
+      <div class="source-info">
+        <div class="source-type type-low">Source 3</div>
+        <h3>Lister, Carbolic Acid, and Why We're Still Poisoning Ourselves</h3>
+        <p>A wellness blog post that celebrates Lister's "natural" instincts while arguing that modern antiseptics and sterilisation chemicals are harmful to health. Loosely based on history, with significant factual drift.</p>
+      </div>
+    </a>
 
-      <a class="source-card" href="../sources/lister-blog.html">
-        <div class="source-badge badge-low">✍️</div>
-        <div class="source-info">
-          <div class="source-type type-low">Source 3</div>
-          <h3>Lister, Carbolic Acid, and Why We're Still Poisoning Ourselves</h3>
-          <p>A wellness blog post that celebrates Lister's "natural" instincts while arguing that modern antiseptics and sterilisation chemicals are harmful to health. Loosely based on history, with significant factual drift.</p>
-        </div>
-      </a>
-
-    </div>
-  </main>
-
-  <aside>
-    <div class="sidebar-card">
-      <h4>Key Questions to Consider</h4>
-      <ul>
-        <li>What was the connection between Pasteur's germ theory and Lister's surgical techniques?</li>
-        <li>Why did some surgeons refuse to adopt Lister's methods even after his results were published?</li>
-        <li>How does Lister's story connect to Semmelweis's?</li>
-        <li>What is the difference between antiseptic and aseptic technique?</li>
-      </ul>
-    </div>
-    <div class="sidebar-card">
-      <h4>Curriculum Links</h4>
-      <p>NZ Science Curriculum: Living World — health and disease; Nature of Science — how scientific understanding develops; the relationship between evidence and theory.</p>
-    </div>
-    <div class="sidebar-card">
-      <h4>Other Topics</h4>
-      <ul style="list-style:none;padding:0;">
-        <li style="padding:0.35rem 0;border-bottom:1px solid var(--grey-mid);"><a href="vaccines.html" style="color:var(--teal);text-decoration:none;font-size:0.85rem;">Vaccines</a></li>
-        <li style="padding:0.35rem 0;border-bottom:1px solid var(--grey-mid);"><a href="antibiotics.html" style="color:var(--teal);text-decoration:none;font-size:0.85rem;">Antibiotics &amp; Resistance</a></li>
-        <li style="padding:0.35rem 0;border-bottom:1px solid var(--grey-mid);"><a href="semmelweis.html" style="color:var(--teal);text-decoration:none;font-size:0.85rem;">Semmelweis &amp; Handwashing</a></li>
-        <li style="padding:0.35rem 0;"><a href="clinical-trials.html" style="color:var(--teal);text-decoration:none;font-size:0.85rem;">Clinical Trials</a></li>
-      </ul>
-    </div>
-  </aside>
+  </div>
 </div>
 
 <footer>
   <div class="footer-inner">
     <span>Medicine &amp; Science Research Hub &mdash; Year 9 Science</span>
-    <span>Last updated: March 2025</span>
+    <span><a href="../index.html" style="color:#a8bea0;text-decoration:none;">← All Topics</a></span>
   </div>
 </footer>
 </body>
