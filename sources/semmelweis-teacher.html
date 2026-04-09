@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ignaz Semmelweis: The Father of Hand Hygiene — A Classroom Resource | ScienceTeachingResources.net</title>
+<style>
+/* Old-school educational website styling — no Google Fonts, system fonts only */
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  background: #eeeeee;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  padding-top: 70px !important;
+}
+a {
+  color: #0000cc;
+  text-decoration: underline;
+}
+a:visited {
+  color: #551a8b;
+}
+a:hover {
+  color: #cc0000;
+}
+/* Outer wrapper — table-like fixed width feel */
+.page-wrapper {
+  width: 780px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-left: 1px solid #aaaaaa;
+  border-right: 1px solid #aaaaaa;
+}
+/* Site header — old blue banner */
+.site-header {
+  background: #003399;
+  padding: 10px 16px;
+  border-bottom: 3px solid #ffcc00;
+}
+.site-header h1 {
+  font-family: Arial, sans-serif;
+  font-size: 1.4em;
+  color: #ffffff;
+  margin: 0;
+  font-weight: bold;
+}
+.site-header .tagline {
+  font-family: Arial, sans-serif;
+  font-size: 0.75em;
+  color: #ccddff;
+  margin-top: 3px;
+}
+/* Nav bar */
+.nav-bar {
+  background: #336699;
+  padding: 5px 16px;
+  border-bottom: 1px solid #225588;
+}
+.nav-bar a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8em;
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 18px;
+  font-weight: bold;
+}
+.nav-bar a:hover {
+  text-decoration: underline;
+  color: #ffff99;
+}
+/* Update notice */
+.update-notice {
+  background: #ffffcc;
+  border: 1px solid #cccc00;
+  padding: 7px 12px;
+  font-family: Arial, sans-serif;
+  font-size: 0.78em;
+  color: #555500;
+  margin: 10px 16px;
+}
+/* Main content area */
+.content-area {
+  padding: 10px 18px 20px 18px;
+}
+/* Page title */
+.page-title {
+  font-family: Arial, sans-serif;
+  font-size: 1.6em;
+  color: #003399;
+  border-bottom: 2px solid #003399;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+}
+/* Section headings */
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.1em;
+  color: #003399;
+  border-left: 4px solid #003399;
+  padding-left: 8px;
+  margin-top: 22px;
+  margin-bottom: 8px;
+  background: #eef2ff;
+  padding: 5px 5px 5px 10px;
+}
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95em;
+  color: #333333;
+  margin-top: 16px;
+  margin-bottom: 6px;
+}
+p {
+  font-size: 0.92em;
+  line-height: 1.65;
+  margin-bottom: 12px;
+}
+/* Two column layout — simulated with float */
+.two-col {
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+.col-left {
+  float: left;
+  width: 200px;
+  margin-right: 16px;
+}
+.col-right {
+  overflow: hidden;
+}
+/* Broken image placeholder */
+.broken-img {
+  width: 190px;
+  height: 220px;
+  background: #cccccc;
+  border: 2px inset #aaaaaa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7em;
+  color: #666666;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 8px;
+}
+.broken-img .x {
+  font-size: 2em;
+  color: #999999;
+  margin-bottom: 6px;
+}
+.img-caption {
+  font-size: 0.72em;
+  color: #666666;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  width: 190px;
+  margin-top: 4px;
+  font-style: italic;
+}
+/* Definition box */
+.definition-box {
+  background: #f0f8ff;
+  border: 1px solid #99aacc;
+  padding: 10px 14px;
+  margin: 14px 0;
+  font-size: 0.85em;
+}
+.definition-box .def-title {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 0.9em;
+  color: #003399;
+  margin-bottom: 5px;
+}
+/* Activity box */
+.activity-box {
+  background: #fff8e8;
+  border: 2px solid #cc8800;
+  padding: 12px 16px;
+  margin: 18px 0;
+  font-size: 0.85em;
+}
+.activity-box .act-title {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: #884400;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.activity-box ul, .activity-box ol {
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+.activity-box li {
+  margin-bottom: 5px;
+  line-height: 1.55;
+}
+/* Key facts table */
+table.key-facts {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85em;
+  margin: 14px 0;
+}
+table.key-facts th {
+  background: #336699;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  padding: 7px 10px;
+  text-align: left;
+  border: 1px solid #225588;
+}
+table.key-facts td {
+  padding: 6px 10px;
+  border: 1px solid #cccccc;
+  vertical-align: top;
+  line-height: 1.5;
+}
+table.key-facts tr:nth-child(even) td {
+  background: #f5f5f5;
+}
+/* Timeline */
+.timeline-item {
+  border-left: 3px solid #336699;
+  padding: 6px 0 6px 14px;
+  margin-bottom: 10px;
+  font-size: 0.88em;
+}
+.timeline-item .year {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: #003399;
+}
+/* Curriculum links box */
+.curriculum-box {
+  background: #eeffee;
+  border: 1px solid #66aa66;
+  padding: 10px 14px;
+  margin: 14px 0;
+  font-size: 0.82em;
+  font-family: Arial, sans-serif;
+}
+.curriculum-box strong {
+  color: #226622;
+}
+/* Footer */
+.site-footer {
+  background: #003399;
+  color: #ccddff;
+  padding: 10px 16px;
+  font-family: Arial, sans-serif;
+  font-size: 0.75em;
+  border-top: 3px solid #ffcc00;
+  margin-top: 20px;
+}
+.site-footer a {
+  color: #ffff99;
+}
+/* HUD */
+.hud-top-bar{position:fixed;top:0;left:0;width:100%;height:60px;background:#1a2744;border-bottom:4px solid #0d7a6e;display:flex;align-items:center;z-index:9999;box-shadow:0 4px 10px rgba(0,0,0,0.2);font-family:'Source Sans 3',Arial,sans-serif;}
+.hud-container{max-width:1100px;margin:0 auto;width:100%;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;}
+.breadcrumbs{color:#8fa3c8;font-size:0.9rem;}
+.breadcrumbs a{color:#fff;text-decoration:none;font-weight:600;}
+.breadcrumbs a:hover{color:#c8922a;}
+.sep{margin:0 10px;color:#0d7a6e;font-weight:bold;}
+.current-page{color:#fff;opacity:0.8;}
+.hud-badge{background:rgba(255,255,255,0.1);border:1px solid #0d7a6e;color:#fff;padding:4px 10px;font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;border-radius:3px;white-space:nowrap;}
+</style>
+</head>
+<body>
+
+<div class="hud-top-bar"><div class="hud-container"><div class="breadcrumbs"><a href="../index.html">Home</a><span class="sep">/</span><a href="../topics/semmelweis.html">Semmelweis</a><span class="sep">/</span><span class="current-page">Source Analysis</span></div><div class="hud-badge">External Source Analysis</div></div></div>
+
+<div class="page-wrapper">
+
+<div class="site-header">
+  <h1>ScienceTeachingResources.net</h1>
+  <div class="tagline">Free classroom resources for science teachers &mdash; Years 7&ndash;13 &mdash; Curriculum-aligned</div>
+</div>
+
+<div class="nav-bar">
+  <a href="#">Home</a>
+  <a href="#">Biology</a>
+  <a href="#">Chemistry</a>
+  <a href="#">Physics</a>
+  <a href="#">History of Science</a>
+  <a href="#">Assessment Ideas</a>
+  <a href="#">Links</a>
+  <a href="#">About</a>
+</div>
+
+<div class="update-notice">
+  <strong>Note:</strong> This page was last updated <strong>November 2007</strong>. Some links may be broken. Content is provided free for educational use. Please check our <a href="#">main page</a> for newer resources.
+</div>
+
+<div class="content-area">
+
+  <div class="page-title">Ignaz Semmelweis: The Father of Hand Hygiene &mdash; A Classroom Resource</div>
+
+  <div class="curriculum-box">
+    <strong>Curriculum Links (NZ Science Years 9&ndash;10):</strong> Living World | Nature of Science — Understanding about Science | Science in the Community<br>
+    <strong>Also useful for:</strong> History, Social Studies, Health &amp; Physical Education
+  </div>
+
+  <div class="two-col">
+    <div class="col-left">
+      <div class="broken-img">
+        <div class="x">&#x26A0;</div>
+        Image not found<br><br>
+        <small>semmelweis_portrait.jpg</small>
+      </div>
+      <div class="img-caption">Portrait of Ignaz Semmelweis<br>(image unavailable)</div>
+    </div>
+    <div class="col-right">
+      <p>Ignaz Philipp Semmelweis (1818&ndash;1868) was a Hungarian physician who made one of the most important discoveries in the history of medicine: that doctors should wash their hands before treating patients.</p>
+      <p>Working at a hospital in Vienna, Austria, during the 1840s, Semmelweis discovered that the death rate from childbed fever (also called puerperal fever) could be dramatically reduced if medical staff washed their hands before delivering babies. His discovery is why he is often called the "Father of Hand Hygiene."</p>
+      <p>Despite the evidence he provided, doctors at the time immediately accepted his findings and handwashing quickly became standard practice in hospitals across Europe. His work is now recognised as a landmark moment in the history of medicine and the foundation of modern hospital hygiene.</p>
+    </div>
+  </div>
+
+  <h2>Background: Vienna in the 1840s</h2>
+
+  <p>In the mid-nineteenth century, hospitals were very different from today. There was little understanding of how diseases spread, and surgery and childbirth were extremely dangerous. Hospitals could be places where patients were more likely to die than recover.</p>
+
+  <p>The Vienna General Hospital was one of the most important medical institutions in Europe. It was a teaching hospital where medical students learned their craft — including how to perform post-mortem examinations (autopsies) on people who had died.</p>
+
+  <p>Childbed fever — the infection that killed many women in the days after giving birth — was a major problem in the hospital. No one understood what caused it, and treatments were largely ineffective.</p>
+
+  <h2>Semmelweis's Discovery</h2>
+
+  <p>In 1847, Semmelweis noticed something important. The hospital had two maternity wards: one staffed by doctors and medical students, and one staffed by midwives. The death rate in the doctors' ward was much higher — sometimes around 10 to 18% of women died — while in the midwives' ward it was under 2%.</p>
+
+  <p>When his friend and colleague Dr. Jakob Kolletschka died from a wound infection after being accidentally cut during an autopsy, Semmelweis realised the connection. The doctors and students were going straight from autopsies to delivering babies without cleaning their hands. He concluded that they were carrying "cadaverous particles" — particles from dead bodies — that were causing the fever.</p>
+
+  <div class="definition-box">
+    <div class="def-title">Key Term: Puerperal Fever (Childbed Fever)</div>
+    <p>A serious bacterial infection of the uterus and reproductive tract that could develop in women after childbirth or miscarriage. Before the introduction of antiseptic techniques, it killed large numbers of women in hospital maternity wards. It is now rare in countries with modern medical care.</p>
+  </div>
+
+  <p>Semmelweis's solution was simple: he told doctors to wash their hands with a chlorinated lime solution before entering the maternity ward. The results were dramatic. The death rate in the doctors' ward dropped almost immediately to match that of the midwives' ward.</p>
+
+  <h2>Semmelweis and Germ Theory</h2>
+
+  <p>Semmelweis's work was groundbreaking because he discovered germ theory — the idea that tiny organisms called germs cause disease — long before this was widely accepted. Thanks to his discovery, doctors began to understand that illness could be spread from person to person, and that cleanliness could prevent this.</p>
+
+  <p>His ideas influenced later scientists and doctors, including Louis Pasteur and Joseph Lister, who built on his work to develop the modern understanding of infection and antiseptic surgery.</p>
+
+  <h2>Timeline of Semmelweis's Life and Work</h2>
+
+  <div class="timeline-item">
+    <span class="year">1818</span> &mdash; Ignaz Semmelweis born in Buda (now Budapest), Hungary, on 1 July.
+  </div>
+  <div class="timeline-item">
+    <span class="year">1844</span> &mdash; Qualifies as a doctor and begins working at Vienna General Hospital.
+  </div>
+  <div class="timeline-item">
+    <span class="year">1847</span> &mdash; Observes the difference in death rates between the two maternity wards. Introduces handwashing with chlorinated lime. Death rates drop dramatically.
+  </div>
+  <div class="timeline-item">
+    <span class="year">1849</span> &mdash; Leaves Vienna and returns to Budapest after his contract is not renewed.
+  </div>
+  <div class="timeline-item">
+    <span class="year">1861</span> &mdash; Publishes his major work, <em>The Etiology, Concept and Prophylaxis of Childbed Fever</em>, laying out his evidence in full.
+  </div>
+  <div class="timeline-item">
+    <span class="year">1865</span> &mdash; Admitted to a mental asylum. Dies shortly after, reportedly from a blood infection.
+  </div>
+  <div class="timeline-item">
+    <span class="year">1868</span> &mdash; <strong>[Listed as death year in some older sources — see note below]</strong>
+  </div>
+
+  <h2>Key Facts at a Glance</h2>
+
+  <table class="key-facts">
+    <tr>
+      <th>Category</th>
+      <th>Information</th>
+    </tr>
+    <tr>
+      <td><strong>Full name</strong></td>
+      <td>Ignaz Philipp Semmelweis</td>
+    </tr>
+    <tr>
+      <td><strong>Born</strong></td>
+      <td>1 July 1818, Buda, Hungary (now Budapest)</td>
+    </tr>
+    <tr>
+      <td><strong>Died</strong></td>
+      <td>1868 (some sources say August 1865 &mdash; exact date disputed in older scholarship)</td>
+    </tr>
+    <tr>
+      <td><strong>Key discovery</strong></td>
+      <td>Handwashing prevents the spread of childbed fever; discovered germ theory</td>
+    </tr>
+    <tr>
+      <td><strong>Where he worked</strong></td>
+      <td>Vienna General Hospital, Austria; later St. Rochus Hospital, Budapest</td>
+    </tr>
+    <tr>
+      <td><strong>Legacy</strong></td>
+      <td>Known as the "Father of Hand Hygiene"; influenced Lister and Pasteur; Semmelweis University named in his honour</td>
+    </tr>
+  </table>
+
+  <h2>Why Was His Discovery Ignored?</h2>
+
+  <p>It may seem surprising to us today that Semmelweis's simple, effective solution was not immediately adopted everywhere. However, in the 1840s, doctors did not have our modern understanding of disease. The idea that a doctor's dirty hands could kill patients was difficult for many to accept, partly because it was insulting to their professional pride.</p>
+
+  <p>Fortunately, Semmelweis was persistent and continued to advocate for handwashing even when faced with resistance. His work eventually had a lasting impact on medicine, and today hand hygiene is one of the most important parts of infection control in hospitals worldwide.</p>
+
+  <div class="definition-box">
+    <div class="def-title">Key Term: Antiseptic</div>
+    <p>A substance that prevents the growth of microorganisms that cause disease. Semmelweis used chlorinated lime solution as an antiseptic. Modern antiseptics include alcohol-based hand rubs and iodine solutions. The development of antiseptic technique transformed surgery in the late 19th century.</p>
+  </div>
+
+  <h2>Semmelweis and Scientific Method</h2>
+
+  <p>One important lesson from Semmelweis's story is about how science works. He used careful observation and data collection to notice a pattern (the different death rates in the two wards), form a hypothesis (that doctors were carrying something harmful), test his hypothesis (by introducing handwashing), and observe the results (dramatic reduction in deaths).</p>
+
+  <p>This is a good example of the scientific method in action, even though Semmelweis himself did not have a full explanation for <em>why</em> his handwashing protocol worked. He observed that it did work — and that was enough to act on. Full understanding of germ theory came later.</p>
+
+  <div class="activity-box">
+    <div class="act-title">&#x1F4D6; Classroom Activity 1: Data Analysis</div>
+    <p>The following figures are approximate representations of the data Semmelweis collected at Vienna General Hospital:</p>
+    <ul>
+      <li>Doctors' Ward, April 1847 (before handwashing): 36 deaths out of 105 births = approximately 18% mortality rate</li>
+      <li>Doctors' Ward, June–August 1847 (after handwashing introduced): 3 deaths out of 204 births = approximately 1.5% mortality rate</li>
+      <li>Midwives' Ward (same period, no change in practice): approximately 1–2% mortality rate throughout</li>
+    </ul>
+    <p><strong>Discussion questions:</strong></p>
+    <ol>
+      <li>Why did the midwives' ward always have a lower death rate than the doctors' ward?</li>
+      <li>What does the rapid drop in mortality in the doctors' ward tell us?</li>
+      <li>Why might some doctors have found these figures hard to accept?</li>
+    </ol>
+  </div>
+
+  <div class="activity-box">
+    <div class="act-title">&#x270F; Classroom Activity 2: Writing Exercise</div>
+    <p>Write a short piece (200–250 words) from the perspective of ONE of the following people in 1848 Vienna:</p>
+    <ul>
+      <li>A doctor who does NOT believe in Semmelweis's handwashing theory</li>
+      <li>A patient in the maternity ward who has heard about the debate</li>
+      <li>Semmelweis himself, writing in his diary about how frustrated he feels</li>
+    </ul>
+    <p>Think about: what did people know at the time? What did they believe? How did they make sense of illness before germ theory?</p>
+  </div>
+
+  <h2>Further Reading and Links</h2>
+
+  <p>The following links were working as of November 2007 and may be useful for further research. Please check whether they are still active before assigning them to students.</p>
+
+  <ul>
+    <li><a href="#">National Library of Medicine (USA) — Semmelweis biography</a> [external link]</li>
+    <li><a href="#">BBC History &mdash; Famous Scientists</a> [external link]</li>
+    <li><a href="#">Semmelweis Society International</a> [external link]</li>
+    <li><a href="#">History of Medicine: Germ Theory (Encyclopaedia Britannica)</a> [external link]</li>
+  </ul>
+
+  <p style="font-size:0.8em;color:#777777;font-family:Arial,sans-serif;margin-top:20px;border-top:1px solid #cccccc;padding-top:10px;">
+    &copy; 2003&ndash;2007 ScienceTeachingResources.net &mdash; Free to use for educational purposes. Not for commercial reproduction. Content may be freely copied and adapted for classroom use. Please link back to this page if you republish this material online. This page has not been reviewed by a medical professional and is intended for educational purposes only. For accurate medical information, consult a qualified healthcare provider or peer-reviewed source.
+  </p>
+
+</div><!-- end content-area -->
+
+<div class="site-footer">
+  <strong>ScienceTeachingResources.net</strong> &mdash; Free resources for NZ and Australian science teachers since 2003<br>
+  <a href="#">Home</a> | <a href="#">About</a> | <a href="#">Contact</a> | <a href="#">Copyright Notice</a> | <a href="#">Submit a Resource</a>
+  <br><small>This site is best viewed at 1024x768 resolution with Internet Explorer 6.0 or higher.</small>
+</div>
+
+</div><!-- end page-wrapper -->
+
+</body>
+</html>

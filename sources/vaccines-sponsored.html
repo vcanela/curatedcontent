@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Parents Should Know About Vaccine Ingredients | PureLife Wellness NZ</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Lato',Arial,sans-serif;background:#faf7f2;color:#333;padding-top:70px!important;}
+a{color:#5a7c5e;text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+/* Site header */
+.site-header{background:#fff;border-bottom:1px solid #e8e2d9;padding:0;}
+.header-top{background:#5a7c5e;padding:6px 0;text-align:center;font-size:0.75rem;color:#c9deca;letter-spacing:0.5px;}
+.header-main{max-width:1100px;margin:0 auto;padding:16px 1.5rem;display:flex;justify-content:space-between;align-items:center;}
+.site-logo{display:flex;align-items:center;gap:12px;}
+.logo-leaf{width:40px;height:40px;background:#5a7c5e;border-radius:50% 50% 50% 0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;}
+.logo-text{font-size:1.5rem;font-weight:900;color:#2d4a30;letter-spacing:-0.5px;}
+.logo-text span{color:#5a7c5e;}
+.logo-sub{font-size:0.7rem;color:#8a9c8b;letter-spacing:1px;text-transform:uppercase;}
+.header-nav{display:flex;gap:2rem;}
+.header-nav a{color:#555;font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;}
+.header-nav a:hover{color:#5a7c5e;}
+.header-cta{background:#5a7c5e;color:#fff!important;padding:9px 22px;border-radius:25px;font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;}
+.header-cta:hover{background:#4a6b4e;text-decoration:none!important;}
+
+/* Sponsored label */
+.sponsored-notice{background:#f5f0e8;border-bottom:1px solid #ddd8ce;padding:7px 0;text-align:center;font-size:0.7rem;color:#888;letter-spacing:0.5px;}
+.sponsored-notice strong{color:#666;}
+
+/* Main layout */
+.main-container{max-width:1100px;margin:30px auto;padding:0 1.5rem;display:grid;grid-template-columns:1fr 320px;gap:2.5rem;}
+
+/* Breadcrumb */
+.breadcrumb{font-size:0.78rem;color:#888;margin-bottom:20px;}
+.breadcrumb a{color:#5a7c5e;}
+.breadcrumb span{margin:0 6px;}
+
+/* Article */
+.article-category{display:inline-block;background:#e8f0e9;color:#5a7c5e;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:4px 14px;border-radius:20px;margin-bottom:14px;}
+.article-headline{font-size:2rem;font-weight:900;line-height:1.25;color:#2d4a30;margin-bottom:12px;}
+.article-sub{font-size:1.05rem;color:#666;line-height:1.65;margin-bottom:18px;}
+.article-meta{font-size:0.8rem;color:#999;margin-bottom:20px;display:flex;gap:16px;align-items:center;}
+.author-chip{display:flex;align-items:center;gap:8px;}
+.author-avatar{width:32px;height:32px;background:#d0dfd1;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.6rem;color:#5a7c5e;}
+.author-name{font-weight:700;color:#444;}
+
+/* Hero */
+.hero-img{background:linear-gradient(135deg,#d0dfd1,#e8f0e9);width:100%;height:360px;display:flex;align-items:center;justify-content:center;color:#6a8a6e;font-size:0.85rem;border-radius:8px;margin-bottom:26px;position:relative;overflow:hidden;}
+.hero-img .overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(45,74,48,0.7));padding:20px;color:#fff;}
+.hero-img .overlay p{font-size:0.78rem;opacity:0.9;}
+
+/* Article body */
+.article-body p{font-size:1rem;line-height:1.8;margin-bottom:18px;color:#3a3a3a;}
+.article-body h2{font-size:1.3rem;font-weight:900;margin:30px 0 12px;color:#2d4a30;}
+.article-body h3{font-size:1.05rem;font-weight:700;margin:22px 0 10px;color:#5a7c5e;}
+.article-body ul{padding-left:22px;margin-bottom:18px;}
+.article-body li{font-size:0.97rem;line-height:1.7;margin-bottom:7px;color:#3a3a3a;}
+
+/* Info box */
+.info-box{background:#fff;border:1px solid #d5e8d6;border-left:5px solid #5a7c5e;border-radius:4px;padding:20px 22px;margin:26px 0;}
+.info-box h3{font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;color:#5a7c5e;font-weight:700;margin-bottom:10px;}
+.info-box p{font-size:0.93rem;line-height:1.7;color:#444;margin-bottom:0;}
+
+/* Warning-tone box */
+.concern-box{background:#fffbf0;border:1px solid #e0d4a0;border-left:5px solid #c8922a;border-radius:4px;padding:20px 22px;margin:26px 0;}
+.concern-box h3{font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;color:#c8922a;font-weight:700;margin-bottom:10px;}
+.concern-box p{font-size:0.93rem;line-height:1.7;color:#444;margin-bottom:8px;}
+
+/* PRODUCT CALLOUT */
+.product-callout{background:#fff;border:2px solid #5a7c5e;border-radius:10px;padding:24px;margin:32px 0;display:grid;grid-template-columns:140px 1fr;gap:22px;align-items:center;}
+.product-img{background:#e0ece1;height:130px;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:0.7rem;color:#5a7c5e;text-align:center;padding:8px;}
+.product-img .product-icon{font-size:2rem;margin-bottom:6px;}
+.product-info{}
+.product-name{font-size:1.2rem;font-weight:900;color:#2d4a30;margin-bottom:4px;}
+.product-tagline{font-size:0.82rem;color:#5a7c5e;font-style:italic;margin-bottom:8px;}
+.product-desc{font-size:0.88rem;color:#555;line-height:1.6;margin-bottom:12px;}
+.product-price{font-size:1.1rem;font-weight:900;color:#2d4a30;margin-bottom:10px;}
+.product-price span{font-size:0.75rem;font-weight:400;color:#888;}
+.product-stars{color:#f0a500;font-size:0.85rem;margin-bottom:10px;}
+.product-btn{display:inline-block;background:#5a7c5e;color:#fff;padding:10px 22px;border-radius:25px;font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;}
+.product-btn:hover{background:#4a6b4e;text-decoration:none;}
+.disclaimer-tiny{font-size:0.65rem;color:#aaa;margin-top:6px;line-height:1.4;}
+
+/* Pull quote */
+.pull-quote{border-top:2px solid #5a7c5e;border-bottom:2px solid #5a7c5e;padding:20px 0;margin:28px 0;font-size:1.15rem;font-weight:300;color:#2d4a30;line-height:1.6;text-align:center;font-style:italic;}
+
+/* Sidebar */
+.sidebar{}
+.sidebar-section{background:#fff;border:1px solid #e8e2d9;border-radius:8px;margin-bottom:22px;overflow:hidden;}
+.sidebar-title{background:#5a7c5e;color:#fff;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:10px 16px;}
+.sidebar-body{padding:16px;}
+.sidebar-body p{font-size:0.85rem;color:#555;line-height:1.6;margin-bottom:12px;}
+
+.product-mini{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid #f0ece4;}
+.product-mini:last-child{border-bottom:none;}
+.mini-img{background:#e0ece1;width:55px;height:55px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+.mini-info .mini-name{font-size:0.85rem;font-weight:700;color:#2d4a30;}
+.mini-info .mini-price{font-size:0.82rem;color:#5a7c5e;font-weight:700;}
+.mini-info .mini-stars{font-size:0.72rem;color:#f0a500;}
+
+.featured-logos{padding:14px 16px;display:flex;flex-wrap:wrap;gap:8px;}
+.logo-badge{background:#f5f0e8;border:1px solid #e0d8cc;border-radius:4px;padding:6px 12px;font-size:0.7rem;color:#888;font-style:italic;}
+
+.email-form input{width:100%;padding:9px 12px;border:1px solid #ddd;border-radius:20px;font-size:0.85rem;margin-bottom:8px;}
+.email-form button{width:100%;background:#5a7c5e;color:#fff;border:none;padding:10px;border-radius:20px;font-size:0.85rem;font-weight:700;cursor:pointer;}
+
+/* Footer */
+.site-footer{background:#2d4a30;color:#a0b8a2;font-size:0.8rem;padding:30px 0;margin-top:40px;}
+.footer-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-bottom:24px;}
+.footer-col h4{color:#c9deca;font-size:0.85rem;font-weight:700;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.5px;}
+.footer-col a{display:block;color:#8aaa8c;font-size:0.8rem;margin-bottom:6px;}
+.footer-col a:hover{color:#fff;}
+.footer-bottom{border-top:1px solid #3d5e40;padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.footer-disclaimer{font-size:0.68rem;color:#6a8a6e;line-height:1.6;margin-top:10px;}
+
+/* HUD */
+.hud-top-bar{position:fixed;top:0;left:0;width:100%;height:60px;background:#1a2744;border-bottom:4px solid #0d7a6e;display:flex;align-items:center;z-index:9999;box-shadow:0 4px 10px rgba(0,0,0,0.2);font-family:'Source Sans 3',Arial,sans-serif;}
+.hud-container{max-width:1100px;margin:0 auto;width:100%;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;}
+.breadcrumbs{color:#8fa3c8;font-size:0.9rem;}
+.breadcrumbs a{color:#fff;text-decoration:none;font-weight:600;}
+.breadcrumbs a:hover{color:#c8922a;}
+.sep{margin:0 10px;color:#0d7a6e;font-weight:bold;}
+.current-page{color:#fff;opacity:0.8;}
+.hud-badge{background:rgba(255,255,255,0.1);border:1px solid #0d7a6e;color:#fff;padding:4px 10px;font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;border-radius:3px;white-space:nowrap;}
+</style>
+</head>
+<body>
+
+<div class="hud-top-bar"><div class="hud-container"><div class="breadcrumbs"><a href="../index.html">Home</a><span class="sep">/</span><a href="../topics/vaccines.html">Vaccines</a><span class="sep">/</span><span class="current-page">Source Analysis</span></div><div class="hud-badge">External Source Analysis</div></div></div>
+
+<div class="header-top">Free NZ shipping on orders over $65 · New: ImmunoShield Junior now in berry flavour</div>
+
+<div class="site-header">
+  <div class="header-main">
+    <div class="site-logo">
+      <div class="logo-leaf">🌿</div>
+      <div>
+        <div class="logo-text">PureLife <span>Wellness NZ</span></div>
+        <div class="logo-sub">Natural health · Clean living · NZ made</div>
+      </div>
+    </div>
+    <nav class="header-nav">
+      <a href="#">Products</a>
+      <a href="#">Learn</a>
+      <a href="#">Our Story</a>
+      <a href="#">Blog</a>
+      <a href="#" class="header-cta">Shop Now</a>
+    </nav>
+  </div>
+</div>
+
+<div class="sponsored-notice"><strong>Sponsored Content</strong> · This article is brought to you by PureLife Wellness NZ</div>
+
+<div class="main-container">
+  <div class="article-section">
+
+    <div class="breadcrumb"><a href="#">Home</a><span>/</span><a href="#">Blog</a><span>/</span><a href="#">Children's Health</a><span>/</span>Vaccine Ingredients</div>
+
+    <div class="article-category">Children's Wellness</div>
+    <h1 class="article-headline">What Parents Should Know About Vaccine Ingredients (And How to Support Your Child's Natural Immunity)</h1>
+    <p class="article-sub">Most of us follow our vaccination schedules without a second thought. But as a parent, it's natural to want to understand what's actually going into your child's body — and what steps you can take to give their immune system the best possible foundation.</p>
+
+    <div class="article-meta">
+      <div class="author-chip">
+        <div class="author-avatar">PL</div>
+        <div>
+          <div class="author-name">The PureLife Wellness Team</div>
+          <div style="font-size:0.72rem;color:#aaa;">Updated April 2024 · 8 min read</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-img">
+      [ PHOTO: Mother and child at natural light — lifestyle image ]
+      <div class="overlay"><p>Supporting your child's immunity is one of the most important things you can do as a parent.</p></div>
+    </div>
+
+    <div class="article-body">
+
+      <p>When your child's plunket nurse hands you the vaccination schedule, it can feel overwhelming. There are so many doses, so many different vaccines — and the information sheet that comes with each one is dense, technical, and hard to interpret if you don't have a medical background.</p>
+
+      <p>We believe parents deserve clear, honest information. So in this article, we're going to walk through some of the common ingredients found in childhood vaccines, explain what they're used for, and then share our philosophy on how nutritional support can complement your child's immune health journey.</p>
+
+      <h2>Common Vaccine Ingredients: What You Need to Know</h2>
+
+      <p>Vaccines are complex biological products. Beyond the active component — the antigen that trains your child's immune system to recognise a specific pathogen — they also contain a range of other substances that serve various manufacturing and delivery functions.</p>
+
+      <h3>Aluminium Adjuvants</h3>
+
+      <p>One of the most commonly used additives in vaccines is aluminium salts, often aluminium hydroxide or aluminium phosphate. These are known as "adjuvants" — substances that boost the immune response, essentially helping the vaccine work harder so that less antigen is needed per dose.</p>
+
+      <div class="concern-box">
+        <h3>Worth Knowing</h3>
+        <p>Aluminium is the most abundant metal in the Earth's crust, and humans are exposed to it daily through food, water, and cookware. However, the aluminium in vaccines is injected directly into muscle tissue rather than ingested, which means it enters the body through a different pathway.</p>
+        <p>While health authorities maintain that the amounts used are safe, some researchers have called for more long-term studies on cumulative exposure across the full childhood immunisation schedule — particularly for children who may be receiving multiple vaccines at the same appointment.</p>
+      </div>
+
+      <h3>Formaldehyde</h3>
+
+      <p>Formaldehyde is used during vaccine manufacturing to inactivate viruses and bacteria, ensuring they cannot cause disease. Most of it is removed during purification, but trace amounts can remain in the final product. The human body actually produces formaldehyde naturally as part of normal metabolism — at levels significantly higher than the trace amounts found in vaccines. Nonetheless, some parents find it unsettling to see the word "formaldehyde" on an ingredient list.</p>
+
+      <h3>Preservatives: Thimerosal</h3>
+
+      <p>Thimerosal, a mercury-based preservative, was historically used in multi-dose vaccine vials to prevent bacterial contamination. It is now absent from most routine childhood vaccines in New Zealand, though it remains in some multi-dose flu vaccine formulations. The type of mercury in thimerosal (ethylmercury) is processed and eliminated by the body differently from the methylmercury found in fish — though this distinction is not always well communicated to parents.</p>
+
+      <h3>Polysorbate 80 and Other Stabilisers</h3>
+
+      <p>Polysorbate 80 is an emulsifier used in many foods, cosmetics, and medicines. In vaccines, it helps stabilise the product and keep ingredients in suspension. It is considered safe at the quantities used, but as with other additives, it is an ingredient derived from synthetic chemistry rather than natural sources.</p>
+
+      <div class="pull-quote">"Being informed about what goes into your child's body is not anti-science. It's good parenting."</div>
+
+      <h2>Does This Mean Vaccines Are Unsafe?</h2>
+
+      <p>We want to be clear: PureLife Wellness NZ supports the childhood immunisation schedule. Vaccines have been one of the most significant achievements in public health history, dramatically reducing childhood mortality from diseases like measles, polio, whooping cough, and diphtheria.</p>
+
+      <p>The purpose of this article is not to discourage vaccination. It is to acknowledge that informed parents ask questions — and that curiosity about what's in a vaccine is not the same as refusing one.</p>
+
+      <p>What we do believe is that the <em>nutritional and immune foundation</em> your child has going into their vaccination appointments can influence how well their immune system mounts a response — and how quickly they recover from any post-vaccination tiredness or discomfort.</p>
+
+      <h2>Supporting Your Child's Natural Immunity</h2>
+
+      <p>The immune system is not a single organ — it's a complex, whole-body network that depends on good nutrition, sleep, gut health, and stress levels to function optimally. Children whose diets are high in processed foods, low in vegetables, and short on key micronutrients may mount a less robust immune response than children with excellent nutritional status.</p>
+
+      <p>Key nutrients that support immune function in children include:</p>
+      <ul>
+        <li><strong>Vitamin D:</strong> Critical for immune modulation. Many New Zealand children have suboptimal vitamin D levels, particularly during winter months.</li>
+        <li><strong>Zinc:</strong> Essential for the development and function of immune cells, including the T-cells that vaccines train.</li>
+        <li><strong>Vitamin C:</strong> Supports both the innate and adaptive immune systems and has antioxidant properties.</li>
+        <li><strong>Probiotics and prebiotics:</strong> The gut houses approximately 70% of the immune system. A healthy microbiome supports effective immune responses.</li>
+        <li><strong>Omega-3 fatty acids:</strong> Play a role in regulating inflammation, which is part of a healthy immune response.</li>
+      </ul>
+
+      <!-- PRODUCT CALLOUT -->
+      <div class="product-callout">
+        <div class="product-img">
+          <div class="product-icon">🍓</div>
+          ImmunoShield Junior<br>Berry Flavour
+        </div>
+        <div class="product-info">
+          <div class="product-name">ImmunoShield Junior™</div>
+          <div class="product-tagline">Complete daily immune support for children aged 3–12</div>
+          <div class="product-desc">A comprehensive blend of Vitamin D3, Zinc, Vitamin C, and elderberry extract in a great-tasting chewable tablet. No artificial colours, flavours, or sweeteners. NZ-made. GMP certified.</div>
+          <div class="product-stars">★★★★★ <span style="color:#888;font-size:0.75rem;">(247 reviews)</span></div>
+          <div class="product-price">$38.90 <span>/ 60 chewable tablets</span></div>
+          <a href="#" class="product-btn">Add to Cart</a>
+          <div class="disclaimer-tiny">This product is not intended to diagnose, treat, cure, or prevent any disease. This is not medical advice.</div>
+        </div>
+      </div>
+
+      <h2>Timing: Should You Give Supplements Around Vaccination Appointments?</h2>
+
+      <p>This is a question we get asked frequently. Some integrative health practitioners suggest ensuring your child's nutritional status is optimised in the weeks before and after vaccination — not to interfere with the immune response, but to ensure the body has the raw materials it needs to build immunity effectively.</p>
+
+      <p>We always recommend discussing any supplementation with your healthcare provider. That said, ensuring your child is eating well, sleeping adequately, and not under unusual stress in the days around their vaccination appointment is simply good health practice — and something most parents would agree with regardless of their views on vaccines.</p>
+
+      <h2>Gut Health and the Immune System</h2>
+
+      <p>One area that is increasingly supported by research is the connection between gut microbiome health and immune function. A diverse, thriving gut microbiome appears to support a more balanced immune response — both in terms of the initial reaction to pathogens (or vaccine antigens) and in terms of the regulatory processes that prevent the immune system from overreacting.</p>
+
+      <p>Antibiotics, processed foods, and high-sugar diets can all negatively affect the microbiome — and many modern children are exposed to all three. This is where targeted probiotic support can play a role.</p>
+
+      <!-- PRODUCT CALLOUT -->
+      <div class="product-callout">
+        <div class="product-img">
+          <div class="product-icon">🌱</div>
+          GutBalance Kids<br>Probiotic Powder
+        </div>
+        <div class="product-info">
+          <div class="product-name">GutBalance Kids™</div>
+          <div class="product-tagline">Multi-strain probiotic powder for children</div>
+          <div class="product-desc">10 billion CFU per serving across 6 scientifically selected strains. Includes prebiotic FOS to feed beneficial bacteria. Unflavoured — mixes easily into food or drinks. Dairy-free. NZ-made.</div>
+          <div class="product-stars">★★★★½ <span style="color:#888;font-size:0.75rem;">(189 reviews)</span></div>
+          <div class="product-price">$45.50 <span>/ 60 serves</span></div>
+          <a href="#" class="product-btn">Add to Cart</a>
+          <div class="disclaimer-tiny">This product is not intended to diagnose, treat, cure, or prevent any disease. This is not medical advice.</div>
+        </div>
+      </div>
+
+      <h2>A Note on Being an Informed Parent</h2>
+
+      <p>At PureLife Wellness NZ, we believe that health is a journey, not a destination — and that it belongs to families, not just to medical institutions. We think good science and natural health approaches can coexist, and that parents who ask questions are doing the right thing.</p>
+
+      <p>If you have specific concerns about vaccine ingredients or your child's immune health, we always recommend speaking with your GP, paediatrician, or a registered nutritionist or naturopath who can advise you based on your child's individual health profile.</p>
+
+      <p>What we can offer is high-quality, thoughtfully formulated nutritional support to complement the healthy lifestyle choices you're already making for your family.</p>
+
+    </div><!-- end article-body -->
+
+  </div><!-- end article section -->
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sidebar-section">
+      <div class="sidebar-title">Our Most Popular Products</div>
+      <div class="sidebar-body">
+        <div class="product-mini">
+          <div class="mini-img">🍓</div>
+          <div class="mini-info">
+            <div class="mini-name">ImmunoShield Junior™</div>
+            <div class="mini-stars">★★★★★</div>
+            <div class="mini-price">$38.90</div>
+          </div>
+        </div>
+        <div class="product-mini">
+          <div class="mini-img">🌱</div>
+          <div class="mini-info">
+            <div class="mini-name">GutBalance Kids™</div>
+            <div class="mini-stars">★★★★½</div>
+            <div class="mini-price">$45.50</div>
+          </div>
+        </div>
+        <div class="product-mini">
+          <div class="mini-img">☀️</div>
+          <div class="mini-info">
+            <div class="mini-name">VitaD3 Drops — Child Formula</div>
+            <div class="mini-stars">★★★★★</div>
+            <div class="mini-price">$28.00</div>
+          </div>
+        </div>
+        <div class="product-mini">
+          <div class="mini-img">🍋</div>
+          <div class="mini-info">
+            <div class="mini-name">ZincPlus Junior Gummies</div>
+            <div class="mini-stars">★★★★</div>
+            <div class="mini-price">$24.90</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-title">Related Articles</div>
+      <div class="sidebar-body">
+        <p>→ <a href="#">Why Your Child's Gut Health Matters More Than You Think</a></p>
+        <p>→ <a href="#">The 5 Nutrients Most NZ Kids Are Missing</a></p>
+        <p>→ <a href="#">Natural Ways to Reduce Post-Vaccination Discomfort</a></p>
+        <p>→ <a href="#">Should You Give Probiotics During a Course of Antibiotics?</a></p>
+        <p>→ <a href="#">How Sleep Affects Your Child's Immune System</a></p>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-title">As Featured In</div>
+      <div class="featured-logos">
+        <div class="logo-badge">NZ Woman's Weekly</div>
+        <div class="logo-badge">Stuff.co.nz</div>
+        <div class="logo-badge">Parenting NZ</div>
+        <div class="logo-badge">Healthy Food Guide</div>
+        <div class="logo-badge">Metro NZ</div>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-title">Join Our Community</div>
+      <div class="sidebar-body">
+        <p>Get wellness tips, recipes, and exclusive offers — delivered to your inbox fortnightly.</p>
+        <div class="email-form">
+          <input type="email" placeholder="Your email address">
+          <button>Sign Me Up</button>
+        </div>
+      </div>
+    </div>
+
+  </aside>
+
+</div><!-- end main-container -->
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="#">Children's Health</a>
+        <a href="#">Adult Immunity</a>
+        <a href="#">Gut Health</a>
+        <a href="#">Vitamins & Minerals</a>
+        <a href="#">Bundles</a>
+      </div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <a href="#">The Blog</a>
+        <a href="#">Ingredient Library</a>
+        <a href="#">Research</a>
+        <a href="#">FAQs</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">Our Story</a>
+        <a href="#">Manufacturing</a>
+        <a href="#">Sustainability</a>
+        <a href="#">Press</a>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <a href="#">Shipping & Returns</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Stockists</a>
+        <a href="#">Loyalty Programme</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2024 PureLife Wellness NZ Ltd. All rights reserved. NZ Made. GMP Certified.</div>
+      <div><a href="#" style="color:#8aaa8c;">Privacy Policy</a> · <a href="#" style="color:#8aaa8c;">Terms</a></div>
+    </div>
+    <div class="footer-disclaimer">GutWise NZ — gut health supplements, NZ-made. The products and information on this website are not intended to diagnose, treat, cure, or prevent any disease. Always consult a qualified healthcare professional before starting any supplementation, particularly during pregnancy, breastfeeding, or if your child has a medical condition. Sponsored content is produced in partnership with PureLife Wellness NZ and may reflect the brand's commercial interests.</div>
+  </div>
+</footer>
+
+</body>
+</html>

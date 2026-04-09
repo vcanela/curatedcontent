@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Spent Three Months Reading Clinical Trial Data So You Don't Have To | CuriousAboutHealth.nz</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Poppins',Arial,sans-serif;background:#f3f0fb;color:#2a2a2a;padding-top:70px!important;}
+a{color:#6c3fc4;text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+/* Header */
+.site-header{background:#fff;border-bottom:3px solid #6c3fc4;box-shadow:0 1px 4px rgba(108,63,196,0.08);}
+.header-inner{max-width:860px;margin:0 auto;padding:14px 1.5rem;display:flex;justify-content:space-between;align-items:center;}
+.logo{font-size:1.4rem;font-weight:700;color:#6c3fc4;}
+.logo span{color:#2a2a2a;}
+.logo-sub{font-size:0.65rem;color:#999;text-transform:uppercase;letter-spacing:1px;margin-top:2px;}
+.header-nav{display:flex;gap:1.2rem;}
+.header-nav a{font-size:0.8rem;font-weight:600;color:#666;}
+.header-nav a:hover{color:#6c3fc4;}
+
+/* Main layout */
+.main-layout{max-width:860px;margin:30px auto;padding:0 1.5rem;display:grid;grid-template-columns:1fr 240px;gap:2rem;}
+
+/* Article */
+.article-wrap{background:#fff;border-radius:12px;padding:32px 36px;box-shadow:0 2px 12px rgba(108,63,196,0.07);}
+
+.post-cat{display:inline-block;background:#ede5fc;color:#6c3fc4;font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:4px 14px;border-radius:20px;margin-bottom:14px;}
+.post-title{font-size:1.9rem;font-weight:700;line-height:1.2;color:#1a1a1a;margin-bottom:10px;}
+.post-sub{font-size:1rem;color:#666;line-height:1.65;margin-bottom:18px;}
+
+.author-bar{display:flex;gap:14px;align-items:center;padding:14px 0;border-top:1px solid #f0e8fc;border-bottom:1px solid #f0e8fc;margin-bottom:24px;}
+.author-photo{width:52px;height:52px;background:#ede5fc;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;}
+.author-info .author-name{font-size:0.92rem;font-weight:700;color:#1a1a1a;}
+.author-info .author-desc{font-size:0.75rem;color:#888;line-height:1.4;margin-top:2px;}
+.author-info .post-meta{font-size:0.72rem;color:#9966cc;font-weight:600;margin-top:3px;}
+
+/* Hero */
+.hero-img{background:linear-gradient(135deg,#ede5fc,#f3f0fb);height:320px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#b090e0;font-size:0.85rem;margin-bottom:28px;}
+
+/* Body */
+.article-body p{font-size:0.97rem;line-height:1.8;margin-bottom:18px;color:#333;}
+.article-body h2{font-size:1.2rem;font-weight:700;margin:28px 0 12px;color:#1a1a1a;padding-bottom:6px;border-bottom:2px solid #ede5fc;}
+.article-body h3{font-size:1rem;font-weight:700;margin:20px 0 8px;color:#6c3fc4;}
+.article-body ul, .article-body ol{padding-left:22px;margin-bottom:18px;}
+.article-body li{font-size:0.95rem;line-height:1.7;margin-bottom:7px;}
+
+/* Disclaimer note */
+.disclaimer-note{background:#faf5ff;border:1px solid #d8c8f5;border-left:4px solid #9966cc;padding:12px 16px;margin:18px 0;border-radius:0 6px 6px 0;}
+.disclaimer-note p{font-size:0.85rem;color:#6644aa;margin-bottom:0;line-height:1.6;}
+
+/* "Understanding" box — where misunderstandings are embedded */
+.understanding-box{background:#f8f4ff;border-radius:10px;border:1px solid #d8c8f5;padding:20px 22px;margin:24px 0;}
+.ub-label{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#9966cc;margin-bottom:10px;}
+.ub-content{}
+.ub-content h3{font-size:0.95rem;font-weight:700;color:#1a1a1a;margin-bottom:6px;}
+.ub-content p{font-size:0.9rem;color:#444;line-height:1.7;margin-bottom:0;}
+
+/* Pull quote */
+.pull-quote{background:#ede5fc;border-radius:10px;padding:20px 24px;margin:26px 0;font-size:1.05rem;font-weight:500;color:#6c3fc4;line-height:1.55;font-style:italic;text-align:center;}
+
+/* Error — visually neutral, looks like a regular box */
+.marcus-insight{background:#fff;border:2px solid #d8c8f5;border-radius:10px;padding:18px 20px;margin:24px 0;}
+.marcus-insight .mi-label{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#9966cc;margin-bottom:8px;}
+.marcus-insight p{font-size:0.9rem;color:#333;line-height:1.7;margin-bottom:0;}
+
+/* Comments */
+.comments-section{margin-top:40px;border-top:2px solid #f0e8fc;padding-top:28px;}
+.comments-title{font-size:1.1rem;font-weight:700;margin-bottom:20px;color:#1a1a1a;}
+.comment{display:grid;grid-template-columns:44px 1fr;gap:14px;margin-bottom:22px;}
+.comment-avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.comment-avatar.reader{background:#ede5fc;}
+.comment-avatar.expert{background:#d4edda;}
+.comment-body{}
+.comment-author{font-size:0.85rem;font-weight:700;color:#1a1a1a;margin-bottom:2px;}
+.comment-meta{font-size:0.72rem;color:#aaa;margin-bottom:8px;}
+.comment-text{font-size:0.88rem;color:#444;line-height:1.7;}
+.comment-text p{margin-bottom:8px;}
+.comment-text p:last-child{margin-bottom:0;}
+.expert-badge{display:inline-block;background:#d4edda;color:#1a6634;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:2px 8px;border-radius:10px;margin-left:6px;}
+
+/* Reply form placeholder */
+.reply-form{background:#f8f4ff;border-radius:10px;padding:20px;margin-top:20px;}
+.reply-form h3{font-size:0.9rem;font-weight:700;margin-bottom:12px;}
+.reply-form input, .reply-form textarea{width:100%;padding:9px 12px;border:1px solid #d8c8f5;border-radius:6px;font-family:'Poppins',sans-serif;font-size:0.85rem;margin-bottom:10px;}
+.reply-form textarea{height:90px;resize:vertical;}
+.reply-form button{background:#6c3fc4;color:#fff;border:none;padding:10px 22px;border-radius:20px;font-size:0.85rem;font-weight:700;cursor:pointer;}
+
+/* Sidebar */
+.sidebar{}
+.sidebar-card{background:#fff;border-radius:12px;padding:18px;margin-bottom:18px;box-shadow:0 1px 6px rgba(108,63,196,0.06);}
+.sidebar-card h3{font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#9966cc;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid #f0e8fc;}
+.sidebar-card p{font-size:0.82rem;color:#555;line-height:1.6;margin-bottom:8px;}
+
+.about-box{background:#6c3fc4;border-radius:12px;padding:18px;color:#fff;margin-bottom:18px;text-align:center;}
+.about-box .ab-photo{width:64px;height:64px;background:#a07ee0;border-radius:50%;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;}
+.about-box h3{font-size:0.9rem;font-weight:700;margin-bottom:4px;}
+.about-box .ab-desc{font-size:0.75rem;color:#d4b8f8;line-height:1.55;}
+
+.popular-post{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid #f0e8fc;}
+.popular-post:last-child{border-bottom:none;}
+.pp-num{font-size:1.4rem;font-weight:700;color:#d8c8f5;line-height:1;min-width:24px;}
+.pp-title{font-size:0.8rem;color:#2a2a2a;font-weight:600;line-height:1.35;}
+
+/* Footer */
+.site-footer{background:#1a1a1a;color:#888;font-size:0.78rem;padding:24px 0;margin-top:40px;text-align:center;}
+.site-footer a{color:#9966cc;}
+
+/* HUD */
+.hud-top-bar{position:fixed;top:0;left:0;width:100%;height:60px;background:#1a2744;border-bottom:4px solid #0d7a6e;display:flex;align-items:center;z-index:9999;box-shadow:0 4px 10px rgba(0,0,0,0.2);font-family:'Source Sans 3',Arial,sans-serif;}
+.hud-container{max-width:1100px;margin:0 auto;width:100%;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;}
+.breadcrumbs{color:#8fa3c8;font-size:0.9rem;}
+.breadcrumbs a{color:#fff;text-decoration:none;font-weight:600;}
+.breadcrumbs a:hover{color:#c8922a;}
+.sep{margin:0 10px;color:#0d7a6e;font-weight:bold;}
+.current-page{color:#fff;opacity:0.8;}
+.hud-badge{background:rgba(255,255,255,0.1);border:1px solid #0d7a6e;color:#fff;padding:4px 10px;font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;border-radius:3px;white-space:nowrap;}
+</style>
+</head>
+<body>
+
+<div class="hud-top-bar"><div class="hud-container"><div class="breadcrumbs"><a href="../index.html">Home</a><span class="sep">/</span><a href="../topics/clinical-trials.html">Clinical Trials</a><span class="sep">/</span><span class="current-page">Source Analysis</span></div><div class="hud-badge">External Source Analysis</div></div></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div>
+      <div class="logo">Curious<span>AboutHealth</span>.nz</div>
+      <div class="logo-sub">A regular person's guide to not being confused by medical research</div>
+    </div>
+    <nav class="header-nav">
+      <a href="#">Home</a>
+      <a href="#">Trials & Research</a>
+      <a href="#">Nutrition</a>
+      <a href="#">Running & Fitness</a>
+      <a href="#">About Marcus</a>
+    </nav>
+  </div>
+</header>
+
+<div class="main-layout">
+  <div class="article-wrap">
+
+    <div class="post-cat">Clinical Trials · Deep Dive</div>
+    <h1 class="post-title">I Spent Three Months Reading Clinical Trial Data So You Don't Have To</h1>
+    <p class="post-sub">After my dad was enrolled in a clinical trial last year, I fell down a rabbit hole trying to understand how they actually work. Here's everything I learned — including how to actually interpret what the results mean. This stuff is genuinely fascinating.</p>
+
+    <div class="author-bar">
+      <div class="author-photo">🏃</div>
+      <div class="author-info">
+        <div class="author-name">Marcus Webb</div>
+        <div class="author-desc">Dad, runner, and amateur science enthusiast. Not a doctor or scientist — just someone who reads a lot and wants to understand things properly.</div>
+        <div class="post-meta">Published November 2024 · 18 min read</div>
+      </div>
+    </div>
+
+    <div class="disclaimer-note">
+      <p><strong>Quick disclaimer:</strong> I'm not a scientist, not a doctor, not a statistician. Everything here is my best understanding after three months of reading. I've tried to be accurate but I'm sure I've got some things wrong — if you spot an error, please leave a comment and I'll update the post!</p>
+    </div>
+
+    <div class="hero-img">[ GRAPHIC: Charts, data, lab equipment — enthusiastic amateur aesthetic ]</div>
+
+    <div class="article-body">
+
+      <p>So this started when my dad was asked whether he'd like to participate in a Phase III clinical trial for a new cholesterol medication. He asked me if I thought he should do it, and I realised I had absolutely no idea how to answer that question properly. What's a Phase III trial? How do I know if the drug works? What do all those numbers in the results mean?</p>
+
+      <p>I spent the next three months reading everything I could find — journal articles, explainer sites, NHS guidance documents, academic textbooks. I took notes. I made spreadsheets. I annoyed my wife extensively. And now I want to share what I learned, because I think this stuff is genuinely important and really under-explained to ordinary people.</p>
+
+      <h2>What Are Clinical Trials, Anyway?</h2>
+
+      <p>At the most basic level, a clinical trial is a research study that tests whether a medical intervention — a drug, a device, a procedure, a dietary change — works on human beings. The key word there is "human beings" rather than mice or cell cultures. A treatment can look incredibly promising in a lab dish and in animal studies, and then completely fail when it's tested on people. Clinical trials are the stage where you find out.</p>
+
+      <p>There are different types of trials — observational studies, randomised controlled trials, crossover studies — but for most of the drugs that eventually reach pharmacies, the gold standard is the randomised controlled trial (RCT). In an RCT, participants are randomly assigned to either receive the treatment being tested or to receive a control (either a placebo or the current standard treatment). The randomisation is crucial because it means that any differences in outcomes between the groups can be attributed to the treatment, not to pre-existing differences between participants.</p>
+
+      <h2>The Four Phases — What Each One Actually Means</h2>
+
+      <p>This is the part I found most confusing when I started, so I want to spend some time on it. Clinical trials are organised into phases, and each phase has a different purpose. I'm going to be honest: when I first read about Phase II and Phase III trials, I got them a bit mixed up. Here's my understanding now:</p>
+
+      <div class="understanding-box">
+        <div class="ub-label">Marcus's Phase-by-Phase Guide</div>
+        <div class="ub-content">
+          <h3>Phase I — Safety Testing (Small groups, ~20–100 people)</h3>
+          <p>This is the first time a treatment is tested in humans. The main question is: is it safe? What dose causes side effects? Researchers are not really looking for whether it works yet — they just want to understand how the human body processes the drug.</p>
+          <br>
+          <h3>Phase II — Exploring Whether It Might Work (~100–300 people)</h3>
+          <p>Phase II trials are where researchers are really finding out if the treatment has any biological effect — does it change the thing we're trying to change? These trials also continue gathering safety data. If a Phase II trial shows promising results, it moves on to Phase III. I used to think Phase II was about confirming effectiveness, but actually it's more of an exploratory stage — the results are interesting but not conclusive. The real proof comes in Phase III.</p>
+          <br>
+          <h3>Phase III — Large-Scale Effectiveness Testing (~300–3,000+ people)</h3>
+          <p>This is the big one. Phase III trials are large, randomised, and often run across multiple sites. They're designed to prove — or disprove — that the treatment actually works, at a level of statistical confidence that regulators require before approving a drug. Phase III is where most of the famous trial results come from. If a Phase III trial shows that a treatment is effective, that's when drug companies apply for approval to market it.</p>
+          <br>
+          <h3>Phase IV — Post-Market Surveillance</h3>
+          <p>This happens after a drug is already approved and being used. Regulators require ongoing monitoring because trials can't detect rare side effects that only appear in large populations over a long time period.</p>
+        </div>
+      </div>
+
+      <p>The key thing I want you to take away from this: a positive Phase II result does not mean a drug works. It means it might work, and that it's worth doing a bigger Phase III trial to find out properly. I've seen news articles get this completely backwards.</p>
+
+      <h2>Understanding Statistical Significance — The Part Everyone Gets Wrong</h2>
+
+      <p>This is the section I'm most proud of, because I think I finally understand something that most science journalists seem to get wrong, and that many non-scientists find completely baffling: statistical significance and what it actually means.</p>
+
+      <p>When you read about a clinical trial, you will often see a number like "p=0.03" or "the result was statistically significant at p&lt;0.05." What does this actually mean?</p>
+
+      <div class="marcus-insight">
+        <div class="mi-label">Marcus's Understanding of P-Values</div>
+        <p>The p-value is a probability — but it's not the probability that most people think it is. A p-value of 0.05 means there is roughly a 95% chance that the treatment actually works. That's a pretty high standard of evidence, which is why 0.05 is used as the threshold for calling something "statistically significant." If your p-value is below 0.05, you can say the result is statistically significant, and you can be fairly confident the treatment is effective.</p>
+      </div>
+
+      <p>When I first understood this, it felt like a revelation. So many trial results I'd seen dismissed as "not statistically significant" suddenly made sense — they just hadn't met the threshold. And results that were significant? They were basically confirmed.</p>
+
+      <div class="pull-quote">"Once I understood p-values, everything else started to click. If p&lt;0.05, you're 95% confident it works. That's the rule. Simple."</div>
+
+      <p>I should be upfront: I'm not 100% certain I've got every nuance right here. Statistics is notoriously counter-intuitive. But I think the core concept is correct, and understanding it has made reading trial results a lot easier for me personally.</p>
+
+      <h2>Relative Risk vs Absolute Risk — The Number Trick Nobody Tells You About</h2>
+
+      <p>This one genuinely made me angry when I discovered it, because I think the way clinical trial results are typically reported can be genuinely misleading — and not always accidentally.</p>
+
+      <p>Here's an example. Suppose a new drug is being tested for reducing the risk of a particular type of heart attack. In the control group, 2 out of every 100 people have a heart attack over the study period. In the treatment group, 1 out of every 100 people have a heart attack.</p>
+
+      <div class="marcus-insight">
+        <div class="mi-label">The Way This Result Gets Reported</div>
+        <p>In press releases and news articles, this result will typically be described as: "The drug reduces the risk of heart attack by 50%." That sounds incredible. A 50% reduction! But look at the actual numbers again. In the control group, 2% of people had a heart attack. In the treatment group, 1% of people had a heart attack. The absolute risk reduction is 1 percentage point. The drug reduced your individual risk from 2% to 1%. Put that way, it sounds much less dramatic — and it's a much more honest representation of what the drug actually does for an individual patient.</p>
+      </div>
+
+      <p>The "50% more effective" figure is the relative risk reduction. The "reduces your risk by 1 percentage point" figure is the absolute risk reduction. Both are mathematically correct. But one of them is much more useful for making decisions about your own health, and that's the absolute risk reduction.</p>
+
+      <p>I've since found that this issue — relative versus absolute risk — is widely discussed in medical statistics, and that a lot of researchers and doctors are concerned about it. But it rarely seems to filter down to how results are reported to the public. In my view, every clinical trial result should be reported with both numbers. The fact that it often isn't is something that deserves more attention.</p>
+
+      <h2>One Study Doesn't Settle It</h2>
+
+      <p>The last big thing I want to talk about is the replication problem — or more precisely, what one clinical trial can and cannot tell you.</p>
+
+      <p>I used to think that if a large, well-designed Phase III trial showed a treatment worked — with a statistically significant result — that was essentially settled science. The treatment works. Done. Move on.</p>
+
+      <p>But that's not quite right either. Science progresses through multiple studies, replication, systematic reviews, and meta-analyses that combine the results of many trials. A single positive Phase III trial is a very important piece of evidence. But it's not the whole picture. Different populations might respond differently. The trial might have been run in a specific way that doesn't reflect clinical practice. There might be confounding variables that weren't fully controlled for. And, statistically, if you run enough trials, you'll eventually get a false positive result by chance alone — even in a well-conducted study.</p>
+
+      <p>This doesn't mean individual trials aren't valuable — they absolutely are. It means that the strongest evidence for a treatment's effectiveness comes from multiple high-quality trials pointing in the same direction, ideally synthesised in a systematic review or meta-analysis. One positive trial is exciting. Five positive trials from independent research groups are convincing. That's how science builds a consensus.</p>
+
+      <p>I think understanding this would save a lot of confusion and anxiety in public health communication. The media reports every new study as if it's the final word — "scientists say X causes Y" — when what they mean is "one study found a statistical association between X and Y, which is interesting and warrants further investigation." Those are very different things.</p>
+
+      <h2>Final Thoughts</h2>
+
+      <p>Three months of reading about clinical trials has made me a much more informed person, and a more sceptical one — in the good sense of the word. I now read health news very differently. I ask: was this a randomised trial? How many participants? Was it Phase II or Phase III? What was the absolute risk reduction? Has this been replicated?</p>
+
+      <p>None of this makes me a scientist. I still get confused by more technical statistical concepts, and I'm sure this post contains mistakes that people with proper training would spot immediately. But I think understanding the basics — the phase structure, statistical significance, the difference between relative and absolute risk, and the importance of replication — makes anyone a better consumer of health research.</p>
+
+      <p>My dad, by the way, enrolled in the trial. He's doing well. And I feel much better informed about what that actually means.</p>
+
+    </div><!-- end article-body -->
+
+    <!-- COMMENTS -->
+    <div class="comments-section">
+      <div class="comments-title">2 Comments</div>
+
+      <div class="comment">
+        <div class="comment-avatar reader">😊</div>
+        <div class="comment-body">
+          <div class="comment-author">Sandra K.</div>
+          <div class="comment-meta">November 2024 · Auckland</div>
+          <div class="comment-text">
+            <p>Marcus this is exactly the kind of thing I've been looking for. My mum was just told about a trial she might be eligible for and I had no idea how to help her think about it. The bit about relative vs absolute risk is mind-blowing — I'm going to share this with her doctor. Thank you so much for writing it all out so clearly!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="comment">
+        <div class="comment-avatar expert">🎓</div>
+        <div class="comment-body">
+          <div class="comment-author">Dr. A. Chen <span class="expert-badge">Biostatistician</span></div>
+          <div class="comment-meta">November 2024 · Wellington</div>
+          <div class="comment-text">
+            <p>Hi Marcus — thanks for this, it's clear you've put a lot of genuine effort into understanding a complicated area, and most of this is really well explained. I wanted to gently flag one correction: the section on p-values contains a misunderstanding that's actually extremely common, even among scientists, so please don't feel bad.</p>
+            <p>A p-value of 0.05 does NOT mean "there is a 95% chance the treatment works." This is called the "base rate fallacy" or the "prosecutor's fallacy" in statistics. What p&lt;0.05 actually means is: "If the treatment had no effect at all, there would be less than a 5% chance of getting results this extreme just by chance." That's subtly but importantly different. It tells us about the probability of the data given no effect — not the probability of an effect given the data. The true interpretation of p-values is genuinely hard and counterintuitive (even professional researchers get it wrong), and there are ongoing debates in statistics about whether p=0.05 is even the right threshold to use.</p>
+            <p>The good news: your section on absolute vs relative risk is completely correct and really important. I recommend it to students. Thanks for writing this — it's a genuinely useful resource with just that one thing to fix.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reply-form">
+        <h3>Leave a Comment</h3>
+        <input type="text" placeholder="Your name">
+        <input type="email" placeholder="Your email (not published)">
+        <textarea placeholder="Your comment..."></textarea>
+        <button>Post Comment</button>
+      </div>
+
+    </div>
+
+  </div><!-- end article-wrap -->
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="about-box">
+      <div class="ab-photo">🏃</div>
+      <h3>About Marcus</h3>
+      <p class="ab-desc">Dad of two. Half-marathon runner. I read stuff about health and try to explain it in plain English. Based in Wellington. Not a doctor — just curious.</p>
+    </div>
+
+    <div class="sidebar-card">
+      <h3>Popular Posts</h3>
+      <div class="popular-post">
+        <div class="pp-num">1</div>
+        <div class="pp-title">What Does "Statistical Significance" Actually Mean?</div>
+      </div>
+      <div class="popular-post">
+        <div class="pp-num">2</div>
+        <div class="pp-title">How I Stopped Being Scared of Reading Scientific Papers</div>
+      </div>
+      <div class="popular-post">
+        <div class="pp-num">3</div>
+        <div class="pp-title">Is the Mediterranean Diet as Good as They Say?</div>
+      </div>
+      <div class="popular-post">
+        <div class="pp-num">4</div>
+        <div class="pp-title">My Experience Running with a Continuous Glucose Monitor for 30 Days</div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <h3>Useful Resources</h3>
+      <p>→ <a href="#">ClinicalTrials.gov — Search Active Trials</a></p>
+      <p>→ <a href="#">Cochrane Library — Systematic Reviews</a></p>
+      <p>→ <a href="#">AllTrials — Campaign for Open Data</a></p>
+      <p>→ <a href="#">NHS Evidence Search</a></p>
+      <p>→ <a href="#">Understanding Statistics for Beginners (YouTube)</a></p>
+    </div>
+
+  </aside>
+
+</div><!-- end main-layout -->
+
+<footer class="site-footer">
+  <p>© 2024 CuriousAboutHealth.nz | Marcus Webb | <a href="#">Privacy Policy</a> | <a href="#">Contact</a></p>
+  <p style="margin-top:6px;font-size:0.7rem;color:#666;">This blog is written by a non-scientist for educational and entertainment purposes. Nothing here constitutes medical advice.</p>
+</footer>
+
+</body>
+</html>

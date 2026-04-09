@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scientists Say Vaccine Immunity May Be Fading Faster Than We Thought | HealthBuzz Daily NZ</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Open Sans',Arial,sans-serif;background:#f4f4f4;color:#2c2c2c;padding-top:70px!important;}
+a{color:#f07422;text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+/* Breaking news bar */
+.breaking-bar{background:#c0392b;color:#fff;font-size:0.8rem;font-weight:700;padding:7px 0;text-align:center;letter-spacing:0.5px;}
+.breaking-bar span{background:#fff;color:#c0392b;padding:2px 8px;border-radius:2px;margin-right:10px;font-size:0.75rem;text-transform:uppercase;}
+
+/* Site header */
+.site-header{background:#2c2c2c;padding:12px 0;border-bottom:4px solid #f07422;}
+.header-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center;}
+.site-logo{font-size:1.7rem;font-weight:800;color:#fff;letter-spacing:-0.5px;}
+.site-logo span{color:#f07422;}
+.site-tagline{color:#aaa;font-size:0.75rem;margin-top:2px;}
+.header-nav{display:flex;gap:1.5rem;}
+.header-nav a{color:#ccc;font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;}
+.header-nav a:hover{color:#f07422;}
+
+/* Top banner ad */
+.ad-banner-top{background:#e0e0e0;border:2px dashed #bbb;max-width:1100px;margin:18px auto;padding:0 1.5rem;}
+.ad-placeholder{background:#d8d8d8;border:1px solid #bbb;display:flex;align-items:center;justify-content:center;color:#888;font-size:0.75rem;font-style:italic;text-transform:uppercase;letter-spacing:1px;}
+.ad-placeholder.leaderboard{height:90px;width:100%;}
+.ad-placeholder.rectangle{height:250px;width:100%;}
+.ad-placeholder.skyscraper{height:600px;width:160px;}
+.ad-label{font-size:0.65rem;color:#999;text-align:center;margin-bottom:2px;text-transform:uppercase;letter-spacing:1px;}
+
+/* Main layout */
+.main-container{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:grid;grid-template-columns:1fr 300px;gap:2rem;}
+
+/* Article */
+.article-section{}
+.article-category{display:inline-block;background:#f07422;color:#fff;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:3px 10px;border-radius:2px;margin-bottom:12px;}
+.article-headline{font-size:2rem;font-weight:800;line-height:1.25;color:#1a1a1a;margin-bottom:14px;}
+.article-standfirst{font-size:1.05rem;color:#555;line-height:1.6;margin-bottom:16px;border-left:4px solid #f07422;padding-left:14px;}
+.article-meta{font-size:0.8rem;color:#888;margin-bottom:18px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.article-meta .author{color:#2c2c2c;font-weight:600;}
+.article-meta .freshness{background:#f07422;color:#fff;padding:2px 8px;border-radius:10px;font-size:0.7rem;font-weight:700;}
+
+/* Social share */
+.share-bar{display:flex;gap:10px;margin-bottom:22px;align-items:center;}
+.share-label{font-size:0.8rem;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:0.5px;}
+.share-btn{padding:7px 16px;border-radius:3px;font-size:0.8rem;font-weight:700;color:#fff;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:6px;}
+.share-fb{background:#1877f2;}
+.share-tw{background:#1da1f2;}
+.share-wa{background:#25d366;}
+.share-email{background:#888;}
+.share-count{font-size:0.75rem;color:#888;margin-left:4px;}
+
+/* Hero image placeholder */
+.hero-img-placeholder{background:#d0d0d0;width:100%;height:380px;display:flex;align-items:center;justify-content:center;color:#999;font-size:0.85rem;border-radius:4px;margin-bottom:22px;position:relative;}
+.hero-img-placeholder .caption{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.5);color:#fff;font-size:0.75rem;padding:8px 12px;}
+
+/* Article body */
+.article-body p{font-size:1rem;line-height:1.75;margin-bottom:18px;color:#2c2c2c;}
+.article-body h2{font-size:1.3rem;font-weight:800;margin:28px 0 12px;color:#1a1a1a;border-bottom:3px solid #f07422;padding-bottom:6px;}
+.article-body .pull-quote{background:#fff8f4;border-left:5px solid #f07422;padding:16px 20px;margin:24px 0;font-size:1.1rem;font-style:italic;color:#444;border-radius:0 4px 4px 0;}
+.article-body .key-points{background:#fff3e0;border:1px solid #f07422;border-radius:6px;padding:18px 20px;margin:24px 0;}
+.article-body .key-points h3{font-size:0.85rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#f07422;margin-bottom:10px;}
+.article-body .key-points ul{padding-left:20px;}
+.article-body .key-points li{font-size:0.95rem;margin-bottom:7px;line-height:1.5;}
+
+/* In-article ad */
+.in-article-ad{margin:28px 0;text-align:center;}
+
+/* Tags */
+.article-tags{margin:28px 0 18px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+.tags-label{font-size:0.8rem;font-weight:700;color:#555;text-transform:uppercase;}
+.tag{background:#eee;border-radius:20px;padding:4px 14px;font-size:0.78rem;color:#555;}
+.tag:hover{background:#f07422;color:#fff;}
+
+/* Sidebar */
+.sidebar{}
+.sidebar-widget{background:#fff;border:1px solid #e0e0e0;border-radius:4px;margin-bottom:22px;overflow:hidden;}
+.widget-title{background:#2c2c2c;color:#fff;font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;padding:10px 14px;border-bottom:3px solid #f07422;}
+.you-might-like a{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border-bottom:1px solid #f0f0f0;text-decoration:none;}
+.you-might-like a:last-child{border-bottom:none;}
+.you-might-like a:hover{background:#fff8f4;}
+.yml-thumb{background:#d8d8d8;min-width:60px;height:50px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:0.6rem;color:#aaa;}
+.yml-text{font-size:0.82rem;font-weight:700;color:#2c2c2c;line-height:1.35;}
+.yml-text .yml-meta{font-size:0.7rem;color:#f07422;font-weight:400;margin-top:3px;}
+
+.trending-list{padding:4px 0;}
+.trending-list li{border-bottom:1px solid #f0f0f0;padding:10px 14px;list-style:none;display:flex;align-items:flex-start;gap:10px;}
+.trending-list li:last-child{border-bottom:none;}
+.trending-num{font-size:1.5rem;font-weight:800;color:#f07422;line-height:1;min-width:28px;}
+.trending-title{font-size:0.82rem;color:#2c2c2c;font-weight:600;line-height:1.35;}
+
+.newsletter-widget{padding:16px;}
+.newsletter-widget p{font-size:0.85rem;color:#555;margin-bottom:12px;line-height:1.5;}
+.newsletter-input{width:100%;padding:9px 12px;border:1px solid #ddd;border-radius:3px;font-size:0.85rem;margin-bottom:8px;}
+.newsletter-btn{width:100%;background:#f07422;color:#fff;border:none;padding:10px;font-size:0.85rem;font-weight:700;border-radius:3px;cursor:pointer;text-transform:uppercase;letter-spacing:0.5px;}
+
+/* Footer */
+.site-footer{background:#2c2c2c;color:#aaa;font-size:0.8rem;padding:30px 0;margin-top:40px;text-align:center;}
+.site-footer a{color:#f07422;}
+
+/* HUD */
+.hud-top-bar{position:fixed;top:0;left:0;width:100%;height:60px;background:#1a2744;border-bottom:4px solid #0d7a6e;display:flex;align-items:center;z-index:9999;box-shadow:0 4px 10px rgba(0,0,0,0.2);font-family:'Source Sans 3',Arial,sans-serif;}
+.hud-container{max-width:1100px;margin:0 auto;width:100%;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;}
+.breadcrumbs{color:#8fa3c8;font-size:0.9rem;}
+.breadcrumbs a{color:#fff;text-decoration:none;font-weight:600;}
+.breadcrumbs a:hover{color:#c8922a;}
+.sep{margin:0 10px;color:#0d7a6e;font-weight:bold;}
+.current-page{color:#fff;opacity:0.8;}
+.hud-badge{background:rgba(255,255,255,0.1);border:1px solid #0d7a6e;color:#fff;padding:4px 10px;font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;border-radius:3px;white-space:nowrap;}
+</style>
+</head>
+<body>
+
+<div class="hud-top-bar"><div class="hud-container"><div class="breadcrumbs"><a href="../index.html">Home</a><span class="sep">/</span><a href="../topics/vaccines.html">Vaccines</a><span class="sep">/</span><span class="current-page">Source Analysis</span></div><div class="hud-badge">External Source Analysis</div></div></div>
+
+<div class="breaking-bar"><span>Breaking</span> New WHO report released | COVID booster rollout expands | Flu season hits early across NZ</div>
+
+<div class="site-header">
+  <div class="header-inner">
+    <div>
+      <div class="site-logo">HealthBuzz <span>Daily NZ</span></div>
+      <div class="site-tagline">New Zealand's Fastest Health News</div>
+    </div>
+    <nav class="header-nav">
+      <a href="#">News</a>
+      <a href="#">Vaccines</a>
+      <a href="#">Nutrition</a>
+      <a href="#">Mental Health</a>
+      <a href="#">Covid</a>
+      <a href="#">Trending</a>
+    </nav>
+  </div>
+</div>
+
+<div style="max-width:1100px;margin:0 auto;padding:0 1.5rem;">
+  <div class="ad-label">Advertisement</div>
+  <div class="ad-placeholder leaderboard">[ LEADERBOARD AD — 728×90 ]</div>
+</div>
+
+<div class="main-container">
+  <div class="article-section">
+    <div class="article-category">Vaccines</div>
+    <h1 class="article-headline">Scientists Say Vaccine Immunity May Be Fading Faster Than We Thought — Here's What That Means</h1>
+    <p class="article-standfirst">A new study is raising questions about how long vaccine protection actually lasts — and some experts say the findings could change the way we think about booster programmes entirely.</p>
+
+    <div class="article-meta">
+      <span class="freshness">Published 2 hours ago</span>
+      <span class="author">HealthBuzz Staff</span>
+      <span>3 min read</span>
+      <span>🔥 14,302 views</span>
+    </div>
+
+    <div class="share-bar">
+      <span class="share-label">Share:</span>
+      <button class="share-btn share-fb">f Facebook</button>
+      <button class="share-btn share-tw">&#x1D54F; Twitter</button>
+      <button class="share-btn share-wa">WhatsApp</button>
+      <button class="share-btn share-email">✉ Email</button>
+      <span class="share-count">1,247 shares</span>
+    </div>
+
+    <div class="hero-img-placeholder">
+      [ PHOTO: Doctor preparing vaccine syringe ]
+      <div class="caption">Scientists are questioning how long vaccine protection lasts. (Stock image)</div>
+    </div>
+
+    <div class="article-body">
+
+      <p>New research is suggesting that the immunity provided by some vaccines may not last as long as previously believed — and that has scientists, health officials, and everyday New Zealanders asking some serious questions.</p>
+
+      <p>According to researchers, antibody levels from certain vaccines can begin to decline within months of receiving a dose. While health officials have long acknowledged that immunity wanes over time, a new study suggests the process may be happening faster than the original clinical trials indicated.</p>
+
+      <p>So what does this mean for you? Should you be worried? Here's what we know.</p>
+
+      <div class="key-points">
+        <h3>Key Takeaways</h3>
+        <ul>
+          <li>Researchers say antibody levels may fall faster than expected after vaccination</li>
+          <li>A new study suggests this could affect how booster programmes are designed</li>
+          <li>Health officials are "monitoring the situation closely" according to reports</li>
+          <li>Experts say it doesn't mean vaccines aren't working — but the picture is "complicated"</li>
+        </ul>
+      </div>
+
+      <h2>What the Research Says</h2>
+
+      <p>According to researchers at a European university — results that have not yet been peer reviewed but were posted to a preprint server this week — the rate at which neutralising antibodies decline post-vaccination is steeper than the models used to design many booster rollout schedules assumed.</p>
+
+      <p>A new study published in a major international journal found that participants who received two doses of a commonly used vaccine showed a significant drop in measurable antibodies by the six-month mark. Does that mean they were unprotected? Experts say it's not that simple.</p>
+
+      <p>"Antibody levels are just one piece of the picture," one researcher told a science newswire. "T-cell memory and B-cell responses also play a role." But here's the thing — that's exactly the kind of nuance that never makes it into the headlines. And people deserve to know.</p>
+
+      <div class="pull-quote">"The question isn't whether immunity wanes — it does. The question is how fast, and whether it wanes to the point where protection is actually lost."</div>
+
+      <h2>Is This a New Discovery?</h2>
+
+      <p>Not exactly. Scientists have known for years that immunity from vaccines — like immunity from natural infection — is not permanent for most diseases. According to researchers, this is why annual flu vaccines are recommended; the influenza virus mutates rapidly and antibody protection doesn't last indefinitely.</p>
+
+      <p>What appears to be new, based on recent reporting, is the suggestion that for certain vaccines introduced in recent years, the original timeline for booster doses may need to be reconsidered. According to a health policy analyst quoted in an overseas publication, governments may need to "recalibrate their approach" based on emerging data.</p>
+
+      <p>Whether that applies to vaccines currently on the New Zealand immunisation schedule is less clear. We reached out to the Ministry of Health for comment and did not receive a response before publication.</p>
+
+      <div class="in-article-ad">
+        <div class="ad-label">Advertisement</div>
+        <div class="ad-placeholder rectangle">[ RECTANGLE AD — 300×250 ]</div>
+      </div>
+
+      <h2>Why Are Booster Programmes So Controversial?</h2>
+
+      <p>Ask five scientists about boosters and you'll get six opinions. A new study suggests that third doses significantly restore immunity levels — but another recent piece of research indicates that for most healthy adults under 50, the benefit is marginal compared to the resource cost. So who's right?</p>
+
+      <p>According to researchers in the United States, age and underlying health conditions play a far bigger role in determining whether a booster is necessary than population-wide antibody studies suggest. But not everyone agrees.</p>
+
+      <p>In New Zealand, health authorities have generally followed international guidance, but some local immunologists have reportedly expressed concern that policy isn't keeping pace with the science. What those concerns specifically are, and who exactly raised them, is not something we were able to independently confirm before this article went live.</p>
+
+      <p>Still — the conversation is clearly happening. And New Zealanders should be part of it.</p>
+
+      <h2>What Should You Actually Do?</h2>
+
+      <p>Here's the honest answer: talk to your doctor. Every person's immune situation is different, and population-level data about antibody waning doesn't translate neatly into individual advice. But it's reasonable to ask questions. It's reasonable to want to understand what's in your vaccination record and whether you're due for any updates.</p>
+
+      <p>According to public health guidance that has been widely reported, staying up to date with recommended vaccines remains the most effective individual action most people can take to protect themselves from vaccine-preventable diseases. That hasn't changed.</p>
+
+      <p>But the question of exactly how "up to date" needs to be defined — and how often — is clearly one that science is still working through. And a new study might not be the last word on the subject.</p>
+
+      <h2>The Bigger Picture</h2>
+
+      <p>Vaccine hesitancy is a real problem in New Zealand and around the world. Research consistently shows that misinformation spreads faster than corrections, and that uncertainty in scientific messaging — even honest, appropriate scientific uncertainty — can be weaponised by those who want people to distrust vaccines entirely.</p>
+
+      <p>That's not what this article is arguing. Vaccines remain one of the most effective public health interventions in human history, with millions of lives saved every year across dozens of diseases. The fact that immunity wanes, and that booster schedules may need updating, is entirely consistent with how vaccines have always worked.</p>
+
+      <p>But you deserve to know when the science is evolving. And according to researchers, this is one of those moments.</p>
+
+      <p>We'll be updating this story as more information comes to hand. Check back later today.</p>
+
+    </div><!-- end article-body -->
+
+    <div class="article-tags">
+      <span class="tags-label">Tags:</span>
+      <a class="tag" href="#">Vaccines</a>
+      <a class="tag" href="#">Immunity</a>
+      <a class="tag" href="#">Health News</a>
+      <a class="tag" href="#">Boosters</a>
+      <a class="tag" href="#">Covid</a>
+      <a class="tag" href="#">Science</a>
+    </div>
+
+    <div class="share-bar">
+      <span class="share-label">Share this story:</span>
+      <button class="share-btn share-fb">f Facebook</button>
+      <button class="share-btn share-tw">&#x1D54F; Twitter</button>
+      <button class="share-btn share-wa">WhatsApp</button>
+      <button class="share-btn share-email">✉ Email</button>
+    </div>
+
+    <div class="in-article-ad">
+      <div class="ad-label">Advertisement</div>
+      <div class="ad-placeholder rectangle">[ RECTANGLE AD — 300×250 ]</div>
+    </div>
+
+  </div><!-- end article-section -->
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sidebar-widget">
+      <div class="widget-title">You Might Also Like</div>
+      <div class="you-might-like">
+        <a href="#">
+          <div class="yml-thumb">IMG</div>
+          <div class="yml-text">This Common Household Product May Be Destroying Your Immune System, Experts Warn<div class="yml-meta">4.2k shares · 1 hr ago</div></div>
+        </a>
+        <a href="#">
+          <div class="yml-thumb">IMG</div>
+          <div class="yml-text">7 Signs Your Body Is Fighting Something — and You Don't Even Know It<div class="yml-meta">8.1k shares · 3 hrs ago</div></div>
+        </a>
+        <a href="#">
+          <div class="yml-thumb">IMG</div>
+          <div class="yml-text">The Supplement Doctors Are Quietly Recommending to Their Own Families<div class="yml-meta">Sponsored · 12k shares</div></div>
+        </a>
+        <a href="#">
+          <div class="yml-thumb">IMG</div>
+          <div class="yml-text">Why Doctors Are Finally Admitting They Got Flu Shots Wrong<div class="yml-meta">5.6k shares · 2 hrs ago</div></div>
+        </a>
+        <a href="#">
+          <div class="yml-thumb">IMG</div>
+          <div class="yml-text">New Research Suggests This Vitamin May Cut Your Cold Risk by Half<div class="yml-meta">2.8k shares · 5 hrs ago</div></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="sidebar-widget">
+      <div class="ad-label" style="padding:6px 14px 0;">Advertisement</div>
+      <div style="padding:8px 14px 14px;">
+        <div class="ad-placeholder rectangle">[ SIDEBAR AD — 300×250 ]</div>
+      </div>
+    </div>
+
+    <div class="sidebar-widget">
+      <div class="widget-title">Trending Now</div>
+      <ul class="trending-list">
+        <li><span class="trending-num">1</span><span class="trending-title">NZ Hospitals Reporting Surge in Mystery Respiratory Illness — What We Know</span></li>
+        <li><span class="trending-num">2</span><span class="trending-title">Scientists Discover Why Some People Never Get Sick. The Answer is Surprising.</span></li>
+        <li><span class="trending-num">3</span><span class="trending-title">Is Tap Water in NZ Actually Safe? A New Report Has People Worried</span></li>
+        <li><span class="trending-num">4</span><span class="trending-title">The Real Reason Your Kids Keep Getting Every Bug at School</span></li>
+        <li><span class="trending-num">5</span><span class="trending-title">Doctors Share the One Thing They Do Every Morning to Stay Healthy</span></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-widget">
+      <div class="widget-title">Newsletter</div>
+      <div class="newsletter-widget">
+        <p>Get NZ's top health stories delivered to your inbox every morning. Free — no spam, ever.</p>
+        <input class="newsletter-input" type="email" placeholder="Your email address">
+        <button class="newsletter-btn">Subscribe Now</button>
+      </div>
+    </div>
+
+    <div class="sidebar-widget">
+      <div class="ad-label" style="padding:6px 14px 0;">Advertisement</div>
+      <div style="padding:8px 14px 14px;">
+        <div class="ad-placeholder skyscraper" style="width:100%;">[ SIDEBAR AD — 300×600 ]</div>
+      </div>
+    </div>
+
+  </aside>
+
+</div><!-- end main-container -->
+
+<div style="max-width:1100px;margin:0 auto;padding:0 1.5rem 30px;">
+  <div class="ad-label">Advertisement</div>
+  <div class="ad-placeholder leaderboard">[ LEADERBOARD AD — 728×90 ]</div>
+</div>
+
+<footer class="site-footer">
+  <p>© 2024 HealthBuzz Daily NZ | <a href="#">About Us</a> | <a href="#">Contact</a> | <a href="#">Privacy Policy</a> | <a href="#">Advertise With Us</a></p>
+  <p style="margin-top:8px;font-size:0.72rem;color:#666;">HealthBuzz Daily NZ is an independent digital publisher. Content is for informational purposes only and does not constitute medical advice. Always consult a qualified health professional.</p>
+</footer>
+
+</body>
+</html>

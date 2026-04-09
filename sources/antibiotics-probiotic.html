@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antibiotics Wrecked My Gut. Here's How I Rebuilt It (Naturally) | GutWise NZ</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',Arial,sans-serif;background:#f9f9f6;color:#2a2a2a;padding-top:70px!important;}
+a{color:#2ecc87;text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+/* Header */
+.site-header{background:#fff;border-bottom:1px solid #eee;position:sticky;top:60px;z-index:100;}
+.header-inner{max-width:1100px;margin:0 auto;padding:14px 1.5rem;display:flex;justify-content:space-between;align-items:center;}
+.logo{display:flex;align-items:center;gap:10px;}
+.logo-mark{width:38px;height:38px;background:#2ecc87;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem;font-weight:700;}
+.logo-text{font-size:1.4rem;font-weight:700;color:#1a1a1a;}
+.logo-text span{color:#2ecc87;}
+.logo-sub{font-size:0.65rem;color:#aaa;text-transform:uppercase;letter-spacing:1px;}
+.header-nav{display:flex;gap:1.5rem;align-items:center;}
+.header-nav a{font-size:0.85rem;font-weight:500;color:#555;}
+.header-nav .cta-btn{background:#2ecc87;color:#fff;padding:8px 20px;border-radius:30px;font-weight:700;font-size:0.82rem;}
+.header-nav .cta-btn:hover{background:#27b978;text-decoration:none;}
+
+/* Affiliate notice */
+.affiliate-notice{background:#f0faf5;border-bottom:1px solid #d0f0e0;text-align:center;padding:6px;font-size:0.68rem;color:#888;}
+.affiliate-notice a{color:#2ecc87;}
+
+/* Main layout */
+.main-wrap{max-width:1100px;margin:0 auto;padding:2rem 1.5rem;display:grid;grid-template-columns:1fr 300px;gap:2.5rem;}
+
+/* Article header */
+.article-head{}
+.post-category{display:inline-block;background:#e8faf3;color:#2ecc87;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:4px 14px;border-radius:20px;margin-bottom:14px;}
+.post-title{font-size:2.1rem;font-weight:700;line-height:1.2;color:#1a1a1a;margin-bottom:12px;}
+.post-subtitle{font-size:1.05rem;color:#666;line-height:1.65;margin-bottom:18px;}
+.author-bar{display:flex;align-items:center;gap:14px;padding:14px 0;border-top:1px solid #eee;border-bottom:1px solid #eee;margin-bottom:24px;}
+.author-photo{width:48px;height:48px;background:#d0f0e0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+.author-info .author-name{font-weight:700;font-size:0.9rem;color:#1a1a1a;}
+.author-info .author-role{font-size:0.75rem;color:#2ecc87;font-weight:500;}
+.author-info .post-meta{font-size:0.72rem;color:#aaa;margin-top:2px;}
+
+/* Hero */
+.hero-img{background:linear-gradient(135deg,#d0f0e0,#e8faf3);height:380px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#6ad4a8;margin-bottom:28px;font-size:0.85rem;}
+
+/* Article body */
+.article-body p{font-size:1rem;line-height:1.8;margin-bottom:18px;color:#333;}
+.article-body h2{font-size:1.3rem;font-weight:700;margin:30px 0 12px;color:#1a1a1a;}
+.article-body h3{font-size:1.05rem;font-weight:700;margin:22px 0 10px;color:#2ecc87;}
+.article-body ul, .article-body ol{padding-left:22px;margin-bottom:18px;}
+.article-body li{font-size:0.97rem;line-height:1.75;margin-bottom:7px;}
+
+/* Instagram-style pull quote */
+.ig-quote{background:#fff;border-radius:12px;padding:24px;margin:28px 0;text-align:center;box-shadow:0 2px 16px rgba(46,204,135,0.12);border:1px solid #e8faf3;}
+.ig-quote p{font-size:1.2rem;font-weight:500;color:#1a1a1a;line-height:1.5;font-style:italic;}
+.ig-quote span{font-size:0.78rem;color:#2ecc87;font-weight:700;display:block;margin-top:10px;}
+
+/* Science note */
+.science-note{background:#f0faf5;border-left:4px solid #2ecc87;padding:16px 20px;margin:24px 0;border-radius:0 8px 8px 0;}
+.science-note .snlabel{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#2ecc87;margin-bottom:6px;}
+.science-note p{font-size:0.92rem;color:#444;margin-bottom:0;line-height:1.65;}
+
+/* PRODUCT EMBED */
+.product-embed{background:#fff;border-radius:12px;border:2px solid #2ecc87;padding:22px;margin:32px 0;display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:center;}
+.product-embed .prod-img{background:#e0f8ee;height:110px;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:0.7rem;color:#2ecc87;text-align:center;padding:8px;}
+.product-embed .prod-img .icon{font-size:2rem;margin-bottom:4px;}
+.prod-details{}
+.prod-name{font-size:1.15rem;font-weight:700;color:#1a1a1a;margin-bottom:2px;}
+.prod-tagline{font-size:0.8rem;color:#2ecc87;font-style:italic;margin-bottom:8px;}
+.prod-desc{font-size:0.85rem;color:#555;line-height:1.6;margin-bottom:10px;}
+.prod-stars{color:#f0a500;font-size:0.85rem;margin-bottom:4px;}
+.prod-price{font-size:1.05rem;font-weight:700;color:#1a1a1a;margin-bottom:10px;}
+.prod-price .nz{font-size:0.75rem;font-weight:400;color:#888;}
+.prod-btn{display:inline-block;background:#2ecc87;color:#fff;padding:10px 22px;border-radius:30px;font-size:0.82rem;font-weight:700;}
+.prod-btn:hover{background:#27b978;text-decoration:none;}
+.prod-disclaimer{font-size:0.62rem;color:#bbb;margin-top:6px;line-height:1.4;}
+
+/* Testimonials */
+.testimonials-section{margin:36px 0;}
+.testimonials-section h3{font-size:1rem;font-weight:700;margin-bottom:16px;color:#1a1a1a;}
+.testimonial-card{background:#fff;border-radius:10px;padding:18px 20px;margin-bottom:14px;border:1px solid #eee;}
+.testimonial-card .stars{color:#f0a500;font-size:0.85rem;margin-bottom:8px;}
+.testimonial-card p{font-size:0.88rem;color:#444;line-height:1.65;font-style:italic;margin-bottom:8px;}
+.testimonial-card .reviewer{font-size:0.75rem;font-weight:700;color:#2ecc87;}
+.testimonial-card .reviewer span{font-weight:400;color:#aaa;}
+
+/* Sidebar */
+.sidebar{}
+.sidebar-widget{background:#fff;border-radius:10px;border:1px solid #eee;margin-bottom:22px;overflow:hidden;}
+.widget-header{background:#2ecc87;color:#fff;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:10px 16px;}
+.widget-body{padding:16px;}
+.widget-body p{font-size:0.85rem;color:#555;line-height:1.6;margin-bottom:10px;}
+.widget-body a{display:block;font-size:0.83rem;color:#1a1a1a;font-weight:500;padding:8px 0;border-bottom:1px solid #f0f0f0;}
+.widget-body a:last-child{border-bottom:none;}
+.widget-body a:hover{color:#2ecc87;text-decoration:none;}
+
+.mini-product{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid #f5f5f5;}
+.mini-product:last-child{border-bottom:none;}
+.mini-img{background:#e0f8ee;width:50px;height:50px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+.mini-name{font-size:0.82rem;font-weight:700;color:#1a1a1a;}
+.mini-price{font-size:0.78rem;color:#2ecc87;font-weight:700;}
+.mini-stars{font-size:0.7rem;color:#f0a500;}
+
+.seen-in{padding:14px 16px;display:flex;flex-wrap:wrap;gap:8px;}
+.seen-badge{background:#f0faf5;border:1px solid #d0f0e0;border-radius:4px;padding:5px 12px;font-size:0.68rem;color:#888;font-style:italic;}
+
+/* Footer */
+.site-footer{background:#1a1a1a;color:#888;font-size:0.78rem;padding:30px 0;margin-top:40px;}
+.footer-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;}
+.footer-bottom{border-top:1px solid #333;padding-top:14px;margin-top:20px;font-size:0.7rem;color:#666;line-height:1.6;}
+.footer-bottom a{color:#888;}
+
+/* HUD */
+.hud-top-bar{position:fixed;top:0;left:0;width:100%;height:60px;background:#1a2744;border-bottom:4px solid #0d7a6e;display:flex;align-items:center;z-index:9999;box-shadow:0 4px 10px rgba(0,0,0,0.2);font-family:'Source Sans 3',Arial,sans-serif;}
+.hud-container{max-width:1100px;margin:0 auto;width:100%;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;}
+.breadcrumbs{color:#8fa3c8;font-size:0.9rem;}
+.breadcrumbs a{color:#fff;text-decoration:none;font-weight:600;}
+.breadcrumbs a:hover{color:#c8922a;}
+.sep{margin:0 10px;color:#0d7a6e;font-weight:bold;}
+.current-page{color:#fff;opacity:0.8;}
+.hud-badge{background:rgba(255,255,255,0.1);border:1px solid #0d7a6e;color:#fff;padding:4px 10px;font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;border-radius:3px;white-space:nowrap;}
+</style>
+</head>
+<body>
+
+<div class="hud-top-bar"><div class="hud-container"><div class="breadcrumbs"><a href="../index.html">Home</a><span class="sep">/</span><a href="../topics/antibiotics.html">Antibiotics</a><span class="sep">/</span><span class="current-page">Source Analysis</span></div><div class="hud-badge">External Source Analysis</div></div></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-mark">G</div>
+      <div>
+        <div class="logo-text">GutWise <span>NZ</span></div>
+        <div class="logo-sub">Gut health supplements · NZ-made</div>
+      </div>
+    </div>
+    <nav class="header-nav">
+      <a href="#">Shop</a>
+      <a href="#">Learn</a>
+      <a href="#">Our Story</a>
+      <a href="#">Reviews</a>
+      <a href="#" class="cta-btn">Shop Now</a>
+    </nav>
+  </div>
+</header>
+
+<div class="affiliate-notice">This post contains affiliate links. If you purchase through our links, we may earn a commission — at no extra cost to you. <a href="#">What does this mean?</a></div>
+
+<div class="main-wrap">
+  <main>
+
+    <div class="post-category">Personal Story · Gut Health</div>
+    <h1 class="post-title">Antibiotics Wrecked My Gut. Here's How I Rebuilt It (Naturally)</h1>
+    <p class="post-subtitle">After a brutal ten-day course of broad-spectrum antibiotics for a kidney infection, I was left with a gut that felt completely destroyed. Bloating, irregular digestion, fatigue — for months. Here's what I learned about the microbiome, and what actually helped me recover.</p>
+
+    <div class="author-bar">
+      <div class="author-photo">😊</div>
+      <div class="author-info">
+        <div class="author-name">Sophie M.</div>
+        <div class="author-role">GutWise Brand Ambassador · Certified Nutrition Coach</div>
+        <div class="post-meta">Published March 2024 · 9 min read · Wellington, NZ</div>
+      </div>
+    </div>
+
+    <div class="hero-img">[ PHOTO: Bowl of probiotic-rich food — colourful lifestyle image ]</div>
+
+    <div class="article-body">
+
+      <p>I want to start by saying something clearly: I'm not anti-antibiotics. When my GP told me I had a kidney infection that was spreading, taking the full course of ciprofloxacin she prescribed was absolutely the right call. Antibiotics save lives. Mine might have been one of them.</p>
+
+      <p>But here's what my GP didn't tell me — and what I wish she had — is what that antibiotic course was going to do to my gut. And more importantly, what I could do about it.</p>
+
+      <p>Because three weeks after finishing the antibiotics, I felt worse in some ways than I had during the infection itself. The kidney pain was gone. But I had persistent bloating, random cramping, and a kind of generalised exhaustion that I couldn't shake. It took me about two months of research, trial and error, and eventually discovering GutWise to understand what had happened — and how to fix it.</p>
+
+      <h2>What Antibiotics Actually Do to Your Gut</h2>
+
+      <p>Here's the science that I wish came on the leaflet in the antibiotic box. Your gut contains somewhere between 38 and 100 trillion microorganisms — bacteria, fungi, viruses — that form what scientists call your gut microbiome. This community is not just inert passengers. They help digest food, produce vitamins (including B12 and K), regulate your immune system, and even communicate with your brain via the gut-brain axis.</p>
+
+      <div class="science-note">
+        <div class="snlabel">The Science Bit</div>
+        <p>Broad-spectrum antibiotics like ciprofloxacin, amoxicillin, and clindamycin are designed to kill a wide range of bacteria — including the harmful ones causing your infection. But they don't only target the pathogen. They also kill off large populations of beneficial bacteria in your gut. Research published in the journal <em>Nature</em> has shown that a single course of antibiotics can reduce the diversity of the gut microbiome by up to 30%, and that full recovery — if it happens at all — can take six months to a year.</p>
+      </div>
+
+      <p>This disruption to the microbiome is called dysbiosis, and it's increasingly linked to a range of health problems: digestive issues, fatigue, skin conditions, mood disturbances, and reduced immune function. I was experiencing several of these, and I didn't even know it had a name.</p>
+
+      <h2>The Moment Everything Changed</h2>
+
+      <p>I was about six weeks post-antibiotics when a friend mentioned she'd tried a probiotic supplement from a New Zealand company she'd found through Instagram. She'd had a similar experience — a long course of antibiotics for dental work had left her digestive system in chaos. Within three weeks of starting their BiomeFix+ probiotic, she said, things had shifted noticeably.</p>
+
+      <p>I was sceptical. I'd seen probiotic yoghurts in supermarkets and assumed they were all marketing fluff. But I did some reading — proper reading, not just the brand website — and discovered that not all probiotics are equal. The key factors are: the number of live colony-forming units (CFU) per dose, the diversity of bacterial strains, whether the formulation can survive the acidic environment of the stomach to actually reach the colon, and whether it's been stored properly.</p>
+
+      <div class="ig-quote">
+        <p>"I didn't realise until I started researching that most supermarket probiotic yoghurts don't contain enough live bacteria to make any meaningful difference. You need billions of CFU, multiple strains, and ideally acid-resistant capsules."</p>
+        <span>— Sophie M., GutWise Brand Ambassador</span>
+      </div>
+
+      <!-- PRODUCT -->
+      <div class="product-embed">
+        <div class="prod-img">
+          <div class="icon">🧬</div>
+          BiomeFix+
+        </div>
+        <div class="prod-details">
+          <div class="prod-name">BiomeFix+™ Probiotic</div>
+          <div class="prod-tagline">Post-antibiotic gut recovery formula</div>
+          <div class="prod-desc">50 billion CFU per capsule across 8 clinically studied strains, including Lactobacillus rhamnosus, Bifidobacterium longum, and Lactobacillus acidophilus. Delayed-release acid-resistant capsule. Refrigerator stable. NZ-made in a GMP-certified facility.</div>
+          <div class="prod-stars">★★★★★ <span style="color:#888;font-size:0.75rem;">(312 reviews)</span></div>
+          <div class="prod-price">$52.90 <span class="nz">/ 30 capsules</span></div>
+          <a href="#" class="prod-btn">Add to Cart — $52.90</a>
+          <div class="prod-disclaimer">This product is not intended to diagnose, treat, cure, or prevent any disease. Not a substitute for medical advice. Consult your healthcare provider before use.</div>
+        </div>
+      </div>
+
+      <h2>My Recovery Protocol</h2>
+
+      <p>I want to be real with you — there was no single magic bullet. What worked for me was a combination of approaches, and it took about eight weeks of consistency before I felt genuinely back to normal. Here's what I did:</p>
+
+      <ol>
+        <li><strong>Started BiomeFix+ daily</strong> — I took one capsule each morning with breakfast, about thirty minutes after eating to give the stomach acid some time to settle. Within the first week I noticed my bloating was slightly less severe. By week three, it was largely gone.</li>
+        <li><strong>Increased fermented foods</strong> — Yoghurt, kefir, kimchi, and sauerkraut. I'd always liked kimchi on the side of things but I started eating it with most meals. These provide live cultures alongside the supplement.</li>
+        <li><strong>Prioritised prebiotic fibre</strong> — Probiotics need food to survive and thrive. Prebiotic fibres — found in garlic, onion, asparagus, bananas, and oats — feed the beneficial bacteria in your gut. I was genuinely shocked by how much of a difference this made.</li>
+        <li><strong>Cut back on sugar and alcohol</strong> — Both feed the less desirable organisms in a dysbiotic gut and slow microbiome recovery. I was pretty strict about this for the first month.</li>
+        <li><strong>Added GutWise PrebioFibre powder</strong> — When I found out GutWise also made a prebiotic powder, I started adding it to my morning smoothie. The combination of probiotic and prebiotic support — sometimes called synbiotic therapy — is now what I'd recommend as a first step to anyone dealing with post-antibiotic gut issues.</li>
+      </ol>
+
+      <!-- PRODUCT -->
+      <div class="product-embed">
+        <div class="prod-img">
+          <div class="icon">🌾</div>
+          PrebioFibre
+        </div>
+        <div class="prod-details">
+          <div class="prod-name">PrebioFibre™ Powder</div>
+          <div class="prod-tagline">Feeds and supports your beneficial gut bacteria</div>
+          <div class="prod-desc">A blend of inulin, FOS (fructooligosaccharides), and psyllium husk. Unflavoured and odourless — stirs easily into smoothies, yoghurt, or water. No artificial additives. NZ-made. Pairs perfectly with BiomeFix+ for synbiotic support.</div>
+          <div class="prod-stars">★★★★½ <span style="color:#888;font-size:0.75rem;">(228 reviews)</span></div>
+          <div class="prod-price">$34.90 <span class="nz">/ 300g (approx. 30 serves)</span></div>
+          <a href="#" class="prod-btn">Add to Cart — $34.90</a>
+          <div class="prod-disclaimer">Not a substitute for medical advice.</div>
+        </div>
+      </div>
+
+      <h2>What I'd Tell Someone Starting This Journey</h2>
+
+      <p>First: talk to your GP or a registered dietitian, especially if your symptoms are severe or you have an underlying health condition. What worked for me worked for me — your situation might be different, and the science of the microbiome is genuinely still evolving. I'm a nutrition coach, not a doctor, and I'm sharing my personal experience, not prescribing a treatment plan.</p>
+
+      <p>Second: be patient. The microbiome doesn't recover overnight. If you start a probiotic and don't feel dramatically different after three days, that doesn't mean it's not working. Give it at least four to six weeks, alongside a diet rich in plant diversity and prebiotic fibre.</p>
+
+      <p>Third: don't be fooled by cheap, low-CFU probiotics. I went through two different brands before I found BiomeFix+, and I genuinely don't think the earlier ones made any difference. Refrigerate your probiotics if the label says to. Check the CFU count is guaranteed at expiry, not just at manufacture.</p>
+
+      <h2>The Bigger Takeaway</h2>
+
+      <p>My experience with antibiotics and my gut opened up a whole world of reading and learning that I genuinely hadn't engaged with before. The gut microbiome is one of the most fascinating and rapidly evolving areas of medical research right now — and the connections to mental health, immunity, weight management, and chronic disease are extraordinary.</p>
+
+      <p>I don't regret taking the antibiotics — again, they were necessary and I'd make the same decision again. But I do wish more people knew what to do in the aftermath. I hope this post helps someone who's currently in that foggy, uncomfortable post-antibiotic place that I was in.</p>
+
+      <p>And if you want to try BiomeFix+ for yourself, GutWise offers a 30-day money-back guarantee — so there's nothing to lose. Use the code SOPHIE10 for 10% off your first order.</p>
+
+      <!-- READER TESTIMONIALS -->
+      <div class="testimonials-section">
+        <h3>Reader Testimonials</h3>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"I found this post after Googling 'antibiotics destroyed gut' at 2am and honestly it described exactly how I felt. Three weeks into BiomeFix+ and I'm finally feeling human again. Thank you Sophie."</p>
+          <div class="reviewer">Jade K. <span>· Auckland · Verified purchaser</span></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"My son had multiple courses of antibiotics for a chest infection last winter and was struggling with tummy issues for months afterwards. His paediatrician wasn't much help ('it'll sort itself out'). The combination of BiomeFix+ Junior and the prebiotic powder genuinely helped within a few weeks."</p>
+          <div class="reviewer">Ngaio T. <span>· Christchurch · Verified purchaser</span></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★</div>
+          <p>"Good product, takes a few weeks to work. I paired it with increasing vegetables in my diet and cutting out alcohol for a month. Would recommend as part of a broader approach rather than a standalone fix."</p>
+          <div class="reviewer">Marcus W. <span>· Wellington · Verified purchaser</span></div>
+        </div>
+      </div>
+
+    </div><!-- end article body -->
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sidebar-widget">
+      <div class="widget-header">Shop This Post</div>
+      <div class="widget-body">
+        <div class="mini-product">
+          <div class="mini-img">🧬</div>
+          <div>
+            <div class="mini-name">BiomeFix+™ Probiotic</div>
+            <div class="mini-stars">★★★★★</div>
+            <div class="mini-price">$52.90</div>
+          </div>
+        </div>
+        <div class="mini-product">
+          <div class="mini-img">🌾</div>
+          <div>
+            <div class="mini-name">PrebioFibre™ Powder</div>
+            <div class="mini-stars">★★★★½</div>
+            <div class="mini-price">$34.90</div>
+          </div>
+        </div>
+        <div class="mini-product">
+          <div class="mini-img">🌿</div>
+          <div>
+            <div class="mini-name">Gut Reset Bundle (Save 20%)</div>
+            <div class="mini-stars">★★★★★</div>
+            <div class="mini-price">$70.20</div>
+          </div>
+        </div>
+        <div style="margin-top:12px;"><a href="#" class="prod-btn" style="display:block;text-align:center;padding:10px;">View All Products</a></div>
+      </div>
+    </div>
+
+    <div class="sidebar-widget">
+      <div class="widget-header">As Seen In</div>
+      <div class="seen-in">
+        <div class="seen-badge">NZ Woman's Weekly</div>
+        <div class="seen-badge">Healthy Food Guide NZ</div>
+        <div class="seen-badge">Stuff.co.nz</div>
+        <div class="seen-badge">Sunday Star-Times</div>
+        <div class="seen-badge">The Spinoff</div>
+      </div>
+    </div>
+
+    <div class="sidebar-widget">
+      <div class="widget-header">More From The Blog</div>
+      <div class="widget-body">
+        <a href="#">Why 70% of Your Immune System Lives in Your Gut</a>
+        <a href="#">The Best Probiotic Foods in the NZ Supermarket</a>
+        <a href="#">How Long Does It Really Take to Repair the Gut?</a>
+        <a href="#">Prebiotic vs Probiotic: What's the Difference?</a>
+        <a href="#">Should You Take Probiotics During Antibiotics?</a>
+      </div>
+    </div>
+
+  </aside>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>GutWise NZ — gut health supplements, NZ-made | <a href="#">Shop</a> · <a href="#">Blog</a> · <a href="#">About</a> · <a href="#">Contact</a> · <a href="#">Privacy Policy</a></p>
+    <div class="footer-bottom">
+      <p>© 2024 GutWise NZ Ltd. All rights reserved. Products are not intended to diagnose, treat, cure, or prevent any disease. Always consult a qualified healthcare professional before starting a supplement programme. Sophie M. is a paid Brand Ambassador for GutWise NZ. This post contains affiliate links. GutWise NZ is not responsible for the content of external sites.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antibiotic Use on NZ Farms Has Risen 34% in Five Years | NZ Health Investigates</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@300;400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Source Sans 3',Georgia,sans-serif;background:#fff;color:#111;padding-top:70px!important;}
+a{color:#c0392b;text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+/* Site header */
+.site-header{background:#111;padding:0;border-bottom:3px solid #c0392b;}
+.header-inner{max-width:1060px;margin:0 auto;padding:0 1.5rem;}
+.header-top-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #333;}
+.header-top-row .util-links a{color:#999;font-size:0.75rem;margin-left:16px;}
+.date-line{color:#666;font-size:0.72rem;}
+.header-logo-row{padding:14px 0;display:flex;justify-content:space-between;align-items:flex-end;}
+.site-logo{font-family:'Source Serif 4',Georgia,serif;font-size:1.8rem;font-weight:700;color:#fff;letter-spacing:-0.5px;}
+.site-logo .nz{color:#c0392b;}
+.site-motto{font-size:0.72rem;color:#888;letter-spacing:1px;text-transform:uppercase;margin-top:3px;}
+.header-support{text-align:right;}
+.support-text{font-size:0.75rem;color:#888;margin-bottom:6px;}
+.support-btn{background:#c0392b;color:#fff;padding:7px 18px;border-radius:2px;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;}
+.nav-bar{background:#1a1a1a;border-bottom:1px solid #333;}
+.nav-bar ul{list-style:none;display:flex;gap:0;max-width:1060px;margin:0 auto;padding:0 1.5rem;}
+.nav-bar li a{display:block;padding:12px 16px;color:#ccc;font-size:0.82rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;}
+.nav-bar li a:hover{color:#fff;background:#333;text-decoration:none;}
+.nav-bar li.active a{color:#fff;border-bottom:3px solid #c0392b;}
+
+/* Main layout */
+.main-layout{max-width:1060px;margin:36px auto;padding:0 1.5rem;display:grid;grid-template-columns:1fr 300px;gap:3rem;}
+
+/* Article */
+.article-label{display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;}
+.label-tag{background:#c0392b;color:#fff;font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:4px 12px;}
+.label-type{font-size:0.72rem;color:#888;font-weight:600;text-transform:uppercase;letter-spacing:1px;}
+.article-headline{font-family:'Source Serif 4',Georgia,serif;font-size:2.2rem;font-weight:700;line-height:1.2;color:#111;margin-bottom:14px;}
+.article-standfirst{font-size:1.1rem;color:#444;line-height:1.65;margin-bottom:20px;font-family:'Source Serif 4',Georgia,serif;font-weight:300;}
+.article-byline{border-top:1px solid #e0e0e0;border-bottom:1px solid #e0e0e0;padding:14px 0;margin-bottom:22px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;}
+.byline-left{}
+.byline-author{font-size:0.9rem;font-weight:700;color:#111;}
+.byline-credentials{font-size:0.78rem;color:#888;margin-top:2px;}
+.byline-meta{font-size:0.78rem;color:#888;margin-top:6px;display:flex;gap:16px;}
+.byline-meta span{display:flex;align-items:center;gap:4px;}
+.byline-right{display:flex;gap:8px;flex-wrap:wrap;}
+.share-btn{padding:6px 14px;font-size:0.75rem;font-weight:700;border:1px solid #ddd;border-radius:2px;color:#555;cursor:pointer;background:#fff;}
+.share-btn:hover{background:#f5f5f5;}
+
+/* Hero image */
+.hero-img{background:#d8d8d8;width:100%;height:420px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#777;font-size:0.85rem;margin-bottom:12px;}
+.hero-caption{font-size:0.75rem;color:#666;line-height:1.5;margin-bottom:28px;padding-bottom:12px;border-bottom:1px solid #eee;}
+.hero-caption strong{color:#444;}
+
+/* Data callout */
+.data-callout{background:#f5f5f5;border-left:5px solid #c0392b;padding:20px 24px;margin:28px 0;}
+.data-callout .data-label{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#c0392b;margin-bottom:6px;}
+.data-callout .data-number{font-size:2.5rem;font-weight:700;color:#111;line-height:1;margin-bottom:4px;}
+.data-callout .data-desc{font-size:0.9rem;color:#555;line-height:1.5;}
+.data-callout .data-source{font-size:0.72rem;color:#888;margin-top:10px;font-style:italic;}
+
+/* Pull quote */
+.pull-quote{font-family:'Source Serif 4',Georgia,serif;font-size:1.25rem;font-weight:300;color:#c0392b;border-top:3px solid #c0392b;border-bottom:1px solid #ddd;padding:20px 0 18px;margin:30px 0;line-height:1.5;}
+.pull-quote cite{display:block;font-size:0.78rem;font-style:normal;color:#888;margin-top:10px;font-family:'Source Sans 3',sans-serif;}
+
+/* Body text */
+.article-body p{font-family:'Source Serif 4',Georgia,serif;font-size:1.05rem;line-height:1.8;margin-bottom:20px;color:#111;}
+.article-body h2{font-family:'Source Serif 4',Georgia,serif;font-size:1.35rem;font-weight:700;margin:34px 0 14px;color:#111;padding-bottom:8px;border-bottom:2px solid #eee;}
+.article-body .source-tag{display:inline-block;background:#ffe8e4;color:#c0392b;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:2px 8px;border-radius:2px;margin-right:6px;}
+.article-body .box-expert{background:#fff;border:1px solid #ddd;border-radius:4px;padding:18px 20px;margin:26px 0;}
+.article-body .box-expert .expert-name{font-size:0.95rem;font-weight:700;color:#111;margin-bottom:2px;}
+.article-body .box-expert .expert-role{font-size:0.78rem;color:#888;margin-bottom:10px;}
+.article-body .box-expert p{font-size:0.93rem;font-style:italic;color:#444;margin-bottom:0;}
+
+/* Author bio */
+.author-bio{background:#f9f9f9;border:1px solid #e0e0e0;border-radius:4px;padding:22px 24px;margin-top:36px;}
+.author-bio-name{font-size:1rem;font-weight:700;color:#111;margin-bottom:2px;}
+.author-bio-title{font-size:0.8rem;color:#c0392b;font-weight:600;margin-bottom:10px;}
+.author-bio-text{font-size:0.88rem;color:#555;line-height:1.65;}
+
+/* Corrections policy */
+.editorial-footer{border-top:1px solid #e0e0e0;padding-top:20px;margin-top:30px;font-size:0.78rem;color:#888;line-height:1.6;}
+.editorial-footer a{color:#c0392b;}
+
+/* Sidebar */
+.sidebar{}
+.sidebar-block{margin-bottom:28px;}
+.sidebar-label{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#888;border-bottom:2px solid #111;padding-bottom:8px;margin-bottom:14px;}
+.related-item{border-bottom:1px solid #eee;padding-bottom:14px;margin-bottom:14px;}
+.related-item:last-child{border-bottom:none;}
+.related-cat{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#c0392b;margin-bottom:4px;}
+.related-title{font-size:0.88rem;font-weight:700;color:#111;line-height:1.35;}
+.related-title a{color:#111;}
+.related-meta{font-size:0.72rem;color:#888;margin-top:3px;}
+
+.sidebar-facts{background:#f5f5f5;padding:16px;border-radius:4px;margin-bottom:28px;}
+.sidebar-facts h3{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#111;margin-bottom:12px;}
+.fact-item{margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid #e0e0e0;}
+.fact-item:last-child{border-bottom:none;margin-bottom:0;}
+.fact-num{font-size:1.5rem;font-weight:700;color:#c0392b;line-height:1;}
+.fact-desc{font-size:0.78rem;color:#555;margin-top:2px;}
+
+/* Site footer */
+.site-footer{background:#111;color:#888;font-size:0.78rem;padding:30px 0;margin-top:50px;}
+.footer-inner{max-width:1060px;margin:0 auto;padding:0 1.5rem;}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-bottom:24px;}
+.footer-col h4{color:#ccc;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;}
+.footer-col a{display:block;color:#888;margin-bottom:6px;}
+.footer-col a:hover{color:#fff;}
+.footer-bottom{border-top:1px solid #333;padding-top:16px;font-size:0.72rem;color:#666;}
+
+/* HUD */
+.hud-top-bar{position:fixed;top:0;left:0;width:100%;height:60px;background:#1a2744;border-bottom:4px solid #0d7a6e;display:flex;align-items:center;z-index:9999;box-shadow:0 4px 10px rgba(0,0,0,0.2);font-family:'Source Sans 3',Arial,sans-serif;}
+.hud-container{max-width:1100px;margin:0 auto;width:100%;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;}
+.breadcrumbs{color:#8fa3c8;font-size:0.9rem;}
+.breadcrumbs a{color:#fff;text-decoration:none;font-weight:600;}
+.breadcrumbs a:hover{color:#c8922a;}
+.sep{margin:0 10px;color:#0d7a6e;font-weight:bold;}
+.current-page{color:#fff;opacity:0.8;}
+.hud-badge{background:rgba(255,255,255,0.1);border:1px solid #0d7a6e;color:#fff;padding:4px 10px;font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;border-radius:3px;white-space:nowrap;}
+</style>
+</head>
+<body>
+
+<div class="hud-top-bar"><div class="hud-container"><div class="breadcrumbs"><a href="../index.html">Home</a><span class="sep">/</span><a href="../topics/antibiotics.html">Antibiotics</a><span class="sep">/</span><span class="current-page">Source Analysis</span></div><div class="hud-badge">External Source Analysis</div></div></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-top-row">
+      <div class="date-line">Wednesday, 9 April 2025</div>
+      <div class="util-links">
+        <a href="#">Subscribe</a>
+        <a href="#">Newsletter</a>
+        <a href="#">About</a>
+        <a href="#">Editorial Policy</a>
+      </div>
+    </div>
+    <div class="header-logo-row">
+      <div>
+        <div class="site-logo"><span class="nz">NZ</span> Health Investigates</div>
+        <div class="site-motto">Independent investigative health journalism</div>
+      </div>
+      <div class="header-support">
+        <div class="support-text">Our journalism is funded by readers, not advertisers.</div>
+        <a href="#" class="support-btn">Support Our Work</a>
+      </div>
+    </div>
+  </div>
+  <nav class="nav-bar">
+    <ul>
+      <li><a href="#">Latest</a></li>
+      <li class="active"><a href="#">Investigations</a></li>
+      <li><a href="#">Public Health</a></li>
+      <li><a href="#">Pharmaceuticals</a></li>
+      <li><a href="#">Environment</a></li>
+      <li><a href="#">Data</a></li>
+      <li><a href="#">Opinion</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="main-layout">
+  <article>
+
+    <div class="article-label">
+      <span class="label-tag">Investigative Report</span>
+      <span class="label-type">Antimicrobial Resistance</span>
+    </div>
+
+    <h1 class="article-headline">Antibiotic Use on NZ Farms Has Risen 34% in Five Years. Scientists Are Alarmed.</h1>
+
+    <p class="article-standfirst">New data obtained under the Official Information Act reveals a significant increase in agricultural antibiotic use across New Zealand — at the same time as the World Health Organisation is warning of a global antimicrobial resistance crisis. We spoke to scientists, farmers, and government officials to understand what's driving the trend and what it means.</p>
+
+    <div class="article-byline">
+      <div class="byline-left">
+        <div class="byline-author">By Aroha Tūhoe, Science Reporter</div>
+        <div class="byline-credentials">BA (Journalism, University of Canterbury), MSc (Science Communication, Victoria University of Wellington) · 12 years covering health and science</div>
+        <div class="byline-meta">
+          <span>Published 7 April 2025</span>
+          <span>Updated 8 April 2025, 4:12pm</span>
+          <span>Estimated reading time: 14 minutes</span>
+        </div>
+      </div>
+      <div class="byline-right">
+        <button class="share-btn">Share</button>
+        <button class="share-btn">Save</button>
+        <button class="share-btn">Print</button>
+      </div>
+    </div>
+
+    <div class="hero-img">[ PHOTO: Aerial view of New Zealand pastoral farmland ]</div>
+    <p class="hero-caption"><strong>Photo: Supplied / NZ Health Investigates.</strong> Agricultural antibiotic use data has been collected by the Ministry for Primary Industries since 2015, but scrutiny of the trend has intensified following new WHO guidance.</p>
+
+    <div class="article-body">
+
+      <p>Every year, New Zealand farms use millions of doses of antibiotics — not just to treat sick animals, but to prevent disease in large herds and, in some cases, to promote growth in livestock. For years, the scale of this use has been a matter of public record but limited public attention. That changed this week.</p>
+
+      <p>Data released by the Ministry for Primary Industries (MPI) under the Official Information Act reveals that total antibiotic use in New Zealand agriculture increased by 34 percent between 2018 and 2023 — from 162 tonnes of active compound to 217 tonnes, measured in milligrams of antibiotic per kilogram of livestock biomass (mg/PCU), the standard international metric.</p>
+
+      <p>The increase cuts across dairy, beef, sheep, and pig farming sectors, though the sharpest rise — 41 percent — was recorded in the intensive pig and poultry farming sector, where animals are housed in close proximity and disease transmission risks are higher.</p>
+
+      <div class="data-callout">
+        <div class="data-label">Key Figure</div>
+        <div class="data-number">34%</div>
+        <div class="data-desc">Increase in agricultural antibiotic use in New Zealand between 2018–2023, measured in mg of active compound per kg of livestock biomass (mg/PCU)</div>
+        <div class="data-source">Source: Ministry for Primary Industries, Agricultural Antimicrobial Use Report 2023. Released under the Official Information Act, March 2025.</div>
+      </div>
+
+      <h2>Why Scientists Are Concerned</h2>
+
+      <p>The concern is not simply that farmers are using more antibiotics. It's what heavy antibiotic use does to the population of bacteria it encounters — including bacteria that can ultimately affect humans.</p>
+
+      <p>Dr. James Mackenzie, a microbiologist at the University of Otago who has been studying antimicrobial resistance (AMR) in New Zealand for over a decade, says the data is "deeply troubling."</p>
+
+      <div class="box-expert">
+        <div class="expert-name">Dr. James Mackenzie</div>
+        <div class="expert-role">Associate Professor of Microbiology, University of Otago; member of the NZ Antimicrobial Resistance Advisory Group</div>
+        <p>"When you expose bacterial populations to antibiotics repeatedly, you create selection pressure — you're essentially running an evolutionary experiment in real time. The bacteria that survive are the resistant ones, and those resistant strains can spread. What we're seeing in the farm data is consistent with what we're seeing in our clinical surveillance: resistance patterns are shifting."</p>
+      </div>
+
+      <p>The specific antibiotics attracting the most concern among researchers are those classified by the WHO as "critically important antimicrobials" — drugs that are considered last-resort treatments for serious human infections. These include fluoroquinolones and third-generation cephalosporins. MPI data shows that use of these classes on NZ farms, while still small in absolute terms, grew faster than overall antibiotic use over the study period.</p>
+
+      <div class="pull-quote">
+        "The bacteria that survive antibiotic exposure are the resistant ones. What we're seeing in the farm data is consistent with what we're seeing in clinical surveillance: resistance patterns are shifting."
+        <cite>— Dr. James Mackenzie, University of Otago</cite>
+      </div>
+
+      <h2>How Resistance Travels From Farm to Human</h2>
+
+      <p>Associate Professor Lena Park, an epidemiologist at Massey University who co-authored a 2023 review of AMR transmission pathways in New Zealand, explains that the route from farm to clinical setting is not always direct — but it is well-documented.</p>
+
+      <div class="box-expert">
+        <div class="expert-name">Associate Professor Lena Park</div>
+        <div class="expert-role">Epidemiology, Massey University; lead author, "Antimicrobial Resistance Transmission in New Zealand Agriculture," NZ Medical Journal 2023</div>
+        <p>"Resistant bacteria can travel via several pathways. Contaminated water runoff from farms can reach waterways and ultimately drinking water sources. Farm workers can carry resistant bacteria on their skin and clothing. Meat products can carry resistant organisms that survive inadequate cooking. And then there's the more indirect pathway — resistance genes can transfer between bacterial species in the environment, including between animal and human gut bacteria."</p>
+      </div>
+
+      <p>This process — called horizontal gene transfer — means that antibiotic resistance developed in livestock bacteria does not stay in livestock bacteria. It can be shared with other species, including Escherichia coli and Klebsiella pneumoniae, two bacteria that are common causes of urinary tract infections, pneumonia, and bloodstream infections in humans.</p>
+
+      <p>NZ Health Investigates reviewed peer-reviewed literature on this topic, including a 2022 Lancet study of seventeen countries that found statistically significant associations between agricultural antibiotic intensity and human AMR burden. New Zealand was not included in that study, but Otago's Dr. Mackenzie says the mechanisms it describes apply here.</p>
+
+      <h2>The Farmer's Perspective</h2>
+
+      <p>Not everyone in the agricultural sector accepts the framing. Wayne Rutherford, who has run a 900-head dairy farm near Ashburton for 28 years, says the picture is more complicated than the headline figures suggest.</p>
+
+      <p>"I use antibiotics responsibly — only on prescription, only when an animal is sick or at clear risk. My vet signs off every treatment course. The idea that farmers are just throwing antibiotics around is unfair," Rutherford told NZ Health Investigates.</p>
+
+      <p>He acknowledged that use on his farm had increased over the past five years, but attributed this to two factors: a new parlour monitoring system that has allowed earlier identification of mastitis cases that previously went untreated, and a change in herd composition toward higher-producing breeds that are more susceptible to udder infections.</p>
+
+      <p>"I'd actually argue that better monitoring leads to more recorded antibiotic use, even if the animals are being treated more appropriately than before," he said.</p>
+
+      <p>Federated Farmers declined to provide a spokesperson for this article.</p>
+
+      <div class="data-callout">
+        <div class="data-label">For Context</div>
+        <div class="data-number">41%</div>
+        <div class="data-desc">Rise in antibiotic use in the pig and poultry sector specifically — the highest increase of any agricultural category in the five-year period</div>
+        <div class="data-source">Source: MPI Agricultural Antimicrobial Use Report 2023</div>
+      </div>
+
+      <h2>What the Government Says</h2>
+
+      <p>An MPI spokesperson confirmed the figures and said the ministry was "aware of the trend and taking steps to address it." The spokesperson pointed to a voluntary veterinary prescribing programme introduced in 2020 that requires all agricultural antibiotic use to be recorded, and a sector-wide target to reduce the use of WHO critically important antimicrobials by 25 percent by 2030.</p>
+
+      <p>When asked whether the current trajectory was consistent with meeting that target, the spokesperson said: "The ministry continues to work with industry partners to encourage responsible antibiotic stewardship, and further data collection is ongoing."</p>
+
+      <p>Associate Professor Park described the government's response as "well-intentioned but weak on enforcement." She noted that the prescribing recording requirement has no independent verification mechanism, and that the 2030 target applies only to critically important antimicrobials — not to overall antibiotic use, which continues to rise.</p>
+
+      <h2>International Comparisons</h2>
+
+      <p>New Zealand's agricultural antibiotic use sits above the European Union average but below the United States and China, according to the most recent OECD data. The EU implemented mandatory prescription requirements for all agricultural antibiotics in 2022 and banned the use of antibiotics for growth promotion — a practice that remains legal in some New Zealand contexts, though industry groups say it is not widely practised.</p>
+
+      <p>Denmark, frequently cited as a benchmark in AMR policy, reduced its agricultural antibiotic use by over 50 percent between 1994 and 2015 while maintaining livestock production levels — suggesting that reduction is achievable without significant economic cost to the sector.</p>
+
+      <h2>What Happens If Resistance Keeps Growing?</h2>
+
+      <p>The consequences of unchecked AMR are not hypothetical. The WHO estimates that drug-resistant infections currently kill approximately 1.27 million people annually worldwide, and that figure could rise to 10 million by 2050 if current trends continue. In New Zealand, the limited national AMR surveillance infrastructure makes it difficult to quantify the local burden precisely — a gap that both Dr. Mackenzie and Associate Professor Park say urgently needs to be addressed.</p>
+
+      <p>"We don't have a good picture of how many New Zealanders are dying or suffering serious illness because of resistant infections," Dr. Mackenzie said. "That's a problem in itself — you can't manage what you can't measure. And we've been underfunding this area for years."</p>
+
+      <p>NZ Health Investigates has requested the government's current AMR surveillance expenditure figures under the OIA. We will report on the response when it arrives.</p>
+
+    </div><!-- end article-body -->
+
+    <div class="author-bio">
+      <div class="author-bio-name">Aroha Tūhoe</div>
+      <div class="author-bio-title">Science Reporter, NZ Health Investigates</div>
+      <div class="author-bio-text">Aroha Tūhoe has covered health and science for NZ Health Investigates since 2019. She previously reported for Radio New Zealand and the New Zealand Medical Journal's news section. She holds a BA in Journalism from the University of Canterbury and an MSc in Science Communication from Victoria University of Wellington. Contact: aroha.tuhoe@nzhealthinvestigates.nz</div>
+    </div>
+
+    <div class="editorial-footer">
+      <p><strong>Corrections policy:</strong> NZ Health Investigates is committed to accuracy. If you believe this article contains a factual error, please contact <a href="#">corrections@nzhealthinvestigates.nz</a>. We aim to acknowledge and correct errors within 48 hours.</p>
+      <p style="margin-top:8px;"><strong>Editorial independence:</strong> This investigation was funded by the NZ Health Investigates Journalism Fund. No sources, subjects, or external organisations had editorial input. <a href="#">Read our full editorial policy.</a></p>
+      <p style="margin-top:8px;"><strong>Methodology:</strong> Data used in this report was obtained from the Ministry for Primary Industries under the Official Information Act (OIA reference MPI-OIA-2025-0391). Academic sources were reviewed in published, peer-reviewed form. All expert quotes have been reviewed by the individuals named for accuracy of attribution. <a href="#">View full methodology and data notes.</a></p>
+    </div>
+
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sidebar-block">
+      <div class="sidebar-label">Key Facts</div>
+      <div class="sidebar-facts">
+        <div class="fact-item">
+          <div class="fact-num">34%</div>
+          <div class="fact-desc">Rise in NZ farm antibiotic use, 2018–2023 (MPI OIA data)</div>
+        </div>
+        <div class="fact-item">
+          <div class="fact-num">1.27M</div>
+          <div class="fact-desc">Deaths globally attributed to AMR annually (WHO, 2022)</div>
+        </div>
+        <div class="fact-item">
+          <div class="fact-num">50%</div>
+          <div class="fact-desc">Reduction in agricultural antibiotic use achieved by Denmark over 21 years</div>
+        </div>
+        <div class="fact-item">
+          <div class="fact-num">2030</div>
+          <div class="fact-desc">MPI target year for 25% reduction in critically important antimicrobial use</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="sidebar-label">Related Investigations</div>
+      <div class="related-item">
+        <div class="related-cat">Pharmaceuticals</div>
+        <div class="related-title"><a href="#">Antibiotic Prescribing in NZ GP Clinics: How Does We Compare Internationally?</a></div>
+        <div class="related-meta">By Aroha Tūhoe · March 2025</div>
+      </div>
+      <div class="related-item">
+        <div class="related-cat">Environment</div>
+        <div class="related-title"><a href="#">Pharmaceutical Residues in NZ Waterways: The Data MPI Doesn't Publish</a></div>
+        <div class="related-meta">By Tom Harawira · January 2025</div>
+      </div>
+      <div class="related-item">
+        <div class="related-cat">Public Health</div>
+        <div class="related-title"><a href="#">Resistant UTIs on the Rise in Auckland Hospitals — Urologists Sound the Alarm</a></div>
+        <div class="related-meta">By Cara Blackwell · February 2025</div>
+      </div>
+      <div class="related-item">
+        <div class="related-cat">Policy</div>
+        <div class="related-title"><a href="#">NZ's National AMR Action Plan: Ambitious on Paper, Underfunded in Practice</a></div>
+        <div class="related-meta">By Aroha Tūhoe · November 2024</div>
+      </div>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="sidebar-label">About This Outlet</div>
+      <div class="sidebar-facts" style="font-size:0.83rem;color:#555;line-height:1.65;padding:16px;">
+        <p>NZ Health Investigates is an independent, reader-funded journalism outlet specialising in health policy and public health investigation. We are not funded by government, pharmaceutical companies, or advertisers. <a href="#">Learn more about our funding model.</a></p>
+      </div>
+    </div>
+
+  </aside>
+
+</div><!-- end main-layout -->
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Investigations</h4>
+        <a href="#">Latest Reports</a>
+        <a href="#">By Topic</a>
+        <a href="#">Data Projects</a>
+        <a href="#">Archive</a>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <a href="#">Our Mission</a>
+        <a href="#">Editorial Policy</a>
+        <a href="#">Corrections</a>
+        <a href="#">Our Funders</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="#">Subscribe</a>
+        <a href="#">Donate</a>
+        <a href="#">Institutional Access</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="#">Newsroom</a>
+        <a href="#">Tip Line (secure)</a>
+        <a href="#">Media Enquiries</a>
+        <a href="#">Corrections</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 NZ Health Investigates. All rights reserved. ISSN 2703-4178. Registered with the NZ Press Council. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

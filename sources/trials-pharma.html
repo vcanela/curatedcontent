@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Understanding Clinical Trials: A Patient's Guide | TrialConnect NZ</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Roboto',Arial,sans-serif;background:#f8fafd;color:#1a1a1a;padding-top:70px!important;}
+a{color:#1a6fb8;text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+/* Utility bar */
+.util-bar{background:#1a6fb8;color:#d0e8fc;font-size:0.73rem;padding:6px 0;text-align:center;letter-spacing:0.3px;}
+.util-bar a{color:#a8d0f4;}
+
+/* Site header */
+.site-header{background:#fff;border-bottom:2px solid #e0ecf8;box-shadow:0 1px 5px rgba(26,111,184,0.07);}
+.header-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center;height:70px;}
+.logo-area{display:flex;align-items:center;gap:14px;}
+.logo-symbol{width:44px;height:44px;background:linear-gradient(135deg,#1a6fb8,#0d4a8f);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;font-weight:700;}
+.logo-text{font-size:1.3rem;font-weight:700;color:#1a6fb8;}
+.logo-text .nz{color:#0d4a8f;}
+.logo-sub{font-size:0.62rem;color:#888;text-transform:uppercase;letter-spacing:1px;margin-top:1px;}
+.header-nav{display:flex;gap:0;align-items:center;}
+.header-nav a{font-size:0.82rem;font-weight:500;color:#555;padding:8px 14px;border-radius:2px;}
+.header-nav a:hover{color:#1a6fb8;background:#f0f6fc;text-decoration:none;}
+.header-nav .find-btn{background:#1a6fb8;color:#fff;border-radius:4px;font-weight:700;}
+.header-nav .find-btn:hover{background:#0d4a8f!important;}
+
+/* Hero */
+.hero-section{background:linear-gradient(135deg,#0d4a8f,#1a6fb8,#2986d4);color:#fff;padding:60px 1.5rem;}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 360px;gap:3rem;align-items:center;}
+.hero-badge{display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:#fff;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:4px 14px;border-radius:2px;margin-bottom:14px;}
+.hero-title{font-size:2.2rem;font-weight:700;line-height:1.2;margin-bottom:14px;}
+.hero-sub{font-size:1rem;color:#c8deff;line-height:1.65;margin-bottom:22px;}
+.hero-btns a{display:inline-block;padding:12px 28px;border-radius:4px;font-size:0.9rem;font-weight:700;margin-right:10px;margin-bottom:8px;}
+.hero-btns .primary-btn{background:#fff;color:#1a6fb8;}
+.hero-btns .outline-btn{border:2px solid rgba(255,255,255,0.5);color:#fff;}
+.hero-btns a:hover{text-decoration:none;opacity:0.9;}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.hero-stat{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:6px;padding:18px;text-align:center;}
+.hero-stat .stat-num{font-size:1.8rem;font-weight:700;color:#fff;line-height:1;}
+.hero-stat .stat-label{font-size:0.72rem;color:#c8deff;margin-top:4px;line-height:1.3;}
+
+/* Trust bar */
+.trust-bar{background:#fff;border-bottom:1px solid #e0ecf8;padding:16px 0;}
+.trust-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;justify-content:center;gap:3rem;align-items:center;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:0.8rem;color:#555;}
+.trust-icon{color:#1a6fb8;font-size:1.1rem;}
+
+/* Main content */
+.main-content{max-width:1100px;margin:40px auto;padding:0 1.5rem;}
+
+/* Section */
+.content-section{margin-bottom:50px;}
+.section-label{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#1a6fb8;margin-bottom:8px;}
+.section-title{font-size:1.7rem;font-weight:700;color:#0d2855;margin-bottom:12px;line-height:1.2;}
+.section-body p{font-size:0.97rem;line-height:1.75;color:#333;margin-bottom:16px;}
+.section-body h3{font-size:1.05rem;font-weight:700;color:#1a6fb8;margin:20px 0 8px;}
+
+/* Phase grid */
+.phase-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px;}
+.phase-card{background:#fff;border:1px solid #d0e4f5;border-radius:6px;padding:20px;text-align:center;box-shadow:0 1px 4px rgba(26,111,184,0.06);}
+.phase-num{width:44px;height:44px;background:#1a6fb8;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;margin:0 auto 12px;}
+.phase-name{font-size:0.85rem;font-weight:700;color:#0d2855;margin-bottom:6px;}
+.phase-size{font-size:0.72rem;font-weight:700;color:#1a6fb8;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px;}
+.phase-desc{font-size:0.8rem;color:#555;line-height:1.55;}
+
+/* Benefits highlight */
+.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:22px;}
+.benefit-card{background:#fff;border-radius:6px;border:1px solid #d0e4f5;padding:20px;box-shadow:0 1px 4px rgba(26,111,184,0.05);}
+.benefit-icon{font-size:1.8rem;margin-bottom:10px;}
+.benefit-title{font-size:0.9rem;font-weight:700;color:#0d2855;margin-bottom:8px;}
+.benefit-text{font-size:0.83rem;color:#555;line-height:1.6;}
+
+/* Safety section */
+.safety-block{background:#f0f6fc;border:1px solid #c8deff;border-radius:6px;padding:24px;margin:24px 0;}
+.safety-block h3{font-size:1rem;font-weight:700;color:#0d2855;margin-bottom:12px;}
+.safety-block ul{padding-left:20px;}
+.safety-block li{font-size:0.9rem;line-height:1.7;margin-bottom:7px;color:#333;}
+
+/* Consent section */
+.consent-block{background:#fff;border:1px solid #d0e4f5;border-radius:6px;padding:24px;margin:24px 0;}
+.consent-block h3{font-size:1rem;font-weight:700;color:#0d2855;margin-bottom:12px;}
+.consent-block p{font-size:0.9rem;color:#444;line-height:1.7;margin-bottom:10px;}
+.consent-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px;}
+.consent-step{text-align:center;}
+.cs-num{width:36px;height:36px;background:#1a6fb8;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.9rem;font-weight:700;margin:0 auto 8px;}
+.cs-label{font-size:0.75rem;color:#444;line-height:1.45;}
+
+/* FAQ */
+.faq-section{margin-top:28px;}
+.faq-item{background:#fff;border:1px solid #d0e4f5;border-radius:6px;margin-bottom:10px;overflow:hidden;}
+.faq-question{padding:16px 20px;font-size:0.93rem;font-weight:600;color:#0d2855;cursor:default;display:flex;justify-content:space-between;align-items:center;}
+.faq-question::after{content:'▼';font-size:0.7rem;color:#1a6fb8;}
+.faq-answer{padding:0 20px 16px;font-size:0.88rem;color:#555;line-height:1.7;border-top:1px solid #e8f0fb;}
+
+/* Testimonials */
+.testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:22px;}
+.testimonial-card{background:#fff;border-radius:6px;border:1px solid #d0e4f5;padding:20px;box-shadow:0 1px 4px rgba(26,111,184,0.05);}
+.tcard-quote{font-size:0.88rem;color:#444;font-style:italic;line-height:1.65;margin-bottom:14px;}
+.tcard-author{font-size:0.78rem;font-weight:700;color:#0d2855;}
+.tcard-detail{font-size:0.72rem;color:#888;margin-top:2px;}
+
+/* CTA section */
+.cta-section{background:linear-gradient(135deg,#0d4a8f,#1a6fb8);color:#fff;border-radius:8px;padding:46px;text-align:center;margin-bottom:50px;}
+.cta-section h2{font-size:1.8rem;font-weight:700;margin-bottom:12px;}
+.cta-section p{font-size:1rem;color:#c8deff;margin-bottom:28px;max-width:560px;margin-left:auto;margin-right:auto;}
+.cta-form{background:rgba(255,255,255,0.1);border-radius:6px;padding:24px;max-width:500px;margin:0 auto;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
+.form-row input, .cta-form input, .cta-form select{width:100%;padding:11px 14px;border-radius:4px;border:none;font-size:0.88rem;font-family:'Roboto',sans-serif;}
+.cta-form select{background:#fff;}
+.cta-form .submit-btn{width:100%;background:#fff;color:#1a6fb8;border:none;padding:13px;border-radius:4px;font-size:0.95rem;font-weight:700;cursor:pointer;margin-top:10px;}
+.cta-disclaimer{font-size:0.68rem;color:#a0c0e0;margin-top:12px;line-height:1.5;}
+
+/* Footer */
+.site-footer{background:#0a1e3d;color:#6888aa;font-size:0.78rem;padding:30px 0;}
+.footer-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-bottom:20px;}
+.footer-col h4{color:#c8deff;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;}
+.footer-col a{display:block;color:#6888aa;margin-bottom:5px;font-size:0.78rem;}
+.footer-col a:hover{color:#fff;}
+.footer-bottom{border-top:1px solid #1a2e4a;padding-top:14px;font-size:0.7rem;color:#4a6080;line-height:1.6;}
+
+/* HUD */
+.hud-top-bar{position:fixed;top:0;left:0;width:100%;height:60px;background:#1a2744;border-bottom:4px solid #0d7a6e;display:flex;align-items:center;z-index:9999;box-shadow:0 4px 10px rgba(0,0,0,0.2);font-family:'Source Sans 3',Arial,sans-serif;}
+.hud-container{max-width:1100px;margin:0 auto;width:100%;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;}
+.breadcrumbs{color:#8fa3c8;font-size:0.9rem;}
+.breadcrumbs a{color:#fff;text-decoration:none;font-weight:600;}
+.breadcrumbs a:hover{color:#c8922a;}
+.sep{margin:0 10px;color:#0d7a6e;font-weight:bold;}
+.current-page{color:#fff;opacity:0.8;}
+.hud-badge{background:rgba(255,255,255,0.1);border:1px solid #0d7a6e;color:#fff;padding:4px 10px;font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;border-radius:3px;white-space:nowrap;}
+</style>
+</head>
+<body>
+
+<div class="hud-top-bar"><div class="hud-container"><div class="breadcrumbs"><a href="../index.html">Home</a><span class="sep">/</span><a href="../topics/clinical-trials.html">Clinical Trials</a><span class="sep">/</span><span class="current-page">Source Analysis</span></div><div class="hud-badge">External Source Analysis</div></div></div>
+
+<div class="util-bar">TrialConnect NZ — Connecting New Zealanders with Clinical Research | <a href="#">Currently Recruiting: 24 Active Trials</a></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo-area">
+      <div class="logo-symbol">TC</div>
+      <div>
+        <div class="logo-text">TrialConnect <span class="nz">NZ</span></div>
+        <div class="logo-sub">Patient education · Trial recruitment · New Zealand</div>
+      </div>
+    </div>
+    <nav class="header-nav">
+      <a href="#">About Trials</a>
+      <a href="#">For Patients</a>
+      <a href="#">Active Trials</a>
+      <a href="#">For Clinicians</a>
+      <a href="#">Resources</a>
+      <a href="#" class="find-btn">Find a Trial</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero-section">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">Patient Education Resource</div>
+      <h1 class="hero-title">Understanding Clinical Trials: A Patient's Guide to Medical Research</h1>
+      <p class="hero-sub">Clinical trials are how medicine advances. Every treatment you take today was tested in a trial. This guide helps you understand how trials work — and what it means to consider participating in one.</p>
+      <div class="hero-btns">
+        <a href="#" class="primary-btn">Find Trials Near You</a>
+        <a href="#" class="outline-btn">Download This Guide</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="stat-num">24</div>
+        <div class="stat-label">Active trials currently recruiting in New Zealand</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-num">4</div>
+        <div class="stat-label">Phases of testing before a treatment reaches patients</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Of participants have the right to withdraw at any time</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-num">10–15</div>
+        <div class="stat-label">Years of development behind every approved medicine</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><span class="trust-icon">✓</span> Medsafe Compliant</div>
+    <div class="trust-item"><span class="trust-icon">✓</span> Ethics Committee Oversight</div>
+    <div class="trust-item"><span class="trust-icon">✓</span> Informed Consent Required</div>
+    <div class="trust-item"><span class="trust-icon">✓</span> Independent Data Monitoring</div>
+    <div class="trust-item"><span class="trust-icon">✓</span> ICH-GCP Standards</div>
+  </div>
+</div>
+
+<div class="main-content">
+
+  <!-- WHAT ARE TRIALS -->
+  <div class="content-section">
+    <div class="section-label">The Basics</div>
+    <div class="section-title">What Is a Clinical Trial?</div>
+    <div class="section-body">
+      <p>A clinical trial is a carefully designed research study that tests new medical treatments — including drugs, devices, vaccines, and procedures — in human volunteers. Clinical trials are the final and most rigorous step in a long research and development process. Every medicine currently available to you went through this process.</p>
+      <p>Before any treatment reaches clinical testing, it will typically have been studied extensively in laboratory settings and animal models over many years. Only treatments that show genuine promise and an acceptable safety profile reach human trials. And within human trials, there is a structured, staged process designed to ensure that patient safety is the highest priority at every step.</p>
+      <p>Clinical trials are conducted under strict regulatory oversight. In New Zealand, this means compliance with Medsafe requirements and the oversight of an independent Health and Disability Ethics Committee (HDEC), which reviews every trial to ensure that it is scientifically sound, that participant rights are protected, and that the potential benefits justify any risks.</p>
+    </div>
+  </div>
+
+  <!-- PHASE EXPLAINER -->
+  <div class="content-section">
+    <div class="section-label">How Trials Progress</div>
+    <div class="section-title">The Four Phases of Clinical Testing</div>
+    <div class="section-body">
+      <p>Clinical trials are organised into four phases, each with a specific purpose. Understanding these phases helps you know exactly what stage of development a treatment is at — and what questions are still being answered — before you consider participating.</p>
+    </div>
+    <div class="phase-grid">
+      <div class="phase-card">
+        <div class="phase-num">I</div>
+        <div class="phase-name">Safety Testing</div>
+        <div class="phase-size">20–100 participants</div>
+        <div class="phase-desc">The first time a treatment is tested in humans. Researchers focus on safety, dosing, and how the body processes the treatment. Participants receive close medical attention throughout.</div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-num">II</div>
+        <div class="phase-name">Efficacy Exploration</div>
+        <div class="phase-size">100–300 participants</div>
+        <div class="phase-desc">Researchers begin exploring whether the treatment has the desired effect, while continuing to gather safety data. Phase II provides early signals about whether the treatment is promising enough to test further.</div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-num">III</div>
+        <div class="phase-name">Confirmation</div>
+        <div class="phase-size">300–3,000+ participants</div>
+        <div class="phase-desc">Large-scale trials comparing the new treatment to current standard of care or placebo. This is where a treatment's effectiveness and safety profile is comprehensively established. Regulatory approval follows if results are positive.</div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-num">IV</div>
+        <div class="phase-name">Post-Market Surveillance</div>
+        <div class="phase-size">Thousands of patients</div>
+        <div class="phase-desc">Ongoing monitoring after a treatment is approved and available. Tracks long-term safety and effectiveness in the broader population, identifying any rare effects that large trials may not have detected.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BENEFITS SECTION -->
+  <div class="content-section">
+    <div class="section-label">Why Participate</div>
+    <div class="section-title">The Benefits of Clinical Trial Participation</div>
+    <div class="section-body">
+      <p>Many patients who participate in clinical trials describe the experience as a meaningful and positive one. There are several distinct reasons why New Zealanders choose to take part in medical research.</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">🔬</div>
+        <div class="benefit-title">Access to Cutting-Edge Treatments</div>
+        <div class="benefit-text">Trial participants may gain access to innovative treatments that are not yet available outside the research setting. This can be particularly meaningful for patients with conditions where current treatments are limited.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">👩‍⚕️</div>
+        <div class="benefit-title">Close Medical Monitoring</div>
+        <div class="benefit-text">Trial participants receive a higher level of medical attention and monitoring than is typically available in standard clinical care. Your health is closely tracked throughout, and any changes are responded to promptly.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🌍</div>
+        <div class="benefit-title">Advancing Medicine for Everyone</div>
+        <div class="benefit-text">Every participant in a clinical trial contributes to the scientific knowledge that will benefit future patients. Participation is an act of generosity toward the broader community — including people whose lives may depend on the treatments you help test.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">💰</div>
+        <div class="benefit-title">No Cost for Trial Treatment</div>
+        <div class="benefit-text">Trial medications, devices, and related procedures are provided to participants at no cost. Many trials also reimburse travel and accommodation expenses associated with appointments.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🤝</div>
+        <div class="benefit-title">Expert Care Team</div>
+        <div class="benefit-text">You will be supported throughout the trial by an experienced research team including doctors, nurses, and coordinators who are specialists in clinical research and patient welfare.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">📋</div>
+        <div class="benefit-title">Your Rights Are Protected</div>
+        <div class="benefit-text">Participation is entirely voluntary. You may withdraw at any time without it affecting your access to other medical care. Your rights are protected by ethics committee oversight, informed consent processes, and New Zealand law.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SAFETY -->
+  <div class="content-section">
+    <div class="section-label">Participant Protection</div>
+    <div class="section-title">How Your Safety Is Protected</div>
+    <div class="section-body">
+      <p>Patient safety is the cornerstone of clinical research. New Zealand clinical trials operate under a comprehensive framework of protections that exist at every level — from initial design through to long-term follow-up.</p>
+    </div>
+    <div class="safety-block">
+      <h3>Safeguards in Every TrialConnect NZ Partner Study</h3>
+      <ul>
+        <li><strong>Independent Ethics Committee Review:</strong> Every trial must receive approval from a Health and Disability Ethics Committee (HDEC) before recruiting begins. The committee reviews the trial design, participant information, and consent process independently of the sponsor.</li>
+        <li><strong>Independent Data Monitoring Committee:</strong> Most Phase III trials include an independent committee that reviews safety data during the trial. This committee has the authority to stop the trial if safety concerns emerge.</li>
+        <li><strong>Medsafe Oversight:</strong> New Zealand's medicines regulator monitors clinical trials conducted in New Zealand and can require modifications or suspension of any trial at any time.</li>
+        <li><strong>Participants are carefully monitored for safety</strong> throughout the trial using pre-specified monitoring schedules and protocols for responding to adverse events.</li>
+        <li><strong>GCP Compliance:</strong> All trials follow International Conference on Harmonisation Good Clinical Practice (ICH-GCP) standards — the global benchmark for ethical and scientific standards in clinical research.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- INFORMED CONSENT -->
+  <div class="content-section">
+    <div class="section-label">Your Rights</div>
+    <div class="section-title">Informed Consent: What It Means for You</div>
+    <div class="section-body">
+      <p>Informed consent is the process through which you learn about a clinical trial and decide whether you wish to participate. It is not a single form or a single conversation — it is an ongoing process that continues throughout the trial.</p>
+      <p>Your trial team is obligated to ensure that you fully understand what the trial involves, what its potential benefits and risks are, what alternatives exist, and what your rights are as a participant. You should feel free to ask any question, at any time. Understanding your role in advancing medical science for future patients is an important part of this conversation.</p>
+    </div>
+    <div class="consent-block">
+      <h3>The Informed Consent Process</h3>
+      <p>Consent is an active, informed decision — not simply a signature. Here is what you can expect:</p>
+      <div class="consent-steps">
+        <div class="consent-step">
+          <div class="cs-num">1</div>
+          <div class="cs-label">Receive full written information about the trial and read it carefully</div>
+        </div>
+        <div class="consent-step">
+          <div class="cs-num">2</div>
+          <div class="cs-label">Have a detailed discussion with the trial team and ask all your questions</div>
+        </div>
+        <div class="consent-step">
+          <div class="cs-num">3</div>
+          <div class="cs-label">Take as much time as you need to decide — there is no pressure to decide quickly</div>
+        </div>
+        <div class="consent-step">
+          <div class="cs-num">4</div>
+          <div class="cs-label">Sign a consent form confirming your voluntary decision to participate</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="content-section">
+    <div class="section-label">Common Questions</div>
+    <div class="section-title">Frequently Asked Questions</div>
+    <div class="faq-section">
+      <div class="faq-item">
+        <div class="faq-question">Will I receive the new treatment, or might I get a placebo?</div>
+        <div class="faq-answer">In some trials, participants are randomly assigned to receive either the treatment being tested or a control (placebo or current standard treatment). You will be told whether this is the case in your trial's informed consent documentation. In trials where a placebo is used, you will be informed of this before you consent, and will always be able to receive standard care if needed for your condition.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can I withdraw from a trial once I've started?</div>
+        <div class="faq-answer">Yes — absolutely. Participation in a clinical trial is entirely voluntary, and you have the right to withdraw at any stage without giving any reason. Withdrawal will never affect your right to access other medical care.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Are there risks involved in participating?</div>
+        <div class="faq-answer">All medical interventions carry some degree of risk, and clinical trials are no exception. Every trial has a risk-benefit assessment that is reviewed by an independent ethics committee before the trial begins. Potential risks will be clearly explained to you during the informed consent process. Participants are carefully monitored for safety throughout, and protocols are in place to respond rapidly to any adverse events.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Who pays for trial treatment and appointments?</div>
+        <div class="faq-answer">Trial medications, devices, and trial-related procedures are provided at no cost to participants. Many trials also offer reimbursement for reasonable travel and accommodation costs associated with trial visits. Your trial coordinator will provide details specific to your trial.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How do I know if a trial is trustworthy?</div>
+        <div class="faq-answer">All clinical trials conducted in New Zealand must be registered on a publicly accessible trials registry and must receive ethical approval from an HDEC. TrialConnect NZ only lists trials that meet these requirements and comply with ICH-GCP standards. You can check the registration of any trial you are interested in on the Australian New Zealand Clinical Trials Registry (ANZCTR).</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div class="content-section">
+    <div class="section-label">Patient Voices</div>
+    <div class="section-title">What Trial Participants Say</div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="tcard-quote">"I was nervous at first, but the research team explained everything so clearly. The monitoring I received was exceptional — I felt safer than I have in years. And knowing I might be helping future patients made the whole experience meaningful."</div>
+        <div class="tcard-author">Margaret T.</div>
+        <div class="tcard-detail">Phase III cardiovascular trial, Auckland</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="tcard-quote">"The access to cutting-edge treatment was the main reason I enrolled. My condition hadn't responded well to existing medications, and this trial gave me an option I wouldn't otherwise have had. The team was incredible."</div>
+        <div class="tcard-author">James R.</div>
+        <div class="tcard-detail">Phase II oncology trial, Wellington</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="tcard-quote">"I wanted to give something back. My mother benefited from treatments that existed because other people participated in trials decades ago. It felt like the right thing to do. The experience was much easier than I expected."</div>
+        <div class="tcard-author">Aroha M.</div>
+        <div class="tcard-detail">Phase III respiratory trial, Christchurch</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA / FIND A TRIAL -->
+  <div class="cta-section" id="find-trial">
+    <h2>Find a Clinical Trial Near You</h2>
+    <p>Tell us a little about yourself and we'll match you with currently recruiting trials you may be eligible for across New Zealand.</p>
+    <div class="cta-form">
+      <div class="form-row">
+        <input type="text" placeholder="First name">
+        <input type="text" placeholder="Last name">
+      </div>
+      <div class="form-row">
+        <input type="email" placeholder="Email address">
+        <input type="tel" placeholder="Phone number">
+      </div>
+      <select style="margin-bottom:12px;">
+        <option value="">Select your region</option>
+        <option>Auckland</option>
+        <option>Wellington</option>
+        <option>Canterbury</option>
+        <option>Waikato</option>
+        <option>Bay of Plenty</option>
+        <option>Otago / Southland</option>
+        <option>Other</option>
+      </select>
+      <select style="margin-bottom:12px;">
+        <option value="">Area of health interest (optional)</option>
+        <option>Cardiovascular</option>
+        <option>Oncology</option>
+        <option>Respiratory</option>
+        <option>Neurology</option>
+        <option>Diabetes / Metabolic</option>
+        <option>Rare diseases</option>
+        <option>Not sure — show me all</option>
+      </select>
+      <button class="submit-btn">Find My Matches →</button>
+      <div class="cta-disclaimer">By submitting this form, you agree to be contacted by TrialConnect NZ and our research partner sites. Your information will not be shared with third parties outside the TrialConnect network. You may opt out at any time. Providing your information does not obligate you to participate in any trial.</div>
+    </div>
+  </div>
+
+</div><!-- end main-content -->
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>For Patients</h4>
+        <a href="#">What Is a Clinical Trial?</a>
+        <a href="#">Find a Trial</a>
+        <a href="#">Your Rights</a>
+        <a href="#">FAQs</a>
+        <a href="#">Patient Stories</a>
+      </div>
+      <div class="footer-col">
+        <h4>For Clinicians</h4>
+        <a href="#">Refer a Patient</a>
+        <a href="#">Site Qualification</a>
+        <a href="#">Training Resources</a>
+        <a href="#">Regulatory Updates</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="#">Patient Education Library</a>
+        <a href="#">Glossary of Terms</a>
+        <a href="#">ANZCTR Registry</a>
+        <a href="#">HDEC Information</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">About TrialConnect NZ</a>
+        <a href="#">Our Partners</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 TrialConnect NZ. All rights reserved. | <a href="#" style="color:#4a6080;">Privacy Policy</a> | <a href="#" style="color:#4a6080;">Terms of Use</a> | <a href="#" style="color:#4a6080;">Accessibility</a></p>
+      <p style="margin-top:6px;">Sponsored by MedPartner Therapeutics Ltd. | TrialConnect NZ is a clinical trial facilitation service. Information provided on this site is for educational purposes and does not constitute medical advice. Always consult your healthcare provider before making decisions about clinical trial participation.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
