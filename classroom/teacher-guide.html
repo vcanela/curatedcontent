@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Teacher Guide — Source Audit Activity</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; background: #e8ede4; padding: 20px; margin: 0; color: #1a1a1a; }
+
+    .guide {
+      background: white;
+      padding: 14mm;
+      margin-bottom: 12px;
+      box-sizing: border-box;
+      width: 182mm;
+    }
+
+    .guide-header {
+      background: #2d3b2e; color: white;
+      padding: 10px 14px; margin: -14mm -14mm 12px -14mm;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .guide-header h1 { font-size: 11pt; margin: 0; letter-spacing: 0.04em; }
+    .guide-header span { font-size: 8.5pt; opacity: 0.75; }
+
+    h2 { font-size: 9pt; text-transform: uppercase; letter-spacing: 0.07em; color: #2d3b2e;
+         border-bottom: 2pt solid #2d3b2e; padding-bottom: 3px; margin: 14px 0 7px; }
+    h3 { font-size: 8.5pt; font-weight: bold; margin: 10px 0 3px; color: #111; }
+    p, li { font-size: 8.5pt; line-height: 1.55; margin: 0 0 4px; color: #222; }
+    ul, ol { padding-left: 16px; margin: 4px 0 8px; }
+
+    .timing-table { width: 100%; border-collapse: collapse; margin-bottom: 10px; }
+    .timing-table th { background: #2d3b2e; color: white; padding: 4px 7px; font-size: 7.5pt; text-align: left; text-transform: uppercase; letter-spacing: 0.04em; }
+    .timing-table td { border: 0.75pt solid #ccc; padding: 4px 7px; font-size: 8pt; vertical-align: top; }
+    .timing-table tr:nth-child(even) td { background: #f8f8f6; }
+    .time-col { width: 60px; font-weight: bold; color: #2d3b2e; white-space: nowrap; }
+
+    .source-table { width: 100%; border-collapse: collapse; margin-bottom: 10px; font-size: 7.5pt; }
+    .source-table th { background: #3e5240; color: white; padding: 4px 6px; text-align: left; text-transform: uppercase; letter-spacing: 0.04em; font-size: 7pt; }
+    .source-table td { border: 0.75pt solid #ccc; padding: 4px 6px; vertical-align: top; }
+    .source-table tr:nth-child(even) td { background: #f8f8f6; }
+    .type-tag {
+      display: inline-block; font-size: 6.5pt; font-weight: bold; text-transform: uppercase;
+      letter-spacing: 0.05em; padding: 1px 4px; border-radius: 2px; white-space: nowrap;
+    }
+    .gold     { background: #dff0e8; color: #1a5c38; }
+    .journal  { background: #ddeeff; color: #1a3d7a; }
+    .churn    { background: #fff3e0; color: #a85c00; }
+    .spin     { background: #fce8e8; color: #8c1a1a; }
+    .native   { background: #f0e8ff; color: #4a1a8c; }
+    .misinfo  { background: #f5f0e0; color: #7a5c1a; }
+    .disinfo  { background: #ffe0e0; color: #8c1a1a; }
+
+    .alert-box {
+      border-left: 4pt solid #b87d1a; background: #fdf3e3; padding: 7px 10px;
+      margin: 8px 0; font-size: 8pt; line-height: 1.5;
+    }
+    .alert-box strong { color: #7a4e00; }
+
+    .debrief-q { font-weight: bold; font-size: 8.5pt; margin: 8px 0 2px; }
+    .debrief-a { font-size: 8pt; color: #444; margin-left: 10px; margin-bottom: 6px; font-style: italic; }
+
+    @media print {
+      @page { size: A4 portrait; margin: 14mm; }
+      body { background: white; padding: 0; }
+      .guide { width: 100%; padding: 0; page-break-after: always; break-after: page; margin: 0; }
+      .guide:last-child { page-break-after: auto; break-after: auto; }
+      .guide-header { margin: 0 0 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════ PAGE 1: Overview + Timing ══════════════════ -->
+<div class="guide">
+  <div class="guide-header">
+    <h1>Teacher Guide — Source Audit Activity</h1>
+    <span>Year 9 Science · 40 minutes · 20–25 students</span>
+  </div>
+
+  <h2>What students are doing</h2>
+  <p>Students work in 5 groups (one per topic). Each person in the group reads <strong>one source</strong> and answers 5 questions on their card. Groups then share findings and produce a ranked list. A whole-class debrief draws out common patterns. No prior framework is introduced — the goal is for students to discover the patterns themselves before you name them.</p>
+
+  <h2>Lesson timing</h2>
+  <table class="timing-table">
+    <thead><tr><th>Time</th><th>What's happening</th><th>Your role</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="time-col">0 – 3 min</td>
+        <td><strong>Setup.</strong> Seat students in their groups. Hand out cards (each student gets one card only). Give groups their ranking sheet.</td>
+        <td>Say: <em>"Your card tells you which source to open. Read it, answer the five questions, and don't discuss it yet — you'll do that in a few minutes."</em> Write the hub URL on the board.</td>
+      </tr>
+      <tr>
+        <td class="time-col">3 – 18 min</td>
+        <td><strong>Individual analysis.</strong> Each student reads their one source and fills in their card independently.</td>
+        <td>Circulate quietly. If students ask "what does this mean?" redirect to the card questions. Don't validate or correct their judgements yet — that's the point of the debrief.</td>
+      </tr>
+      <tr>
+        <td class="time-col">18 – 28 min</td>
+        <td><strong>Group ranking.</strong> Students share their individual findings with the group. Together they complete the group ranking sheet — ranking all 5 sources 1–5 and answering the three synthesis questions.</td>
+        <td>Remind groups: <em>"You must put them in order — no ties."</em> The disagreement that happens when they can't agree is productive. Let it run.</td>
+      </tr>
+      <tr>
+        <td class="time-col">28 – 38 min</td>
+        <td><strong>Class debrief.</strong> Each group shares: their top-ranked source and their bottom-ranked source, plus what made the bottom one hard to spot.</td>
+        <td>See debrief questions on Page 2. Build a list of <em>tactics</em> on the board as groups report. Reveal source type names at the end.</td>
+      </tr>
+      <tr>
+        <td class="time-col">38 – 40 min</td>
+        <td><strong>Exit thought.</strong> Each student writes one sentence: <em>"Next time I read something online, I will check…"</em></td>
+        <td>Collect cards or ask 2–3 students to share aloud.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>With 20 students (4 per group)</h2>
+  <p>Assign Sources 1–4 only, skipping Source 5 for each group — or give one student Sources 4 and 5 to cover together (they can skim Source 5 quickly if they finish Source 4 early). The ranking then covers 4 sources, which works fine.</p>
+
+  <div class="alert-box">
+    <strong>Important:</strong> Do not tell students this environment is teacher-designed or that sources vary in quality. The debrief is the reveal moment. If students ask whether the sources are "real," a neutral <em>"They're all accessible websites — your job is to evaluate them"</em> is enough.
+  </div>
+</div>
+
+
+<!-- ══════════════════ PAGE 2: Source key + Debrief ══════════════════ -->
+<div class="guide">
+  <div class="guide-header">
+    <h1>Teacher Guide — Page 2: Source Key &amp; Debrief Notes</h1>
+    <span>Do not share this page with students</span>
+  </div>
+
+  <h2>Source type key (reveal during debrief only)</h2>
+  <table class="source-table">
+    <thead><tr><th>Group</th><th>Source</th><th>Type</th><th>Key red flag to draw out</th></tr></thead>
+    <tbody>
+      <tr><td>Vaccines 1</td><td>Vaccines and Immunisation: A Scientific Overview</td><td><span class="type-tag gold">Gold standard</span></td><td>Named author + institutional affiliation + cited data</td></tr>
+      <tr><td>Vaccines 2</td><td>Are Vaccines Still Working?</td><td><span class="type-tag churn">Churnalism</span></td><td>"According to researchers" — no study named; clickbait headline</td></tr>
+      <tr><td>Vaccines 3</td><td>What They're Not Telling You About Vaccines</td><td><span class="type-tag spin">Biased / emotional</span></td><td>No credentials; emotional language; selective evidence</td></tr>
+      <tr><td>Vaccines 4</td><td>Scientists Say Vaccine Immunity May Be Fading…</td><td><span class="type-tag churn">Churnalism</span></td><td>No named journalist; heavy ad load; shallow analysis</td></tr>
+      <tr><td>Vaccines 5</td><td>What Parents Should Know… (PureLife Wellness)</td><td><span class="type-tag native">Native advertising</span></td><td>Tiny "Sponsored Content" label; factual fear → product sale</td></tr>
+      <tr><td>Antibiotics 1</td><td>Antibiotics: Mechanisms, History…</td><td><span class="type-tag gold">Gold standard</span></td><td>Academic journal format; DOI; peer-reviewed methodology</td></tr>
+      <tr><td>Antibiotics 2</td><td>The Superbug Crisis…</td><td><span class="type-tag churn">Churnalism</span></td><td>Dramatic tone; vague stats; designed for shares</td></tr>
+      <tr><td>Antibiotics 3</td><td>Stop Reaching for the Pill Bottle…</td><td><span class="type-tag spin">Personal / biased</span></td><td>Anecdote treated as evidence; no expert sources</td></tr>
+      <tr><td>Antibiotics 4</td><td>Antibiotic Use on NZ Farms Has Risen 34%… (NZ Health Investigates)</td><td><span class="type-tag journal">Quality journalism</span></td><td>Named journalist; named expert sources; OIA data; no ads</td></tr>
+      <tr><td>Antibiotics 5</td><td>Antibiotics Wrecked My Gut… (GutWise NZ)</td><td><span class="type-tag native">Native advertising</span></td><td>Brand ambassador author; accurate info → product CTA</td></tr>
+      <tr><td>Semmelweis 1</td><td>Ignaz Semmelweis and the Origins of Infection Control</td><td><span class="type-tag gold">Gold standard</span></td><td>Encyclopaedic; full citations; infobox with verified dates</td></tr>
+      <tr><td>Semmelweis 2</td><td>The Doctor Who Was Right…</td><td><span class="type-tag churn">Popular history</span></td><td>Accurate but dramatised; no citations; hero narrative</td></tr>
+      <tr><td>Semmelweis 3</td><td>They Called Him Crazy…</td><td><span class="type-tag disinfo">Disinformation-adjacent</span></td><td>Uses real facts to support sweeping conspiracy framing</td></tr>
+      <tr><td>Semmelweis 4</td><td>12 Mind-Blowing Facts…</td><td><span class="type-tag churn">Churnalism</span></td><td>Listicle; no citations; slightly wrong facts; ad-heavy</td></tr>
+      <tr><td>Semmelweis 5</td><td>Ignaz Semmelweis: A Classroom Resource (2007)</td><td><span class="type-tag misinfo">Misinformation (honest)</span></td><td>Well-intentioned but outdated; contains factual errors. The "trap" source — looks trustworthy because it looks like a school resource.</td></tr>
+      <tr><td>Lister 1</td><td>Joseph Lister and the Development of Antiseptic Surgery</td><td><span class="type-tag gold">Gold standard</span></td><td>Wellcome Institute; full citations; data tables</td></tr>
+      <tr><td>Lister 2</td><td>The Man Who Made Surgery Safe…</td><td><span class="type-tag churn">Popular science</span></td><td>Accessible; some simplification; no citations</td></tr>
+      <tr><td>Lister 3</td><td>Lister, Carbolic Acid, and Why We're Still Poisoning Ourselves</td><td><span class="type-tag spin">Wellness / biased</span></td><td>Accurate history → unsupported health claims</td></tr>
+      <tr><td>Lister 4</td><td>Joseph Lister… CleanMed NZ</td><td><span class="type-tag native">Native advertising</span></td><td>"Promotional Content" in tiny text; product cards mid-article</td></tr>
+      <tr><td>Lister 5</td><td>What Joseph Lister Really Taught Us… (IntegrativeHealth)</td><td><span class="type-tag spin">Biased / partisan</span></td><td>Loaded language; author is ND not MD; cherry-picked evidence</td></tr>
+      <tr><td>Trials 1</td><td>Understanding Clinical Trials: Design, Evidence…</td><td><span class="type-tag gold">Gold standard</span></td><td>Evidence pyramid; phase grid; no commercial interest</td></tr>
+      <tr><td>Trials 2</td><td>So a Study Says It Works…</td><td><span class="type-tag churn">Consumer health</span></td><td>Accessible but oversimplified; no named experts</td></tr>
+      <tr><td>Trials 3</td><td>Why You Can't Trust Clinical Trials… (Big Pharma)</td><td><span class="type-tag disinfo">Disinformation</span></td><td>Real scandals used to justify "all trials are lies" conclusion</td></tr>
+      <tr><td>Trials 4</td><td>I Spent Three Months Reading Clinical Trial Data… (blogger)</td><td><span class="type-tag misinfo">Misinformation (honest)</span></td><td>Enthusiastic but misreads statistics; genuine mistake, not malicious</td></tr>
+      <tr><td>Trials 5</td><td>Understanding Clinical Trials: A Patient's Guide (TrialConnect NZ)</td><td><span class="type-tag native">Native advertising</span></td><td>Accurate but omits all negatives; recruits participants; pharma-funded</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Debrief questions — run in this order</h2>
+
+  <div class="debrief-q">1. "What did every group's #1 source have in common?"</div>
+  <div class="debrief-a">Expect: named authors, named institutions, cited evidence, neutral tone. Build a list on the board.</div>
+
+  <div class="debrief-q">2. "What did most groups' bottom-ranked sources have in common?"</div>
+  <div class="debrief-a">Expect: vague sourcing, emotional language, no credentials. The pattern across different topics is the key insight.</div>
+
+  <div class="debrief-q">3. "Did any source fool you at first? Which one and why?"</div>
+  <div class="debrief-a">The <strong>Semmelweis teacher resource (S5)</strong> and the <strong>CleanMed NZ / TrialConnect pharma pages</strong> are the best candidates here. Draw out: looking professional is not the same as being trustworthy.</div>
+
+  <div class="debrief-q">4. "Two of the sources on this site had real, accurate facts — but they were still not reliable sources. Why?"</div>
+  <div class="debrief-a">Target: native advertising sources (PureLife, GutWise, CleanMed, TrialConnect). The point: <em>true facts arranged to serve a commercial purpose</em> is still a form of bias.</div>
+
+  <div class="debrief-q">5. Name the types (reveal).</div>
+  <div class="debrief-a">Write these five terms on the board as you describe what students found: <strong>Gold Standard → Quality Journalism → Churnalism → Native Advertising → Misinformation → Disinformation.</strong> Tell students: "These types exist on every topic, not just medicine."</div>
+
+  <div class="alert-box">
+    <strong>The Semmelweis "trap" source</strong> (ScienceTeachingResources.net, 2007): This page looks like a school resource and was written with good intent, but it contains several factual errors — including the wrong year of death (1868 instead of 1865), crediting Semmelweis with "discovering germ theory," and claiming doctors immediately accepted his findings. Students who compare it to Source 1 should notice the discrepancies. This is your best example for discussing <em>currency</em> — when was it last updated, and does that matter?
+  </div>
+</div>
+
+</body>
+</html>

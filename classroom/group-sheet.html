@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Group Ranking Sheet — Year 9 Science (Print)</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; background: #e8ede4; padding: 20px; margin: 0; }
+    .screen-notice {
+      background: #2d3b2e; color: white; padding: 14px 18px; border-radius: 6px;
+      margin-bottom: 20px; font-size: 0.88rem;
+    }
+    .screen-notice strong { color: #d4c090; }
+
+    /* One sheet per group */
+    .sheet {
+      background: white;
+      padding: 14mm 14mm 10mm;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      width: 182mm;
+    }
+
+    .sheet-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 2pt solid #111;
+    }
+    .sheet-title { font-size: 10pt; font-weight: bold; text-transform: uppercase; letter-spacing: 0.06em; }
+    .topic-name { font-size: 16pt; font-weight: bold; margin-top: 2px; }
+    .group-box {
+      border: 1.5pt solid #333; padding: 5px 12px; font-size: 8pt; text-align: center;
+      font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .group-box span { display: block; font-size: 14pt; font-weight: bold; margin-top: 2px; }
+
+    .instructions {
+      font-size: 8pt; color: #444; margin-bottom: 10px; line-height: 1.5;
+    }
+
+    /* Ranking table */
+    table {
+      width: 100%; border-collapse: collapse; margin-bottom: 12px; font-size: 8.5pt;
+    }
+    th {
+      background: #2d3b2e; color: white; padding: 5px 7px; text-align: left;
+      font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.05em; font-weight: bold;
+    }
+    td { border: 0.75pt solid #bbb; padding: 5px 7px; vertical-align: top; }
+    tr:nth-child(even) td { background: #f8f8f6; }
+    .rank-cell { font-size: 12pt; font-weight: bold; text-align: center; width: 24px; color: #2d3b2e; }
+    .title-cell { width: 38%; }
+    .rating-cell { width: 14%; text-align: center; }
+    .reason-cell { /* remaining width */ }
+    .writing-line { border-bottom: 0.75pt solid #aaa; min-height: 14px; display: block; }
+
+    /* Bottom questions */
+    .synthesis { margin-top: 8px; }
+    .syn-q {
+      font-size: 8pt; font-weight: bold; text-transform: uppercase;
+      letter-spacing: 0.04em; margin-bottom: 4px; margin-top: 10px;
+    }
+    .answer-lines { border-bottom: 0.75pt solid #aaa; margin-bottom: 6px; min-height: 16px; }
+    .answer-lines + .answer-lines { margin-top: 4px; }
+
+    /* Colour header strips per topic */
+    .vaccines .topic-name  { color: #1a6b5c; }
+    .antibiotics .topic-name { color: #1a3d7a; }
+    .semmelweis .topic-name  { color: #6b1a2c; }
+    .lister .topic-name      { color: #2c5c1a; }
+    .trials .topic-name      { color: #4a1a6b; }
+
+    /* Print */
+    @media print {
+      @page { size: A4 portrait; margin: 14mm; }
+      body { background: white; padding: 0; margin: 0; }
+      .screen-notice { display: none; }
+      .sheet {
+        width: 100%; padding: 0;
+        page-break-after: always; break-after: page;
+        margin: 0;
+      }
+      .sheet:last-child { page-break-after: auto; break-after: auto; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="screen-notice">
+  <strong>Group Ranking Sheets — Print guide</strong><br>
+  Print this file: <strong>A4 Portrait, 1 page per group = 5 pages total.</strong>
+  One sheet per table group. Students complete together during the group discussion phase.
+</div>
+
+<!-- ══════════════════ VACCINES ══════════════════ -->
+<div class="sheet vaccines">
+  <div class="sheet-header">
+    <div>
+      <div class="sheet-title">Year 9 Science · Source Audit</div>
+      <div class="topic-name">Vaccines</div>
+    </div>
+    <div class="group-box">Group<span>1</span></div>
+  </div>
+
+  <p class="instructions">
+    Each person in your group has analysed one source. Share your findings, then agree on a group ranking from
+    <strong>most trustworthy (1)</strong> to <strong>least trustworthy (5)</strong>. You must put them in order — no ties allowed.
+    Record one reason per source.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width:28px;">Rank</th>
+        <th class="title-cell">Source title (brief)</th>
+        <th class="rating-cell">Individual<br>rating (1–5)</th>
+        <th class="reason-cell">One thing that decided this rank</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="rank-cell">1</td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td></tr>
+      <tr><td class="rank-cell">2</td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td></tr>
+      <tr><td class="rank-cell">3</td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td></tr>
+      <tr><td class="rank-cell">4</td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td></tr>
+      <tr><td class="rank-cell">5</td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="synthesis">
+    <div class="syn-q">What did your least trustworthy source do to seem credible?</div>
+    <div class="answer-lines">&nbsp;</div>
+    <div class="answer-lines">&nbsp;</div>
+
+    <div class="syn-q">What was the biggest difference between your #1 and your #5 source?</div>
+    <div class="answer-lines">&nbsp;</div>
+    <div class="answer-lines">&nbsp;</div>
+
+    <div class="syn-q">Did any source surprise you — did you trust it at first, then change your mind?</div>
+    <div class="answer-lines">&nbsp;</div>
+    <div class="answer-lines">&nbsp;</div>
+  </div>
+</div>
+
+<!-- ══════════════════ ANTIBIOTICS ══════════════════ -->
+<div class="sheet antibiotics">
+  <div class="sheet-header">
+    <div>
+      <div class="sheet-title">Year 9 Science · Source Audit</div>
+      <div class="topic-name">Antibiotics &amp; Resistance</div>
+    </div>
+    <div class="group-box">Group<span>2</span></div>
+  </div>
+  <p class="instructions">Each person in your group has analysed one source. Share your findings, then agree on a group ranking from <strong>most trustworthy (1)</strong> to <strong>least trustworthy (5)</strong>. You must put them in order — no ties allowed. Record one reason per source.</p>
+  <table>
+    <thead><tr><th style="width:28px;">Rank</th><th class="title-cell">Source title (brief)</th><th class="rating-cell">Individual<br>rating (1–5)</th><th class="reason-cell">One thing that decided this rank</th></tr></thead>
+    <tbody>
+      <tr><td class="rank-cell">1</td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td></tr>
+      <tr><td class="rank-cell">2</td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td></tr>
+      <tr><td class="rank-cell">3</td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td></tr>
+      <tr><td class="rank-cell">4</td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td></tr>
+      <tr><td class="rank-cell">5</td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td></tr>
+    </tbody>
+  </table>
+  <div class="synthesis">
+    <div class="syn-q">What did your least trustworthy source do to seem credible?</div>
+    <div class="answer-lines">&nbsp;</div><div class="answer-lines">&nbsp;</div>
+    <div class="syn-q">What was the biggest difference between your #1 and your #5 source?</div>
+    <div class="answer-lines">&nbsp;</div><div class="answer-lines">&nbsp;</div>
+    <div class="syn-q">Did any source surprise you — did you trust it at first, then change your mind?</div>
+    <div class="answer-lines">&nbsp;</div><div class="answer-lines">&nbsp;</div>
+  </div>
+</div>
+
+<!-- ══════════════════ SEMMELWEIS ══════════════════ -->
+<div class="sheet semmelweis">
+  <div class="sheet-header">
+    <div>
+      <div class="sheet-title">Year 9 Science · Source Audit</div>
+      <div class="topic-name">Semmelweis &amp; Handwashing</div>
+    </div>
+    <div class="group-box">Group<span>3</span></div>
+  </div>
+  <p class="instructions">Each person in your group has analysed one source. Share your findings, then agree on a group ranking from <strong>most trustworthy (1)</strong> to <strong>least trustworthy (5)</strong>. You must put them in order — no ties allowed. Record one reason per source.</p>
+  <table>
+    <thead><tr><th style="width:28px;">Rank</th><th class="title-cell">Source title (brief)</th><th class="rating-cell">Individual<br>rating (1–5)</th><th class="reason-cell">One thing that decided this rank</th></tr></thead>
+    <tbody>
+      <tr><td class="rank-cell">1</td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td></tr>
+      <tr><td class="rank-cell">2</td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td></tr>
+      <tr><td class="rank-cell">3</td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td></tr>
+      <tr><td class="rank-cell">4</td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td></tr>
+      <tr><td class="rank-cell">5</td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td></tr>
+    </tbody>
+  </table>
+  <div class="synthesis">
+    <div class="syn-q">What did your least trustworthy source do to seem credible?</div>
+    <div class="answer-lines">&nbsp;</div><div class="answer-lines">&nbsp;</div>
+    <div class="syn-q">What was the biggest difference between your #1 and your #5 source?</div>
+    <div class="answer-lines">&nbsp;</div><div class="answer-lines">&nbsp;</div>
+    <div class="syn-q">Did any source surprise you — did you trust it at first, then change your mind?</div>
+    <div class="answer-lines">&nbsp;</div><div class="answer-lines">&nbsp;</div>
+  </div>
+</div>
+
+<!-- ══════════════════ LISTER ══════════════════ -->
+<div class="sheet lister">
+  <div class="sheet-header">
+    <div>
+      <div class="sheet-title">Year 9 Science · Source Audit</div>
+      <div class="topic-name">Lister &amp; Sterilisation</div>
+    </div>
+    <div class="group-box">Group<span>4</span></div>
+  </div>
+  <p class="instructions">Each person in your group has analysed one source. Share your findings, then agree on a group ranking from <strong>most trustworthy (1)</strong> to <strong>least trustworthy (5)</strong>. You must put them in order — no ties allowed. Record one reason per source.</p>
+  <table>
+    <thead><tr><th style="width:28px;">Rank</th><th class="title-cell">Source title (brief)</th><th class="rating-cell">Individual<br>rating (1–5)</th><th class="reason-cell">One thing that decided this rank</th></tr></thead>
+    <tbody>
+      <tr><td class="rank-cell">1</td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td></tr>
+      <tr><td class="rank-cell">2</td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td></tr>
+      <tr><td class="rank-cell">3</td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td></tr>
+      <tr><td class="rank-cell">4</td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td></tr>
+      <tr><td class="rank-cell">5</td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td></tr>
+    </tbody>
+  </table>
+  <div class="synthesis">
+    <div class="syn-q">What did your least trustworthy source do to seem credible?</div>
+    <div class="answer-lines">&nbsp;</div><div class="answer-lines">&nbsp;</div>
+    <div class="syn-q">What was the biggest difference between your #1 and your #5 source?</div>
+    <div class="answer-lines">&nbsp;</div><div class="answer-lines">&nbsp;</div>
+    <div class="syn-q">Did any source surprise you — did you trust it at first, then change your mind?</div>
+    <div class="answer-lines">&nbsp;</div><div class="answer-lines">&nbsp;</div>
+  </div>
+</div>
+
+<!-- ══════════════════ CLINICAL TRIALS ══════════════════ -->
+<div class="sheet trials">
+  <div class="sheet-header">
+    <div>
+      <div class="sheet-title">Year 9 Science · Source Audit</div>
+      <div class="topic-name">Clinical Trials</div>
+    </div>
+    <div class="group-box">Group<span>5</span></div>
+  </div>
+  <p class="instructions">Each person in your group has analysed one source. Share your findings, then agree on a group ranking from <strong>most trustworthy (1)</strong> to <strong>least trustworthy (5)</strong>. You must put them in order — no ties allowed. Record one reason per source.</p>
+  <table>
+    <thead><tr><th style="width:28px;">Rank</th><th class="title-cell">Source title (brief)</th><th class="rating-cell">Individual<br>rating (1–5)</th><th class="reason-cell">One thing that decided this rank</th></tr></thead>
+    <tbody>
+      <tr><td class="rank-cell">1</td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td></tr>
+      <tr><td class="rank-cell">2</td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td></tr>
+      <tr><td class="rank-cell">3</td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td></tr>
+      <tr><td class="rank-cell">4</td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td></tr>
+      <tr><td class="rank-cell">5</td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td><td><span class="writing-line"></span></td></tr>
+    </tbody>
+  </table>
+  <div class="synthesis">
+    <div class="syn-q">What did your least trustworthy source do to seem credible?</div>
+    <div class="answer-lines">&nbsp;</div><div class="answer-lines">&nbsp;</div>
+    <div class="syn-q">What was the biggest difference between your #1 and your #5 source?</div>
+    <div class="answer-lines">&nbsp;</div><div class="answer-lines">&nbsp;</div>
+    <div class="syn-q">Did any source surprise you — did you trust it at first, then change your mind?</div>
+    <div class="answer-lines">&nbsp;</div><div class="answer-lines">&nbsp;</div>
+  </div>
+</div>
+
+</body>
+</html>
