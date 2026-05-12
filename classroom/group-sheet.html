@@ -24,49 +24,64 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 8px;
-      padding-bottom: 6px;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
       border-bottom: 2pt solid #111;
     }
     .sheet-title { font-size: 10pt; font-weight: bold; text-transform: uppercase; letter-spacing: 0.06em; }
     .topic-name { font-size: 16pt; font-weight: bold; margin-top: 2px; }
     .group-box {
-      border: 1.5pt solid #333; padding: 5px 12px; font-size: 8pt; text-align: center;
+      border: 1.5pt solid #333; padding: 5px 14px; font-size: 8pt; text-align: center;
       font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em;
     }
-    .group-box span { display: block; font-size: 14pt; font-weight: bold; margin-top: 2px; }
+    .group-box span { display: block; font-size: 16pt; font-weight: bold; margin-top: 2px; }
 
     .instructions {
-      font-size: 8pt; color: #444; margin-bottom: 10px; line-height: 1.5;
+      font-size: 8.5pt; color: #444; margin-bottom: 12px; line-height: 1.6;
     }
 
     /* Ranking table */
     table {
-      width: 100%; border-collapse: collapse; margin-bottom: 12px; font-size: 8.5pt;
+      width: 100%; border-collapse: collapse; margin-bottom: 14px; font-size: 9pt;
     }
     th {
-      background: #2d3b2e; color: white; padding: 5px 7px; text-align: left;
-      font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.05em; font-weight: bold;
+      background: #2d3b2e; color: white; padding: 6px 8px; text-align: left;
+      font-size: 8pt; text-transform: uppercase; letter-spacing: 0.05em; font-weight: bold;
     }
-    td { border: 0.75pt solid #bbb; padding: 5px 7px; vertical-align: top; }
+    td {
+      border: 0.75pt solid #bbb;
+      padding: 14px 8px 4px;
+      vertical-align: top;
+    }
     tr:nth-child(even) td { background: #f8f8f6; }
-    .rank-cell { font-size: 12pt; font-weight: bold; text-align: center; width: 24px; color: #2d3b2e; }
+    .rank-cell {
+      font-size: 14pt; font-weight: bold; text-align: center;
+      width: 24px; color: #2d3b2e;
+      padding-top: 16px;
+    }
     .title-cell { width: 38%; }
     .rating-cell { width: 14%; text-align: center; }
     .reason-cell { /* remaining width */ }
-    .writing-line { border-bottom: 0.75pt solid #aaa; min-height: 14px; display: block; }
+    .writing-line {
+      border-bottom: 0.75pt solid #aaa;
+      min-height: 36px;
+      display: block;
+    }
 
     /* Bottom questions */
-    .synthesis { margin-top: 8px; }
+    .synthesis { margin-top: 10px; }
     .syn-q {
-      font-size: 8pt; font-weight: bold; text-transform: uppercase;
-      letter-spacing: 0.04em; margin-bottom: 4px; margin-top: 10px;
+      font-size: 9pt; font-weight: bold; text-transform: uppercase;
+      letter-spacing: 0.04em; margin-bottom: 6px; margin-top: 14px;
     }
-    .answer-lines { border-bottom: 0.75pt solid #aaa; margin-bottom: 6px; min-height: 16px; }
-    .answer-lines + .answer-lines { margin-top: 4px; }
+    .answer-lines {
+      border-bottom: 0.75pt solid #aaa;
+      margin-bottom: 8px;
+      min-height: 28px;
+    }
 
     /* Colour header strips per topic */
-    .vaccines .topic-name  { color: #1a6b5c; }
+    .vaccines .topic-name    { color: #1a6b5c; }
     .antibiotics .topic-name { color: #1a3d7a; }
     .semmelweis .topic-name  { color: #6b1a2c; }
     .lister .topic-name      { color: #2c5c1a; }
@@ -107,7 +122,7 @@
   <p class="instructions">
     Each person in your group has analysed one source. Share your findings, then agree on a group ranking from
     <strong>most trustworthy (1)</strong> to <strong>least trustworthy (5)</strong>. You must put them in order — no ties allowed.
-    Record one reason per source.
+    Record a brief title and one reason per source.
   </p>
 
   <table>
@@ -130,16 +145,22 @@
 
   <div class="synthesis">
     <div class="syn-q">What did your least trustworthy source do to seem credible?</div>
-    <div class="answer-lines">&nbsp;</div>
-    <div class="answer-lines">&nbsp;</div>
+    <div class="answer-lines"></div>
+    <div class="answer-lines"></div>
+    <div class="answer-lines"></div>
+    <div class="answer-lines"></div>
 
     <div class="syn-q">What was the biggest difference between your #1 and your #5 source?</div>
-    <div class="answer-lines">&nbsp;</div>
-    <div class="answer-lines">&nbsp;</div>
+    <div class="answer-lines"></div>
+    <div class="answer-lines"></div>
+    <div class="answer-lines"></div>
+    <div class="answer-lines"></div>
 
     <div class="syn-q">Did any source surprise you — did you trust it at first, then change your mind?</div>
-    <div class="answer-lines">&nbsp;</div>
-    <div class="answer-lines">&nbsp;</div>
+    <div class="answer-lines"></div>
+    <div class="answer-lines"></div>
+    <div class="answer-lines"></div>
+    <div class="answer-lines"></div>
   </div>
 </div>
 
@@ -152,7 +173,7 @@
     </div>
     <div class="group-box">Group<span>2</span></div>
   </div>
-  <p class="instructions">Each person in your group has analysed one source. Share your findings, then agree on a group ranking from <strong>most trustworthy (1)</strong> to <strong>least trustworthy (5)</strong>. You must put them in order — no ties allowed. Record one reason per source.</p>
+  <p class="instructions">Each person in your group has analysed one source. Share your findings, then agree on a group ranking from <strong>most trustworthy (1)</strong> to <strong>least trustworthy (5)</strong>. You must put them in order — no ties allowed. Record a brief title and one reason per source.</p>
   <table>
     <thead><tr><th style="width:28px;">Rank</th><th class="title-cell">Source title (brief)</th><th class="rating-cell">Individual<br>rating (1–5)</th><th class="reason-cell">One thing that decided this rank</th></tr></thead>
     <tbody>
@@ -165,11 +186,11 @@
   </table>
   <div class="synthesis">
     <div class="syn-q">What did your least trustworthy source do to seem credible?</div>
-    <div class="answer-lines">&nbsp;</div><div class="answer-lines">&nbsp;</div>
+    <div class="answer-lines"></div><div class="answer-lines"></div><div class="answer-lines"></div><div class="answer-lines"></div>
     <div class="syn-q">What was the biggest difference between your #1 and your #5 source?</div>
-    <div class="answer-lines">&nbsp;</div><div class="answer-lines">&nbsp;</div>
+    <div class="answer-lines"></div><div class="answer-lines"></div><div class="answer-lines"></div><div class="answer-lines"></div>
     <div class="syn-q">Did any source surprise you — did you trust it at first, then change your mind?</div>
-    <div class="answer-lines">&nbsp;</div><div class="answer-lines">&nbsp;</div>
+    <div class="answer-lines"></div><div class="answer-lines"></div><div class="answer-lines"></div><div class="answer-lines"></div>
   </div>
 </div>
 
@@ -182,7 +203,7 @@
     </div>
     <div class="group-box">Group<span>3</span></div>
   </div>
-  <p class="instructions">Each person in your group has analysed one source. Share your findings, then agree on a group ranking from <strong>most trustworthy (1)</strong> to <strong>least trustworthy (5)</strong>. You must put them in order — no ties allowed. Record one reason per source.</p>
+  <p class="instructions">Each person in your group has analysed one source. Share your findings, then agree on a group ranking from <strong>most trustworthy (1)</strong> to <strong>least trustworthy (5)</strong>. You must put them in order — no ties allowed. Record a brief title and one reason per source.</p>
   <table>
     <thead><tr><th style="width:28px;">Rank</th><th class="title-cell">Source title (brief)</th><th class="rating-cell">Individual<br>rating (1–5)</th><th class="reason-cell">One thing that decided this rank</th></tr></thead>
     <tbody>
@@ -195,11 +216,11 @@
   </table>
   <div class="synthesis">
     <div class="syn-q">What did your least trustworthy source do to seem credible?</div>
-    <div class="answer-lines">&nbsp;</div><div class="answer-lines">&nbsp;</div>
+    <div class="answer-lines"></div><div class="answer-lines"></div><div class="answer-lines"></div><div class="answer-lines"></div>
     <div class="syn-q">What was the biggest difference between your #1 and your #5 source?</div>
-    <div class="answer-lines">&nbsp;</div><div class="answer-lines">&nbsp;</div>
+    <div class="answer-lines"></div><div class="answer-lines"></div><div class="answer-lines"></div><div class="answer-lines"></div>
     <div class="syn-q">Did any source surprise you — did you trust it at first, then change your mind?</div>
-    <div class="answer-lines">&nbsp;</div><div class="answer-lines">&nbsp;</div>
+    <div class="answer-lines"></div><div class="answer-lines"></div><div class="answer-lines"></div><div class="answer-lines"></div>
   </div>
 </div>
 
@@ -212,7 +233,7 @@
     </div>
     <div class="group-box">Group<span>4</span></div>
   </div>
-  <p class="instructions">Each person in your group has analysed one source. Share your findings, then agree on a group ranking from <strong>most trustworthy (1)</strong> to <strong>least trustworthy (5)</strong>. You must put them in order — no ties allowed. Record one reason per source.</p>
+  <p class="instructions">Each person in your group has analysed one source. Share your findings, then agree on a group ranking from <strong>most trustworthy (1)</strong> to <strong>least trustworthy (5)</strong>. You must put them in order — no ties allowed. Record a brief title and one reason per source.</p>
   <table>
     <thead><tr><th style="width:28px;">Rank</th><th class="title-cell">Source title (brief)</th><th class="rating-cell">Individual<br>rating (1–5)</th><th class="reason-cell">One thing that decided this rank</th></tr></thead>
     <tbody>
@@ -225,11 +246,11 @@
   </table>
   <div class="synthesis">
     <div class="syn-q">What did your least trustworthy source do to seem credible?</div>
-    <div class="answer-lines">&nbsp;</div><div class="answer-lines">&nbsp;</div>
+    <div class="answer-lines"></div><div class="answer-lines"></div><div class="answer-lines"></div><div class="answer-lines"></div>
     <div class="syn-q">What was the biggest difference between your #1 and your #5 source?</div>
-    <div class="answer-lines">&nbsp;</div><div class="answer-lines">&nbsp;</div>
+    <div class="answer-lines"></div><div class="answer-lines"></div><div class="answer-lines"></div><div class="answer-lines"></div>
     <div class="syn-q">Did any source surprise you — did you trust it at first, then change your mind?</div>
-    <div class="answer-lines">&nbsp;</div><div class="answer-lines">&nbsp;</div>
+    <div class="answer-lines"></div><div class="answer-lines"></div><div class="answer-lines"></div><div class="answer-lines"></div>
   </div>
 </div>
 
@@ -242,7 +263,7 @@
     </div>
     <div class="group-box">Group<span>5</span></div>
   </div>
-  <p class="instructions">Each person in your group has analysed one source. Share your findings, then agree on a group ranking from <strong>most trustworthy (1)</strong> to <strong>least trustworthy (5)</strong>. You must put them in order — no ties allowed. Record one reason per source.</p>
+  <p class="instructions">Each person in your group has analysed one source. Share your findings, then agree on a group ranking from <strong>most trustworthy (1)</strong> to <strong>least trustworthy (5)</strong>. You must put them in order — no ties allowed. Record a brief title and one reason per source.</p>
   <table>
     <thead><tr><th style="width:28px;">Rank</th><th class="title-cell">Source title (brief)</th><th class="rating-cell">Individual<br>rating (1–5)</th><th class="reason-cell">One thing that decided this rank</th></tr></thead>
     <tbody>
@@ -255,11 +276,11 @@
   </table>
   <div class="synthesis">
     <div class="syn-q">What did your least trustworthy source do to seem credible?</div>
-    <div class="answer-lines">&nbsp;</div><div class="answer-lines">&nbsp;</div>
+    <div class="answer-lines"></div><div class="answer-lines"></div><div class="answer-lines"></div><div class="answer-lines"></div>
     <div class="syn-q">What was the biggest difference between your #1 and your #5 source?</div>
-    <div class="answer-lines">&nbsp;</div><div class="answer-lines">&nbsp;</div>
+    <div class="answer-lines"></div><div class="answer-lines"></div><div class="answer-lines"></div><div class="answer-lines"></div>
     <div class="syn-q">Did any source surprise you — did you trust it at first, then change your mind?</div>
-    <div class="answer-lines">&nbsp;</div><div class="answer-lines">&nbsp;</div>
+    <div class="answer-lines"></div><div class="answer-lines"></div><div class="answer-lines"></div><div class="answer-lines"></div>
   </div>
 </div>
 
