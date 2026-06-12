@@ -1,0 +1,1323 @@
+#+TITLE: How to Build a Curated Media Literacy Resource
+#+SUBTITLE: A complete guide to designing, coding, and running a "fake internet" classroom activity
+#+AUTHOR: Medicine & Science Research Hub — Year 9 Science, Diocesan School for Girls NZ
+#+DATE: 2026
+#+STARTUP: overview
+
+* Introduction
+
+This document explains how to build a self-contained web-based media literacy
+resource of the kind used in the "Source Audit" classroom activity. The
+approach involves building a set of realistic-looking HTML pages that simulate
+different kinds of online sources — from peer-reviewed journals to wellness
+blogs to native advertising — and using them as the basis for a structured
+evaluation activity with students.
+
+The full project (at the time of writing) covers five topics in Year 9 Science:
+Vaccines, Antibiotics & Resistance, Semmelweis & Handwashing, Joseph Lister &
+Sterilisation, and How Clinical Trials Work. Each topic has five curated
+"source" pages, and the site is hosted on GitHub Pages. The whole thing is
+static HTML with no build system, no framework, and no back end.
+
+This guide covers:
+- The pedagogical rationale for the design
+- The spectrum of source quality types and how to think about them
+- Detailed instructions (with HTML/CSS snippets) for building each source type
+- The "invisible scaffold" technique — the HUD overlay
+- The classroom activity design and printable materials
+- How to adapt this for other subjects
+
+** What makes this approach work
+
+The core insight is that students learn to evaluate sources best when they have
+to work out the difference for themselves, rather than being told. If you show
+students a trustworthy source and a bad source side by side and explain why
+one is better, they learn the conclusion. If they have to investigate five
+sources — each designed to be a realistic example of its type — and rank them
+without being told what they're looking for, they discover the signals
+independently.
+
+This is only possible if the sources are good enough to be convincing. A
+fake "bad source" that looks obviously fake does not teach the lesson. A fake
+wellness blog that looks and reads like an actual wellness blog — including the
+product callouts, the "as seen in" credibility badges, the emotionally
+warm tone, the affiliate notice in tiny text — teaches students something
+real about how such sources operate online.
+
+The design goal is: every source should be believable in its genre. A student
+should be able to encounter any one of them in the wild and not immediately
+recognise it as constructed.
+
+
+* The Spectrum of Information Quality
+
+The project uses seven source types, ordered here from most to least reliable
+for evidence-based factual claims.
+
+** 1. Gold Standard
+
+What it is: A source with named expert authors, institutional affiliations,
+peer-review credentials (real or simulated), specific numbered citations,
+and a neutral, methodical tone. In the real world this includes academic
+journal articles, institutional review publications, WHO/government reports,
+and encyclopaedia-style reference articles with verified facts.
+
+Tells that make it trustworthy:
+- Named authors with affiliations (university, hospital, research institute)
+- Received/Accepted/Published dates showing an editorial process
+- A DOI or ISSN
+- Numbered inline citations matched to a reference list
+- Abstract or structured summary
+- Data tables with sourced figures
+- No product placement, no ads, no commercial interest
+
+** 2. Quality Journalism
+
+What it is: Original reporting by a named journalist, drawing on primary
+sources (interviews, OIA requests, government data, named experts). The
+journalist has a byline, credentials, and a clearly editorial-independent
+masthead. No product to sell. May include a corrections policy.
+
+Tells that make it trustworthy:
+- Named journalist with a track record
+- Specific named sources (not "a researcher", but "Dr X, University of Y")
+- Primary data (OIA documents, official statistics)
+- Transparent methodology
+- No advertising content adjacent to the article
+- Masthead with editorial independence statement
+
+** 3. Churnalism
+
+What it is: Content that looks like journalism but is mostly repackaged
+information — often a wire story or press release processed into an article
+with minimal original reporting. Characterised by vague sourcing ("researchers
+say", "according to a new study"), clickbait headlines, high ad density, and
+no original investigation.
+
+Tells for students:
+- "According to researchers at a European university" — no name, no study title
+- Headline makes a dramatic claim; article walks it back
+- "We reached out to X and did not receive a response before publication"
+- View/share counts displayed prominently
+- Article full of ads, recommended-content widgets, share buttons
+- Author credit says "Staff" or just a first name
+
+** 4. Biased / Partisan / Personal Blog
+
+What it is: A personal perspective presented as health information. May
+contain accurate facts but the framing, selection of evidence, and emotional
+language serve an agenda (often anti-establishment, anti-pharma, or
+pro-alternative-medicine). The author's credentials are either absent or
+not relevant to the claims being made.
+
+Tells for students:
+- Warm, personal, emotionally engaging tone — "As a parent, I..."
+- Rhetorical questions as section headings: "But what are they not telling us?"
+- Loaded language: "the establishment", "suppressed", "what they don't want
+  you to know"
+- Author credentials are lifestyle-based, not scientific
+- Missing counter-evidence: the science is cherry-picked
+- No specific citations, or citations that don't support the claim made
+
+** 5. Native Advertising
+
+What it is: Content that looks editorial but is produced to sell something.
+A brand pays for an article that reads like health journalism, builds trust
+with accurate information, and then transitions to recommending the brand's
+products. The "Sponsored Content" or "Advertising" label is technically
+present but designed to be missed.
+
+Tells for students:
+- "Sponsored Content" label is tiny, grayed out, and easy to miss
+- Article structure: accurate information → concern → our product solves this
+- Product callout boxes mid-article with star ratings and "Add to Cart"
+- Author is listed as "Brand Ambassador" or "our team"
+- Sidebar full of products from the same company
+- Footer disclaimer: "This product is not intended to diagnose, treat, cure,
+  or prevent any disease"
+
+** 6. Misinformation (honest mistake)
+
+What it is: Content produced with good intent that contains factual errors —
+usually because it is outdated, because the author misunderstood the source
+material, or because it was written without expert review. The key distinction
+from disinformation: there is no intent to deceive.
+
+In this project the main example is a "teacher-created classroom resource" last
+updated in 2007 that contains several factual errors about Semmelweis —
+including the wrong year of his death, and the claim that doctors immediately
+accepted his findings. It looks credible because it looks like a school
+resource, but it has not been maintained.
+
+Tells for students:
+- Last updated date is very old
+- No author credentials visible
+- Layout looks educational/trustworthy but the content doesn't match other
+  sources on the same facts
+- Inconsistencies when cross-checked against a known-good source
+
+** 7. Disinformation (or disinformation-adjacent)
+
+What it is: Content that uses real, accurate facts as a foundation and then
+builds to a conclusion that the evidence does not support — often a sweeping
+conspiratorial claim. The author may believe what they are writing, but the
+rhetorical structure is designed to make the reader reject a whole category
+of evidence (e.g. "all clinical trials are manipulated", "the establishment
+silences anyone who challenges them").
+
+Tells for students:
+- Opens with something accurate and uncontroversial
+- Uses real examples of genuine failure/scandal to generalise to "all of X
+  is corrupt"
+- Language becomes increasingly loaded: "they", "suppressed", "silenced"
+- No distinguishing between "some trials were fraudulent" and "all trials
+  are fraudulent"
+- Uses the reader's justified concern to push them toward wholesale rejection
+
+The distinction between this and a personal blog is important: a biased blog
+makes a specific claim with bad evidence. Disinformation-adjacent content
+systematically undermines the reader's ability to evaluate any future evidence.
+
+
+* How to Build Each Source Type
+
+The following sections give practical HTML/CSS design guidance for each type,
+with annotated snippets from the actual project files.
+
+** General structure of every source page
+
+Every source page in this project has two CSS blocks in its <head>:
+
+1. The page-specific styles (which vary per source type)
+2. The HUD (the teacher overlay — identical across all pages)
+
+The HUD is discussed in detail in section 4. Every page should follow this
+template:
+
+#+BEGIN_SRC html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Title that matches the fake source's style]</title>
+  <!-- Source-type-specific font and styles -->
+  <style>
+    /* ... page styles ... */
+  </style>
+  <!-- HUD overlay — identical in all pages -->
+  <style>
+    .hud-top-bar { position:fixed; top:0; left:0; width:100%; height:60px;
+      background:#1a2744; border-bottom:4px solid #0d7a6e; display:flex;
+      align-items:center; z-index:9999; }
+    /* ... full HUD CSS ... */
+    body { padding-top:70px !important; }
+  </style>
+</head>
+<body>
+<div class="hud-top-bar">...</div>
+<!-- source page content below -->
+</body>
+</html>
+#+END_SRC
+
+** Building a Gold Standard source (academic journal)
+
+The goal is to simulate a peer-reviewed journal article. Students with even
+a little research experience will recognise the genre immediately. Key design
+elements:
+
+*Visual identity:*
+- Serif body font (Lora, Source Serif 4, or Georgia) — academic publications
+  use serif type for body text to signal scholarly register
+- Maroon/navy colour scheme — journals rarely use bright colours
+- Two-column layout: article left, sidebar right
+- Article metadata block at the top (not a bio box, a structured metadata table)
+
+*The metadata block — this is the most important element:*
+
+#+BEGIN_SRC html
+<div class="article-meta-block">
+  <div class="meta-row">
+    <span class="meta-label">Authors</span>
+    <span class="meta-value">
+      Dr. Hemi Ngata<sup>1</sup>, Dr. Claire Sutherland<sup>2</sup>
+    </span>
+  </div>
+  <div class="meta-row">
+    <span class="meta-label">Affiliations</span>
+    <span class="meta-value">
+      <sup>1</sup>School of Biological Sciences, Victoria University of Wellington;
+      <sup>2</sup>Institute for Environmental Science and Research (ESR), Porirua
+    </span>
+  </div>
+  <div class="meta-row">
+    <span class="meta-label">Received</span>
+    <span class="meta-value">4 October 2023</span>
+  </div>
+  <div class="meta-row">
+    <span class="meta-label">Accepted</span>
+    <span class="meta-value">19 January 2024 (following peer review)</span>
+  </div>
+  <div class="meta-row">
+    <span class="meta-label">DOI</span>
+    <span class="meta-value">10.1186/jame.2024.0312</span>
+  </div>
+</div>
+#+END_SRC
+
+The Received/Accepted dates demonstrate a peer review process. The DOI is
+fictitious but follows real DOI format. The university affiliations are real
+NZ institutions, which is important — if students Google them, they exist.
+The author names are plausible but not real people.
+
+*The abstract box:*
+
+#+BEGIN_SRC html
+<div class="abstract-box">
+  <h3>Abstract</h3>
+  <p>Antibiotics have been among the most transformative medicines in human
+  history... [continues with accurate, technical content]</p>
+</div>
+#+END_SRC
+
+*Inline citations — essential for the gold standard feel:*
+
+#+BEGIN_SRC html
+<p>The WHO's 2023 Global Antimicrobial Resistance and Use Surveillance System
+report estimated that bacterial AMR was directly responsible for 1.27 million
+deaths globally in 2019<sup class="ref">[10]</sup>.</p>
+#+END_SRC
+
+Every factual claim should have a superscript reference number. The reference
+list at the bottom should use a real citation format (APA, Vancouver, or AMA
+are all used in life sciences). The references should be real, checkable
+publications — this is important. If a student googles "Waksman 1947 antibiotic
+Mycologia", the paper should exist.
+
+*Data table — makes the source feel substantive:*
+
+#+BEGIN_SRC html
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Mechanism</th>
+      <th>Effect on Bacteria</th>
+      <th>Antibiotic Class Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cell wall synthesis inhibition</td>
+      <td>Bacteria cannot maintain their cell wall; they swell and burst</td>
+      <td>Penicillins, cephalosporins, vancomycin</td>
+    </tr>
+    <!-- ... -->
+  </tbody>
+</table>
+#+END_SRC
+
+*Sidebar — article info, not products:*
+
+#+BEGIN_SRC html
+<div class="sidebar-box">
+  <h4>Article Info</h4>
+  <p><strong>Peer reviewed:</strong> Yes (double-blind)</p>
+  <p><strong>Open access:</strong> Yes</p>
+  <p><strong>Licence:</strong> CC BY 4.0</p>
+</div>
+<div class="sidebar-box">
+  <h4>External Links</h4>
+  <ul>
+    <li><a href="https://www.who.int/...">WHO: AMR Fact Sheet</a></li>
+    <li><a href="https://www.cdc.gov/...">CDC: Antibiotic Resistance</a></li>
+  </ul>
+</div>
+#+END_SRC
+
+Note: the external links in the sidebar should point to real URLs. The WHO
+and CDC pages linked in the project are real. This is intentional — if a
+student clicks through, they reach actual authoritative sources.
+
+*Footer:*
+
+#+BEGIN_SRC html
+<footer>
+  &copy; 2024 Journal of Applied Microbiology Education.
+  Open access under CC BY 4.0. For educational use.
+  Content does not substitute professional medical advice.
+</footer>
+#+END_SRC
+
+The journal name, ISSN, and volume/issue information are all fictitious but
+formatted correctly.
+
+** Building a Quality Journalism source (investigative/data journalism)
+
+The goal is to simulate long-form investigative journalism of the kind
+published by outlets like Stuff, The Spinoff, RNZ, or The Guardian. The key
+signals are: a named journalist with stated credentials, named and quoted
+expert sources, primary data (in the NZ context, often OIA documents), and
+a clean, ad-free layout.
+
+*Visual identity:*
+- Clean, editorial masthead with a distinctive wordmark
+- Serif display font for headlines (Source Serif 4, Georgia)
+- Red accent colour (traditional newspaper association)
+- No ads — this is one of the strongest signals of quality journalism
+- A byline with journalist credentials
+
+*The byline — the most critical element:*
+
+#+BEGIN_SRC html
+<div class="article-byline">
+  <div class="byline-left">
+    <div class="byline-author">Aroha Tūhoe</div>
+    <div class="byline-credentials">
+      Science Correspondent · NZ Health Investigates
+    </div>
+    <div class="byline-meta">
+      <span>Published 14 February 2025</span>
+      <span>Updated 16 February 2025</span>
+      <span>8 min read</span>
+    </div>
+  </div>
+</div>
+#+END_SRC
+
+The journalist has a full name, a job title, and a publication. The article
+has both a publication date and an update date (indicating ongoing editorial
+attention).
+
+*Named expert sources in-text:*
+
+#+BEGIN_SRC html
+<div class="box-expert">
+  <div class="expert-name">Associate Professor James Liu</div>
+  <div class="expert-role">
+    Institute of Environmental Science and Research, Massey University
+  </div>
+  <p>"These numbers should concern us. The pattern we're seeing in farm
+  antibiotic use is exactly what the WHO has been warning about for years."</p>
+</div>
+#+END_SRC
+
+The expert box gives full name, affiliation, and a direct quote — not a
+paraphrase. Sources are named, not described vaguely.
+
+*Data callout — showing primary data:*
+
+#+BEGIN_SRC html
+<div class="data-callout">
+  <div class="data-label">OIA-Released Government Data</div>
+  <div class="data-number">+34%</div>
+  <div class="data-desc">
+    Increase in antibiotic use on NZ farms 2019–2024,
+    measured in milligrams per population correction unit (PCU)
+  </div>
+  <div class="data-source">
+    Source: Ministry for Primary Industries, released under OIA request
+    #2024-0892, 18 November 2024
+  </div>
+</div>
+#+END_SRC
+
+The specific OIA reference number, date, and ministry name give this the
+feel of genuine document-based reporting. Students who know what an OIA is
+will immediately recognise the signal.
+
+*Author bio and corrections policy — signals of editorial accountability:*
+
+#+BEGIN_SRC html
+<div class="author-bio">
+  <div class="author-bio-name">Aroha Tūhoe</div>
+  <div class="author-bio-title">Science Correspondent</div>
+  <div class="author-bio-text">
+    Aroha Tūhoe covers health policy and environmental science for NZ Health
+    Investigates. She holds a BSc (Microbiology) from the University of Otago
+    and an MJ (Journalism) from AUT.
+  </div>
+</div>
+
+<div class="editorial-footer">
+  <p><strong>Corrections:</strong> NZ Health Investigates is committed to
+  accuracy. If you believe this article contains an error, please
+  <a href="#">contact our editorial team</a>.</p>
+</div>
+#+END_SRC
+
+The corrections policy is a strong signal of quality journalism. No
+commercial content outlet or personal blog will have one.
+
+** Building a Churnalism source (health news aggregator)
+
+The goal is to simulate the kind of health news that gets shared widely on
+social media — articles with dramatic headlines, thin reporting, vague
+sourcing, and heavy monetisation. Think clickbait health news aggregators.
+
+*Visual identity:*
+- Bold, aggressive sans-serif fonts (Open Sans, Roboto at heavy weights)
+- Orange or red accent colours — high-energy, urgent palette
+- "Breaking News" bar at the top
+- Share count prominently displayed
+- Multiple ad placeholders visible on the page
+- "You Might Also Like" widget with more clickbait headlines in the sidebar
+
+*The headline and standfirst — dramatic claim, vague body:*
+
+#+BEGIN_SRC html
+<h1 class="article-headline">
+  Scientists Say Vaccine Immunity May Be Fading Faster Than We Thought
+  — Here's What That Means
+</h1>
+<p class="article-standfirst">
+  A new study is raising questions about how long vaccine protection
+  actually lasts — and some experts say the findings could change the
+  way we think about booster programmes entirely.
+</p>
+#+END_SRC
+
+Note the headline makes a strong claim. The standfirst softens it slightly
+("raising questions"). The article body never identifies the study, the
+researchers, or where it was published.
+
+*The author byline — no individual named:*
+
+#+BEGIN_SRC html
+<div class="article-meta">
+  <span class="freshness">Published 2 hours ago</span>
+  <span class="author">HealthBuzz Staff</span>
+  <span>3 min read</span>
+  <span>🔥 14,302 views</span>
+</div>
+#+END_SRC
+
+"HealthBuzz Staff" — no individual named. The freshness indicator ("2 hours
+ago") and the view count both signal content designed for rapid consumption
+and sharing, not careful reading.
+
+*The vague sourcing — the core of churnalism:*
+
+#+BEGIN_SRC html
+<p>According to researchers at a European university — results that have
+not yet been peer reviewed but were posted to a preprint server this week
+— the rate at which neutralising antibodies decline post-vaccination is
+steeper than the models assumed.</p>
+
+<p>A new study published in a major international journal found that
+participants who received two doses showed a significant drop in measurable
+antibodies by the six-month mark.</p>
+
+<p>"Antibody levels are just one piece of the picture," one researcher
+told a science newswire.</p>
+#+END_SRC
+
+"A European university" — which one? "A major international journal" —
+which journal? "One researcher told a science newswire" — which researcher?
+This is precisely the vague sourcing pattern that distinguishes churnalism
+from journalism. Every claim has a source gesture but no actual source.
+
+*Ad placeholders — heavy monetisation:*
+
+#+BEGIN_SRC html
+<div class="in-article-ad">
+  <div class="ad-label">Advertisement</div>
+  <div class="ad-placeholder rectangle">[ RECTANGLE AD — 300×250 ]</div>
+</div>
+#+END_SRC
+
+Multiple ad placeholders appear in the article body and sidebar. In a real
+churnalism site these would be Google AdSense or similar. In the simulated
+version they're placeholders, but the structure and density is accurate.
+
+*The "You Might Also Like" sidebar — designed to keep you clicking:*
+
+#+BEGIN_SRC html
+<div class="you-might-like">
+  <a href="#">
+    <div class="yml-thumb">IMG</div>
+    <div class="yml-text">
+      This Common Household Product May Be Destroying Your Immune System
+      <div class="yml-meta">4.2k shares · 1 hr ago</div>
+    </div>
+  </a>
+  <a href="#">
+    <!-- more clickbait headlines -->
+  </a>
+</div>
+#+END_SRC
+
+The headlines in the "You Might Also Like" sidebar are deliberately written
+in churnalism style: alarming, vague, share-optimised. This is an important
+detail — the content around an article is part of the source evaluation.
+
+** Building a Native Advertising source
+
+This is the most sophisticated source type to build, because it must look
+genuinely editorial while being structurally commercial. There are two
+subtypes demonstrated in the project:
+
+*Subtype A: Corporate brand blog (PureLife Wellness NZ)*
+
+A brand publishes content in the style of health journalism. The content is
+factually accurate (this is crucial — the native ad only works if people
+trust it). The commercial intent is revealed only via a tiny "Sponsored
+Content" label and the product callouts embedded mid-article.
+
+*Sponsored notice — technically present but easy to miss:*
+
+#+BEGIN_SRC html
+<div class="sponsored-notice">
+  <strong>Sponsored Content</strong>
+  · This article is brought to you by PureLife Wellness NZ
+</div>
+#+END_SRC
+
+The CSS for this element:
+
+#+BEGIN_SRC css
+.sponsored-notice {
+  background: #f5f0e8;
+  border-bottom: 1px solid #ddd8ce;
+  padding: 7px 0;
+  text-align: center;
+  font-size: 0.7rem;      /* very small */
+  color: #888;            /* low contrast grey */
+  letter-spacing: 0.5px;
+}
+.sponsored-notice strong {
+  color: #666;            /* still low contrast */
+}
+#+END_SRC
+
+The key design choice: 0.7rem font size, #888 grey text on a beige background.
+This is technically disclosure. It is designed to be ignored. Real native
+advertising works exactly this way.
+
+*The article structure — trust-building before the sell:*
+
+The article follows a three-act structure that is standard in native
+advertising:
+
+Act 1: Build credibility with accurate, helpful information.
+The article accurately explains vaccine ingredients — aluminium adjuvants,
+formaldehyde, thimerosal — in a way that is factually correct but framed
+to seem alarming. This is real information, and it builds trust.
+
+Act 2: Raise concern without making false claims.
+"Some researchers have called for more long-term studies on cumulative exposure."
+This is technically accurate but selected to create doubt.
+
+Act 3: Introduce the product as the natural solution.
+After establishing immune support as important, the product appears:
+
+#+BEGIN_SRC html
+<div class="product-callout">
+  <div class="product-img">
+    <div class="product-icon">🍓</div>
+    ImmunoShield Junior<br>Berry Flavour
+  </div>
+  <div class="product-info">
+    <div class="product-name">ImmunoShield Junior™</div>
+    <div class="product-tagline">
+      Complete daily immune support for children aged 3–12
+    </div>
+    <div class="product-stars">
+      ★★★★★ <span>(247 reviews)</span>
+    </div>
+    <div class="product-price">$38.90 <span>/ 60 chewable tablets</span></div>
+    <a href="#" class="product-btn">Add to Cart</a>
+    <div class="disclaimer-tiny">
+      This product is not intended to diagnose, treat, cure,
+      or prevent any disease. This is not medical advice.
+    </div>
+  </div>
+</div>
+#+END_SRC
+
+The product callout appears mid-article, between informational sections.
+The tiny disclaimer is legally required and practically unread. Two product
+callouts appear in the article body; more products appear in the sidebar.
+
+*Subtype B: Personal brand ambassador blog (GutWise NZ)*
+
+Different from the corporate blog: this is written in first person by a named
+individual ("Sophie M.") who is labelled a "Brand Ambassador" — but this label
+appears in very small text.
+
+#+BEGIN_SRC html
+<div class="author-bar">
+  <div class="author-photo">😊</div>
+  <div class="author-info">
+    <div class="author-name">Sophie M.</div>
+    <div class="author-role">GutWise Brand Ambassador · Certified Nutrition Coach</div>
+    <div class="post-meta">Published March 2024 · 9 min read · Wellington, NZ</div>
+  </div>
+</div>
+#+END_SRC
+
+"Brand Ambassador" is disclosed but presented as equivalent to a credential.
+The personal, first-person narrative structure ("I was about six weeks
+post-antibiotics when...") creates emotional connection and trust that a
+corporate-voice article cannot.
+
+The article also contains an affiliate notice — technically present, barely
+visible:
+
+#+BEGIN_SRC html
+<div class="affiliate-notice">
+  This post contains affiliate links. If you purchase through our links,
+  we may earn a commission — at no extra cost to you.
+  <a href="#">What does this mean?</a>
+</div>
+#+END_SRC
+
+CSS:
+
+#+BEGIN_SRC css
+.affiliate-notice {
+  background: #f0faf5;
+  border-bottom: 1px solid #d0f0e0;
+  text-align: center;
+  padding: 6px;
+  font-size: 0.68rem;   /* smaller than the sponsored notice */
+  color: #888;
+}
+#+END_SRC
+
+0.68rem. Even smaller than the sponsored content notice. This is accurate
+to real affiliate-blog practice.
+
+** Building a Biased / Personal Blog source
+
+The goal is to simulate a wellness parent blog — emotionally warm, personally
+grounded, genuinely caring in tone, but factually selective and operating from
+an anti-establishment worldview. The challenge is that this type of source can
+be quite accurate on individual facts; the problem is with the framing and
+what is left out.
+
+*Visual identity:*
+- Warm, soft colour palette (sage green, blush, ivory)
+- Elegant serif display font (Cormorant Garamond is perfect — it reads as
+  refined and authentic, not corporate)
+- Personal handwritten-style elements in the header
+- No hard news elements — no date stamps in orange, no share counts
+- "About Me" box in the sidebar with a hand-drawn avatar style
+
+#+BEGIN_SRC css
+:root {
+  --sage: #7a9a6a;
+  --sage-dark: #5a7a4a;
+  --blush: #e8c4b0;
+  --blush-light: #fdf6f2;
+  --warm: #8a6a4a;
+  --bg: #fdfaf6;
+}
+body {
+  font-family: 'Lato', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+.blog-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  font-weight: 300;  /* light weight — graceful, personal */
+  color: var(--sage-dark);
+}
+#+END_SRC
+
+*The author — wellness credentials, not scientific ones:*
+
+#+BEGIN_SRC html
+<div class="author-tag">
+  <div class="author-circle">K</div>
+  <div class="info">
+    <div class="name">Katrina Wells</div>
+    <div class="role">
+      Holistic nutritionist, mum of three, natural health advocate
+    </div>
+  </div>
+</div>
+#+END_SRC
+
+"Holistic nutritionist" and "natural health advocate" are not regulated
+credentials in NZ. This is a real and important point for students: anyone can
+call themselves a nutritionist; only a Registered Dietitian (RD) has a
+protected title backed by university training and professional regulation.
+
+*The personal opening — emotional engagement before argument:*
+
+The article should open with a relatable personal story that establishes
+empathy before making any claims. "I was that mum who followed every piece
+of advice my GP gave without question..." This is a deliberate rhetorical
+technique that builds identification with the reader before asking them to
+doubt official information.
+
+*Rhetorical questions as section headings:*
+
+#+BEGIN_SRC html
+<h2>But Are We Being Told the Whole Story?</h2>
+<h2>Why Does This Matter for Our Children?</h2>
+#+END_SRC
+
+Framing questions as headings creates the impression of investigation without
+requiring evidence.
+
+*The personal block — stylised pull quote from self:*
+
+#+BEGIN_SRC html
+<div class="personal-block">
+  "I am not anti-vaccine. I want to be really clear about that.
+   What I am is pro-information — and I think those are very different things."
+</div>
+#+END_SRC
+
+This is a classic structure in wellness-blog anti-establishment content:
+the preemptive denial ("I am not anti-X") followed by behaviour that is
+functionally anti-X. It is designed to neutralise the most obvious criticism
+before a reader can make it.
+
+** Building a Misinformation (honest mistake) source
+
+The goal is to simulate a genuine, well-intentioned educational resource that
+contains factual errors — either because it is outdated or because the author
+was working outside their expertise. The Semmelweis classroom resource is
+the primary example.
+
+*Visual identity — this is the key challenge:*
+
+The source must look trustworthy. It should look like something a teacher
+would have bookmarked in 2007 and forgotten to update. This means:
+- Old-school web design (no Google Fonts — system fonts only)
+- Blue/yellow government-style colour scheme
+- Fixed-width centred layout (pre-responsive design)
+- Actual visible signs of age: "Last updated: September 2007"
+
+#+BEGIN_SRC css
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  background: #eeeeee;
+  color: #000000;
+}
+.page-wrapper {
+  width: 780px;   /* fixed width — pre-responsive design era */
+  margin: 0 auto;
+  background: #ffffff;
+  border-left: 1px solid #aaaaaa;
+  border-right: 1px solid #aaaaaa;
+}
+.site-header {
+  background: #003399;    /* old-school education blue */
+  border-bottom: 3px solid #ffcc00;
+}
+#+END_SRC
+
+#+BEGIN_SRC html
+<div class="update-notice">
+  <strong>Note:</strong> This page was last reviewed in September 2007.
+  Some information may be out of date.
+</div>
+#+END_SRC
+
+The update notice is present and honest — but in practice students often
+skip it or assume "some information may be out of date" means minor details,
+not substantive factual errors.
+
+*The factual errors — deliberate but not immediately obvious:*
+
+In this project the Semmelweis classroom resource contains three errors:
+1. Semmelweis died in 1868 (the real date is 1865)
+2. It credits him with "discovering germ theory" (he preceded formal germ
+   theory and his explanation was pre-Pasteur)
+3. It claims doctors immediately accepted his handwashing findings (in reality
+   he was widely resisted for years)
+
+These errors are not invented carelessly — they are based on real
+misconceptions that circulate widely. Students who compare this source against
+the gold standard source should notice the discrepancies in the death year
+(the most checkable fact) and the claim about immediate acceptance
+(which contradicts the whole Semmelweis narrative).
+
+*The table of contents / side navigation — old-school educational feel:*
+
+#+BEGIN_SRC html
+<div class="toc">
+  <div class="toc-title">Contents</div>
+  <ol>
+    <li><a href="#background">Background</a></li>
+    <li><a href="#discovery">The Discovery</a></li>
+    <li><a href="#legacy">Legacy and Impact</a></li>
+    <li><a href="#activities">Classroom Activities</a></li>
+  </ol>
+</div>
+#+END_SRC
+
+A table of contents signals organisation and care — it looks like work was
+put into the resource. This is part of why the source is a "trap": it looks
+like it belongs in a classroom.
+
+** Building a Disinformation (or disinformation-adjacent) source
+
+The goal is to simulate content that uses genuine scandals as leverage for
+sweeping, unfalsifiable claims about entire institutions. The Clinical Trials
+"Big Pharma" source is the primary example.
+
+*Visual identity:*
+- Dark navy/black colour scheme — authoritative, conspiratorial
+- Gold accents — "truth" signalling
+- The site name contains words like "Independent", "Observer", "Truth",
+  "Investigates"
+- "Mission statement" sidebar explaining why this site exists to fight
+  against "captured media"
+
+#+BEGIN_SRC css
+:root {
+  --navy: #0a1628;
+  --navy-mid: #152240;
+  --blue: #1a4a8a;
+  --gold: #c8a820;   /* truth-signalling gold */
+}
+header {
+  background: var(--navy);
+  border-bottom: 3px solid var(--gold);
+}
+#+END_SRC
+
+#+BEGIN_SRC html
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <span class="the">The</span>
+      <span class="name">
+        Independent Health <span>Observer</span>
+      </span>
+    </a>
+    <div class="header-right">
+      "Questioning the narrative since 2016"
+    </div>
+  </div>
+</header>
+#+END_SRC
+
+"Questioning the narrative since 2016" — the site frames itself as
+adversarial to consensus from the beginning.
+
+*The mission statement sidebar — the most important disinformation tell:*
+
+#+BEGIN_SRC html
+<div class="mission-sb">
+  <h4>Our Mission</h4>
+  <p>The Independent Health Observer exists to cover the health stories
+  that mainstream outlets won't touch. We are reader-funded and accept
+  no pharmaceutical advertising.</p>
+  <button>Support Independent Journalism</button>
+</div>
+#+END_SRC
+
+"Mainstream outlets won't touch" and "reader-funded" are classic framing
+devices: they pre-explain why this site's claims are not covered elsewhere
+(not because they're false, but because they're suppressed).
+
+*The rhetorical structure — real evidence → false generalisation:*
+
+The article opens with genuine, documented examples of research fraud:
+
+#+BEGIN_SRC html
+<div class="evidence-box">
+  <h3>The Record of Documented Fraud</h3>
+  <ul>
+    <li>The Vioxx scandal (2004): Merck suppressed cardiovascular data
+      — 27,785 excess cases of serious coronary heart disease estimated</li>
+    <li>GlaxoSmithKline fined $3 billion (2012) for misrepresenting
+      data on Paxil and Wellbutrin</li>
+    <li>The Fujii retractions (2012): 183 anaesthesia papers retracted
+      for fabricated data</li>
+  </ul>
+</div>
+#+END_SRC
+
+These examples are real and the details are accurate. This is what makes
+disinformation-adjacent content effective: it cannot be dismissed by fact-
+checking individual claims, because the individual claims are true.
+
+*The conclusion box — where the logic breaks down:*
+
+#+BEGIN_SRC html
+<div class="conclusion-box">
+  <h3>What This Means For You</h3>
+  <p>The evidence presented above is not the exception. It is the pattern.
+  When the same funding structures, the same regulatory revolving doors,
+  and the same publication biases operate across every major therapeutic
+  area — what you are reading is not science. It is marketing with
+  statistical footnotes.</p>
+</div>
+#+END_SRC
+
+The conclusion box moves from "here are real documented cases" to "this is
+not the exception, it is the pattern" to "all of this is marketing". This
+is the logical leap that distinguishes the disinformation structure: real
+examples used to support a claim that no evidence could falsify.
+
+
+* The "Invisible Scaffold" — The HUD Overlay
+
+The single most important technical element in the project is the HUD
+(heads-up display) — a fixed navigation bar overlaid on every source page
+that anchors it within the classroom context without disrupting the reading
+experience.
+
+** What the HUD does
+
+Every source page looks like an external website. Without the HUD, students
+would lose context — they might forget which topic they are supposed to be
+looking at, or how the source they are reading connects to the Hub.
+
+The HUD provides:
+1. A breadcrumb back to the Hub (Home → Topic → Source)
+2. A badge reminding them they are doing "External Source Analysis"
+3. A persistent visual anchor that all pages belong to the same system
+
+The HUD is designed to look like a browser extension or tool overlay — not
+part of the fake website's own design.
+
+** The HUD CSS and HTML
+
+This is identical on every single source page. Copy this exactly:
+
+#+BEGIN_SRC css
+.hud-top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #1a2744;
+  border-bottom: 4px solid #0d7a6e;
+  display: flex;
+  align-items: center;
+  z-index: 9999;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  font-family: 'Source Sans 3', Arial, sans-serif;
+}
+.hud-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.breadcrumbs { color: #8fa3c8; font-size: 0.9rem; }
+.breadcrumbs a { color: #fff; text-decoration: none; font-weight: 600; }
+.breadcrumbs a:hover { color: #c8922a; }
+.sep { margin: 0 10px; color: #0d7a6e; font-weight: bold; }
+.current-page { color: #fff; opacity: 0.8; }
+.hud-badge {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid #0d7a6e;
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+body { padding-top: 70px !important; }
+#+END_SRC
+
+#+BEGIN_SRC html
+<div class="hud-top-bar">
+  <div class="hud-container">
+    <div class="breadcrumbs">
+      <a href="../index.html">Home</a>
+      <span class="sep">/</span>
+      <a href="../topics/vaccines.html">Vaccines</a>
+      <span class="sep">/</span>
+      <span class="current-page">Source Analysis</span>
+    </div>
+    <div class="hud-badge">External Source Analysis</div>
+  </div>
+</div>
+#+END_SRC
+
+The =body { padding-top: 70px !important; }= declaration is critical — it
+shifts the page content down so the HUD does not overlap the source header.
+The =!important= is necessary because source page styles may define their own
+body padding (e.g. for sticky headers).
+
+The dark navy (#1a2744) and teal (#0d7a6e) colour palette is deliberately
+different from all source pages, which use their own colour schemes. The HUD
+always reads as a distinct "layer" on top.
+
+
+* File Structure and Navigation Hub
+
+** Recommended directory structure
+
+#+BEGIN_SRC
+project/
+├── index.html              ← Landing page (topic grid)
+├── topics/
+│   ├── vaccines.html       ← Topic hub page (lists 5 sources)
+│   ├── antibiotics.html
+│   ├── semmelweis.html
+│   ├── lister.html
+│   └── clinical-trials.html
+├── sources/
+│   ├── vaccines-who.html         ← Gold standard
+│   ├── vaccines-sponsored.html   ← Native ad
+│   ├── vaccines-churn.html       ← Churnalism
+│   ├── vaccines-naturalmum.html  ← Biased/personal
+│   ├── vaccines-healthnews.html  ← Churnalism (variant)
+│   ├── antibiotics-science.html
+│   └── [etc — one file per source]
+└── classroom/
+    ├── student-cards.html        ← Printable student evaluation cards
+    ├── group-sheet.html          ← Group ranking sheets
+    └── teacher-guide.html        ← Teacher guide with source key
+#+END_SRC
+
+All paths are relative. The sources directory sits alongside topics.
+Relative paths in source pages: =../index.html=, =../topics/vaccines.html=.
+The whole site can be opened locally from the filesystem with no server.
+
+** The topic hub page
+
+The topic hub page lists the five sources for a topic. The design is
+deliberately neutral — no quality indicators, no colour coding, all sources
+look identical. This is intentional: if the hub page hinted at quality
+(green for good, red for bad), the exercise would be compromised.
+
+The source order on each hub page is shuffled so the gold standard source
+does not always appear at position 1. In this project:
+- Vaccines: Gold standard at S2
+- Antibiotics: Gold standard at S3
+- Semmelweis: Gold standard at S4
+- Lister: Gold standard at S4
+- Clinical Trials: Gold standard at S5
+
+This ensures students cannot use source number as a proxy for quality.
+
+** Hosting on GitHub Pages
+
+The entire project is a static site with no build step. To host:
+
+1. Create a public GitHub repository
+2. Push all files to the main branch with the root at /
+3. In the repository settings, enable GitHub Pages from the main branch root
+4. The site will be live at https://[username].github.io/[repo-name]
+
+This gives you a shareable URL for classroom use. Students can access it on
+any device without installing anything.
+
+
+* The Classroom Activity Design
+
+** Overview
+
+The activity is a jigsaw structure — each student becomes an expert on one
+source, then shares findings with a group that covers all five sources.
+
+Students work in 5 groups (one per topic). Each person reads one source,
+fills in an evaluation card independently, and then the group shares findings
+and ranks all five sources from most to least trustworthy.
+
+A class debrief then surfaces patterns across all groups, and the teacher
+reveals the source type names at the end.
+
+** Why the jigsaw structure works
+
+The jigsaw is more effective than giving every student all five sources
+because:
+1. Each student reads one source thoroughly rather than skimming five
+2. Students must explain their source to others — explanation reinforces
+   understanding
+3. Groups must debate and justify rankings — the disagreement is productive
+4. Each student gets a card with their source's title, so they cannot be
+   confused about which source they are evaluating
+
+** The student evaluation card
+
+Each student receives a physical card (printed landscape A4, 2 cards per sheet,
+25 total) with:
+- The topic group name and colour (teal for Vaccines, navy for Antibiotics, etc.)
+- The source number and title
+- Five evaluation questions with checkbox options
+- A notes line after each question
+- A rating scale from 1 (don't trust) to 5 (fully trust)
+- A "main reason for my rating" line
+
+The five questions are:
+1. Who is behind this? (named expert / organisation / anonymous)
+2. What do they want from you? (inform / persuade / sell / hard to tell)
+3. How is evidence used? (named studies / vague references / personal stories)
+4. What's missing? (other side / credentials / date)
+5. What's the tone? (calm and balanced / alarming / very confident)
+
+These questions are deliberately framework-light. They do not use the
+technical vocabulary (churnalism, native advertising, etc.) because the
+goal is for students to discover those patterns themselves. The questions
+function as structured observation prompts, not a classification rubric.
+
+** The group ranking sheet
+
+Each group of 5 students receives a shared group sheet. They must:
+1. Fill in the source titles and individual ratings in a ranking table
+2. Rank all five sources 1 to 5 (no ties allowed)
+3. Answer three synthesis questions:
+   - What did your least trustworthy source do to seem credible?
+   - What was the biggest difference between your #1 and #5 source?
+   - Did any source surprise you?
+
+The "no ties" rule forces students to make a judgment call when two sources
+feel similarly problematic. This productive difficulty is where much of the
+learning happens.
+
+** The teacher guide
+
+The teacher guide (print-only, not shared with students) contains:
+
+1. A timing reference (0–3 min setup, 3–18 min individual, 18–28 min group,
+   28–38 min debrief, 38–40 min exit)
+
+2. A source answer key — one row per student card — showing the source type
+   and the key red flag to draw out in the debrief
+
+3. A debrief sequence — five questions in order, with expected student
+   responses
+
+4. Notes on the "trap" sources (the Semmelweis 2007 classroom resource;
+   the native advertising sources that look editorial)
+
+The critical rule communicated in the teacher guide:
+Do not tell students the sources vary in quality before the activity.
+The debrief is the reveal moment. If students are told in advance that they
+are looking for "bad" sources, they will approach the exercise as a sorting
+game rather than as genuine evaluation.
+
+** Running with 20 students instead of 25
+
+With exactly 5 groups of 4: skip Source 5 from each group's ranking, or
+assign one student two sources (they skim the second after finishing the first).
+The ranking and debrief work fine with 4 sources per group.
+
+
+* Adapting for Other Subjects
+
+This approach is not specific to science or medicine. Any subject area with
+a range of publicly available source types can use this structure.
+
+** Adapting the topics
+
+For humanities or social studies, good topic areas include:
+- Any contested historical event (sources range from academic history to
+  national myth to political revision)
+- Climate change (scientific consensus / quality journalism / denial /
+  commercial greenwashing)
+- Social media and mental health (peer-reviewed studies / popular psychology /
+  wellness influencers / tech company PR)
+
+For business or economics:
+- A major corporate event (annual reports / investigative journalism /
+  PR / conspiracy)
+
+The principle is the same: choose a topic where a full spectrum of source
+types naturally exists.
+
+** Adapting the source types
+
+Not all subject areas will have a "misinformation teacher resource" that
+works as well as the Semmelweis example. The most universally applicable
+types are:
+- Gold standard (always possible — academic paper, official report)
+- Churnalism (always possible — any topic generates content farming)
+- Native advertising (always possible — any topic has something to sell)
+- Biased/personal blog (always possible — any topic has advocates)
+
+Quality journalism and disinformation are more topic-dependent. Not every
+area will have investigative journalism with OIA data, and disinformation
+tends to cluster around topics where there is strong emotional investment
+(health, politics, identity).
+
+** Technical requirements for adaption
+
+Each new topic requires:
+- 5 HTML source pages (one per type)
+- 1 topic hub page linking the 5 sources
+- Updates to the landing page grid (index.html)
+- New student cards for the topic (5 cards)
+- Updated teacher guide source key
+
+The HUD, student card format, group sheet, and classroom activity structure
+can all be reused without modification.
+
+
+* Common Mistakes to Avoid
+
+** Making the bad sources too obvious
+
+If the disinformation source has a header that says "TRUTH WARRIORS" in
+flashing red text, students will identify it instantly without evaluating it.
+The bad sources should require actual reading to identify. The churnalism
+source should look like journalism. The native ad should look like a health
+article. The biased blog should feel warm and reasonable, not obviously wrong.
+
+** Making all sources the same length
+
+Real sources of different types are different lengths. A journal article is
+long, dense, and structured with clear sections. A personal blog post can be
+long and conversational. Churnalism is short — it is designed for fast
+consumption. A native advertising piece is medium length, structured to hold
+attention until the product placement. Varying length is part of the realism.
+
+** Putting the gold standard first in the source list
+
+If Source 1 is always the best source, students will figure out the pattern
+within one or two groups and the exercise loses its challenge. Shuffle the
+positions. In this project the gold standard appears at S2, S3, S4, S4, S5
+across the five groups.
+
+** Using obviously fake source names
+
+"TrustScienceNow.com" and "WellnessQuacks.net" are not convincing. Real
+sources have plausible, professional-sounding names: "Journal of Applied
+Microbiology Education", "HealthBuzz Daily NZ", "PureLife Wellness NZ",
+"NZ Health Investigates". The names should be plausible enough that a student
+could encounter them in the wild without immediately recognising them as fake.
+
+** Forgetting to neutralise visual quality cues
+
+If you code the gold standard source with a green badge and the worst
+source with a red badge on the hub page, you have told students the answer
+before they start reading. All source cards on the hub page should look
+identical — same neutral badge colour, same icon, same text style.
+
+** Skipping the debrief
+
+The debrief is where the learning happens. The jigsaw and the cards are
+diagnostic; the debrief is the lesson. Build in 10 minutes minimum. The most
+productive debrief question is the third one: "Did any source fool you at
+first?" — because honest answers to this question reveal that even careful,
+engaged readers can be taken in by native advertising or by sources that
+look educational.
+
+
+* Summary: The Design Principles in One Place
+
+1. Every source must be convincing in its genre.
+2. Bad sources should require reading to identify — visual complexity is not
+   a tell.
+3. Accurate content can still be in an unreliable source (native advertising
+   is the best example of this).
+4. The gold standard position should be shuffled — never always first.
+5. The hub page should be visually neutral — no quality colour-coding.
+6. The HUD anchors every page in the classroom context without disrupting
+   the reading experience.
+7. The student card questions are observation prompts, not a classification
+   rubric — students should discover the categories, not apply them.
+8. No ties in the group ranking — the difficulty of forced ordering is
+   pedagogically productive.
+9. Do not reveal source types until the class debrief.
+10. The debrief is the lesson. Protect time for it.
